@@ -1,3 +1,4 @@
+var duration;
 var balls = [];
 var total = 25;
 var paddle;
@@ -92,7 +93,7 @@ function drawPlaying(){
 function drawEnd(){
   textSize(50);
   textAlign(CENTER,CENTER);
-  
+  noStroke();
   fill(255,0,0);
   ellipse(startCenterX, startCenterY,startButtonSize,startButtonSize);
   
@@ -107,6 +108,7 @@ function drawEnd(){
   text("SHOP AGAIN",0,450,width,50);
 
   fredscream.play();
+  duration(3);
 }
 
 function gameOver(){

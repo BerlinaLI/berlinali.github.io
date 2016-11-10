@@ -5,6 +5,7 @@ var score;
 var lives = 3;
 var chart;
 var angle = 0;
+var fredscream;
 
 var startCenterX;
 var startCenterY;
@@ -16,7 +17,9 @@ var startButtonSize = 130;
 */
 var state = 0;
 
-
+function preload(){
+  fredscream = loadSound("fredscreaming.m4a");
+}
 function setup() {
   createCanvas(1000,600);
  
@@ -102,6 +105,8 @@ function drawEnd(){
   strokeWeight(6);
   textSize(20);
   text("SHOP AGAIN",0,450,width,50);
+
+  fredscream.play();
 }
 
 function gameOver(){

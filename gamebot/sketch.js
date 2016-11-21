@@ -12,7 +12,7 @@ var titleText = "9 Lives Self-Suicide Bot"
 var startText = "Press any key \n\nto play!";
 var endText = "Game over!\n \nPress any key to play again!";
 var winText = "Congrats! \n \nPress any key to play again!";
-var bgdMusic;
+//var bgdMusic;
 var hitSound;
 var scoreSound;
 var winSound;
@@ -25,7 +25,7 @@ var timer3;
 var timer;
 
 function preload(){
-  bgdMusic = loadSound("bgdMusic.MP3");
+ // bgdMusic = loadSound("bgdMusic.MP3");
   hitSound = loadSound("hitSound.MP3");
   scoreSound = loadSound("scoreSound.MP3");
   winSound = loadSound("winSound.MP3"); 
@@ -44,7 +44,7 @@ function setup(){
 	textAlign(CENTER,CENTER);
 	textFont(myFont);
 	
-  bgdMusic.loop();
+ // bgdMusic.loop();
 }
 
 function draw(){

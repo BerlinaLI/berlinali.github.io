@@ -6,8 +6,6 @@ var score;
 var lives = 3;
 var chart;
 var angle = 0;
-var fredscream;
-
 var startCenterX;
 var startCenterY;
 var startButtonSize = 130;
@@ -18,30 +16,18 @@ var startButtonSize = 130;
 */
 var state = 0;
 
-function preload(){
-  fredscream = loadSound("fredscreaming.m4a");
-}
 function setup() {
-  createCanvas(1000,600);
- 
-  
+  createCanvas(window.innerWidth, window.innerHeight);
   cart = loadImage("cart.jpg");
- 
   startCenterX = width/2 - 5; //  为什么还需要initiate在var前面？
   startCenterY = 472;
-
   textFont("Helvetica");
   textSize(50);
   textAlign(CENTER,CENTER);
-  
- 
 }
 
 function draw() {
   background(2,82,179);
-  
-  
-  
   if(state == 0){
     drawIntro();
   }else if (state == 1){
@@ -64,13 +50,6 @@ function drawIntro(){
 }
 
 function drawPlaying(){
-  
-  // fill(255,0,0);
-  // stroke(255);
-  // textSize(100);
-  // text("买",100,100,500,500);
-  
-  
   for (var i=0; i<balls.length;i++){
     balls[i].update();
     balls[i].render();
@@ -96,19 +75,13 @@ function drawEnd(){
   noStroke();
   fill(255,0,0);
   ellipse(startCenterX, startCenterY,startButtonSize,startButtonSize);
-  
   fill(255);
   noStroke();
   text("DUDE,\n YOU ARE BANKRUPTED!",0,0,width,height -50);
-  
- 
   fill(255);
   strokeWeight(6);
   textSize(20);
   text("SHOP AGAIN",0,450,width,50);
-
-  fredscream.play();
-  duration(3);
 }
 
 function gameOver(){

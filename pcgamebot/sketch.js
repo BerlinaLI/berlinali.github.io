@@ -12,10 +12,10 @@ var endText2 = "Press any key to play again!";
 var winText1 = "Congrats!";
 var winText2 = "Press any key to play again!";
 //var bgdMusic;
-var hitSound;
-var scoreSound;
-var winSound;
-var loseSound;
+//var hitSound;
+// var scoreSound;
+// var winSound;
+// var loseSound;
 var myFont;
 var canvas;
 var timer1;
@@ -27,10 +27,10 @@ var timer;
 
 function preload(){
  // bgdMusic = loadSound("bgdMusic.MP3");
-  hitSound = loadSound("hitSound.MP3");
-  scoreSound = loadSound("scoreSound.MP3");
-  winSound = loadSound("winSound.MP3"); 
-  loseSound = loadSound("loseSound.MP3");
+  // hitSound = loadSound("hitSound.mp3");
+  // scoreSound = loadSound("scoreSound.mp3");
+  // winSound = loadSound("winSound.mp3"); 
+  // loseSound = loadSound("loseSound.mp3");
   myFont = loadFont("acadeClassic.TTF");
 }
 
@@ -145,7 +145,7 @@ function drawPlaying(){
 
 function loseGame(){
 	loseText();
-  loseSound.play();
+  //loseSound.play();
 	timer3 = millis();
 	if(keyIsPressed){
 		state = 4;
@@ -154,7 +154,7 @@ function loseGame(){
 
 function winGame(){
 	winText();
-  winSound.play();
+  //winSound.play();
 	timer3 = millis();
 	if(keyIsPressed){
 		state = 4;
@@ -287,8 +287,8 @@ function Ball(micBall){
  		ellipse(this.micBall.x,this.micBall.y+11,10,14);
 		lives --;
 		this.micBall.color = color(255,0,0);
-		hitSound.setVolume(0.5);
-		hitSound.play();
+		// hitSound.setVolume(0.5);
+		// hitSound.play();
 	}
 	
 	this.score = function(){
@@ -296,8 +296,8 @@ function Ball(micBall){
     triangle(this.micBall.x-8,this.micBall.y+8,this.micBall.x,this.micBall.y+18,this.micBall.x+8,this.micBall.y+8);
 		score ++;
 		this.micBall.color = color(0,0,255);
-		scoreSound.setVolume(0.5);
-		scoreSound.play();
+	//	scoreSound.setVolume(0.5);
+		//scoreSound.play();
 	}
 }
 

@@ -6,17 +6,17 @@ var lives;
 var score;
 var state = 0;
 var titleText = "Sound Reactive Mini Game"
-var startText = "Press any key to play!";
+var startText = "Tap the screen to play!";
 var timeText = "It has played";
 var endText1 = "Game over!";
-var endText2 = "Press any key to play again!";
+var endText2 = "Tap the screen to play again!";
 var winText1 = "Congrats!";
-var winText2 = "Press any key to play again!";
+var winText2 = "Tap the screen to play again!";
 //var bgdMusic;
 var hitSound;
 var scoreSound;
-var winSound;
-var loseSound;
+// var winSound;
+// var loseSound;
 var myFont;
 var canvas;
 var timer1;
@@ -30,8 +30,8 @@ function preload(){
   //bgdMusic = loadSound("bgdMusic.MP3");
   hitSound = loadSound("hitSound.MP3");
   scoreSound = loadSound("scoreSound.MP3");
-  winSound = loadSound("winSound.MP3"); 
-  loseSound = loadSound("loseSound.MP3");
+  // winSound = loadSound("winSound.MP3"); 
+  // loseSound = loadSound("loseSound.MP3");
   myFont = loadFont("acadeClassic.TTF");
 }
 
@@ -146,7 +146,7 @@ function drawPlaying(){
 
 function loseGame(){
 	loseText();
-  loseSound.play();
+  //loseSound.play();
 	timer3 = millis();
 	if(touchIsDown){
 		state = 4;
@@ -155,7 +155,7 @@ function loseGame(){
 
 function winGame(){
 	winText();
-  winSound.play();
+  //winSound.play();
 	timer3 = millis();
 	if(touchIsDown){
 		state = 4;

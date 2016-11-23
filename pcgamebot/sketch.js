@@ -5,8 +5,7 @@ var micBall;
 var lives;
 var score;
 var state = 0;
-var titleText = "Sound Reactive Mini Game"
-var startText = "Press any key to play!";
+
 var timeText = "It has played";
 var endText1 = "Game over!";
 var endText2 = "Press any key to play again!";
@@ -165,11 +164,11 @@ function winGame(){
 function beginText(){
 	fill(255);
 	stroke(0);
-	text(titleText,0,0,width,height-200);
+	text("Sound Reactive Mini Game",0,0,width,height-200);
 	textSize(20);
 	textStyle(ITALIC);
 	if(frameCount % 60 < 45){
-		text(startText,0,200,width,height-200);
+		text("Press any key to play!",0,200,width,height-200);
 	}
 	textSize(40);
 	textStyle(NORMAL);
@@ -211,11 +210,11 @@ function loseText(){
 	textStyle(ITALIC);
 	stroke(0);
 	textSize(30);
-	text(endText1,0,0,width,height-250);
-	text(timeText+" "+timer+" secs.",0,0,width,height-100);
+	text("Game over !",0,0,width,height-250);
+	text("It has played"+" "+timer+" secs.",0,0,width,height-100);
 	textSize(20);
 	if(frameCount % 60 < 45){
-		text(endText2,0,0,width,height+100);
+		text( "Press any key to play again !",0,0,width,height+100);
 	}
 }
 
@@ -224,11 +223,11 @@ function winText(){
 	stroke(0);
 	textAlign(CENTER,CENTER);
 	textSize(30);
-	text(winText1,0,0,width,height-250);
-	text(timeText+" "+timer+" secs.",0,0,width,height-100);
+	text("Congrats !",0,0,width,height-250);
+	text("It has played"+" "+timer+" secs.",0,0,width,height-100);
 	textSize(20);
 	if(frameCount % 60 < 45){
-		text(winText2,0,0,width,height+100);
+		text("Press any key to play again !",0,0,width,height+100);
 	}
 }
 

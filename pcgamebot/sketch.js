@@ -1,3 +1,10 @@
+
+/*
+this project also can  be viewed on 
+https://berlinali.github.io/pcgamebot/
+*/
+
+
 var balls = [];
 var total = 15;
 var mic;

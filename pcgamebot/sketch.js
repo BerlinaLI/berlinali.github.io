@@ -6,18 +6,18 @@ https://berlinali.github.io/pcgamebot/
 
 
 var balls = [];
-var total = 15;
+var total = 20;
 var mic;
 var micBall;
 var lives;
 var score;
 var state = 0;
 
-var timeText = "It has played";
-var endText1 = "Game over!";
-var endText2 = "Press any key to play again!";
-var winText1 = "Congrats!";
-var winText2 = "Press any key to play again!";
+// var timeText = "It has played";
+// var endText1 = "Game over! Your score is ";
+// var endText2 = "Press any key to play again!";
+// var winText1 = "Congrats! Your score is ";
+// var winText2 = "Press any key to play again!";
 var bgdMusic;
 var hitSound;
 var scoreSound;
@@ -217,7 +217,7 @@ function loseText(){
 	textStyle(ITALIC);
 	stroke(0);
 	textSize(30);
-	text("Game over !",0,0,width,height-250);
+	text("Game over ! Your score is "+score+".",0,0,width,height-250);
 	text("It has played"+" "+timer+" secs.",0,0,width,height-100);
 	textSize(20);
 	if(frameCount % 60 < 45){
@@ -230,7 +230,7 @@ function winText(){
 	stroke(0);
 	textAlign(CENTER,CENTER);
 	textSize(30);
-	text("Congrats !",0,0,width,height-250);
+	text("Congrats ! Your score is "+score+".",0,0,width,height-250);
 	text("It has played"+" "+timer+" secs.",0,0,width,height-100);
 	textSize(20);
 	if(frameCount % 60 < 45){
@@ -240,13 +240,13 @@ function winText(){
 
 function Ball(micBall){
 	this.micBall = micBall;
-	this.size = 20;
+	this.size = 40;
 	this.speed = 10;
-	this.goodBall = random(0,100) < 70;
+	this.goodBall = random(0,100) < 60;
 	
 	this.init = function(){
 		this.x = random(-width,-20);
-		this.y = random(this.size,height-this.size*2);
+		this.y = random(this.size,height-50-this.size*2);
 	}
 	this.init();
 	
@@ -316,7 +316,7 @@ function MicBall(){
 	
 	this.init = function(){ //经常变的值
 		this.vol = mic.getLevel();
-		this.y = map(this.vol,0,0.4,height-50,0);
+		this.y = map(this.vol,0,0.6,height-50,0);
 	}
 	
 	this.render = function(){

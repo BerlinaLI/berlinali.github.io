@@ -6,6 +6,7 @@ https://berlinali.github.io/pcgamebot/
 
 
 var balls = [];
+var teeth;
 var total = 20;
 var mic;
 var micBall;
@@ -46,11 +47,13 @@ function setup(){
 	//frameRate(0);
 	mic = new p5.AudioIn();
 	mic.start();
+	mic.connect();
 	
 	micBall = new MicBall();
 	for(var i=0; i<total; i++){
 		balls[i] = new Ball(micBall);
 	}
+  teeth = new Teeth();
 	
 	fill(255);
 	textSize(50);
@@ -71,6 +74,7 @@ function draw(){
 		balls[i].render();
 		balls[i].update();
 	}
+  teeth.render();
 //reset with defaultMode before starting from state 1 again
 	if(state == 0){
 		drawIntro();
@@ -104,6 +108,7 @@ function shakeCanvas(){
 }
 
 function drawIntro(){
+	mic.disconnect();
 	beginText();
 	timer1 = millis();
 	if(keyIsPressed){
@@ -116,12 +121,14 @@ function defaultMode(){  //相当于setup by default
 	score = 0;
 	//timer2 = 0;
 	state = 1;
+	mic.connect();
 }
 
 function startAgain(){
 	lives = 3;
 	score = 0;
 	state = 5;
+	mic.connect();
 }
 
 function playAgain(){
@@ -141,7 +148,7 @@ function drawPlaying(){
   playText();
   playTime();
 	//lose
-	if(lives == 0){
+	if(lives == 0 || micBall.y > height-30-micBall.size/2){
 		state = 2;
 	}
 	//win
@@ -151,6 +158,7 @@ function drawPlaying(){
 }
 
 function loseGame(){
+	mic.disconnect();
 	loseText();
   loseSound.play();
 	timer3 = millis();
@@ -160,6 +168,7 @@ function loseGame(){
 }
 
 function winGame(){
+	mic.disconnect();
 	winText();
   winSound.play();
 	timer3 = millis();
@@ -171,7 +180,9 @@ function winGame(){
 function beginText(){
 	fill(255);
 	stroke(0);
+	strokeWeight(6);
 	text("Sound Reactive Mini Game",0,0,width,height-200);
+	strokeWeight(3);
 	textSize(20);
 	textStyle(ITALIC);
 	if(frameCount % 60 < 45){
@@ -216,10 +227,12 @@ function loseText(){
 	textAlign(CENTER,CENTER);
 	textStyle(ITALIC);
 	stroke(0);
+	strokeWeight(6);
 	textSize(30);
 	text("Game over ! Your score is "+score+".",0,0,width,height-250);
 	text("It has played"+" "+timer+" secs.",0,0,width,height-100);
 	textSize(20);
+	strokeWeight(3);
 	if(frameCount % 60 < 45){
 		text( "Press any key to play again !",0,0,width,height+100);
 	}
@@ -228,11 +241,13 @@ function loseText(){
 function winText(){
 	fill(255);
 	stroke(0);
+	strokeWeight(6);
 	textAlign(CENTER,CENTER);
 	textSize(30);
 	text("Congrats ! Your score is "+score+".",0,0,width,height-250);
 	text("It has played"+" "+timer+" secs.",0,0,width,height-100);
 	textSize(20);
+	strokeWeight(3);
 	if(frameCount % 60 < 45){
 		text("Press any key to play again !",0,0,width,height+100);
 	}
@@ -246,7 +261,7 @@ function Ball(micBall){
 	
 	this.init = function(){
 		this.x = random(-width,-20);
-		this.y = random(this.size,height-50-this.size*2);
+		this.y = random(this.size,height-25-this.size*2);
 	}
 	this.init();
 	
@@ -316,7 +331,7 @@ function MicBall(){
 	
 	this.init = function(){ //经常变的值
 		this.vol = mic.getLevel();
-		this.y = map(this.vol,0,0.6,height-50,0);
+		this.y = map(this.vol,0,0.6,height-25-this.size/2,0);
 	}
 	
 	this.render = function(){
@@ -324,6 +339,7 @@ function MicBall(){
 		fill(this.color);
 		stroke(0);
 		strokeWeight(5);
+
 		ellipse(this.x,this.y,this.size,this.size);
 		this.color = color(255);
 		fill(0);
@@ -333,4 +349,19 @@ function MicBall(){
 	//change
 		fill(this.color);
 	}
+}
+
+
+function Teeth(){
+  this.hr = random(0.1,0.12);
+  this.slength = 20;
+
+  this.render = function(){
+    for(var i = 0 ; i < width/20 ;i++){
+      fill(255);
+      stroke(125,127+127*sin(frameCount* this.hr));
+      strokeWeight(3);
+      triangle(i*this.slength,height,i*this.slength + this.slength/2,height-20,(i+1)*this.slength,height);
+    }
+  }
 }

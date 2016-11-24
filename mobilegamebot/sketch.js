@@ -12,7 +12,7 @@ var endText1 = "Game over!";
 var endText2 = "Tap the screen to play again!";
 var winText1 = "Congrats!";
 var winText2 = "Tap the screen to play again!";
-//var bgdMusic;
+var bgdMusic;
 var hitSound;
 var scoreSound;
 var winSound;
@@ -27,7 +27,7 @@ var ttimer;
 var timer;
 
 function preload(){
-  //bgdMusic = loadSound("bgdMusic.mp3");
+  bgdMusic = loadSound("bgdMusic.mp3");
   hitSound = loadSound("hitSound.mp3");
   scoreSound = loadSound("scoreSound.mp3");
   winSound = loadSound("winSound.mp3"); 
@@ -51,7 +51,7 @@ function setup(){
 	textAlign(CENTER,CENTER);
 	textFont(myFont);
 	
-  //bgdMusic.loop();
+  bgdMusic.loop();
 }
 
 function draw(){

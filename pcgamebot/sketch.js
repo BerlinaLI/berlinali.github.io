@@ -11,7 +11,7 @@ var endText1 = "Game over!";
 var endText2 = "Press any key to play again!";
 var winText1 = "Congrats!";
 var winText2 = "Press any key to play again!";
-//var bgdMusic;
+var bgdMusic;
 var hitSound;
 var scoreSound;
 var winSound;
@@ -26,7 +26,7 @@ var ttimer;
 var timer;
 
 function preload(){
- // bgdMusic = loadSound("bgdMusic.mp3");
+  bgdMusic = loadSound("bgdMusic.mp3");
   hitSound = loadSound("hitSound.mp3");
   scoreSound = loadSound("scoreSound.mp3");
   winSound = loadSound("winSound.mp3"); 
@@ -50,7 +50,7 @@ function setup(){
 	textAlign(CENTER,CENTER);
 	textFont(myFont);
 	
-  //bgdMusic.loop();
+  bgdMusic.loop();
 }
 
 function draw(){
@@ -309,7 +309,7 @@ function MicBall(){
 	
 	this.init = function(){ //经常变的值
 		this.vol = mic.getLevel();
-		this.y = map(this.vol,0,0.4,height-50,0);
+		this.y = map(this.vol,0,0.5,height-50,0);
 	}
 	
 	this.render = function(){

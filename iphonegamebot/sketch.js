@@ -56,7 +56,7 @@ function preload(){
 function setup(){
 	canvas = createCanvas(window.innerWidth,window.innerHeight);
 	//frameRate(0);
-	mic = new p5.AudioIn();
+	mic = new p5.AudioIn([errorCallback]);
 	mic.start();
 	
 	fill(255);

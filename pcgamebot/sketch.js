@@ -7,12 +7,15 @@ https://berlinali.github.io/pcgamebot/
 
 var balls = [];
 var teeth;
-var total = 20;
+var total = 40;
 var mic;
 var micBall;
 var lives;
 var score;
 var state = 0;
+var frameIntro;
+var framePlaying;
+var frameEnd;
 
 // var timeText = "It has played";
 // var endText1 = "Game over! Your score is ";
@@ -47,13 +50,6 @@ function setup(){
 	//frameRate(0);
 	mic = new p5.AudioIn();
 	mic.start();
-	mic.connect();
-	
-	micBall = new MicBall();
-	for(var i=0; i<total; i++){
-		balls[i] = new Ball(micBall);
-	}
-  teeth = new Teeth();
 	
 	fill(255);
 	textSize(50);
@@ -69,12 +65,6 @@ function draw(){
 	stroke(0);
 	strokeWeight(5);
 
-	micBall.render();
-	for(var i=0; i<balls.length; i++){
-		balls[i].render();
-		balls[i].update();
-	}
-  teeth.render();
 //reset with defaultMode before starting from state 1 again
 	if(state == 0){
 		drawIntro();
@@ -108,47 +98,52 @@ function shakeCanvas(){
 }
 
 function drawIntro(){
-	mic.disconnect();
 	beginText();
 	timer1 = millis();
 	if(keyIsPressed){
 		state = 0.5;
 	}
+	frameIntro = frameCount;
 }
 
 function defaultMode(){  //相当于setup by default
+	micBall = new MicBall();
+	for(var i=0; i<total; i++){
+		balls[i] = new Ball(micBall);
+	}
+  teeth = new Teeth();
+  
 	lives = 3;
 	score = 0;
 	//timer2 = 0;
 	state = 1;
-	mic.connect();
 }
 
 function startAgain(){
+	micBall = new MicBall();
+	for(var i=0; i<total; i++){
+		balls[i] = new Ball(micBall);
+	}
+  teeth = new Teeth();
+  
 	lives = 3;
 	score = 0;
 	state = 5;
-	mic.connect();
-}
-
-function playAgain(){
-	playText();
-  playTimeAgain();
-	//lose
-	if(lives == 0){
-		state = 2;
-	}
-	//win
-	if(micBall.y < micBall.size/2){
-		state = 3;
-	}
 }
 
 function drawPlaying(){
+	micBall.render();
+	micBall.update();
+	for(var i=0; i<balls.length; i++){
+		balls[i].render();
+		balls[i].update();
+	}
+  teeth.render();
+  
   playText();
   playTime();
 	//lose
-	if(lives == 0 || micBall.y > height-30-micBall.size/2){
+	if(lives == 0 || micBall.y > height-20-micBall.size/2){
 		state = 2;
 	}
 	//win
@@ -157,8 +152,28 @@ function drawPlaying(){
 	}
 }
 
+function playAgain(){
+	micBall.render();
+	micBall.updateAgain();
+	for(var i=0; i<balls.length; i++){
+		balls[i].render();
+		balls[i].update();
+	}
+  teeth.render();
+	playText();
+  playTimeAgain();
+	//lose
+	if(lives == 0  || micBall.y > height-20-micBall.size/2){
+		state = 2;
+	}
+	//win
+	if(micBall.y < micBall.size/2){
+		state = 3;
+	}
+}
+
 function loseGame(){
-	mic.disconnect();
+	frameEnd = frameCount;
 	loseText();
   loseSound.play();
 	timer3 = millis();
@@ -168,7 +183,7 @@ function loseGame(){
 }
 
 function winGame(){
-	mic.disconnect();
+	frameEnd = frameCount;
 	winText();
   winSound.play();
 	timer3 = millis();
@@ -325,17 +340,19 @@ function Ball(micBall){
 
 function MicBall(){
 	this.x = width/2;
+	this.y = height*3/4;
 	this.size = 50;
 	this.ssize = 15;
 	this.color = color(255);
+	this.speed = 3;
+  this.hr = random(0.11,0.12);
+
+	// this.init = function(){ //经常变的值
 	
-	this.init = function(){ //经常变的值
-		this.vol = mic.getLevel();
-		this.y = map(this.vol,0,0.6,height-25-this.size/2,0);
-	}
+	// }
 	
 	this.render = function(){
-		this.init();
+		// this.init();
 		fill(this.color);
 		stroke(0);
 		strokeWeight(5);
@@ -349,8 +366,57 @@ function MicBall(){
 	//change
 		fill(this.color);
 	}
+	
+	this.update = function(){
+		framePlaying = frameCount;
+		var frame1 = framePlaying-frameIntro ;
+		textSize(100);
+		textAlign(CENTER,CENTER);
+		stroke(0,127+127*sin(frameCount* this.hr));
+    strokeWeight(10);
+		if(frame1 < 20){
+			text("3",0,0,width,height);
+		}
+		if(frame1 > 20 && frame1 <40 ){
+			text("2",0,0,width,height);
+		}
+		if(frame1 > 40 && frame1 <60 ){
+			text("1",0,0,width,height);
+		}
+		
+		if(frame1 > 60){
+			this.vol = mic.getLevel();
+			this.volSpeed = map(this.vol,0,0.7,0,height);
+			this.totalSpeed = this.speed - this.volSpeed/10;
+			this.y += this.totalSpeed;
+		}
+	}
+	
+	this.updateAgain = function(){
+		framePlaying = frameCount;
+		var frame2 = framePlaying-frameEnd ;
+		textSize(100);
+		textAlign(CENTER,CENTER);
+		stroke(0,127+127*sin(frameCount* this.hr));
+    strokeWeight(10);
+		if(frame2 < 20){
+			text("3",0,0,width,height);
+		}
+		if(frame2 > 20 && frame2 <40 ){
+			text("2",0,0,width,height);
+		}
+		if(frame2 > 40 && frame2 <60 ){
+			text("1",0,0,width,height);
+		}
+		
+		if(frame2 > 60){
+			this.vol = mic.getLevel();
+			this.volSpeed = map(this.vol,0,0.6,0,height);
+			this.totalSpeed = this.speed - this.volSpeed/20;
+			this.y += this.totalSpeed;
+		}
+	}
 }
-
 
 function Teeth(){
   this.hr = random(0.1,0.12);

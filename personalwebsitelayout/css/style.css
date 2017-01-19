@@ -1,0 +1,47 @@
+body{
+  background-color: grey;
+}
+
+.intro{
+   background-color:white; 
+  height:150px;
+}
+
+.profilepic{
+  background-color:blue; 
+  height:150px;  
+}
+
+.introtext{
+  background-color:yellow; 
+  height:150px;
+}
+
+.aa{
+  background-color:red; 
+  height:300px;
+}
+
+.bb{
+  background-color:blue; 
+  height:300px;
+}
+
+.cc{
+  background-color:yellow; 
+  height:150px;
+}
+
+.dd{
+  background-color:green; 
+  height:150px;
+}
+
+.ee{
+  background-color:purple; 
+  height:150px;
+}
+.ff{
+  background-color:pink; 
+  height:150px;
+}

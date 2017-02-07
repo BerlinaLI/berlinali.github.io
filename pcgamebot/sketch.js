@@ -7,7 +7,7 @@ https://berlinali.github.io/pcgamebot/
 
 var balls = [];
 var teeth;
-var total = 40;
+var total = 20;
 var mic;
 var micBall;
 var lives;
@@ -196,15 +196,18 @@ function beginText(){
 	fill(255);
 	stroke(0);
 	strokeWeight(6);
+	textSize(40);
 	text("Sound Reactive Mini Game",0,0,width,height-200);
 	strokeWeight(3);
-	textSize(20);
-	textStyle(ITALIC);
+	textSize(17);
 	if(frameCount % 60 < 45){
 		text("Press any key to play!",0,200,width,height-200);
 	}
-	textSize(40);
 	textStyle(NORMAL);
+	fill('rgba(0,0,255, 0.75)');
+	noStroke();
+	textStyle(ITALIC);
+	text("Control it with your voice volume.\n\n Restart if you hit the red balls for 3 times.",0,100,width,height-200);
 }
 
 function playText(){
@@ -283,9 +286,9 @@ function Ball(micBall){
 	this.render = function(){
 		noStroke();
 		if(this.goodBall){
-			fill(0,0,255);
+			fill('rgba(0,0,255,0.75)');
 		} else{
-			fill(255,0,0);
+			fill('rgba(255,0,0,0.75)');
 		}
 		ellipse(this.x,this.y,this.size,this.size);
 	}

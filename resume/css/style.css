@@ -1,0 +1,181 @@
+*{
+   font-family: 'Roboto Condensed', sans-serif;
+}  
+
+.nav{
+/*   position: relative; */
+/*   height:auto; */
+  margin-top: 3em;
+  margin-left:0.5em;
+  margin-right:0.5em;
+}
+/* todo div not included */
+.tobottom {
+/*   position: absolute; */
+  bottom: 0;
+ }
+
+.navpadding{
+  margin-right:1em;
+}
+
+.myname{
+  text-align:center;
+  font-size:4em;
+}
+
+.navname{
+  text-align:center;
+  font-size:1.8em;
+  color: #999;
+}
+
+.navname a{
+  color: #999;
+}
+
+/* .navwork:hover, */
+.navwork a:hover,
+.navproject a:hover,
+.navresume a:hover
+{
+  color: #000000;
+  text-decoration: none;
+}
+
+.navproject:link
+{
+  color: inherit;
+  text-decoration: inherit;
+}
+
+
+
+/* intro */
+.intro{
+  margin-top:1em;
+  margin-left:2em;
+  margin-right:2em;
+}
+
+.profilepic{
+  border-radius: 50%;
+  height:15em; 
+  margin-top:2.5em;
+/*   text-align:center; */
+  margin-bottom:2em;
+
+/*   left:0; */
+/*   float:left; */
+/*   padding-left:0; */
+}
+
+/* .center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ } */
+
+.introtext{
+/*   margin-top:2em; */
+  line-height:1.5em;
+  font-size:1.2em;
+  text-align:justify；
+}
+.introtext .top-buffer{
+  margin-top:0.3em;
+}
+
+.underline{
+  text-decoration: underline
+}
+
+.resume .top-buffer{
+   margin-top:1.5em;
+}
+.time{
+  color: #999;
+}
+
+/* footer */
+.footer{
+  margin-top:7em;
+  margin-bottom:3em;
+}
+
+.footer .row{
+  text-align:center;  
+}
+
+.socialmedia {
+	 background-color:#A9A9A9 ;
+  width:80%；
+  margin-left:10em;  
+/*   sliver #C0C0C0*/
+  border-color: #fff !important;
+  display:inline;
+} 
+
+@media screen and (min-width: 480px) {
+/*  nav  */
+ .nav{
+  position: relative;
+  margin-top: 15em;
+/*  margin-bottom:15em;*/
+  margin-left:8em;
+  margin-right:8em;
+}
+
+.name{
+  left: 0;
+  font-size:4em;
+}
+
+.navname{
+  right:0;  
+  font-size:1.8em;
+  color: #999;
+}
+  
+.tobottom {
+  position: absolute;
+ }
+ 
+/* project */
+
+
+.profilepic{
+/*   border-radius: 50%; */
+  height:20em; 
+/*   left:0; */
+/*  float:left;*/  
+  padding-top:1em;
+  margin-top:0;
+}
+  
+img{
+  display:inline;
+}
+  
+ .intro{
+  margin-top:5.5em;
+  margin-left:8em;
+  margin-right:8em;
+} 
+  
+  .introtext{
+  line-height:1.5em;
+  font-size:1.5em;
+  text-align:justify；
+}
+  
+}
+
+/* .yy {
+  background-color:blue;
+}
+.zz {
+  background-color:pink;
+} */
+
+

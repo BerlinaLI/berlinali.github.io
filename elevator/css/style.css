@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+*{
+   font-family: 'Roboto Condensed', sans-serif;
+}  
+
+.nav{
+/*   position: relative; */
+/*   height:auto; */
+  margin-top: 3em;
+  margin-left:0.5em;
+  margin-right:0.5em;
+}
+/* todo div not included */
+.tobottom {
+/*   position: absolute; */
+  bottom: 0;
+ }
+
+.navpadding{
+  margin-right:1em;
+}
+
+.name{
+  text-align:center;
+  font-size:4em;
+}
+
+.navname{
+  text-align:center;
+  font-size:1.8em;
+  color: #999;
+}
+
+.navname a{
+  color: #999;
+}
+
+/* .navwork:hover, */
+.navwork a:hover,
+.navproject a:hover,
+.navresume a:hover
+{
+  color: #000000;
+  text-decoration: none;
+}
+
+.navproject:link
+{
+  color: inherit;
+  text-decoration: inherit;
+}
+
+
+/* project */
+.projectmain{
+  margin-top:3.5em;
+  margin-bottom:3em;
+}
+
+iframe{
+  position: absolute;
+  top: 0;
+/*   bottom: 1em; */
+  bottom: 0em; 
+  left: 0;
+  right: 0;
+  height:100%;
+  width:100%;
+  overflow:inherit;  
+  vertical-align: middle;
+}
+
+/* text */
+.ee{
+/*   background-color:red;   */
+/*   height:600px;  */
+  padding:0 3em 0;
+  margin-bottom:3em;
+}
+
+.projectText{  
+  font-size:1.2em;
+  text-align:justify；
+}
+
+.projectText p{
+  text-align:justify；
+}
+
+h4{
+  margin-bottom:1em; 
+  font-size:1.8em;
+}
+
+h5{
+  color: #999;
+  margin-bottom:2em;
+}
+
+h5 .top-buffer{
+  margin-top:0.3em;
+}
+
+.projectText span{
+  font-style:italic;
+}
+
+        
+@media screen and (min-width: 480px) {
+/*  nav  */
+ .nav{
+  position: relative;
+  margin-top: 10em;
+/*   margin-bottom: 15em; */
+  margin-left:8em;
+  margin-right:8em;
+}
+  
+  
+.myname{
+   left: 0; 
+}
+
+.navname{
+   right:0;   
+}
+  
+.tobottom {
+  position: absolute;
+ }
+  
+.projectmain{  
+/*   background-color:red; */
+  margin-left:8em;
+  margin-right:8em;
+  margin-top:5.5em;
+  margin-bottom:5em;
+}
+
+.projectText{  
+  font-size:1.2em;
+}
+ iframe{
+   height:400px; 
+ }
+  
+/* .bb a{
+   height:550px; 
+ } */
+  
+.ee{
+/*   height:600px;  */
+/*   margin-left:-3em; */
+  padding-left:3em;
+  padding-right:3em;
+}
+  
+}
+
+
+/* @media screen {
+body > div#header {
+    position: fixed;
+}
+body > div#footer {
+    position: fixed;
+} */
+
+
+
+

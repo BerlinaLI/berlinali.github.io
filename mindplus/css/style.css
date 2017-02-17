@@ -208,8 +208,10 @@ h5 .top-buffer{
 }
   
 #img1{
-  height:450px;  
-  width: auto;
+/*  height:450px;  
+  width: auto;*/
+  height:auto;  
+  width: 100%;
   padding:0;
 }
   

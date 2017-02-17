@@ -38,6 +38,10 @@
   color: #999;
 }
 
+.navwork a{
+  color:#000000 !important;
+}
+
 /* .navwork:hover, */
 .navwork a:hover,
 .navproject a:hover,

@@ -1,12 +1,26 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @BerlinaLI
+ Sign out
+ Unwatch 1
+  Star 0
+  Fork 0 BerlinaLI/berlinali.github.io
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs  Settings
+Tree: 5c69b90e5f Find file Copy pathberlinali.github.io/prototype/css/style.css
+5c69b90  5 hours ago
+@BerlinaLI BerlinaLI change nav color
+1 contributor
+RawBlameHistory     
+267 lines (230 sloc)  3.64 KB
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
 *{
    font-family: 'Roboto Condensed', sans-serif;
 }  
-
-body{
-  margin: 0 5em 0;
-}
 
 .nav{
 /*   position: relative; */
@@ -111,21 +125,16 @@ body{
   justify-content:space-around; 
 }
 
-img{
+.project img{
 /*   display:inline; */
   margin-top:2.5em;
-  width:18em;
-  height:25em;
-  overflow:hidden;
-}
 }
 
 .caption {
-/*  text-align:center;*/
+  text-align:center;
   margin-top:0.5em;
 }
 .caption .projectname{
-    text-align:center;
   font-size: 1.5em;
 }
   .caption div{
@@ -150,7 +159,7 @@ img{
 }
 
 .socialmedia {
-	 background-color:#A9A9A9 ;
+   background-color:#A9A9A9 ;
   width:80%；
   margin-left:10em;  
 /*   sliver #C0C0C0*/
@@ -162,7 +171,7 @@ img{
 /*  nav  */
  .nav{
   position: relative;
-  margin-top: 10em;
+  margin-top: 15em;
 /*   margin-bottom: 5em; */
   margin-left:8em;
   margin-right:8em;
@@ -199,7 +208,6 @@ img{
   }
   
 .caption .projectname{
-  text-align:center;
   font-size: 2em;
 }
   .caption div{
@@ -221,7 +229,6 @@ img{
 /* .aa{
   background-color:red;
 }
-
 .bb{
   background-color:blue;
 } */
@@ -233,19 +240,16 @@ img{
   margin-left:2em;
   margin-right:2em;
 }
-
 .profilepic{
   border-radius: 50%;
   height:13em; 
   margin-top:1.3em;
 }
-
 .center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
  }
-
 .introtext{
   margin-top:2em;
   line-height:1.5em;
@@ -255,11 +259,9 @@ img{
 .introtext .top-buffer{
   margin-top:0.3em;
 }
-
 .linktowork:hover {
   text-decoration: underline;
 }
-
 .linktowork{
   cursor: pointer;
 } */
@@ -275,3 +277,5 @@ img{
   font-size:1.5em;
   text-align:justify；
 } */
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help

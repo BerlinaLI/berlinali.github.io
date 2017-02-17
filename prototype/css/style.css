@@ -37,7 +37,9 @@
 .navname a{
   color: #999;
 }
-
+.navproject a{
+  color:#000000 !important;
+}
 /* .navwork:hover, */
 .navwork a:hover,
 .navproject a:hover,

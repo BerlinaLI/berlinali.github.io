@@ -4,6 +4,9 @@
    font-family: 'Roboto Condensed', sans-serif;
 }  
 
+body{
+  margin: 0 1em 0;
+}
 .nav{
 /*   position: relative; */
 /*   height:auto; */
@@ -121,6 +124,7 @@
   margin-top:0.5em;
 }
 .caption .projectname{
+    text-align:center;
   font-size: 1.5em;
 }
   .caption div{

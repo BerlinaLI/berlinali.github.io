@@ -121,7 +121,7 @@ img{
 }
 
 .caption {
-  text-align:center;
+/*  text-align:center;*/
   margin-top:0.5em;
 }
 .caption .projectname{
@@ -199,6 +199,7 @@ img{
   }
   
 .caption .projectname{
+  text-align:center;
   font-size: 2em;
 }
   .caption div{

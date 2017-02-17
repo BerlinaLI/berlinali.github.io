@@ -5,7 +5,7 @@
 }  
 
 body{
-  margin: 0 2em 0;
+  margin: 0 5em 0;
 }
 
 .nav{
@@ -111,11 +111,11 @@ body{
   justify-content:space-around; 
 }
 
-.project img{
+img{
 /*   display:inline; */
   margin-top:2.5em;
   width:18em;
-  height:15em;
+  height:25em;
   overflow:hidden;
 }
 }

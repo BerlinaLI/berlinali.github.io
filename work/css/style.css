@@ -183,8 +183,8 @@ img{
   margin-top: 3em;
  }
   .project img{
-    width:35em;
-    height:21.5em;
+    min-width:35em;
+    min-height:21.5em;
     overflow:hidden;
 }
   .rowpadding{

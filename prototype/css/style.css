@@ -37,6 +37,7 @@
 .navname a{
   color: #999;
 }
+
 .navproject a{
   color:#000000 !important;
 }
@@ -153,7 +154,7 @@
 /*  nav  */
  .nav{
   position: relative;
-  margin-top: 15em;
+  margin-top: 10em;
 /*   margin-bottom: 5em; */
   margin-left:8em;
   margin-right:8em;
@@ -211,6 +212,7 @@ img{
 /* .aa{
   background-color:red;
 }
+
 .bb{
   background-color:blue;
 } */
@@ -222,16 +224,19 @@ img{
   margin-left:2em;
   margin-right:2em;
 }
+
 .profilepic{
   border-radius: 50%;
   height:13em; 
   margin-top:1.3em;
 }
+
 .center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
  }
+
 .introtext{
   margin-top:2em;
   line-height:1.5em;
@@ -241,9 +246,11 @@ img{
 .introtext .top-buffer{
   margin-top:0.3em;
 }
+
 .linktowork:hover {
   text-decoration: underline;
 }
+
 .linktowork{
   cursor: pointer;
 } */

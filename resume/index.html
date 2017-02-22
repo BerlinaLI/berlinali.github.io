@@ -2,103 +2,91 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Berlina's resume</title>
+  <title>Berlina's prototype</title>
   
+  <link rel="stylesheet" href="css/style.css">
   
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-<link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
 
-      <link rel="stylesheet" href="css/style.css">
 
-  
+ <!--  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 
 </head>
 
 <body>
-  <!-- include bootstrap & font awesome-->
-<head>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
- <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-</head>
-
-<!-- <script>
- 	$(document).ready(function(){
-    $("project").remove();
-  });
-</script> -->
-<body> 
-  <div class="container-fluid">
-    <div class="nav">
-      <div class="row">
-        <div class="col-md-6 col-xs-12" >
-          <h1 class="tobottom myname"><strong>BerlinaLi</strong></h1>
-        </div>
-        <div class="col-md-6 col-xs-12 " >
-         <div class="tobottom navname ">
-            <span class="navpadding navwork"><a href="http://berlinali.github.io/work">work</a></span>
-            <span class="navpadding navproject"><a href="http://berlinali.github.io/prototype">prototype</a></span>
-            <span class="navresume"><a href="http://berlinali.github.io/resume">resume</a></span> 
-          </div>
-        </div>
-       </div>
-    </div>
+<div class="container">
+  <div class="canvas">
+    <div class="row nav">
+      <div class="col-xs-12 col-md-6 myname">
+         <div><span><strong>Berlina Li</strong></span></div>
+      </div> 
+      <div class="col-xs-12 col-md-6 navname">
+<!--         <div><span>Two Words</span></div> -->
+          <ul class="list-inline "> 
+            <li><a href="http://berlinali.github.io/work" class="navwork">work</a></li>
+            <li><a href="http://berlinali.github.io/prototype" class="navprototype ">prototype</a></li>
+            <li><a href="http://berlinali.github.io/resume" class="navresume active">resume</a></li>
+          </ul>
+      </div>
+    </div><!--row -->
     
+    <div class="page-divider"></div>
 <!--  project    -->
     <div class="intro">
       <div class="row">
-        <div class="col-md-4 col-xs-12 " >
-          <img class="image-responsive profilepic  center-block" src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/profilepic.jpg"  alt="profile pic"> 
+        <div class="col-md-4" >
+          <img class="image-responsive center-block img-circle" src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/profilepic.jpg" width="250" height="250" alt="profile pic"> 
         </div>
-        <div class="col-md-8 col-xs-12 ">
+
+        <div class="col-md-8">
           <h3 class="introtext">I am a front end developer/maker based in Shanghai.</br> My work focuses on web animiation  with <strong>Javascript (esp p5.js)</strong> and hardware interaction with <strong>Arduino</strong>. </br><div class="top-buffer">
       Send an email to <span class="underline">berlina.lili at gmail.com</span></a> and say hi if you are intersted in my work. </br></br>
-<div class="resume">      
-  <h4 class="time">//2006-2010 </h4> 
-  <div>BA in Advertisement Planning</div>
-  <h4 class="time top-buffer">//2011-2012 </h4> 
-  <div>Msc in Arts & NGO Management @ EDHEC Business School</div>
-  <h4 class="time  top-buffer ">//2013 - 2014 </h4> 
-Community Manager of Mind+(Visual Programming language for Arduino) @DFRobot
+          <div class="resume">      
+            <h4 class="time">//2006-2010 </h4> 
+            <div>BA in Advertisement Planning</div>
+            <h4 class="time top-buffer">//2011-2012 </h4> 
+            <div>Msc in Arts & NGO Management @ EDHEC Business School</div>
+            <h4 class="time  top-buffer ">//2013 - 2014 </h4> 
+          Community Manager of Mind+(Visual Programming language for Arduino) @DFRobot
 
-  <h4 class="time  top-buffer">//2015- Sept 2016</h4> 
-  Program Manager of Arduino in China @Seeed Studio
+            <h4 class="time  top-buffer">//2015- Sept 2016</h4> 
+            Program Manager of Arduino in China @Seeed Studio
 
-  <h4 class="time  top-buffer">//Sept 2016 til now</h4> 
-  Freelance Front End Wed Developer @ CoderBunker   
-</div>
-        </div>
-      </div>
-    </div>
+            <h4 class="time  top-buffer">//Sept 2016 til now</h4> 
+            Freelance Front End Wed Developer @ CoderBunker   
+          </div><!--  resume -->
+        </div> <!-- col -->
+      </div> <!-- row -->
+    </div> <!-- intro -->
       
-   
-
+    <div class="page-divider"></div> 
 <!-- footer -->
-     <div class="footer">
-       <div class="row">
-         <div class="col-md-12 col-xs-12">   
-           <!-- <a href="https://github.com/BerlinaLI">
+    <div class="footer">
+      <div class="row">
+        <div class="col-md-12 col-xs-12">   
+         
             <button class="btn btn-default btnReload socialmedia" id="github">
-              <i class="fa fa-github-square fa-2x"></i>
+             <a href="https://github.com/BerlinaLI"><i class="fa fa-github-square fa-2x"></i></a>
             </button>
-           </a>
-           <a href="https://www.instagram.com/berlinali/">
+          
+          <a href="https://www.instagram.com/berlinali/">
             <button class="btn btn-default btnReload socialmedia" id="instagram">
             <i class="fa fa-instagram fa-2x"></i>
             </button>
-           </a>
-           <a href="https://www.linkedin.com/in/berlinali/">
+          </a>
+          <a href="https://www.linkedin.com/in/berlinali/">
             <button class="btn btn-default btnReload socialmedia" id="linkedin">
-              <i class="fa fa-linkedin fa-2x"></i> -->
+            <i class="fa fa-linkedin fa-2x"></i>
             </button>
           </a>
-         </div>
-       </div>  <!-- row -->
-     </div>   <!-- footer -->
-   </div> <!-- container -->
-</body>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 
-    <script src="js/index.js"></script>
-
+          </div>
+        </div>  <!-- row -->
+      </div>   <!-- footer -->   
+    </div>   <!-- canvas -->   
+  </div> <!-- container -->
 </body>
 </html>

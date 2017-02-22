@@ -1,83 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 *{
    font-family: 'Roboto Condensed', sans-serif;
 }  
 
-.nav{
-/*   position: relative; */
-/*   height:auto; */
-  margin-top: 3em;
-  margin-left:0.5em;
-  margin-right:0.5em;
+.aa{
+  background-color:red;
 }
-/* todo div not included */
-.tobottom {
-/*   position: absolute; */
-  bottom: 0;
- }
 
-.navpadding{
-  margin-right:1em;
+
+
+/*mobile
+==============================================================
+ */
+
+.canvas{
+  margin:30px 0;
 }
 
 .myname{
-  text-align:center;
-  font-size:4em;
+  height:100px;
+  padding:0;
+}
+
+.myname div{
+  position:relative;
+  height:100px;
+}
+/* center */
+.myname span {
+  font-size:60px;
+  line-height:1;
+  position: absolute;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  text-align: center;
 }
 
 .navname{
-  text-align:center;
-  font-size:1.8em;
+  height:50px;
+}
+
+.navname div{
+  height:50px;
+  position:relative;
+}
+/* center */
+.navname ul{
+  font-size:25px;
+  position: absolute;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  text-align: center;
+}
+
+li a{
+  padding-left:15px;
+  padding-right:15px;
+  line-height:1;
   color: #999;
 }
 
-.navname a{
-  color: #999;
+li{
+    display: inline;
 }
 
-.navresume a{
-  color:#000000 !important;
+ul{
+  margin-bottom:0;
+  -webkit-padding-start:0;
 }
-/* .navwork:hover, */
-.navwork a:hover,
-.navproject a:hover,
-.navresume a:hover
+
+ul.list-inline{
+  margin-bottom:0;
+}
+/*
+hover color*/
+a:hover
 {
-  color: #000000;
-  text-decoration: none;
+  color: #000000 !important;
+  text-decoration: none !important;
 }
 
-.navproject:link
+ul a:link
 {
-  color: inherit;
-  text-decoration: inherit;
+  color: inherit !important;
+  text-decoration: inherit !important;
+}
+
+.socialmedia a{
+  color:#000;
+}
+
+.active{
+  color:#000000;
+}
+
+.page-divider{
+  margin:45px 0;
 }
 
 
-
-/* intro */
+/* intro 
+=========================================================
+*/
 .intro{
   margin-top:1em;
-  margin-left:2em;
-  margin-right:2em;
 }
 
-.profilepic{
+img{
   border-radius: 50%;
-  height:15em; 
-  margin-top:2.5em;
-/*   text-align:center; */
-  margin-bottom:2em;
-
-/*   left:0; */
-/*   float:left; */
-/*   padding-left:0; */
-}
-
-/* .center-block {
+  /*center image*/
   display: block;
   margin-left: auto;
-  margin-right: auto;
- } */
+  margin-right: auto; 
+  /*stretch img & auto switch size*/
+}
 
 .introtext{
 /*   margin-top:2em; */
@@ -96,77 +134,64 @@
 .resume .top-buffer{
    margin-top:1.5em;
 }
+
 .time{
   color: #999;
+  font-size:15px;
 }
 
 /* footer */
-.footer{
-  margin-top:7em;
-  margin-bottom:3em;
-}
-
 .footer .row{
   text-align:center;  
+  margin-top:10px;
 }
 
 .socialmedia {
-	 background-color:#A9A9A9 ;
-  width:80%；
-  margin-left:10em;  
-/*   sliver #C0C0C0*/
-  border-color: #fff !important;
-  display:inline;
+   background-color:#fff ;
 } 
 
-@media screen and (min-width: 480px) {
-/*  nav  */
- .nav{
-  position: relative;
-  margin-top: 10em;
-/*  margin-bottom:15em;*/
-  margin-left:8em;
-  margin-right:8em;
+
+@media (min-width: 768px) {
+.canvas{
+  margin:100px 30px 40px;
+}
+/* left */
+.myname span{
+  position:absolute;
+  bottom:0;
+  left:0; 
+  text-align:left;
+}
+  
+/* right */
+.navname ul{
+  position:absolute;
+  bottom:0;
+  right:0; 
+  text-align:right;
 }
 
-.name{
-  left: 0;
-  font-size:4em;
-}
 
 .navname{
-  right:0;  
-  font-size:1.8em;
-  color: #999;
+  height:100px;
 }
-  
-.tobottom {
-  position: absolute;
- }
+
+.navname div{
+  height:100px;
+}
+
+.page-divider{
+  margin:80px 0;
+}
  
 /* project */
-
-
 .profilepic{
-/*   border-radius: 50%; */
   height:20em; 
-/*   left:0; */
-/*  float:left;*/  
   padding-top:1em;
-  margin-top:0;
 }
+    
   
-img{
-  display:inline;
-}
-  
- .intro{
-  margin-top:5.5em;
-  margin-left:8em;
-  margin-right:8em;
-} 
-  
-  .introtext{
+.introtext{
   line-height:1.5em;
   font-size:1.2em;
   text-align:justify；
@@ -174,11 +199,14 @@ img{
   
 }
 
-/* .yy {
-  background-color:blue;
+@media (min-width: 992px) {
+.canvas{
+  margin:60px 30px 40px;
 }
-.zz {
-  background-color:pink;
-} */
 
+
+.page-divider{
+  margin:60px 0;
+}
+}
 

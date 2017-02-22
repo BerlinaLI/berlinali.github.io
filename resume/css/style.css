@@ -114,13 +114,14 @@ img{
   display: block;
   margin-left: auto;
   margin-right: auto; 
-  /*stretch img & auto switch size*/
+  margin-bottom:40px;
+  width:50%;
+  height:auto;
 }
 
 .introtext{
-/*   margin-top:2em; */
   line-height:1.5em;
-  font-size:1.2em;
+  font-size:30px;
   text-align:justify；
 }
 .introtext .top-buffer{
@@ -137,7 +138,7 @@ img{
 
 .time{
   color: #999;
-  font-size:15px;
+  font-size:20px;
 }
 
 /* footer */
@@ -185,18 +186,29 @@ img{
 }
  
 /* project */
-.profilepic{
-  height:20em; 
-  padding-top:1em;
+img{
+  width:75%;
 }
-    
-  
+
 .introtext{
   line-height:1.5em;
   font-size:1.2em;
   text-align:justify；
 }
-  
+
+.time{
+  color: #999;
+  font-size:15px;
+}
+
+.col-md-4{
+  padding-right:80px; 
+}
+
+.col-md-8{
+  padding-left:40px;   
+}
+
 }
 
 @media (min-width: 992px) {

@@ -207,7 +207,7 @@ function beginText(){
 	fill('rgba(0,0,255, 0.75)');
 	noStroke();
 	textStyle(ITALIC);
-	text("Control it with your voice volume.\n\n Restart if you hit the red balls for 3 times.",0,100,width,height-200);
+	//text("Control it with your voice volume.\n\n Restart if you hit the red balls for 3 times.",0,100,width,height-200);
 }
 
 function playText(){

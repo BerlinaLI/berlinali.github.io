@@ -133,6 +133,11 @@ img{
   margin:15px 0;
 }
 
+.projectlink a, .textblock a{
+  color:#000;
+  text-decoration: underline !important;
+}
+
 /*ipad
 ========================================================*/
 

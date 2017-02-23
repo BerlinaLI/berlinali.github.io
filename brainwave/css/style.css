@@ -108,9 +108,13 @@ img{
 }
 
 .projectText{  
-  font-size:30px;
   text-align:justify；   
 }
+
+.maintext{
+  font-size:25px;
+}
+
 .title{
   font-size:35px;
   text-align:center;
@@ -121,12 +125,13 @@ img{
   color:#999 !important; 
   font-size:20px;
   text-align:center;
+  line-height:1.2;
 } 
 
-.info .top-buffer{
-  margin-top:0.3em;
+.textblock{
+  display:block;
+  margin:15px 0;
 }
-
 
 /*ipad
 ========================================================*/
@@ -163,19 +168,8 @@ img{
   margin:80px 0;
 }
   
-.projectText{  
-  font-size:1.2em;
-}
-
-.col-md-7{
-/*  padding-right:40px;*/
-  margin-right:-40px;
-}
-
-.col-md-4{
-  /*margin-left:-40px;*/
-  padding-right:0;
-  margin-right:0;
+.maintext{
+  font-size:18px;
 }
 
 .title{
@@ -195,6 +189,11 @@ img{
 .info{
   text-align:left;
 } 
+
+.textblock{
+  display:block;
+  margin:10px 0;
+}
 
 }
 

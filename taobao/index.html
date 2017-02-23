@@ -2,74 +2,66 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Taobaobot  Plug-in</title>
+  <title>key word search bot</title>
   
+  <link rel="stylesheet" href="css/style.css">
   
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
 
-      <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  
 </head>
 
 <body>
-  
-<body>
-  <div class="container-fluid">
-     <div class="nav">
-      <div class="row">
-        <div class="col-md-6 col-xs-12" >
-          <h1 class="tobottom name"><strong>BerlinaLi</strong></h1>
-        </div>
-        <div class="col-md-6 col-xs-12 " >
-          <div class="tobottom navname ">
-              <span class="navpadding navwork"><a href="http://berlinali.github.io/work">work</a></span>
-            <span class="navpadding navproject"><a href="http://berlinali.github.io/prototype">prototype</a></span>
-            <span class="navresume"><a href="http://berlinali.github.io/resume">resume</a></span> 
-<!--              <span>contact</span> -->
-          </div>
-        </div>
-       </div>
-    </div>
+<div class="container">
+  <div class="canvas">
+    <div class="row nav">
+      <div class="col-xs-12 col-md-6 myname">
+         <div><span><strong>Berlina Li</strong></span></div>
+      </div> 
+      <div class="col-xs-12 col-md-6 navname">
+<!--         <div><span>Two Words</span></div> -->
+          <ul class="list-inline "> 
+            <li><a href="http://berlinali.github.io/work" class="navwork">work</a></li>
+            <li><a href="http://berlinali.github.io/prototype" class="navprototype ">prototype</a></li>
+            <li><a href="http://berlinali.github.io/resume" class="navresume active">resume</a></li>
+          </ul>
+      </div>
+    </div><!--row -->
     
-<!--     project -->
-    <div class="projectmain">
-    <div class="row">
-      <div class="col-md-8 col-xs-12 bb">
-        <div class="row ">
-<!--           <div class="col-md-12 col-xs-12 bb"> -->
-<!--             <a href="http://berlinali.github.io/taobao"><img src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/taobao_gif.gif" class="img-responsive"  alt="keyword plug-in"></a>   -->
+    <div class="page-divider"></div>
 
-<!--             <h5 id="image-caption">Click here for <span class="text-primary">YOUTUBE</span> demo video.</h5> -->
-<!--             <iframe src="https://www.youtube.com/embed/fiJgCSeNmD4" frameborder="0" class="img-responsive" allowfullscreen></iframe>    -->
-               <iframe src="https://www.youtube.com/embed/fiJgCSeNmD4" frameborder="0" allowfullscreen></iframe>   
-<!--           <iframe src="http://player.youku.com/embed/XMTU2ODI5MzY4OA==" frameborder="0" allowfullscreen></iframe>    -->
-          
-        </div> <!-- row -->                     
-      </div>  <!-- col-8 -->
-      
-      <div class="col-md-4 col-xs-12 ee">
-        <div class="projectText">
-          <h4><strong>Key Word Search Bot</strong></h4>
-          <h5> Client // Pei Enen</br>
-          <div class="top-buffer">Role // browser interaction and interface</div> 
-          <div class="top-buffer">Tool // jQuery,Javascript,Chrome Plug-in</div> 
-          </h5>               
-          <p>           
-           Key word search bot is a chrome plug-in that searches keywords automatically to manipulate the website's recommendation system.  
-            <div class="top-buffer">Rather than running on terminal, it provides an graphical user interface for general public to influence the website's algorithm at ease.  
-            </div></br>
-            <div class="top-buffer">Only available on <span>Chrome</span>. 
-          <!--   Click <a href="https://www.youtube.com/embed/fiJgCSeNmD4">here</a> for <span>Youtube</span> demo video. -->
-            </div></br>
-          </p>
-        </div> <!-- projecttext -->
-      </div>  <!-- col-4 -->
-    </div> <!-- row -->
-  </div>
-  </div>
-</body>
-  
-  
+    <div class="intro">
+      <div class="row">
+        <div class="col-md-8 aa">
+          <iframe src="https://www.youtube.com/embed/fiJgCSeNmD4" frameborder="0" allowfullscreen class="center-block image-responsive"></iframe>
+        </div>
+
+        <div class="col-md-4 ee">
+          <div class="projectText">
+            <p class="title"><strong>Key Word Search Bot</strong></p>
+            <div class="info">
+             <div>Client // Pei Enen</div>
+             <div>Role // browser interaction and interface</div> 
+              <div>Tool // jQuery,Javascript,Chrome Plug-in</div> 
+            </div>    
+            <p class="maintext">
+              <span class="textblock"> 
+                Key word search bot is a chrome plug-in that searches keywords automatically to manipulate the website's recommendation system.       
+              </span>
+               <span class="textblock"> 
+                Rather than running on terminal, it provides an graphical user interface for general public to influence the website's algorithm easily.
+               </span>
+               <span class="textblock"> 
+               Only available on <em>Chrome</em>
+               </span>
+              </br>
+            </p>
+          </div> <!-- projecttext -->
+        </div>  <!-- col-4 -->
+      </div> <!-- row -->
+    </div> <!-- projectmain-->
+  </div> <!-- canvas -->
+</div> <!-- container -->
 </body>
 </html>

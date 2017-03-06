@@ -8,8 +8,8 @@ var alertText =
 <strong>1 mins 4 step to spin your own Google LOGO</br></strong>\
 *===================================*</br></div></br>\
 <div>[STEP1]</br>Copy the text below</div>\
-<div>[STEP2]</br>Rightclick on the Google page and select <Inspect>.</div>\
-<div>[STEP3]</br>Find <console> and paste the text in the blank there.</div>\
+<div>[STEP2]</br>Rightclick on the Google page and select INSPECT.</div>\
+<div>[STEP3]</br>Find CONSOLE and paste the text in the blank there.</div>\
 <div>[STEP4]</br>Hit ENTER! You are ready to go.</div></br>\
 *Here is the text to copy*</br>javascript: (function(e, s) {</br>\
    \xa0 e.src = s;</br>\

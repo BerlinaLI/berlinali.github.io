@@ -19,16 +19,18 @@ function randomRef(){
   document.getElementById("quote").innerHTML = reference[index].quote; 
   document.getElementById("author").innerHTML = reference[index].author; 
   document.getElementById("pic").src=reference[index].pic;
-}              
-
-function openURL(url){
-  window.open(url, 'Share', 'width=550, height=400, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=0');
-}
-
+} 
 
 function shareTwitter(){
-  openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + quote + '" ' + author));
+  var curQuote= document.getElementById("quote").innerHTML;//$("#quote").html();
+  var curAuthor=document.getElementById("author").innerHTML;//$("#author").html();
+  var url='https://twitter.com/intent/tweet?text=' + encodeURIComponent(curQuote+"\n"+curAuthor);
+  window.open(url);
 }
+
+
+
+
 
 function getQuote() { 
   randomRef(); 
@@ -37,15 +39,3 @@ function getQuote() {
 getQuote();
 
 
-// var quotes =["dd","duuuuuuuuuuuuud","qeeeeeeeeeeeeee"];
-
-// function randomQuote(value){
-//   var index = Math.floor(value.length * Math.random() ); 
-//    return quotes[index];
-// }              
-              
-// function myFunction() { 
-
-//   document.getElementById("demo").innerHTML = randomQuote(quotes) ;
-//   //document.getElementById("pic").src="https://i1.wp.com/itsallstyletome.com/wp-content/uploads/2016/05/kenzoxhm-lookbook-amy-sall-and-juliana-huxtable.jpg?fit=1024%2C768";
-// }

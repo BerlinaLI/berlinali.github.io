@@ -19,7 +19,7 @@ div {
 
 .wrapper {
   position: relative;
-  margin:3% auto auto auto;
+  margin:3% auto 2% auto;
   width:450px;
   height:auto;
   display: table;

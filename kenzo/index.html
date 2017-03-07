@@ -16,20 +16,21 @@
 <body>
   
 <div class="wrapper">
-  <p id="quote">click click click.</p>
+
+  <i class="fa fa-quote-left quotation-mark"> </i><span id="quote"></span><i class="fa fa-quote-right quotation-mark"> </i>
   
-  <p id="author">lalalalalall.</p>
+  <p id="author"></p>
 
   <div class="buttons">
 
   	<a title="Tweet this quote!" target="_blank">
-      <i class="fa fa-twitter btn btn-outline-primary new-twitter"></i>
+      <i class="fa fa-twitter btn btn-outline-primary new-twitter" onclick="shareTwitter()"></i>
     </a>
 
-  	<button type="button" class="btn btn-outline-primary new-quote" onclick="myFunction()">Get More Inspiration</button>
+  	<button type="button" class="btn btn-outline-primary new-quote" onclick="getQuote()">Get More Inspiration</button>
   </div>
 
-  <img class="img-responsive" id="pic" src="http://pbs.twimg.com/media/CjT4RTBWsAADOod.jpg">
+  <img class="img-responsive" id="pic" src="">
 
  
 </div>

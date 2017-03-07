@@ -24,11 +24,26 @@ div {
   height:auto;
   display: table;
 }
+
 #pic{
   width:450px;
   height:auto;
   text-align:center; 
 }
+
+.quotation-mark{
+  font-size:100px;
+  font-weight:900;
+}
+
+.fa-quote-left{
+   margin-right: 10px;
+}
+
+.fa-quote-right{
+   margin-left: 10px;
+}
+
 
 #quote
 {
@@ -37,19 +52,22 @@ div {
   color: #000;
   background: #fff;
   text-decoration: none;
-  text-align: center；
-  font-size:20px;
+  text-align: center;
+  font-size:25px;
   z-index: 20;
+  line-height:1.2;
+  font-weight:350;
 }
 
 #author{
   width:450px; 
-  margin-top:0;
+  margin-top:15px;
   color: #000;
   background: #fff;
   text-decoration: none;
   text-align: center;
-  font-size:15px;
+  font-size:20px;
+  font-weight:550;
 }
 
 .buttons{
@@ -62,14 +80,11 @@ div {
   background: #000000;
   text-decoration: none;
   text-align: center !important; 
-  font-size:15px;
+  font-size:10px;
 }
 
 .new-twitter{
   float:left;
-/*  text-align:center;*/
-/*  height:30px;
-  width:40px;*/
 }
 
 .new-quote{

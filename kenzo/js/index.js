@@ -9,7 +9,7 @@ var reference =[
    pic: "http://culturemagazin.com/wp-content/uploads/1611-HM-KENZO-4.jpg"
   },{
    author:"-- Rosario Dawson --",
-   quote:"fashion and styling is a way to express yourself even before you open your month.",
+   quote:"Fashion and styling is a way to express yourself even before you open your month.",
    pic:"http://culturemagazin.com/wp-content/uploads/1611-HM-KENZO-3.jpg"
   }
 ];

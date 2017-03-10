@@ -1,8 +1,13 @@
 var gif;
 
+
+function preload() {
+  gif = loadGif('discoinvite.gif');
+}
+
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
-  gif = loadGif('dance.gif');
+  // gif = loadGif('discoinvite.gif');
 }
 
 function draw() {

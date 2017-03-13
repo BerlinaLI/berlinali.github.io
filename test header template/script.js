@@ -1,3 +1,3 @@
 $(document).ready(function() {
- $('#nav-container').load('https://berlinali.github.io/header #nav');
+ $('#nav-container').load('https://berlinali.github.io/header #footer');
 });

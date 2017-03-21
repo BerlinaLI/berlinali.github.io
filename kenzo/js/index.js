@@ -28,14 +28,14 @@ function shareTwitter(){
   window.open(url);
 }
 
-
-
-
-
 function getQuote() { 
   randomRef(); 
 }
 
 getQuote();
 
+
+
+$('.new-twitter').on('click', shareTwitter);
+$('.new-quote').on('click', getQuote);
 

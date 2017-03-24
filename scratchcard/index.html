@@ -50,7 +50,7 @@
 
     var i=0;
 
-    function draw(i){
+    function draw(){
        
         var canvas = ( function createCanvas() {
             var canvas = document.createElement('canvas');
@@ -122,7 +122,7 @@
       e.preventDefault();
       mousedown=true;
 
-      setTimeout(draw(i), 1000);
+      setTimeout(draw(), 1000);
     }
 
     function handlerEventUp(e){
@@ -153,7 +153,7 @@
         }
     }
 
-   draw(i);
+   draw();
 
 })()
 

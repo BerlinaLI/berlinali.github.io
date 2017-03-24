@@ -14,39 +14,44 @@
 
 <script type="text/javascript">
 
-(function(sec){
+(function(){
       
     var mousedown = false;
     var bodyStyle = document.body.style;
     bodyStyle.mozUserSelect = 'none';
     bodyStyle.webkitUserSelect = 'none';
 
+
     var imgs = [
     // 'p_0.jpg','p_1.jpg'
-        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
-        'http://static1.gamespot.com/uploads/original/648/6483659/3059723-dizzy-face.png', 
-        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
-        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
-        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
+        'http://artworks.oss-cn-hongkong.aliyuncs.com/8.jpg',
+        'http://artworks.oss-cn-hongkong.aliyuncs.com/9.jpg', 
+        'http://artworks.oss-cn-hongkong.aliyuncs.com/10.jpg',
         'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
         'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
         'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
         'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
-        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png'
+        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
+        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
+        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
+       
     ];
 
      
-    (function go(i) {
-      var i = i || 0; i = +i;
-      i = draw(i);
-      if (i>=0) {
-        setTimeout(go.bind(null, i), sec)
-      };
-    }.bind(null, 9))();
+    // (function go(i) {
+    //   var i = i || 0; //default operator
+    //   i = +i;
+    //   i = draw(i);
+    //   if (i>=0) {
+    //     setTimeout(go.bind(null, i), 3000) //？？？
+    //   };
 
+    // }.bind(null, 9))();   
+
+    var i=0;
 
     function draw(i){
-
+       
         var canvas = ( function createCanvas() {
             var canvas = document.createElement('canvas');
             var div = document.createElement('div');
@@ -54,7 +59,7 @@
             document.body.appendChild(div); 
             canvas.id = 'id'+i;
             canvas.style.backgroundColor='transparent';
-            canvas.style.margin = '10px 10px';
+            canvas.style.margin = '10px auto 10px auto';
             return canvas;      
         })();
 
@@ -66,11 +71,12 @@
             });
 
         })(canvas)
-          console.log(i);
+      
+      console.log(i);
 
-      i--;
+      i++;
       return i;
-    }
+    };
 
     function drawScratchCard(e, canvas){
 
@@ -101,7 +107,7 @@
         canvas.addEventListener('touchmove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));
         canvas.addEventListener('mousedown', handlerEventDown.bind(mousedown));
         canvas.addEventListener('mouseup', handlerEventUp.bind(mousedown));
-        canvas.addEventListener('mousemove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));
+        canvas.addEventListener('mousemove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));  //？？？？
     }
 
     function layer(ctx, w, h) {
@@ -112,10 +118,11 @@
 
 
     function handlerEventDown(e){
-        mousedown = this;
-        e.preventDefault();
-        mousedown=true;
+      mousedown = this; //？？
+      e.preventDefault();
+      mousedown=true;
 
+      setTimeout(draw(i), 1000);
     }
 
     function handlerEventUp(e){
@@ -146,8 +153,9 @@
         }
     }
 
+   draw(i);
 
-})(3000)
+})()
 
 </script>
 </body>

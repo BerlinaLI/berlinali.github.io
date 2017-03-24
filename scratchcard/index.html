@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -12,59 +12,133 @@
 
 <body>
 
-<div id="main">
-   <div class="demo">
-   		<canvas></canvas>
-   </div>
-</div>
-
 <script type="text/javascript">
-var bodyStyle = document.body.style;
 
-bodyStyle.mozUserSelect = 'none';
-bodyStyle.webkitUserSelect = 'none';
-
-var img = new Image();
-var canvas = document.querySelector('canvas');
-canvas.style.backgroundColor='transparent';
-canvas.style.position = 'absolute';
-var imgs = ['p_0.jpg','p_1.jpg'];
-var num = Math.floor(Math.random()*2);
-img.src = imgs[num];
-
-// img.addEventListener('load', function(e) {
-function drawScratchCard(e){
-	var ctx;
-    var w = img.width,
-    	h = img.height;
-    var offsetX = canvas.offsetLeft,
-    	offsetY = canvas.offsetTop;
+(function(sec){
+      
     var mousedown = false;
+    var bodyStyle = document.body.style;
+    bodyStyle.mozUserSelect = 'none';
+    bodyStyle.webkitUserSelect = 'none';
 
-    function layer(ctx) {
+    var imgs = [
+    // 'p_0.jpg','p_1.jpg'
+        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
+        'http://static1.gamespot.com/uploads/original/648/6483659/3059723-dizzy-face.png', 
+        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
+        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
+        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
+        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
+        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
+        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
+        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
+        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png'
+    ];
+
+     
+    (function go(i) {
+      var i = i || 0; i = +i;
+      i = draw(i);
+      if (i>=0) {
+        setTimeout(go.bind(null, i), sec)
+      };
+    }.bind(null, 9))();
+
+
+    function draw(i){
+
+        var canvas = ( function createCanvas() {
+            var canvas = document.createElement('canvas');
+            var div = document.createElement('div');
+            div.appendChild(canvas);
+            document.body.appendChild(div); 
+            canvas.id = 'id'+i;
+            canvas.style.backgroundColor='transparent';
+            canvas.style.margin = '10px 10px';
+            return canvas;      
+        })();
+
+        (function initImg(canvas){
+            var  img = new Image();
+            img.src = imgs[i]; //i - index 
+            img.addEventListener('load',function(e){
+                drawScratchCard(e, canvas)
+            });
+
+        })(canvas)
+          console.log(i);
+
+      i--;
+      return i;
+    }
+
+    function drawScratchCard(e, canvas){
+
+        var img = e.target;
+
+        var ctx;
+        var w = img.width,
+            h = img.height;
+
+        canvas.width=w;
+        canvas.height=h;
+        canvas.style.backgroundImage='url('+img.src+')';
+        
+        ctx=canvas.getContext('2d');
+        ctx.fillStyle='transparent';
+        ctx.fillRect(0, 0, w, h);
+
+        layer(ctx, w, h);
+        ctx.globalCompositeOperation = 'destination-out';
+
+        attachEvent(canvas, ctx)
+    }
+
+    function attachEvent(canvas, ctx) {
+
+        canvas.addEventListener('touchstart', handlerEventDown.bind(mousedown));
+        canvas.addEventListener('touchend', handlerEventUp.bind(mousedown));
+        canvas.addEventListener('touchmove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));
+        canvas.addEventListener('mousedown', handlerEventDown.bind(mousedown));
+        canvas.addEventListener('mouseup', handlerEventUp.bind(mousedown));
+        canvas.addEventListener('mousemove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));
+    }
+
+    function layer(ctx, w, h) {
         ctx.fillStyle = 'gray';
         ctx.fillRect(0, 0, w, h);
+
     }
 
-    function eventDown(e){
+
+    function handlerEventDown(e){
+        mousedown = this;
         e.preventDefault();
         mousedown=true;
+
     }
 
-    function eventUp(e){
+    function handlerEventUp(e){
+        mousedown = this;
         e.preventDefault();
         mousedown=false;
+
     }
 
-    function eventMove(e){
+    function handlerEventMove(e){
+
         e.preventDefault();
-        if(mousedown) {
+
+         var offsetX = this.canvas.offsetLeft,
+            offsetY = this.canvas.offsetTop;
+     
+         if(mousedown) {
              if(e.changedTouches){
                  e=e.changedTouches[e.changedTouches.length-1];
              }
              var x = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0,
                  y = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;
-             with(ctx) {
+             with(this.ctx) {
                  beginPath()
                  arc(x, y, 10, 0, Math.PI * 2);
                  fill();
@@ -72,28 +146,9 @@ function drawScratchCard(e){
         }
     }
 
-    canvas.width=w;
-    canvas.height=h;
-    canvas.style.backgroundImage='url('+img.src+')';
-    ctx=canvas.getContext('2d');
-    ctx.fillStyle='transparent';
-    ctx.fillRect(0, 0, w, h);
-    layer(ctx);
 
-    ctx.globalCompositeOperation = 'destination-out';
-
-    canvas.addEventListener('touchstart', eventDown);
-    canvas.addEventListener('touchend', eventUp);
-    canvas.addEventListener('touchmove', eventMove);
-    canvas.addEventListener('mousedown', eventDown);
-    canvas.addEventListener('mouseup', eventUp);
-    canvas.addEventListener('mousemove', eventMove);
-}
-
-img.addEventListener('load',drawScratchCard);
-
+})(3000)
 
 </script>
-
 </body>
-</html>
+</html>  

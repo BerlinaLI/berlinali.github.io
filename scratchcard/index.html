@@ -119,8 +119,8 @@
     }
 
     function layer(ctx, w, h) {
-        ctx.fillStyle = 'gray';
-        ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = 'gray';
+      ctx.fillRect(0, 0, w, h);
 
     }
 
@@ -129,23 +129,21 @@
       mousedown = this; //？？
       e.preventDefault();
       mousedown=true;
+    }
 
-      var mouseAt = parseInt(e.target.id); //turn string into int
+    function handlerEventUp(e){
+      mousedown = this;
+      e.preventDefault();
+      mousedown=false;
+      var mouseAt = parseInt(e.target.id); //turn string into interger
 
       console.log("I = "+i,"mouse at = "+mouseAt);
 
       if(i == mouseAt){
-        setTimeout(draw(mouseAt+1), 2000);
+        setTimeout(draw(mouseAt+1), 3000);
         i++;
         return i;
       }
-
-    }
-
-    function handlerEventUp(e){
-        mousedown = this;
-        e.preventDefault();
-        mousedown=false;
 
     }
 

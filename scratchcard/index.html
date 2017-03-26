@@ -21,21 +21,21 @@
     bodyStyle.mozUserSelect = 'none';
     bodyStyle.webkitUserSelect = 'none';
     
+    var i= 0;    
 
 
     var imgs = [
     // 'p_0.jpg','p_1.jpg'
-        'http://artworks.oss-cn-hongkong.aliyuncs.com/8.jpg',
-        'http://artworks.oss-cn-hongkong.aliyuncs.com/9.jpg', 
-        'http://artworks.oss-cn-hongkong.aliyuncs.com/10.jpg',
-        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
-        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
-        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
-        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
-        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
-        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
-        'http://pix.iemoji.com/images/emoji/apple/ios-9/256/money-mouth-face.png',
-       
+        'http://www.iconsplace.com/icons/preview/orange/number-0-256.png',
+        'http://www.iconsplace.com/icons/preview/orange/number-1-256.png', 
+        'http://www.iconsplace.com/icons/preview/orange/number-2-256.png',
+        'http://www.iconsplace.com/icons/preview/orange/number-3-256.png',
+        'http://www.iconsplace.com/icons/preview/orange/number-4-256.png',
+        'http://www.iconsplace.com/icons/preview/orange/number-5-256.png',
+        'http://www.iconsplace.com/icons/preview/orange/number-6-256.png',
+        'http://www.iconsplace.com/icons/preview/orange/number-7-256.png',
+        'http://www.iconsplace.com/icons/preview/orange/number-8-256.png',
+        'http://www.iconsplace.com/icons/preview/orange/number-9-256.png'
     ];
 
      
@@ -49,19 +49,19 @@
 
     // }.bind(null, 9))();   
 
-    var i=0;
 
-    function draw(){
+    function draw(i){
+
       if(i<10){
         var canvas = ( function createCanvas() {
             var canvas = document.createElement('canvas');
             var div = document.createElement('div');
             div.appendChild(canvas);
             document.body.appendChild(div); 
-            canvas.id = 'id'+i;
+            canvas.id = i;
             canvas.style.backgroundColor='transparent';
             canvas.style.margin = '10px auto 10px auto';
-            return canvas;      
+            return canvas;  //!!!!!   
         })();
 
         (function initImg(canvas){
@@ -73,17 +73,15 @@
 
         })(canvas)
       
-      console.log(i);
-
-      i++;
-      return i;
+      // i++;
+      // return i;
+      // console.log(i);
       };
     };
 
     function drawScratchCard(e, canvas){
 
         var img = e.target;
-
         var ctx;
         var w = img.width,
             h = img.height;
@@ -94,7 +92,7 @@
         
         ctx=canvas.getContext('2d');
         ctx.fillStyle='transparent';
-        ctx.fillRect(0, 0, w, h);
+        ctx.fillRect(0, 0, w, h);  //why need to add such layer
 
         layer(ctx, w, h);
         ctx.globalCompositeOperation = 'destination-out';
@@ -124,7 +122,19 @@
       e.preventDefault();
       mousedown=true;
 
-      setTimeout(draw(), 1000);
+      var mouseAt = parseInt(e.target.id); //turn string into int
+
+      console.log("I = "+i,"mouse at = "+mouseAt);
+
+      if(i == mouseAt){
+        console.log("generate next pic");
+        setTimeout(draw(mouseAt+1), 1000);
+         i++;
+        return i;
+      }else{
+         console.log("stay in the same pic");
+      }
+
     }
 
     function handlerEventUp(e){
@@ -155,7 +165,7 @@
         }
     }
 
-   draw();
+   draw(i);
 
 })()
 

@@ -24,9 +24,9 @@
     bodyStyle.mozUserSelect = 'none';
     bodyStyle.webkitUserSelect = 'none';
     
-    var i= 0;   
-
-    // var $ = jQuery;
+    var i= 0;
+    var imgGenerateSpeed = 200;
+    var imgScrollSpeed = 1500;  
 
     var imgs = [
     // 'p_0.jpg','p_1.jpg'
@@ -80,13 +80,13 @@
         //jQuery scroll down feature
         jQuery('html, body').animate({
           scrollTop: jQuery("canvas#"+i).offset().top + $( "canvas" ).height()
-        }, 2000);
+        }, imgScrollSpeed);
 
       }; 
     };
 
     function drawScratchCard(e, canvas){
-
+``
         var img = e.target;
         var ctx;
         var w = img.width,
@@ -95,10 +95,9 @@
         canvas.width=w;
         canvas.height=h;
         canvas.style.backgroundImage='url('+img.src+')';
-
-        //$( "canvas" ).fadeIn( 2000 );
         
         ctx=canvas.getContext('2d');
+
         ctx.fillStyle='transparent';
         ctx.fillRect(0, 0, w, h);  //why need to add such layer
 
@@ -109,9 +108,9 @@
     }
 
     function attachEvent(canvas, ctx) {
-
+      //event handler reference https://www.w3schools.com/jsref/dom_obj_event.asp
         canvas.addEventListener('touchstart', handlerEventDown.bind(mousedown));
-        canvas.addEventListener('touchend', handlerEventUp.bind(mousedown));
+        canvas.addEventListener('touchend', handlerEventUp.bind(mousedown));  //todo: mouse up
         canvas.addEventListener('touchmove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));
         canvas.addEventListener('mousedown', handlerEventDown.bind(mousedown));
         canvas.addEventListener('mouseup', handlerEventUp.bind(mousedown));
@@ -121,7 +120,6 @@
     function layer(ctx, w, h) {
       ctx.fillStyle = 'gray';
       ctx.fillRect(0, 0, w, h);
-
     }
 
 
@@ -140,7 +138,7 @@
       console.log("I = "+i,"mouse at = "+mouseAt);
 
       if(i == mouseAt){
-        setTimeout(draw(mouseAt+1), 3000);
+        setTimeout(draw(mouseAt+1), imgGenerateSpeed);
         i++;
         return i;
       }

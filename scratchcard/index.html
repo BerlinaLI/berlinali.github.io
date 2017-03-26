@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>本刮刮卡老板决定送你一亿</title>
@@ -8,6 +9,8 @@
 .demo{width:320px; margin:10px auto 20px auto; min-height:300px;}
 .msg{text-align:center; height:32px; line-height:32px; font-weight:bold; margin-top:50px}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -21,8 +24,9 @@
     bodyStyle.mozUserSelect = 'none';
     bodyStyle.webkitUserSelect = 'none';
     
-    var i= 0;    
+    var i= 0;   
 
+    // var $ = jQuery;
 
     var imgs = [
     // 'p_0.jpg','p_1.jpg'
@@ -73,10 +77,12 @@
 
         })(canvas)
       
-      // i++;
-      // return i;
-      // console.log(i);
-      };
+        //jQuery scroll down feature
+        jQuery('html, body').animate({
+          scrollTop: jQuery("canvas#"+i).offset().top + $( "canvas" ).height()
+        }, 2000);
+
+      }; 
     };
 
     function drawScratchCard(e, canvas){
@@ -89,6 +95,8 @@
         canvas.width=w;
         canvas.height=h;
         canvas.style.backgroundImage='url('+img.src+')';
+
+        //$( "canvas" ).fadeIn( 2000 );
         
         ctx=canvas.getContext('2d');
         ctx.fillStyle='transparent';
@@ -127,12 +135,9 @@
       console.log("I = "+i,"mouse at = "+mouseAt);
 
       if(i == mouseAt){
-        console.log("generate next pic");
-        setTimeout(draw(mouseAt+1), 1000);
-         i++;
+        setTimeout(draw(mouseAt+1), 2000);
+        i++;
         return i;
-      }else{
-         console.log("stay in the same pic");
       }
 
     }
@@ -170,5 +175,11 @@
 })()
 
 </script>
+
+
+
+
+
+
 </body>
 </html>  

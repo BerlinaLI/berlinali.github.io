@@ -56,7 +56,7 @@
 
   function draw(i){
 
-    if(i<10){
+    if(i<5){
     //if(i<2){ 
       var canvas = ( function createCanvas() {
           var canvas = document.createElement('canvas');
@@ -66,13 +66,11 @@
 
           var p = document.createElement('p');
           p.id="status";
-          // p.textContent = "请在以上的刮奖区刮奖";
           document.body.appendChild(p); 
 
           canvas.id = i;
           canvas.style.backgroundColor='transparent';
           canvas.style.margin = '10px auto 10px auto';
-          // canvas.style.border = '2px solid red';
           return canvas;  //!!!!!   
       })();
 
@@ -90,16 +88,19 @@
         scrollTop: jQuery("canvas#"+i).offset().top + $( "canvas" ).height()
       }, imgScrollSpeed);
 
-    };
-    // }else{
-    //   jumpToAnimation();
-    // }
+    // };
+    }else{
+      jumpToAnimation();
+    }
   };
 
 
   function jumpToAnimation(){
     $('canvas').fadeOut("slow");
-    setTimeout(function(){ alert("Hello"); }, 3000);
+    setTimeout(function(){ 
+      //alert("Now jump to animation!!!"); 
+      window.open("https://codepen.io/unmeshpro/full/orhKk/","_self");
+    }, 0);
   }
 
   function drawScratchCard(e, canvas){
@@ -114,14 +115,19 @@
       canvas.style.backgroundImage='url('+img.src+')';
       
       ctx=canvas.getContext('2d');
-      layer(canvas,ctx,w,h);
+      ctx.fillStyle = 'transparent';
+      ctx.fillRect(0, 0, w, h);
+
+      layer(ctx,w,h);
+      layer.id="layerId";
+      console.log(layer.id);
 
       ctx.globalCompositeOperation = 'destination-out';
 
       attachEvent(canvas, ctx)
   }
 
-  function layer(canvas,ctx,w,h){
+  function layer(ctx,w,h){
     ctx.fillStyle = 'gray';
     ctx.fillRect(0, 0, w, h);
   }
@@ -188,11 +194,12 @@
     }
     var erasePercentage = transparent/(loop/4);  
  
-    //if mouseAt the last generated img, then generate new img
+    //if mouseAt the last generated img & the erase area is big enough, then generate new img
     var mouseAt = parseInt(e.target.id); //turn string into interger
     console.log("I = "+i,"mouse at = "+mouseAt,erasePercentage>.5); 
     if(i == mouseAt && erasePercentage >.5){ 
-      
+      //layer=undefined;
+      // $( "#layerId" ).remove(); //todo: when percentage is bigger than 50%, remove the layer
       setTimeout(draw(mouseAt+1), imgGenerateSpeed);
       i++;
       return i;

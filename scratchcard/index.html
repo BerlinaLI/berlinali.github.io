@@ -19,163 +19,203 @@
 
 (function(){
       
-    var mousedown = false;
-    var bodyStyle = document.body.style;
-    bodyStyle.mozUserSelect = 'none';
-    bodyStyle.webkitUserSelect = 'none';
+  var mousedown = false;
+  var bodyStyle = document.body.style;
+  bodyStyle.mozUserSelect = 'none';
+  bodyStyle.webkitUserSelect = 'none';
+  
+  var i= 0;
+  var imgGenerateSpeed = 200;
+  var imgScrollSpeed = 1500;  
+
+  var imgs = [
+  // 'p_0.jpg','p_1.jpg'
+      'http://www.iconsplace.com/icons/preview/orange/number-0-256.png',
+      'http://www.iconsplace.com/icons/preview/orange/number-1-256.png', 
+      'http://www.iconsplace.com/icons/preview/orange/number-2-256.png',
+      'http://www.iconsplace.com/icons/preview/orange/number-3-256.png',
+      'http://www.iconsplace.com/icons/preview/orange/number-4-256.png',
+      'http://www.iconsplace.com/icons/preview/orange/number-5-256.png',
+      'http://www.iconsplace.com/icons/preview/orange/number-6-256.png',
+      'http://www.iconsplace.com/icons/preview/orange/number-7-256.png',
+      'http://www.iconsplace.com/icons/preview/orange/number-8-256.png',
+      'http://www.iconsplace.com/icons/preview/orange/number-9-256.png'
+  ];
+
+   
+  // (function go(i) {
+  //   var i = i || 0; //default operator
+  //   i = +i;
+  //   i = draw(i);
+  //   if (i>=0) {
+  //     setTimeout(go.bind(null, i), 3000) //？？？
+  //   };
+
+  // }.bind(null, 9))();   
+
+
+  function draw(i){
+
+    if(i<10){
+    //if(i<2){ 
+      var canvas = ( function createCanvas() {
+          var canvas = document.createElement('canvas');
+          var div = document.createElement('div');
+          div.appendChild(canvas);
+          document.body.appendChild(div); 
+
+          var p = document.createElement('p');
+          p.id="status";
+          // p.textContent = "请在以上的刮奖区刮奖";
+          document.body.appendChild(p); 
+
+          canvas.id = i;
+          canvas.style.backgroundColor='transparent';
+          canvas.style.margin = '10px auto 10px auto';
+          // canvas.style.border = '2px solid red';
+          return canvas;  //!!!!!   
+      })();
+
+      (function initImg(canvas){
+          var  img = new Image();
+          img.src = imgs[i]; //i - index 
+          img.addEventListener('load',function(e){
+              drawScratchCard(e, canvas)
+          });
+
+      })(canvas)
     
-    var i= 0;
-    var imgGenerateSpeed = 200;
-    var imgScrollSpeed = 1500;  
+      //jQuery scroll down feature
+      jQuery('html, body').animate({
+        scrollTop: jQuery("canvas#"+i).offset().top + $( "canvas" ).height()
+      }, imgScrollSpeed);
 
-    var imgs = [
-    // 'p_0.jpg','p_1.jpg'
-        'http://www.iconsplace.com/icons/preview/orange/number-0-256.png',
-        'http://www.iconsplace.com/icons/preview/orange/number-1-256.png', 
-        'http://www.iconsplace.com/icons/preview/orange/number-2-256.png',
-        'http://www.iconsplace.com/icons/preview/orange/number-3-256.png',
-        'http://www.iconsplace.com/icons/preview/orange/number-4-256.png',
-        'http://www.iconsplace.com/icons/preview/orange/number-5-256.png',
-        'http://www.iconsplace.com/icons/preview/orange/number-6-256.png',
-        'http://www.iconsplace.com/icons/preview/orange/number-7-256.png',
-        'http://www.iconsplace.com/icons/preview/orange/number-8-256.png',
-        'http://www.iconsplace.com/icons/preview/orange/number-9-256.png'
-    ];
-
-     
-    // (function go(i) {
-    //   var i = i || 0; //default operator
-    //   i = +i;
-    //   i = draw(i);
-    //   if (i>=0) {
-    //     setTimeout(go.bind(null, i), 3000) //？？？
-    //   };
-
-    // }.bind(null, 9))();   
-
-
-    function draw(i){
-
-      if(i<10){
-        var canvas = ( function createCanvas() {
-            var canvas = document.createElement('canvas');
-            var div = document.createElement('div');
-            div.appendChild(canvas);
-            document.body.appendChild(div); 
-            canvas.id = i;
-            canvas.style.backgroundColor='transparent';
-            canvas.style.margin = '10px auto 10px auto';
-            return canvas;  //!!!!!   
-        })();
-
-        (function initImg(canvas){
-            var  img = new Image();
-            img.src = imgs[i]; //i - index 
-            img.addEventListener('load',function(e){
-                drawScratchCard(e, canvas)
-            });
-
-        })(canvas)
-      
-        //jQuery scroll down feature
-        jQuery('html, body').animate({
-          scrollTop: jQuery("canvas#"+i).offset().top + $( "canvas" ).height()
-        }, imgScrollSpeed);
-
-      }; 
     };
+    // }else{
+    //   jumpToAnimation();
+    // }
 
-    function drawScratchCard(e, canvas){
-``
-        var img = e.target;
-        var ctx;
-        var w = img.width,
-            h = img.height;
+  };
 
-        canvas.width=w;
-        canvas.height=h;
-        canvas.style.backgroundImage='url('+img.src+')';
-        
-        ctx=canvas.getContext('2d');
 
-        ctx.fillStyle='transparent';
-        ctx.fillRect(0, 0, w, h);  //why need to add such layer
+  function jumpToAnimation(){
+    $('canvas').fadeOut("slow");
+    setTimeout(function(){ alert("Hello"); }, 3000);
+  }
 
-        layer(ctx, w, h);
-        ctx.globalCompositeOperation = 'destination-out';
+  function drawScratchCard(e, canvas){
 
-        attachEvent(canvas, ctx)
-    }
+      var img = e.target;
+      var ctx;
+      var w = img.width,
+          h = img.height;
 
-    function attachEvent(canvas, ctx) {
-      //event handler reference https://www.w3schools.com/jsref/dom_obj_event.asp
-        canvas.addEventListener('touchstart', handlerEventDown.bind(mousedown));
-        canvas.addEventListener('touchend', handlerEventUp.bind(mousedown));  //todo: mouse up
-        canvas.addEventListener('touchmove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));
-        canvas.addEventListener('mousedown', handlerEventDown.bind(mousedown));
-        canvas.addEventListener('mouseup', handlerEventUp.bind(mousedown));
-        canvas.addEventListener('mousemove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));  //？？？？
-    }
-
-    function layer(ctx, w, h) {
+      canvas.width=w;
+      canvas.height=h;
+      canvas.style.backgroundImage='url('+img.src+')';
+      
+      ctx=canvas.getContext('2d');
       ctx.fillStyle = 'gray';
       ctx.fillRect(0, 0, w, h);
-    }
 
 
-    function handlerEventDown(e){
-      mousedown = this; //？？
-      e.preventDefault();
-      mousedown=true;
-    }
+      ctx.globalCompositeOperation = 'destination-out';
 
-    function handlerEventUp(e){
-      mousedown = this;
-      e.preventDefault();
-      mousedown=false;
-      var mouseAt = parseInt(e.target.id); //turn string into interger
+      attachEvent(canvas, ctx)
+  }
 
-      console.log("I = "+i,"mouse at = "+mouseAt);
+  function attachEvent(canvas, ctx) {
+    //event handler reference https://www.w3schools.com/jsref/dom_obj_event.asp
+      canvas.addEventListener('touchstart', handlerEventDown.bind(mousedown));
+      canvas.addEventListener('touchend', handlerEventUp.bind(mousedown));  //todo: mouse up
+      canvas.addEventListener('touchmove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));
+      // canvas.addEventListener('touchmove', getErasePercentage.bind({canvas: canvas, ctx: ctx}));
 
-      if(i == mouseAt){
-        setTimeout(draw(mouseAt+1), imgGenerateSpeed);
-        i++;
-        return i;
+    
+      canvas.addEventListener('mousedown', handlerEventDown.bind(mousedown));
+      canvas.addEventListener('mouseup', handlerEventUp.bind(mousedown));
+      canvas.addEventListener('mousemove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));  //？？？？
+      // canvas.addEventListener('mousemove', getErasePercentage.bind({canvas: canvas, ctx: ctx}));
+  }
+
+
+  function handlerEventDown(e){
+    mousedown = this; //？？
+    e.preventDefault();
+    mousedown=true;
+  }
+
+  function handlerEventUp(e){
+    mousedown = this;
+    e.preventDefault();
+    mousedown=false;
+    
+    generateNextImage(e);
+
+  }
+
+  function handlerEventMove(e){
+    e.preventDefault();
+    var offsetX = this.canvas.offsetLeft,
+        offsetY = this.canvas.offsetTop;
+ 
+    if(mousedown) {
+      if(e.changedTouches){
+        e=e.changedTouches[e.changedTouches.length-1];
       }
 
+      var x = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0,
+          y = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;
+
+      with(this.ctx) {
+           beginPath();
+           arc(x, y, 25, 0, Math.PI * 2);
+           closePath();
+           fill();
+      }
     }
 
-    function handlerEventMove(e){
+  //   getErasePercentage(this.canvas,this.ctx);
+  // }
 
-        e.preventDefault();
+  //calculate erase area percentage 
+  //function getErasePercentage(canvas,ctx){
+    var imgData = this.ctx.getImageData(0,0,this.canvas.width,this.canvas.height);
+    var pixelsArr= imgData.data;
+    var loop = pixelsArr.length;
+    var transparent = 0;
 
-         var offsetX = this.canvas.offsetLeft,
-            offsetY = this.canvas.offsetTop;
-     
-         if(mousedown) {
-             if(e.changedTouches){
-                 e=e.changedTouches[e.changedTouches.length-1];
-             }
-             var x = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0,
-                 y = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;
-             with(this.ctx) {
-                 beginPath()
-                 arc(x, y, 10, 0, Math.PI * 2);
-                 fill();
-             }
-        }
+    for(var i=0; i<loop ; i+=4){
+      var alpha = pixelsArr[i+3];
+      if(alpha<10){
+        transparent++;
+      }
     }
 
-   draw(i);
+    var percentage = transparent/(loop/4);  
+    //return percentage; 
+    if(percentage >.5){
+      console.log(">50%");
+    }
+
+  }
+
+
+  function generateNextImage(e){
+    var mouseAt = parseInt(e.target.id); //turn string into interger
+    console.log("I = "+i,"mouse at = "+mouseAt); 
+    if(i == mouseAt){ //if mouseAt the last generated img, then generate new img
+      setTimeout(draw(mouseAt+1), imgGenerateSpeed);
+      i++;
+      return i;
+    }
+  }
+
+  draw(i);
 
 })()
 
 </script>
-
-
-
-
-
 
 </body>
 </html>  

@@ -94,7 +94,6 @@
     // }else{
     //   jumpToAnimation();
     // }
-
   };
 
 
@@ -115,13 +114,16 @@
       canvas.style.backgroundImage='url('+img.src+')';
       
       ctx=canvas.getContext('2d');
-      ctx.fillStyle = 'gray';
-      ctx.fillRect(0, 0, w, h);
-
+      layer(canvas,ctx,w,h);
 
       ctx.globalCompositeOperation = 'destination-out';
 
       attachEvent(canvas, ctx)
+  }
+
+  function layer(canvas,ctx,w,h){
+    ctx.fillStyle = 'gray';
+    ctx.fillRect(0, 0, w, h);
   }
 
   function attachEvent(canvas, ctx) {
@@ -149,9 +151,6 @@
     mousedown = this;
     e.preventDefault();
     mousedown=false;
-    
-    generateNextImage(e);
-
   }
 
   function handlerEventMove(e){
@@ -175,36 +174,25 @@
       }
     }
 
-  //   getErasePercentage(this.canvas,this.ctx);
-  // }
-
-  //calculate erase area percentage 
-  //function getErasePercentage(canvas,ctx){
+    //calculate erase area percentage 
     var imgData = this.ctx.getImageData(0,0,this.canvas.width,this.canvas.height);
     var pixelsArr= imgData.data;
     var loop = pixelsArr.length;
     var transparent = 0;
 
-    for(var i=0; i<loop ; i+=4){
-      var alpha = pixelsArr[i+3];
+    for(var j=0; j<loop ; j+=4){
+      var alpha = pixelsArr[j+3];
       if(alpha<10){
         transparent++;
       }
     }
-
-    var percentage = transparent/(loop/4);  
-    //return percentage; 
-    if(percentage >.5){
-      console.log(">50%");
-    }
-
-  }
-
-
-  function generateNextImage(e){
+    var erasePercentage = transparent/(loop/4);  
+ 
+    //if mouseAt the last generated img, then generate new img
     var mouseAt = parseInt(e.target.id); //turn string into interger
-    console.log("I = "+i,"mouse at = "+mouseAt); 
-    if(i == mouseAt){ //if mouseAt the last generated img, then generate new img
+    console.log("I = "+i,"mouse at = "+mouseAt,erasePercentage>.5); 
+    if(i == mouseAt && erasePercentage >.5){ 
+      
       setTimeout(draw(mouseAt+1), imgGenerateSpeed);
       i++;
       return i;

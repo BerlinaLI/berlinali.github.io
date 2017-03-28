@@ -6,8 +6,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>本刮刮卡老板决定送你一亿</title>
 <style type="text/css">
-.demo{width:320px; margin:10px auto 20px auto; min-height:300px;}
-.msg{text-align:center; height:32px; line-height:32px; font-weight:bold; margin-top:50px}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color:#FFD700;
+}
+
+svg {
+  height: 400px;
+  width: 100%;
+  position: absolute;
+  z-index: -10;
+}
+
+.title{ 
+  width:100%;
+  height:400px;
+  /*position:relative;*/
+}
+
+h1{
+  padding: 0;
+  margin: 0; 
+  text-align: center;
+  padding: 100px 0;
+  font-size: 100px;
+}
+
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
@@ -15,6 +42,32 @@
 
 <body>
 
+<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'>
+    <rect width='1000%' height='1000%' fill='#fff'/>
+    <rect width='100%' height='100%' fill='#FFD700'/> 
+  <svg id="coords" x='48.5%' y='41.9%' overflow='visible'>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(20)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(40)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(60)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(80)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(100)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(120)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(140)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(160)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(180)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(200)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(220)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(240)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(260)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(280)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(300)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(320)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(340)'/>
+      <rect width='2000%' height='2000%' fill-opacity='0.1' fill='#fff' transform='rotate(360)'/>
+  </svg></svg>
+    <div class="title">
+        <h1>刮刮卡</h1>
+    </div>      
 <script type="text/javascript">
 
 (function(){
@@ -26,32 +79,34 @@
   
   var i= 0;
   var imgGenerateSpeed = 200;
-  var imgScrollSpeed = 1500;  
+  var imgScrollSpeed = 2000; 
+  var arcSize = 20; 
 
   var imgs = [
-  // 'p_0.jpg','p_1.jpg'
-      'http://www.iconsplace.com/icons/preview/orange/number-0-256.png',
-      'http://www.iconsplace.com/icons/preview/orange/number-1-256.png', 
-      'http://www.iconsplace.com/icons/preview/orange/number-2-256.png',
-      'http://www.iconsplace.com/icons/preview/orange/number-3-256.png',
-      'http://www.iconsplace.com/icons/preview/orange/number-4-256.png',
-      'http://www.iconsplace.com/icons/preview/orange/number-5-256.png',
-      'http://www.iconsplace.com/icons/preview/orange/number-6-256.png',
-      'http://www.iconsplace.com/icons/preview/orange/number-7-256.png',
-      'http://www.iconsplace.com/icons/preview/orange/number-8-256.png',
-      'http://www.iconsplace.com/icons/preview/orange/number-9-256.png'
+    'p_0.jpg',
+    'p_0.jpg',
+    'p_0.jpg',
+    'p_0.jpg',
+    'p_1.jpg'
+    // 'http://www.iconsplace.com/icons/preview/orange/number-0-256.png',
+    // 'http://www.iconsplace.com/icons/preview/orange/number-1-256.png', 
+    // 'http://www.iconsplace.com/icons/preview/orange/number-2-256.png',
+    // 'http://www.iconsplace.com/icons/preview/orange/number-3-256.png',
+    // 'http://www.iconsplace.com/icons/preview/orange/number-4-256.png',
+    // 'http://www.iconsplace.com/icons/preview/orange/number-5-256.png',
+    // 'http://www.iconsplace.com/icons/preview/orange/number-6-256.png',
+    // 'http://www.iconsplace.com/icons/preview/orange/number-7-256.png',
+    // 'http://www.iconsplace.com/icons/preview/orange/number-8-256.png',
+    // 'http://www.iconsplace.com/icons/preview/orange/number-9-256.png'
   ];
 
-   
-  // (function go(i) {
-  //   var i = i || 0; //default operator
-  //   i = +i;
-  //   i = draw(i);
-  //   if (i>=0) {
-  //     setTimeout(go.bind(null, i), 3000) //？？？
-  //   };
-
-  // }.bind(null, 9))();   
+  var hints = [
+    '请在以上的刮奖区刮奖',
+    '11',
+    '22',
+    '33',
+    '44'
+  ]
 
 
   function draw(i){
@@ -59,19 +114,21 @@
     if(i<5){
     //if(i<2){ 
       var canvas = ( function createCanvas() {
-          var canvas = document.createElement('canvas');
-          var div = document.createElement('div');
-          div.appendChild(canvas);
-          document.body.appendChild(div); 
+        var canvas = document.createElement('canvas');
+        var div = document.createElement('div');
+        div.appendChild(canvas);
+        document.body.appendChild(div); 
 
-          var p = document.createElement('p');
-          p.id="status";
-          document.body.appendChild(p); 
+        var p = document.createElement('p');
+        p.id="status";
+        p.textContent = "请在以上的刮奖区刮奖";
+        document.body.appendChild(p); 
 
-          canvas.id = i;
-          canvas.style.backgroundColor='transparent';
-          canvas.style.margin = '10px auto 10px auto';
-          return canvas;  //!!!!!   
+        canvas.id = i;
+        canvas.style.backgroundColor='transparent';
+        canvas.style.margin = '10px auto';
+        canvas.style.display='block';
+        return canvas;   
       })();
 
       (function initImg(canvas){
@@ -88,7 +145,6 @@
         scrollTop: jQuery("canvas#"+i).offset().top + $( "canvas" ).height()
       }, imgScrollSpeed);
 
-    // };
     }else{
       jumpToAnimation();
     }
@@ -98,7 +154,6 @@
   function jumpToAnimation(){
     $('canvas').fadeOut("slow");
     setTimeout(function(){ 
-      //alert("Now jump to animation!!!"); 
       window.open("https://codepen.io/unmeshpro/full/orhKk/","_self");
     }, 0);
   }
@@ -115,12 +170,8 @@
       canvas.style.backgroundImage='url('+img.src+')';
       
       ctx=canvas.getContext('2d');
-      ctx.fillStyle = 'transparent';
-      ctx.fillRect(0, 0, w, h);
 
       layer(ctx,w,h);
-      layer.id="layerId";
-      console.log(layer.id);
 
       ctx.globalCompositeOperation = 'destination-out';
 
@@ -133,28 +184,24 @@
   }
 
   function attachEvent(canvas, ctx) {
-    //event handler reference https://www.w3schools.com/jsref/dom_obj_event.asp
       canvas.addEventListener('touchstart', handlerEventDown.bind(mousedown));
-      canvas.addEventListener('touchend', handlerEventUp.bind(mousedown));  //todo: mouse up
+      canvas.addEventListener('touchend', handlerEventUp.bind(mousedown));  
       canvas.addEventListener('touchmove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));
-      // canvas.addEventListener('touchmove', getErasePercentage.bind({canvas: canvas, ctx: ctx}));
-
-    
+ 
       canvas.addEventListener('mousedown', handlerEventDown.bind(mousedown));
       canvas.addEventListener('mouseup', handlerEventUp.bind(mousedown));
-      canvas.addEventListener('mousemove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));  //？？？？
-      // canvas.addEventListener('mousemove', getErasePercentage.bind({canvas: canvas, ctx: ctx}));
+      canvas.addEventListener('mousemove', handlerEventMove.bind({canvas: canvas, ctx: ctx})); 
   }
 
 
   function handlerEventDown(e){
-    mousedown = this; //？？
+    mousedown = this.mousedown; 
     e.preventDefault();
     mousedown=true;
   }
 
   function handlerEventUp(e){
-    mousedown = this;
+    mousedown = this.mousedown; 
     e.preventDefault();
     mousedown=false;
   }
@@ -169,12 +216,12 @@
         e=e.changedTouches[e.changedTouches.length-1];
       }
 
-      var x = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0,
+      var x = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0,//question
           y = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;
 
-      with(this.ctx) {
+      with(this.ctx) {//question
            beginPath();
-           arc(x, y, 25, 0, Math.PI * 2);
+           arc(x, y, arcSize, 0, Math.PI * 2);
            closePath();
            fill();
       }
@@ -194,12 +241,11 @@
     }
     var erasePercentage = transparent/(loop/4);  
  
-    //if mouseAt the last generated img & the erase area is big enough, then generate new img
-    var mouseAt = parseInt(e.target.id); //turn string into interger
+    //if mouseAt the last generated img & the erase area is bigget than 50%, 
+    //then generate new img
+    var mouseAt = parseInt(e.target.id); 
     console.log("I = "+i,"mouse at = "+mouseAt,erasePercentage>.5); 
     if(i == mouseAt && erasePercentage >.5){ 
-      //layer=undefined;
-      // $( "#layerId" ).remove(); //todo: when percentage is bigger than 50%, remove the layer
       setTimeout(draw(mouseAt+1), imgGenerateSpeed);
       i++;
       return i;

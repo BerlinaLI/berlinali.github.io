@@ -163,14 +163,8 @@ p span{
       var canvas = ( function createCanvas() {
         var canvas = document.createElement('canvas');
         var div = document.createElement('div');
-        div.appendChild(canvas);
-       
+        div.appendChild(canvas);     
         document.body.appendChild(div); 
-
-        var p = document.createElement('p');
-        p.id="status";
-        p.textContent = "请在以上的刮奖区刮奖";
-        document.body.appendChild(p); 
         
         canvas.id = i;
         canvas.style.backgroundColor='transparent';
@@ -187,17 +181,12 @@ p span{
         });
       })(canvas)
 
-      // (function initHint(p,canvas){
-      //   var hint = hints[i];
-      //   var canvas = document.getElementById("status");
-      //   var ctx = canvas.getContext("2d");
-      //   ctx.font = "10px Arial";
-      //   ctx.textAlign = "center";
-      //   ctx.fillText(hint,canvas.width/2, canvas.height/2+10);
-      //   // document.getElementById("status").innerHTML = hint; //todo
-      // })(p,canvas)
-
-    
+      //explaination added below the scratch card  
+      var p = document.createElement('p');
+      p.id="status";
+      p.textContent = hints[i]; 
+      document.body.appendChild(p); 
+   
       //jQuery scroll down feature
       if(i>0){
         jQuery('html, body').animate({

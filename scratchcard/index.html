@@ -17,17 +17,9 @@ body {
   background-color:#FFD700;
 }
 
-svg {
-  height: 400px;
-  width: 100%;
-  position: absolute;
-  z-index: -10;
-}
-
 .title{ 
   width:100%;
   height:400px;
-  /*position:relative;*/
   background: red; /* For browsers that do not support gradients */
   /* Safari 5.1 to 6.0 */
   background: -webkit-repeating-linear-gradient(red, yellow 10%, green 20%);
@@ -39,28 +31,16 @@ svg {
   background: repeating-linear-gradient(red, yellow 10%, green 20%);
 }
 
-
-p{
-  margin:0;
-  color:black;
-  text-shadow: 3px 2px white;
-  text-align: center;
-  margin-left:30px;
-  float:left;
-  font-size:15px;
-}
-
-p span{
-  color:red;
-}
 .faceemoji{
   z-index:1;
-  width:250px;
-  height:250px;
+  width:150px;
+  height:150px;
   text-align: center;
-  margin:10px auto;
+  margin:0px auto;
+  padding:10px 0;
   display:block;
 }
+
 h1{  
   z-index: 2;
   margin: 0; 
@@ -97,7 +77,23 @@ h1{
   }
 }
 
+.mini-slogan{
+  margin:0 auto;
+  padding:15px 0;
+  display:block;
+}
 
+p{
+  margin:0;
+  color:black;
+  text-shadow: 1px 1px white;
+  text-align:center;
+  font-size:15px;
+}
+
+p span{
+  color:red;
+}
 
 }
 
@@ -112,10 +108,12 @@ h1{
     <div class="title">
     <img class="faceemoji"src="https://cdn.shopify.com/s/files/1/1061/1924/products/Money_Face_Emoji_b26670f3-2d57-42f5-9003-f1a1ee3257c6_large.png?v=1480481059">
         <h1>刮刮卡</h1>
-        <strong>
-        <p>老板今天开微信号疯了!!!</p>
-        <p>最高奖金<span>1亿</span>美元，中奖率<span>100%</span></p>
-        </strong>
+        <div class="mini-slogan">
+          <strong>
+          <p>老板今天开微信号疯了!!!</p>
+          <p>最高奖金<span>1亿</span>美元，中奖率<span>100%</span></p>
+          </strong>
+        </div>
     </div>      
 <script type="text/javascript">
 
@@ -151,7 +149,7 @@ h1{
 
   var hints = [
     '请在以上的刮奖区刮奖',
-    '11',
+    '程序员忘了',
     '22',
     '33',
     '44'
@@ -170,10 +168,10 @@ h1{
         div.appendChild(p);
         document.body.appendChild(div); 
 
-        p.id="status";     
+        p.id=i;     
         canvas.id = i;
         canvas.style.backgroundColor='transparent';
-        canvas.style.margin = '20px 30px';
+        canvas.style.margin = '20px auto';
         canvas.style.display='block';
         return canvas;   
       })();

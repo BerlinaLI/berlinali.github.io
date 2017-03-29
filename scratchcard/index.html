@@ -106,7 +106,7 @@ p span{
 <body>
 
     <div class="title">
-    <img class="faceemoji"src="https://cdn.shopify.com/s/files/1/1061/1924/products/Money_Face_Emoji_b26670f3-2d57-42f5-9003-f1a1ee3257c6_large.png?v=1480481059">
+    <img class="faceemoji" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Money_Face_Emoji_b26670f3-2d57-42f5-9003-f1a1ee3257c6_large.png?v=1480481059">
         <h1>刮刮卡</h1>
         <div class="mini-slogan">
           <strong>
@@ -193,6 +193,7 @@ p span{
           scrollTop: jQuery("canvas#"+i).offset().top + $( "canvas" ).height()
         }, imgScrollSpeed);
       }
+
     }else{
       jumpToAnimation();
     }
@@ -288,6 +289,12 @@ p span{
     var mouseAt = parseInt(e.target.id); 
     console.log("I = "+i,"mouse at = "+mouseAt,erasePercentage>.5); 
     if(i == mouseAt && erasePercentage >.5){ 
+
+      // setTimeout(function(){
+      //   // delete layer(this.ctx,this.ctx.width,this.ctx.height);
+      //    this.canvas.fillStyle = 'transparent';
+      // }, imgGenerateSpeed*0.1);
+
       setTimeout(draw(mouseAt+1), imgGenerateSpeed);
       i++;
       return i;
@@ -297,7 +304,7 @@ p span{
   function jumpToAnimation(){
     $('canvas').fadeOut("slow");
     setTimeout(function(){ 
-      window.open("https://codepen.io/unmeshpro/full/orhKk/","_self");
+      window.open("http://www.goodboydigital.com/pixijs/bunnymark_v3/","_self");
     }, 0);
   }
 

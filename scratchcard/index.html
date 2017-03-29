@@ -162,13 +162,16 @@ p span{
     //if(i<2){ 
       var canvas = ( function createCanvas() {
         var canvas = document.createElement('canvas');
-        var p = document.createElement('p');
         var div = document.createElement('div');
         div.appendChild(canvas);
-        div.appendChild(p);
+       
         document.body.appendChild(div); 
 
-        p.id=i;     
+        var p = document.createElement('p');
+        p.id="status";
+        p.textContent = "请在以上的刮奖区刮奖";
+        document.body.appendChild(p); 
+        
         canvas.id = i;
         canvas.style.backgroundColor='transparent';
         canvas.style.margin = '20px auto';
@@ -177,15 +180,23 @@ p span{
       })();
 
       (function initImg(canvas){
-          var  img = new Image();
-          img.src = imgs[i]; //i - index 
-          hint = hints[i];
-          //document.getElementById("status").innerHTML = hint; //todo
-          img.addEventListener('load',function(e){
-              drawScratchCard(e, canvas)
-          });
-
+        var  img = new Image();
+        img.src = imgs[i]; //i - index 
+        img.addEventListener('load',function(e){
+            drawScratchCard(e, canvas)
+        });
       })(canvas)
+
+      // (function initHint(p,canvas){
+      //   var hint = hints[i];
+      //   var canvas = document.getElementById("status");
+      //   var ctx = canvas.getContext("2d");
+      //   ctx.font = "10px Arial";
+      //   ctx.textAlign = "center";
+      //   ctx.fillText(hint,canvas.width/2, canvas.height/2+10);
+      //   // document.getElementById("status").innerHTML = hint; //todo
+      // })(p,canvas)
+
     
       //jQuery scroll down feature
       if(i>0){
@@ -198,18 +209,9 @@ p span{
     }
   };
 
-
-  function jumpToAnimation(){
-    $('canvas').fadeOut("slow");
-    setTimeout(function(){ 
-      window.open("https://codepen.io/unmeshpro/full/orhKk/","_self");
-    }, 0);
-  }
-
   function drawScratchCard(e, canvas){
 
       var img = e.target;
-      var p = e.target;
       var ctx;
       var w = img.width,
           h = img.height;
@@ -218,10 +220,9 @@ p span{
       canvas.height=h;
       canvas.style.backgroundImage='url('+img.src+')';   
 
-      //document.getElementById("status").innerHTML = hint;
-
       ctx=canvas.getContext('2d');
 
+      document.getElementById("status").innerHTML = "请在以上的刮奖区刮奖"; //todo
 
       layer(ctx,w,h);
 
@@ -302,6 +303,13 @@ p span{
       i++;
       return i;
     }
+  }
+
+  function jumpToAnimation(){
+    $('canvas').fadeOut("slow");
+    setTimeout(function(){ 
+      window.open("https://codepen.io/unmeshpro/full/orhKk/","_self");
+    }, 0);
   }
 
   draw(i);

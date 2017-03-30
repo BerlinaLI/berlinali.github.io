@@ -127,7 +127,7 @@ p span{
   var i= 0;
   var imgGenerateSpeed = 200;
   var imgScrollSpeed = 2000; 
-  var arcSize = 20; 
+  var arcSize = 40; 
 
   var imgs = [
     'p_0.jpg',
@@ -135,16 +135,6 @@ p span{
     'p_0.jpg',
     'p_0.jpg',
     'p_1.jpg'
-    // 'http://www.iconsplace.com/icons/preview/orange/number-0-256.png',
-    // 'http://www.iconsplace.com/icons/preview/orange/number-1-256.png', 
-    // 'http://www.iconsplace.com/icons/preview/orange/number-2-256.png',
-    // 'http://www.iconsplace.com/icons/preview/orange/number-3-256.png',
-    // 'http://www.iconsplace.com/icons/preview/orange/number-4-256.png',
-    // 'http://www.iconsplace.com/icons/preview/orange/number-5-256.png',
-    // 'http://www.iconsplace.com/icons/preview/orange/number-6-256.png',
-    // 'http://www.iconsplace.com/icons/preview/orange/number-7-256.png',
-    // 'http://www.iconsplace.com/icons/preview/orange/number-8-256.png',
-    // 'http://www.iconsplace.com/icons/preview/orange/number-9-256.png'
   ];
 
   var hints = [
@@ -211,34 +201,34 @@ p span{
       canvas.style.backgroundImage='url('+img.src+')';   
 
       ctx=canvas.getContext('2d');
+      ctx.fillStyle = 'gray';
+      ctx.fillRect(0, 0, w, h);
 
-      document.getElementById("status").innerHTML = "请在以上的刮奖区刮奖"; //todo
-
-      layer(ctx,w,h);
+      // layer(ctx,w,h);
 
       ctx.globalCompositeOperation = 'destination-out';
 
       attachEvent(canvas, ctx)
   }
 
-  function layer(ctx,w,h){
-    ctx.fillStyle = 'gray';
-    ctx.fillRect(0, 0, w, h);
-  }
+  // function layer(ctx,w,h){
+  //   ctx.fillStyle = 'gray';
+  //   ctx.fillRect(0, 0, w, h);
+  // }
 
   function attachEvent(canvas, ctx) {
       canvas.addEventListener('touchstart', handlerEventDown.bind(mousedown));
-      canvas.addEventListener('touchend', handlerEventUp.bind(mousedown));  
+      canvas.addEventListener('touchend', handlerEventUp.bind({canvas: canvas, ctx: ctx}));  
       canvas.addEventListener('touchmove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));
  
       canvas.addEventListener('mousedown', handlerEventDown.bind(mousedown));
-      canvas.addEventListener('mouseup', handlerEventUp.bind(mousedown));
+      canvas.addEventListener('mouseup', handlerEventUp.bind({canvas: canvas, ctx: ctx}));
       canvas.addEventListener('mousemove', handlerEventMove.bind({canvas: canvas, ctx: ctx})); 
   }
 
 
   function handlerEventDown(e){
-    mousedown = this.mousedown; 
+    mousedown = this.mousedown; //question
     e.preventDefault();
     mousedown=true;
   }
@@ -247,6 +237,39 @@ p span{
     mousedown = this.mousedown; 
     e.preventDefault();
     mousedown=false;
+
+  
+    //if the erase area percentage is > 0.5, clear the layer and generate new one
+    var imgData = this.ctx.getImageData(0,0,this.canvas.width,this.canvas.height);
+    var pixelsArr= imgData.data;
+    var loop = pixelsArr.length;
+    var transparent = 0;
+
+    for(var j=0; j<loop ; j+=4){
+      var alpha = pixelsArr[j+3];
+      if(alpha<10){
+        transparent++;
+      }
+    }
+    var erasePercentage = transparent/(loop/4);  
+    var mouseAt = parseInt(e.target.id); 
+    console.log("I = "+i,"mouse at = "+mouseAt,erasePercentage>.5); 
+    if(i == mouseAt && erasePercentage >.5){ 
+
+      setTimeout(function(){
+        this.ctx.fillStyle ='transparent';
+        console.log("action 1");
+      }, imgGenerateSpeed*0.1);
+
+      setTimeout(function(){
+        console.log("action 2");
+        draw(mouseAt+1);
+      }, imgGenerateSpeed);
+      
+      i++;
+      return i;
+    }
+  
   }
 
   function handlerEventMove(e){
@@ -268,37 +291,7 @@ p span{
            closePath();
            fill();
       }
-    }
-
-    //calculate erase area percentage 
-    var imgData = this.ctx.getImageData(0,0,this.canvas.width,this.canvas.height);
-    var pixelsArr= imgData.data;
-    var loop = pixelsArr.length;
-    var transparent = 0;
-
-    for(var j=0; j<loop ; j+=4){
-      var alpha = pixelsArr[j+3];
-      if(alpha<10){
-        transparent++;
-      }
-    }
-    var erasePercentage = transparent/(loop/4);  
- 
-    //if mouseAt the last generated img & the erase area is bigget than 50%, 
-    //then generate new img
-    var mouseAt = parseInt(e.target.id); 
-    console.log("I = "+i,"mouse at = "+mouseAt,erasePercentage>.5); 
-    if(i == mouseAt && erasePercentage >.5){ 
-
-      // setTimeout(function(){
-      //   // delete layer(this.ctx,this.ctx.width,this.ctx.height);
-      //    this.canvas.fillStyle = 'transparent';
-      // }, imgGenerateSpeed*0.1);
-
-      setTimeout(draw(mouseAt+1), imgGenerateSpeed);
-      i++;
-      return i;
-    }
+    }    
   }
 
   function jumpToAnimation(){
@@ -307,6 +300,11 @@ p span{
       window.open("http://www.goodboydigital.com/pixijs/bunnymark_v3/","_self");
     }, 0);
   }
+
+  //glitch image
+
+    
+
 
   draw(i);
 

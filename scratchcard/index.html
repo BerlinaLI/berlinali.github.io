@@ -15,11 +15,13 @@ body {
   padding: 0;
   margin: 0;
   background-color:#FFD700;
+
 }
 
 .title{ 
   width:100%;
   height:400px;
+
   background: red; /* For browsers that do not support gradients */
   /* Safari 5.1 to 6.0 */
   background: -webkit-repeating-linear-gradient(red, yellow 10%, green 20%);
@@ -105,8 +107,12 @@ p span{
 
 <body>
 
+
     <div class="title">
     <img class="faceemoji" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Money_Face_Emoji_b26670f3-2d57-42f5-9003-f1a1ee3257c6_large.png?v=1480481059">
+   
+    <div id="faceemoji"></div>
+
         <h1>刮刮卡</h1>
         <div class="mini-slogan">
           <strong>
@@ -139,10 +145,10 @@ p span{
 
   var hints = [
     '请在以上的刮奖区刮奖',
-    '程序员忘了',
-    '22',
-    '33',
-    '44'
+    '再给你一次机会刮奖',
+    '不中，再给你一次机会',
+    '好吧，老板说把奖放在第5个...',
+    '呵呵，都说我不是骗子啦'
   ]
 
 
@@ -204,17 +210,17 @@ p span{
       ctx.fillStyle = 'gray';
       ctx.fillRect(0, 0, w, h);
 
-      // layer(ctx,w,h);
+      layer(ctx,w,h);
 
       ctx.globalCompositeOperation = 'destination-out';
 
       attachEvent(canvas, ctx)
   }
 
-  // function layer(ctx,w,h){
-  //   ctx.fillStyle = 'gray';
-  //   ctx.fillRect(0, 0, w, h);
-  // }
+  function layer(ctx,w,h){
+    ctx.fillStyle = 'gray';
+    ctx.fillRect(0, 0, w, h);
+  }
 
   function attachEvent(canvas, ctx) {
       canvas.addEventListener('touchstart', handlerEventDown.bind(mousedown));
@@ -237,9 +243,15 @@ p span{
     mousedown = this.mousedown; 
     e.preventDefault();
     mousedown=false;
+    //eraseAreaDetection(canvas,ctx);
+  // }
 
-  
-    //if the erase area percentage is > 0.5, clear the layer and generate new one
+  /*
+  todo 
+  i tried to put the code below into a function and call it in handlerEventUp but it is not working. I have passed the argument in function. Don't know what is going wrong. 
+  */
+  // function eraseAreaDetection(canvas,ctx){
+    //if the erased area percentage is > 0.5, clear the layer and generate new one
     var imgData = this.ctx.getImageData(0,0,this.canvas.width,this.canvas.height);
     var pixelsArr= imgData.data;
     var loop = pixelsArr.length;
@@ -256,10 +268,19 @@ p span{
     console.log("I = "+i,"mouse at = "+mouseAt,erasePercentage>.5); 
     if(i == mouseAt && erasePercentage >.5){ 
 
-      setTimeout(function(){
-        this.ctx.fillStyle ='transparent';
-        console.log("action 1");
-      }, imgGenerateSpeed*0.1);
+
+    /*todo 
+    if the if statement is true, 
+    action 1: 
+      clear the layer(line220). Changes its color from brown to transparent.My solution below does not work. 
+    action 2(finished): 
+      generate a new scratch card below. 
+    */
+
+      // setTimeout(function(){
+      //   console.log("action 1");
+      //   this.ctx.fillStyle ='transparent';       
+      // }, imgGenerateSpeed*0.1);
 
       setTimeout(function(){
         console.log("action 2");
@@ -269,7 +290,6 @@ p span{
       i++;
       return i;
     }
-  
   }
 
   function handlerEventMove(e){
@@ -301,13 +321,10 @@ p span{
     }, 0);
   }
 
-  //glitch image
-
-    
-
 
   draw(i);
 
+    
 })()
 
 </script>

@@ -349,6 +349,7 @@ $(function () {
         //发送给微信朋友
         wx.onMenuShareAppMessage({
             title: "this is "+ numInTitle + "a title", // 分享标题
+            title: "this is a title", // 分享标题
             desc: "this is a desc", // 分享描述
             link: "link", // 分享链接
             imgUrl: "", // 分享图标
@@ -364,7 +365,8 @@ $(function () {
 
         //分享到朋友圈
         wx.onMenuShareTimeline({
-            title:"this is "+ numInTitle + "a title",
+            //title:"this is "+ numInTitle + "a title",
+            title:"this is a title",
             link: "",
             imgUrl: "",
             success: function () {

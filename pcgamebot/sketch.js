@@ -107,7 +107,7 @@ function defaultMode(){  //相当于setup by default
 	}
   teeth = new Teeth();
   
-	lives = 3;
+	lives = 5;
 	score = 0;
 	//timer2 = 0;
 	state = 1;
@@ -120,7 +120,7 @@ function startAgain(){
 	}
   teeth = new Teeth();
   
-	lives = 3;
+	lives = 5;
 	score = 0;
 	state = 5;
 }
@@ -206,32 +206,32 @@ function beginText(){
 }
 
 function playText(){
-	stroke(0);
+	strokeWeight(3);
 	textAlign(RIGHT);
-	textSize(20/n);
+	textSize(30/n);
 	if(lives <= 2){
     fill("red");
   } else{
     fill("white");
   }
-	text("Lives : "+lives,0,0,width-20/n,80/n);
+	text("Lives : "+lives,0,10,width-20/n,80/n);
 	fill(255);
-	text("Score : "+score,0,0,width-20/n,150/n)
+	text("Score : "+score,0,10,width-20/n,200/n)
 }
 
 function playTime(){
 	timer2 = millis();
 	ttimer = timer2 - timer1;
 	timer = round(ttimer/1000);
-	textSize(20/n);
-	text(timer+" sec",0,0,width-20/n,220/n);
+	textSize(30/n);
+	text(timer+" sec",0,10,width-20/n,300/n);
 }
 
 function playTimeAgain(){
 	timer4 = millis();
 	ttimer = timer4 - timer3;
 	timer = round(ttimer/1000);
-	textSize(20/n);
+	textSize(30/n);
 	text(timer+" sec",0,0,width-20/n,220/n);
 }
 
@@ -241,11 +241,11 @@ function loseText(){
 	textStyle(ITALIC);
 	stroke(0);
 	strokeWeight(6/n);
-	textSize(30/n);
+	textSize(40/n);
 	text("Game over ! Your score is "+score+".",0,0,width,height-250/n);
 	text("It has played"+" "+timer+" secs.",0,0,width,height-100/n);
-	textSize(20/n);
-	strokeWeight(3/n);
+	textSize(30/n);
+	strokeWeight(6/n);
 	if(frameCount % 60 < 45){
 		text( "Press any key to play again !",0,0,width,height+100/n);
 	}
@@ -256,10 +256,10 @@ function winText(){
 	stroke(0);
 	strokeWeight(6/n);
 	textAlign(CENTER,CENTER);
-	textSize(30/n);
+	textSize(40/n);
 	text("Congrats ! Your score is "+score+".",0,0,width,height-250/n);
 	text("It has played"+" "+timer+" secs.",0,0,width,height-100/n);
-	textSize(20/n);
+	textSize(30/n);
 	strokeWeight(3/n);
 	if(frameCount % 60 < 45){
 		text("Press any key to play again !",0,0,width,height+100);

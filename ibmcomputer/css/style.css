@@ -1,0 +1,15 @@
+body{
+  background-color:transparent;  
+}
+
+#computer{
+  position:relative;
+  pointer-events: none;
+}
+
+#gameinterface{
+  position:absolute;
+  left:60px;
+  top:30px;
+}
+

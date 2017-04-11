@@ -191,23 +191,23 @@ function winGame(){
 function beginText(){
 	fill(255);
 	stroke(0);
-	strokeWeight(6/n);
-	//textSize(40/n);
-	//text("Sound Reactive Mini Game",0,0,width,height-200/n);
+	strokeWeight(9/n);
+	textSize(40/n);
+	text("Sound Reactive Mini Game",width/2,height/3);
 	strokeWeight(3);
-	textSize(45/n);
+	textSize(30/n);
 	if(frameCount % 60 < 45){
 		// text("Press any key to play!",0,200/n,width,height-200/n);
-			text("*** CLICK ON ME! ***",width/2, height/3-20);
+			text("*** CLICK ON ME! ***\n\n Press any key to play!",width/2, height/3+75);
 	}
 	// textStyle(NORMAL);
-	textSize(25/n);
-	textStyle(ITALIC);
-	strokeWeight(2);
-	text("1. Use your voice to control \n \n2. Don't hit on red balls!",width/2,height/3+15);
-	textSize(35/n);
-	strokeWeight(3);
-	text("Press any key to start",width/2, height/4*3);
+	// textSize(25/n);
+	// textStyle(ITALIC);
+	// strokeWeight(2);
+	// // text("1. Use your voice to control \n \n2. Don't hit on red balls!",width/2,height/3+15);
+	// textSize(35/n);
+	// strokeWeight(3);
+	// text("Press any key to start",width/2, height/4*3);
 }
 
 function playText(){

@@ -63,7 +63,7 @@ function draw(){
 	if(state == 0){
 		drawIntro();
 	}else if(state == 0.5){
-		defaultMode();	
+		defaultMode();
 	}else if(state == 1){
 		drawPlaying();
 	}else if(state == 2){
@@ -110,8 +110,10 @@ function defaultMode(){  //相当于setup by default
 	lives = 5;
 	score = 0;
 	//timer2 = 0;
-	state = 1;
+	state =1;
 }
+
+
 
 function startAgain(){
 	micBall = new MicBall();
@@ -193,16 +195,19 @@ function beginText(){
 	//textSize(40/n);
 	//text("Sound Reactive Mini Game",0,0,width,height-200/n);
 	strokeWeight(3);
-	textSize(40/n);
+	textSize(45/n);
 	if(frameCount % 60 < 45){
 		// text("Press any key to play!",0,200/n,width,height-200/n);
-			text("*** CLICK ON ME! *** \n \n Press any key to play!",width/2, height/2);
+			text("*** CLICK ON ME! ***",width/2, height/3-20);
 	}
-	textStyle(NORMAL);
-	fill('rgba(0,0,255, 0.75)');
-	noStroke();
+	// textStyle(NORMAL);
+	textSize(25/n);
 	textStyle(ITALIC);
-	//text("Control it with your voice volume.\n\n Restart if you hit the red balls for 3 times.",0,100,width,height-200);
+	strokeWeight(2);
+	text("1. Use your voice to control \n \n2. Don't hit on red balls!",width/2,height/3+15);
+	textSize(35/n);
+	strokeWeight(3);
+	text("Press any key to start",width/2, height/4*3);
 }
 
 function playText(){
@@ -214,9 +219,9 @@ function playText(){
   } else{
     fill("white");
   }
-	text("Lives : "+lives,0,25,width-20/n,80/n);
-	fill(255);
-	text("Score : "+score,0,25,width-20/n,200/n)
+	text("Lives : "+lives,window.innerWidth-30,100/n);
+	// fill(255);
+	// text("Score : "+score,0,25,width-20/n,200/n)
 }
 
 function playTime(){
@@ -224,7 +229,7 @@ function playTime(){
 	ttimer = timer2 - timer1;
 	timer = round(ttimer/1000);
 	textSize(30/n);
-	text(timer+" sec",0,25,width-20/n,300/n);
+	text(timer+" sec",window.innerWidth-30,180/n);
 }
 
 function playTimeAgain(){
@@ -232,7 +237,7 @@ function playTimeAgain(){
 	ttimer = timer4 - timer3;
 	timer = round(ttimer/1000);
 	textSize(30/n);
-	text(timer+" sec",0,0,width-20/n,220/n);
+	text(timer+" sec",0,0,window.innerWidth-30,180/n);
 }
 
 function loseText(){
@@ -242,12 +247,12 @@ function loseText(){
 	stroke(0);
 	strokeWeight(6/n);
 	textSize(40/n);
-	text("Game over ! \nYour score is "+score+".",0,0,width,height-250/n);
-	text("It has played"+" "+timer+" secs.",0,0,width,height-100/n);
+	text("Game over !\n\nYou survived for "+timer+" secs." ,0,0,width,height-250/n);
+	//text("",0,0,width,height-100/n);
 	textSize(30/n);
 	strokeWeight(6/n);
 	if(frameCount % 60 < 45){
-		text( "Press any key to play again !",0,0,width,height+100/n);
+		text( "Press any key to play again !",width/2,height/4*3);
 	}
 }
 

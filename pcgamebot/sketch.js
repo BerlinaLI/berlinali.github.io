@@ -214,9 +214,9 @@ function playText(){
   } else{
     fill("white");
   }
-	text("Lives : "+lives,0,10,width-20/n,80/n);
+	text("Lives : "+lives,0,25,width-20/n,80/n);
 	fill(255);
-	text("Score : "+score,0,10,width-20/n,200/n)
+	text("Score : "+score,0,25,width-20/n,200/n)
 }
 
 function playTime(){
@@ -224,7 +224,7 @@ function playTime(){
 	ttimer = timer2 - timer1;
 	timer = round(ttimer/1000);
 	textSize(30/n);
-	text(timer+" sec",0,10,width-20/n,300/n);
+	text(timer+" sec",0,25,width-20/n,300/n);
 }
 
 function playTimeAgain(){
@@ -242,7 +242,7 @@ function loseText(){
 	stroke(0);
 	strokeWeight(6/n);
 	textSize(40/n);
-	text("Game over ! Your score is "+score+".",0,0,width,height-250/n);
+	text("Game over ! \nYour score is "+score+".",0,0,width,height-250/n);
 	text("It has played"+" "+timer+" secs.",0,0,width,height-100/n);
 	textSize(30/n);
 	strokeWeight(6/n);

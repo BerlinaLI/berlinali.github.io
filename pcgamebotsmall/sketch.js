@@ -1,4 +1,4 @@
-var n = 3; // /n
+var n = 3; // n
 var balls = [];
 var teeth;
 var total = 10;
@@ -10,6 +10,7 @@ var state = 0;
 var frameIntro;
 var framePlaying;
 var frameEnd;
+
 
 // var timeText = "It has played";
 // var endText1 = "Game over! Your score is ";
@@ -29,19 +30,20 @@ var timer3;
 var timee4;
 var ttimer;
 var timer;
+var mute = false;
 
 function preload(){
-  bgdMusic = loadSound("bgdMusic.mp3");
+  //bgdMusic = loadSound("bgdMusic.mp3");
   hitSound = loadSound("hitSound.mp3");
   scoreSound = loadSound("scoreSound.mp3");
-  winSound = loadSound("winSound.mp3"); 
-  loseSound = loadSound("loseSound.mp3");
+  // winSound = loadSound("winSound.mp3"); 
+  // loseSound = loadSound("loseSound.mp3");
   myFont = loadFont("acadeClassic.TTF");
 }
 
 function setup(){
+
 	canvas = createCanvas(window.innerWidth,window.innerHeight);
-	//frameRate(0);
 	mic = new p5.AudioIn();
 	mic.start();
 	
@@ -50,7 +52,8 @@ function setup(){
 	textAlign(CENTER,CENTER);
 	textFont(myFont);
 	
-  bgdMusic.loop();
+	// bgdMusic.setVolume(0.35);
+  // bgdMusic.loop();
 }
 
 function draw(){
@@ -62,20 +65,28 @@ function draw(){
 //reset with defaultMode before starting from state 1 again
 	if(state == 0){
 		drawIntro();
+
 	}else if(state == 0.5){
 		defaultMode();
+			
 	}else if(state == 1){
 		drawPlaying();
+			
 	}else if(state == 2){
 		loseGame();
+		
 	}else if(state == 3){
 		winGame();
+		
 	}else if(state == 4){
 		startAgain();
+			
 	}else if(state == 5){
 		playAgain();
+		
 	}
 }
+
 
 function stableCanvas(){
 	background(255,255,0);
@@ -85,8 +96,8 @@ function stableCanvas(){
 }
 
 function shakeCanvas(){
-	canvasX = random(-1,9/n);
-	canvasY = random(-9/n,1);
+	canvasX = random(-9,9);
+	canvasY = random(-9,9);
   canvas.position(canvasX,canvasY);
   //background(255); 加了background就不动了。。。
 }
@@ -109,10 +120,8 @@ function defaultMode(){  //相当于setup by default
   
 	lives = 5;
 	score = 0;
-	//timer2 = 0;
 	state =1;
 }
-
 
 
 function startAgain(){
@@ -144,7 +153,7 @@ function drawPlaying(){
 	}
 	//win
 	if(micBall.y < micBall.size/2){
-			state = 3;
+		state = 3;
 	}
 }
 
@@ -171,7 +180,7 @@ function playAgain(){
 function loseGame(){
 	frameEnd = frameCount;
 	loseText();
-  loseSound.play();
+  // loseSound.play();
 	timer3 = millis();
 	if(keyIsPressed){
 		state = 4;
@@ -181,7 +190,7 @@ function loseGame(){
 function winGame(){
 	frameEnd = frameCount;
 	winText();
-  winSound.play();
+  // winSound.play();
 	timer3 = millis();
 	if(keyIsPressed){
 		state = 4;
@@ -237,7 +246,7 @@ function playTimeAgain(){
 	ttimer = timer4 - timer3;
 	timer = round(ttimer/1000);
 	textSize(30/n);
-	text(timer+" sec",0,0,window.innerWidth-30,180/n);
+	text(timer+" sec",window.innerWidth-30,180/n);
 }
 
 function loseText(){

@@ -252,6 +252,10 @@ img{
 /*project 
 ================================================================
 */
+.caption .projectname{
+  font-size: 20px;
+}
+
 .project .col-md-6{
   margin-bottom:30px;
 }

@@ -164,7 +164,7 @@ img{
     -moz-transition: opacity 500ms;
     -o-transition: opacity 500ms;
     transition: opacity 500ms;
-    font-size:20px;
+    font-size:5px;
     z-index: 20;
 }
 
@@ -252,6 +252,10 @@ img{
 /*project 
 ================================================================
 */
+.caption .projectname{
+  font-size: 20px;
+}
+
 .project .col-md-6{
   margin-bottom:30px;
 }

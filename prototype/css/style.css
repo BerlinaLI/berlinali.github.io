@@ -268,13 +268,13 @@ img{
     padding: 2px 0px;
     color: #ffffff;
     background: #000000;
+    font-size:15px;
     text-decoration: none;
     text-align: center;
     -webkit-transition: opacity 500ms;
     -moz-transition: opacity 500ms;
     -o-transition: opacity 500ms;
     transition: opacity 500ms;
-    font-size:15px;
     z-index: 20;
 }
 

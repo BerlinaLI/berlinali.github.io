@@ -150,7 +150,7 @@ img{
 .hovertextbrainwave,
 .hovertextmindplus
 {
-    opacity: 0;
+    opacity: 0.7;
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -164,7 +164,7 @@ img{
     -moz-transition: opacity 500ms;
     -o-transition: opacity 500ms;
     transition: opacity 500ms;
-    font-size:5px;
+    font-size:20px;
     z-index: 20;
 }
 
@@ -181,7 +181,7 @@ img{
     z-index: 10;
 }
 
-
+/*
 #elevator:hover .elevatorgif,
 #taobao:hover .taobaogif,
 #brainwave:hover .brainwavegif,
@@ -189,16 +189,16 @@ img{
 {
     opacity: 1;
 }
+*/
 
-
-#elevator:hover .hovertextelevator,
+/*#elevator:hover .hovertextelevator,
 #taobao:hover .hovertexttaobao,
 #brainwave:hover .hovertextbrainwave,
 #mindplus:hover .hovertextmindplus
 {
     opacity: 0.7;
 }
-
+*/
 
 .footer .row{
   text-align:center;  
@@ -273,13 +273,63 @@ img{
   font-size: 13px;
 }
 
+/*  hover effect */
+
 .hovertextelevator, 
 .hovertexttaobao,
 .hovertextbrainwave,
 .hovertextmindplus
 {
-  font-size:15px;
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 2px 0px;
+    color: #ffffff;
+    background: #000000;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+    font-size:15px;
+    z-index: 20;
 }
+
+.elevatorgif, 
+.taobaogif,
+.brainwavegif,
+.mindplusgif
+{
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+}
+
+
+#elevator:hover .elevatorgif,
+#taobao:hover .taobaogif,
+#brainwave:hover .brainwavegif,
+#mindplus:hover .mindplusgif
+{
+    opacity: 1;
+}
+
+
+#elevator:hover .hovertextelevator,
+#taobao:hover .hovertexttaobao,
+#brainwave:hover .hovertextbrainwave,
+#mindplus:hover .hovertextmindplus
+{
+    opacity: 0.7;
+}
+
+
 }
 
 @media (min-width: 992px) {

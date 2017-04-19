@@ -3,11 +3,6 @@
    font-family: 'Roboto Condensed', sans-serif;
 }  
 
-
-/*mobile
-==============================================================
- */
-
 .canvas{
   margin-bottom:30px 0;
 }
@@ -180,7 +175,6 @@ button a{
 .page-divider{
   margin:80px 0;
 }
-
 
 }
 

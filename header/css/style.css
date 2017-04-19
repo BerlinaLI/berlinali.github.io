@@ -78,9 +78,9 @@ ul a:link
   text-decoration: inherit !important;
 }
 
-.active{
+/*.active{
   color:#000000;
-}
+}*/
 
 .page-divider{
   margin:45px 0;

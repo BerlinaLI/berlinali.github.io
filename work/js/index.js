@@ -1,19 +1,6 @@
-// maker gif  videotaobao/
-//add intro 
-// test speed - whether buy a new domain. 
-//update linkedin 
-
-
-
-// function link_work(){
-//   $('.project').fadeIn(); 
-//   $('body').animate({scrollTop:$('.project').offset().top},1000);
-// };  
-
-// $(document).ready(function(){
-//   $('.linktowork').click(function(){
-//      link_work();
-//  });
-
-  
-// });
+$(document).ready(function() {
+   $('#nav-container').load('https://berlinali.github.io/header/');
+   // setTimeout(function(){ 
+   // 	 $('a.navwork').addClass("active");
+   // }, 0);
+});

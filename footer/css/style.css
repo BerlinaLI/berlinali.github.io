@@ -1,0 +1,24 @@
+.footer .row{
+  text-align:center;  
+  margin-top:10px;
+}
+
+button{
+background-color: transparent;
+}
+
+button a{
+  color:#000;
+}
+
+.socialmedia {
+   background-color:transparent;
+   font-size: 15px;
+} 
+
+.socialmedia a{
+  color: #000;
+}
+
+
+

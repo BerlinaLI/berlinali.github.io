@@ -22,7 +22,7 @@ var frameEnd;
 // var endText2 = "Press any key to play again!";
 // var winText1 = "Congrats! Your score is ";
 // var winText2 = "Press any key to play again!";
-var bgdMusic;
+// var bgdMusic;
 var hitSound;
 var scoreSound;
 var winSound;
@@ -37,11 +37,11 @@ var ttimer;
 var timer;
 
 function preload(){
-  bgdMusic = loadSound("bgdMusic.mp3");
+  // bgdMusic = loadSound("bgdMusic.mp3");
   hitSound = loadSound("hitSound.mp3");
   scoreSound = loadSound("scoreSound.mp3");
-  winSound = loadSound("winSound.mp3"); 
-  loseSound = loadSound("loseSound.mp3");
+  // winSound = loadSound("winSound.mp3"); 
+  // loseSound = loadSound("loseSound.mp3");
   myFont = loadFont("acadeClassic.TTF");
 }
 
@@ -56,7 +56,7 @@ function setup(){
 	textAlign(CENTER,CENTER);
 	textFont(myFont);
 	
-  bgdMusic.loop();
+  // bgdMusic.loop();
 }
 
 function draw(){
@@ -175,7 +175,7 @@ function playAgain(){
 function loseGame(){
 	frameEnd = frameCount;
 	loseText();
-  loseSound.play();
+  // loseSound.play();
 	timer3 = millis();
 	if(keyIsPressed){
 		state = 4;
@@ -185,7 +185,7 @@ function loseGame(){
 function winGame(){
 	frameEnd = frameCount;
 	winText();
-  winSound.play();
+  // winSound.play();
 	timer3 = millis();
 	if(keyIsPressed){
 		state = 4;
@@ -286,9 +286,9 @@ function Ball(micBall){
 	this.render = function(){
 		noStroke();
 		if(this.goodBall){
-			fill('rgba(0,0,255,0.75)');
+			fill('rgb(0,0,255)');
 		} else{
-			fill('rgba(255,0,0,0.75)');
+			fill('rgb(255,0,0)');
 		}
 		ellipse(this.x,this.y,this.size,this.size);
 	}
@@ -327,7 +327,7 @@ function Ball(micBall){
  		ellipse(this.micBall.x,this.micBall.y+11,10,14);
 		lives --;
 		this.micBall.color = color(255,0,0);
-		hitSound.setVolume(0.5);
+		hitSound.setVolume(0.05);
 		hitSound.play();
 	}
 	
@@ -336,7 +336,7 @@ function Ball(micBall){
     triangle(this.micBall.x-8,this.micBall.y+8,this.micBall.x,this.micBall.y+18,this.micBall.x+8,this.micBall.y+8);
 		score ++;
 		this.micBall.color = color(0,0,255);
-		scoreSound.setVolume(0.5);
+		scoreSound.setVolume(0.05);
 		scoreSound.play();
 	}
 }

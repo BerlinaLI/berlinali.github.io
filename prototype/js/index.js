@@ -1,3 +1,14 @@
+$(document).ready(function() {
+   $('#nav-container').load('https://berlinali.github.io/header/index.html');
+
+   setTimeout(function(){ 
+     $('a.navprototype').addClass("active");
+   }, 0);
+   
+   $('#footer-container').load('https://berlinali.github.io/footer/index.html');
+});
+
+
 //once click, switch to google website with alert 
 //once hover, it moves
 

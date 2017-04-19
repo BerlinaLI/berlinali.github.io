@@ -1,6 +1,7 @@
 $(document).ready(function() {
    $('#nav-container').load('https://berlinali.github.io/header/');
-   // setTimeout(function(){ 
-   // 	 $('a.navwork').addClass("active");
-   // }, 0);
+   $('#footer-container').load('https://berlinali.github.io/footer/');
+   setTimeout(function(){ 
+   	 $('a.navwork').addClass("active");
+   }, 0);
 });

@@ -201,9 +201,12 @@ img{
 
 .checkvideo{
   font-size: 14px;
-  color:#999;
+    color:#999; 
 }
 
+.checkvideo a{
+  color:#999;
+}
 .checkvideo:hover{
   color:#000;
 }

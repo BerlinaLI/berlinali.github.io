@@ -187,11 +187,11 @@ img{
 /*introtext*/
 
 .maintext{
-  font-size:18px;
+  font-size:16px;
 }
 
 .title{
-  font-size:25px;
+  font-size:20px;
   margin-bottom: 0;
 }
 
@@ -313,6 +313,14 @@ img{
 #taobao:hover .taobaogif,
 #brainwave:hover .brainwavegif,
 #mindplus:hover .mindplusgif
+{
+    opacity: 1;
+}
+
+#elevatortext:hover .elevatorgif,
+#taobaotext:hover .taobaogif,
+#brainwavetext:hover .brainwavegif,
+#mindplustext:hover .mindplusgif
 {
     opacity: 1;
 }

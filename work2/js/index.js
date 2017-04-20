@@ -48,22 +48,22 @@ $(document).ready(function() {
 
 
 /*game*/
-var $overlay3 = $('<div class="overlay"></div>');
-var $popup3 =  $('<div></div>');
-var $content3 = $('<iframe class="gameframe" width="760" height="1200" src="https://berlinali.github.io/ibmcomputer/" frameborder="0" allowfullscreen></iframe>');
+// var $overlay3 = $('<div class="overlay"></div>');
+// var $popup3 =  $('<div></div>');
+// var $content3 = $('<iframe class="gameframe" width="760" height="1200" src="https://berlinali.github.io/ibmcomputer/" frameborder="0" allowfullscreen></iframe>');
 
-$overlay3.append($popup3);
-$popup3.append($content3);
-$('body').append($overlay3);
+// $overlay3.append($popup3);
+// $popup3.append($content3);
+// $('body').append($overlay3);
 
-$(document).ready(function() {
-    $('#pop-it-game, #mindplus').click(function(){
-      $overlay3.show();  
-    });
-    $overlay3.click(function() {
-      $overlay3.hide();
-    });
-});
+// $(document).ready(function() {
+//     $('#pop-it-game, #mindplus').click(function(){
+//       $overlay3.show();  
+//     });
+//     $overlay3.click(function() {
+//       $overlay3.hide();
+//     });
+// });
 
 
 

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 *{
    font-family: 'Roboto Condensed', sans-serif;
+   box-sizing: border-box;  
 }  
 
 
@@ -8,6 +9,14 @@
 ==============================================================
  */
 
+/*col same height*/
+
+
+
+.col { 
+    display: block;
+    width: 100%;
+}
 
 
 
@@ -104,9 +113,9 @@ img{
   text-align:justify；   
 }
 
-.maintext{
+/*.maintext{
   font-size:25px;
-}
+}*/
 
 .title{
   font-size:35px;
@@ -124,6 +133,7 @@ img{
 .textblock{
   display:block;
   margin-top:10px;
+    font-size:15px;
 }
 
 .projectlink a, .textblock a{
@@ -136,6 +146,18 @@ img{
 ==============================================================================================================
  */
 @media (min-width: 768px) {
+
+/*col same height*/
+.col-container {
+    display: table;
+    width: 100%;
+}
+.col {
+    display: table-cell;
+    padding: 16px;
+}
+
+
 /*introtext*/
 
 .maintext{
@@ -169,12 +191,12 @@ img{
 
 /*video*/
 
-.videowrapper {
+/*.videowrapper {
   text-align: center; 
-}
+}*/
 
 .checkvideo{
-  font-size: 12px;
+  font-size: 14px;
   color:#999;
 }
 
@@ -193,6 +215,9 @@ img{
   z-index:200;    
 }
 
+.videotext{
+  text-align:bottom;
+}
 
 .videoiframe{
   display:block;

@@ -147,6 +147,10 @@ img{
  */
 @media (min-width: 768px) {
 
+.spaceholder{
+  margin:20px;
+}
+
 /*col same height*/
 .col-container {
     display: table;

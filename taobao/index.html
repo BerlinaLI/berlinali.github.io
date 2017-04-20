@@ -10,26 +10,28 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+  <link rel="icon" href="http://www.clipartbest.com/cliparts/nTE/59b/nTE59boyc.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  $(document).ready(function() {
+   $('#nav-container').load('https://berlinali.github.io/header/index.html');
+
+   setTimeout(function(){ 
+     $('a.navwork').addClass("active");
+   }, 0);
+   
+</script>
+
 </head>
 
 <body>
 <div class="container">
   <div class="canvas">
-    <div class="row nav">
-      <div class="col-xs-12 col-md-6 myname">
-         <div><span><strong>Berlina Li</strong></span></div>
-      </div> 
-      <div class="col-xs-12 col-md-6 navname">
-<!--         <div><span>Two Words</span></div> -->
-          <ul class="list-inline "> 
-            <li><a href="http://berlinali.github.io/work" class="navwork active">work</a></li>
-            <li><a href="http://berlinali.github.io/prototype" class="navprototype ">prototype</a></li>
-            <li><a href="http://berlinali.github.io/resume" class="navresume">resume</a></li>
-          </ul>
-      </div>
-    </div><!--row -->
-    
-    <div class="page-divider"></div>
+
+    <div id="nav-container"></div>
 
     <div class="intro">
       <div class="row">
@@ -64,4 +66,8 @@
   </div> <!-- canvas -->
 </div> <!-- container -->
 </body>
+
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script> 
+  <script src="js/index.js"></script>
+  
 </html>

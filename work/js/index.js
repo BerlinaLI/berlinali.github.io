@@ -20,6 +20,8 @@ $overlay1.append($popup1);
 $popup1.append($content1);
 $('body').append($overlay1);
 
+$overlay1.hide();
+
 $(document).ready(function() {
     $('#pop-it-elevator, #elevator').click(function(){
       $overlay1.show();  
@@ -38,6 +40,8 @@ $overlay2.append($popup2);
 $popup2.append($content2);
 $('body').append($overlay2);
 
+$overlay2.hide();
+
 $(document).ready(function() {
     $('#pop-it-bot, #taobao').click(function(){
       $overlay2.show();  
@@ -49,21 +53,27 @@ $(document).ready(function() {
 
 
 /*game*/
-var $overlay3 = $('<div class="overlay"></div>');
-var $popup3 =  $('<div></div>');
-var $content3 = $('<iframe class="gameframe" width="760" height="1200" src="https://berlinali.github.io/ibmcomputer/" frameborder="0" allowfullscreen></iframe>');
+function playGame(){
+  var $overlay3 = $('<div class="overlay"></div>');
+  var $popup3 =  $('<div></div>');
+  var $content3 = $('<iframe class="gameframe" width="760" height="1200" src="https://berlinali.github.io/ibmcomputer/" frameborder="0" allowfullscreen></iframe>');
 
-$overlay3.append($popup3);
-$popup3.append($content3);
-$('body').append($overlay3);
+  $overlay3.append($popup3);
+  $popup3.append($content3);
+  $('body').append($overlay3);
 
-$(document).ready(function() {
-    $('#pop-it-game, #mindplus').click(function(){
+  $overlay3.hide();
+
+  $('#pop-it-game, #mindplus').click(function(){
       $overlay3.show();  
     });
     $overlay3.click(function() {
       $overlay3.hide();
-    });
+  });
+}
+
+$(document).ready(function() {
+   playGame();
 });
 
 

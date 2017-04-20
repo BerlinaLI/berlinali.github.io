@@ -206,7 +206,7 @@ img{
   display:block;
   width: 560px;
   height: 815px;
-  margin-top: 50px;
+  margin: 50px auto;
   overflow: visible;
 /*  margin-right:5%;*/
 }

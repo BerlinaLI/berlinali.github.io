@@ -187,12 +187,13 @@ img{
 /*introtext*/
 
 .maintext{
-  font-size:16px;
+  font-size:14px;
 }
 
 .title{
-  font-size:20px;
+  font-size:16px;
   margin-bottom: 0;
+  text-align:center !important;
 }
 
 
@@ -277,7 +278,7 @@ img{
 .hovertextbrainwave,
 .hovertextmindplus
 {
-    opacity: 0;
+    opacity: 0.75;
     position: absolute;
     bottom: 0px;
     left: 0px;

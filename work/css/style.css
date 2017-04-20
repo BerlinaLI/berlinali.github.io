@@ -152,7 +152,7 @@ img{
 }
 
 .checkvideo a{
-  color:#999;
+  color:#999 !important;
 }
 .checkvideo:hover{
   color:#000;
@@ -176,11 +176,11 @@ img{
 @media (min-width: 768px) {
 
 .canvas{
-  margin:20px 300px 20px;
+  margin:20px 200px 20px;
 }
 
 .spaceholder{
-  margin:20px;
+  margin:40px;
 }
 
 

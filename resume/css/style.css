@@ -7,6 +7,15 @@
 ==============================================================
  */
 
+
+body{
+  background:linear-gradient(225deg, #ffabab, #ffdaab, #ddffab, #abe4ff, #d9abff);
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  display: table;
+}
+
 .canvas{
   margin:30px 20px;
 }

@@ -8,12 +8,6 @@
 
 body{
   background:linear-gradient(225deg, #ffabab, #ffdaab, #ddffab, #abe4ff, #d9abff);
-/*  margin: 0 !important;
-  padding:0 !important;
-  box-sizing: border-box;
-  display: table;
-  width:100vw;
-  text-align:center;*/
 }
 
 
@@ -29,7 +23,7 @@ a.navwork, .myname span{
 } 
 
 .navresume{
-color:#999 !important;
+color:#fff !important;
 }
 
 
@@ -246,7 +240,7 @@ img{
   display:block;
   margin-top:10px;
   font-size:14px;
-  color:#000 !important;
+  color:#7F7F7F; !important;
 }
 
 
@@ -279,7 +273,27 @@ img{
   z-index:200;    
 }
 
+.footer .row{
+  text-align:center;  
+  margin-top:10px;
+}
 
+button{
+background-color: transparent;
+}
+
+button a{
+  color:#000;
+}
+
+.socialmedia {
+   background-color:transparent;
+   font-size: 15px;
+} 
+
+.socialmedia .fa{
+  color: #fff;
+}
 /* desktop + ipad 
 ==============================================================================================================
  */
@@ -390,8 +404,6 @@ img{
   float:right;
   color:#E88400 !important;
 }
-
-
 
 
 .videoiframe{

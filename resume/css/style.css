@@ -7,10 +7,52 @@
 ==============================================================
  */
 
-.canvas{
-  margin:30px 20px;
+
+body{
+  background:linear-gradient(225deg, #ffabab, #ffdaab, #ddffab, #abe4ff, #d9abff);
 }
-/*
+
+
+
+a:hover{
+  color:#fff;
+}
+
+.footer-container a{
+  color:#fff !important;
+}
+.navresume, .myname span{
+  color:rgb(2,30,170) !important;
+} 
+
+.navwork{
+color:#999 !important;
+}
+
+
+
+.col-md-5{
+  opacity: 0;
+  transform: translateX(-25px);
+  transition: all .5s ease-in;
+ }
+
+
+.canvas{
+  margin:20px 30px 20px;
+}
+
+
+.spaceholder{
+  margin:30px;
+}
+
+/* header
+============================================
+============================================ */
+
+
+
 .myname{
   height:100px;
   padding:0;
@@ -20,7 +62,7 @@
   position:relative;
   height:100px;
 }
-
+/* center */
 .myname span {
   font-size:60px;
   line-height:1;
@@ -39,7 +81,7 @@
   height:50px;
   position:relative;
 }
-
+/* center */
 .navname ul{
   font-size:25px;
   position: absolute;
@@ -53,7 +95,6 @@ li a{
   padding-left:15px;
   padding-right:15px;
   line-height:1;
-  color: #999;
 }
 
 li{
@@ -69,30 +110,17 @@ ul.list-inline{
   margin-bottom:0;
 }
 
-a:hover
-{
-  color: #000000 !important;
-  text-decoration: none !important;
-}
 
-ul a:link
-{
-  color: inherit !important;
-  text-decoration: inherit !important;
-}
 
-.socialmedia a{
-  color:#000;
-}
+/*#F5264C*/
 
 .active{
-  color:#000000;
+  color:rgb(2,117,216);
 }
 
 .page-divider{
   margin:45px 0;
 }
-*/
 
 /* intro 
 =========================================================
@@ -149,6 +177,73 @@ img{
 .canvas{
   margin:100px 30px 40px;
 }
+
+.canvas{
+  margin:20px 200px 20px;
+}
+
+
+/*header*/
+.navname ul{
+  font-size:20px;
+}
+
+.myname{
+  height:50px;
+  padding:0;
+}
+
+.myname div{
+  position:relative;
+  height:50px;
+}
+/* center */
+.myname span {
+  font-size:50px;
+  line-height:1;
+  position: absolute;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  text-align: center;
+}
+
+.navname{
+  height:50px;
+}
+
+.page-divider{
+  margin:30px 0;
+}
+
+
+/* left */
+.myname span{
+  position:absolute;
+  bottom:0;
+  left:0; 
+  text-align:left;
+}
+  
+/* right */
+.navname ul{
+  position:absolute;
+  bottom:0;
+  right:0; 
+  text-align:right;
+}
+
+
+.myname span {
+  font-size:45px;
+}
+
+
+.spaceholder{
+  margin:25px;
+}
+/*header*/
+
 /*
 .myname span{
   position:absolute;

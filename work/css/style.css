@@ -2,7 +2,37 @@
 *{
    font-family: 'Roboto Condensed', sans-serif;
    box-sizing: border-box;  
+
 }  
+
+
+body{
+  background:linear-gradient(225deg, #ffabab, #ffdaab, #ddffab, #abe4ff, #d9abff);
+/*  margin: 0 !important;
+  padding:0 !important;
+  box-sizing: border-box;
+  display: table;
+  width:100vw;
+  text-align:center;*/
+}
+
+
+a:hover{
+  color:#fff;
+}
+
+.footer-container a{
+  color:#fff !important;
+}
+a.navwork, .myname span{
+  color:rgb(2,30,170) !important;
+} 
+
+.navresume{
+color:#999 !important;
+}
+
+
 
 
 /*mobile
@@ -22,10 +52,7 @@
     width: 100% !important;
 }
 
-.nav-container{
-  background-color: #fff;
-  z-index:300;
-}
+
 
 .canvas{
   margin:20px 30px 20px;
@@ -84,7 +111,6 @@ li a{
   padding-left:15px;
   padding-right:15px;
   line-height:1;
-  color: #000;
 }
 
 li{
@@ -99,22 +125,13 @@ ul{
 ul.list-inline{
   margin-bottom:0;
 }
-/*
-hover color*/
-a:hover
-{
-  color: #000000 !important;
-  text-decoration: none !important;
-}
 
-ul a:link
-{
-  color: inherit !important;
-  text-decoration: inherit !important;
-}
+
+
+/*#F5264C*/
 
 .active{
-  color:#000000;
+  color:rgb(2,117,216);;
 }
 
 .page-divider{
@@ -144,12 +161,12 @@ img{
 }
 .caption .projectname{
   font-size: 25px;
-    color: #000;
+/*    color: #000;*/
 }
 
 .caption ul{
   font-size: 22px;
-  color: #999;
+/*  color: #999;*/
 }
 
 .caption ul li{
@@ -170,14 +187,14 @@ img{
 .hovertextbrainwave,
 .hovertextmindplus
 {
-    opacity: 0.7;
+    opacity: 0.9;
     position: absolute;
     bottom: 0px;
     left: 0px;
     right: 0px;
     padding: 2px 0px;
-    color: #ffffff;
-    background: #000000;
+    color:rgb(2,30,170);
+    background: #fff;
     text-decoration: none;
     text-align: center;
     -webkit-transition: opacity 500ms;
@@ -229,12 +246,13 @@ img{
   display:block;
   margin-top:10px;
   font-size:14px;
+  color:#000 !important;
 }
 
 
 /*show video*/
 .projectlink a, .textblock a{
-  color:#000;
+ 
   text-decoration: underline !important;
 }
 
@@ -243,12 +261,8 @@ img{
 }
 
 
-.checkvideo{
-  color:#999; 
-}
-
 .checkvideo a{
-  color:#999 !important;
+  color:rbg(2,30,170) !important;
 }
 .checkvideo:hover{
   color:#000;
@@ -371,19 +385,17 @@ img{
 
 /*video*/
 
-/*.videowrapper {
-  text-align: center; 
-}*/
-
-.checkvideo{
-  font-size: 10px;
+.videowrapper a{
+  margin-top:5px !important;
+  float:right;
+  color:#E88400 !important;
 }
 
-.videotext{
-  text-align:bottom;
-}
+
+
 
 .videoiframe{
+    font-size: 10px;
   display:block;
   width: 560px;
   height: 315px;
@@ -400,24 +412,15 @@ img{
 /*  margin-right:5%;*/
 }
 
+.gameframe a{
+  color:rgb(2,30,170) !important;
+}
+
 /*project 
 ================================================================
 */
 .caption .projectname{
   font-size: 20px;
-}
-
-.project .col-md-6{
-  margin-bottom:30px;
-}
-
-
-.project .col-md-6:nth-child(odd) {
-  padding-right:20px; 
-}
-
-.project .col-md-6:nth-child(even) {
-  padding-left:20px;   
 }
 
 .caption ul{
@@ -437,15 +440,15 @@ img{
     left: 0px;
     right: 0px;
     padding: 2px 0px;
-    color: #ffffff;
-    background: #000000;
-    font-size:15px !important;  
+    color:rgb(2,30,170);
+    background: #fff;
     text-decoration: none;
     text-align: center;
     -webkit-transition: opacity 500ms;
     -moz-transition: opacity 500ms;
     -o-transition: opacity 500ms;
     transition: opacity 500ms;
+    font-size:15px;
     z-index: 20;
 }
 
@@ -487,6 +490,7 @@ img{
 {
     opacity: 0.7;
 }
+
 
 
 }

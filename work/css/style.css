@@ -2,7 +2,6 @@
 *{
    font-family: 'Roboto Condensed', sans-serif;
    box-sizing: border-box;  
-
 }  
 
 
@@ -26,7 +25,11 @@ a.navwork, .myname span{
 color:#fff !important;
 }
 
-
+.videowrapper a{
+  margin-top:5px !important;
+  float:right;
+  color:#E88400 !important;
+}
 
 
 /*mobile
@@ -399,11 +402,6 @@ button a{
 
 /*video*/
 
-.videowrapper a{
-  margin-top:5px !important;
-  float:right;
-  color:#E88400 !important;
-}
 
 
 .videoiframe{

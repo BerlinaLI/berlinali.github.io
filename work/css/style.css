@@ -4,68 +4,49 @@
    box-sizing: border-box;  
 }  
 
-
-body{
-  background:linear-gradient(225deg, #ffabab, #ffdaab, #ddffab, #abe4ff, #d9abff);
-}
-
-
+/*color*/
 a:hover{
-  color:#fff;
+  color:#999;
 }
 
-.footer-container a{
-  color:#fff !important;
-}
-a.navwork, .myname span{
-  color:rgb(2,30,170) !important;
-} 
-
-.navresume{
-color:#fff !important;
+.active, .myname span{
+  color:#000 !important;
 }
 
-.videowrapper a{
-  margin-top:5px !important;
-  float:right;
-  color:#E88400 !important;
+.navwork,.navresume {
+color:#999;
 }
 
 
 /*mobile
 ==============================================================
  */
+.canvas{
+  margin:20px 15px 20px;
+}
+
 
 .col-md-5{
   opacity: 0;
   transform: translateX(-25px);
   transition: all .5s ease-in;
- }
-
-.navbar-fixed {
-    top: 0 !important;
-    z-index: 100 !important;
-    position: fixed !important;
-    width: 100% !important;
 }
 
-
-
-.canvas{
-  margin:20px 30px 20px;
+.section-divider{
+  margin:50px 0 50px;
 }
 
-
-.spaceholder{
-  margin:30px;
+.space-divider{
+  margin:40px;
 }
+
+.mobile-space-divider{  
+  margin:20px;
+}  /*to-do*/
 
 /* header
 ============================================
 ============================================ */
-
-
-
 .myname{
   height:100px;
   padding:0;
@@ -77,7 +58,7 @@ color:#fff !important;
 }
 /* center */
 .myname span {
-  font-size:60px;
+  font-size:3.75rem;
   line-height:1;
   position: absolute;
   left: 0;
@@ -96,7 +77,7 @@ color:#fff !important;
 }
 /* center */
 .navname ul{
-  font-size:25px;
+  font-size:1.5rem;
   position: absolute;
   left: 0;
   bottom:0;
@@ -104,14 +85,14 @@ color:#fff !important;
   text-align: center;
 }
 
+li{
+    display: inline;
+}
+
 li a{
   padding-left:15px;
   padding-right:15px;
   line-height:1;
-}
-
-li{
-    display: inline;
 }
 
 ul{
@@ -124,23 +105,9 @@ ul.list-inline{
 }
 
 
-
-/*#F5264C*/
-
-.active{
-  color:rgb(2,117,216);;
-}
-
-.page-divider{
-  margin:45px 0;
-}
 /* project
 ============================================
 ============================================ */
-.project .col-md-6{
-  margin-bottom:5px;
-}
-
 
 img{
   /*center image*/
@@ -151,26 +118,6 @@ img{
   width: 100%;
   height: auto;
 }
-
-.caption {
-  text-align:center;
-  margin-top:10px;
-}
-.caption .projectname{
-  font-size: 25px;
-/*    color: #000;*/
-}
-
-.caption ul{
-  font-size: 22px;
-/*  color: #999;*/
-}
-
-.caption ul li{
-  margin:0 5px;
-  text-align:center;
-} 
-
 
 
 /*hover effect
@@ -198,7 +145,7 @@ img{
     -moz-transition: opacity 500ms;
     -o-transition: opacity 500ms;
     transition: opacity 500ms;
-    font-size:20px;
+    font-size:1.25rem;
     z-index: 20;
 }
 
@@ -222,47 +169,33 @@ img{
   text-align:justify；   
 }
 
-/*.maintext{
-  font-size:25px;
-}*/
 
 .title{
-  font-size:14px;
+  font-size:0.9rem;
   text-align:center;
 }
 
-/*.info{
-  margin:20px 0 30px !important;
-  color:#999 !important; 
-  font-size:20px;
-  text-align:center;
-  line-height:1.2;
-}*/ 
+
 
 .textblock{
   display:block;
   margin-top:10px;
-  font-size:14px;
-  color:#7F7F7F; !important;
+  font-size:0.75rem;
+  color:#000 !important;
 }
 
 
 /*show video*/
-.projectlink a, .textblock a{
- 
-  text-decoration: underline !important;
+
+.videowrapper a{
+  font-size: 0.7rem;
+  margin-top:5px !important;
+  float:right;
+  color:#000 !important;
 }
 
-.checkvideo{
-  font-size: 13px;
-}
-
-
-.checkvideo a{
-  color:rbg(2,30,170) !important;
-}
-.checkvideo:hover{
-  color:#000;
+.videowrapper:hover{
+  color:#999;
 }
 
 .overlay {
@@ -273,57 +206,54 @@ img{
   top: 0;
   left: 0;
   display: none;
-  z-index:200;    
+  z-index:100;    
 }
 
 .footer .row{
   text-align:center;  
-  margin-top:10px;
 }
 
 button{
 background-color: transparent;
 }
 
-button a{
-  color:#000;
-}
-
 .socialmedia {
    background-color:transparent;
-   font-size: 15px;
+   font-size: 0.9rem;
 } 
 
 .socialmedia .fa{
-  color: #fff;
+  color: #000;
 }
-/* desktop + ipad 
+/* 
+
+ipad 
 ==============================================================================================================
  */
 @media (min-width: 768px) {
 
 .canvas{
-  margin:20px 200px 20px;
+  margin:20px 25px 20px;
 }
 
 
 /*header*/
 .navname ul{
-  font-size:20px;
+  font-size:1.25rem;
 }
 
 .myname{
-  height:50px;
+  height:40px;
   padding:0;
 }
 
 .myname div{
   position:relative;
-  height:50px;
+  height:40px;
 }
 /* center */
 .myname span {
-  font-size:50px;
+  font-size:3.1rem;
   line-height:1;
   position: absolute;
   left: 0;
@@ -333,11 +263,11 @@ button a{
 }
 
 .navname{
-  height:50px;
+  height:40px;
 }
 
-.page-divider{
-  margin:30px 0;
+.section-divider{
+  margin:40px 0 40px;
 }
 
 
@@ -359,84 +289,66 @@ button a{
 
 
 .myname span {
-  font-size:45px;
+  font-size:2.8rem;
 }
 
 
-.spaceholder{
+.space-divider{
   margin:25px;
+}
+
+.mobile-space-divider{
+  margin:0px;
+}
+
+.navbar-fixed {
+  top: 0 !important;
+  z-index: 500 !important;
+  position: fixed !important;
+  width: 100% !important;
 }
 /*header*/
 
 /*introtext*/
 
 .maintext{
-  font-size:12px;
+  font-size:0.75rem;
 }
 
 .title{
-  font-size:14px;
+  font-size:0.875rem;
   margin-bottom: 0;
   text-align:center !important;
 }
-
-
-.client{
- /* margin:5px 0 !important;*/
-  color:#999 !important; 
-  font-size:15px;
-} 
-
-.title{
-  text-align:left;
-}
-
-.info{
-  text-align:left;
-} 
 
 .textblock{
   display:block;
   margin-top:5px;
 }
 
+
 /*video*/
-
-
-
 .videoiframe{
-    font-size: 10px;
+  font-size: 10px;
   display:block;
   width: 560px;
   height: 315px;
   margin: 50px auto;
-
 }
 
 .gameframe{
   display:block;
   width: 560px;
   height: 815px;
-  margin: 50px auto;
+  margin-top: 100px ;
   overflow: visible;
-/*  margin-right:5%;*/
 }
 
-.gameframe a{
-  color:rgb(2,30,170) !important;
-}
+
 
 /*project 
 ================================================================
 */
-.caption .projectname{
-  font-size: 20px;
-}
-
-.caption ul{
-  font-size: 13px;
-}
-
 /*  hover effect */
 
 .hovertextelevator, 
@@ -476,36 +388,26 @@ button a{
 }
 
 
-#elevator:hover .elevatorgif,
-#taobao:hover .taobaogif,
-#brainwave:hover .brainwavegif,
-#mindplus:hover .mindplusgif
-{
-    opacity: 1;
-}
-
-#elevatortext:hover .elevatorgif,
-#taobaotext:hover .taobaogif,
-#brainwavetext:hover .brainwavegif,
-#mindplustext:hover .mindplusgif
+#elevatorhover:hover .elevatorgif,
+#taobaohover:hover .taobaogif,
+#brainwavehover:hover .brainwavegif,
+#mindplushover:hover .mindplusgif
 {
     opacity: 1;
 }
 
 
-#elevator:hover .hovertextelevator,
-#taobao:hover .hovertexttaobao,
-#brainwave:hover .hovertextbrainwave,
-#mindplus:hover .hovertextmindplus
+#elevatorhover:hover .hovertextelevator,
+#taobaohover:hover .hovertexttaobao,
+#brainwavehover:hover .hovertextbrainwave,
+#mindplushover:hover .hovertextmindplus
 {
     opacity: 0.7;
 }
 
-
-
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
 .canvas{
   margin:60px 30px 40px;
 }
@@ -517,6 +419,6 @@ button a{
 .hovertextbrainwave,
 .hovertextmindplus
 {
-  font-size:15px;
+  font-size:0.9rem;
 }
 }

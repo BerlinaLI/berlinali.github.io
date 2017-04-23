@@ -1,30 +1,23 @@
 //nav active anchor
-
 $(document).ready(function() {
+  setTimeout(function(){
+    TweenMax.staggerTo(".col-md-5",.25, {'opacity': 1,  x: 0}, .25); 
+  }, 3000);
 
 
-
-    //TweenMax.staggerTo(".row:nth-child(1)",.25, {'opacity': 1,  x: 0}, .75); 
-
-  setTimeout(function(){ 
-     TweenMax.staggerTo(".col-md-5:nth-child(1)",.5, {'opacity': 1,  x: 0}, 1.5); 
-     TweenMax.staggerTo(".col-md-5:nth-child(2)",.5, {'opacity': 1,  x: 0}, 1.75); 
-  // $("#nav-container").load('https://berlinali.github.io/header/index.html');
-  },1500);
-  // setTimeout(function(){ 
-  //  	 $("a.navwork").addClass("active");
-  // 
 
   // $(window).scroll(function() {       
-  //   if ($(window).scrollTop() > 160) {
-  //     $('#nav-container').addClass('navbar-fixed');
-  //   }
-  //   else {
-  //     $('#nav-container').removeClass('navbar-fixed');
-  //   }
-  // });    
+  // if ($(window).scrollTop() > 260) {
+  //   $('#nav').addClass('navbar-fixed');
+  // }
+  // else {
+  //   $('#nav').removeClass('navbar-fixed');
+  // }
+ 
+
 
 });
+
 
 
 //pop up video 
@@ -69,28 +62,28 @@ $(document).ready(function() {
 
 
 /*game*/
-function playGame(){
-  var $overlay3 = $('<div class="overlay"></div>');
-  var $popup3 =  $('<div></div>');
-  var $content3 = $('<iframe class="gameframe" width="760" height="1200" src="https://berlinali.github.io/ibmcomputer/" frameborder="0" allowfullscreen></iframe>');
+// function playGame(){
+//   var $overlay3 = $('<div class="overlay"></div>');
+//   var $popup3 =  $('<div></div>');
+//   var $content3 = $('<iframe class="gameframe" width="760" height="1200" src="https://berlinali.github.io/ibmcomputer/" frameborder="0" allowfullscreen></iframe>');
 
-  $overlay3.append($popup3);
-  $popup3.append($content3);
-  $('body').append($overlay3);
+//   $overlay3.append($popup3);
+//   $popup3.append($content3);
+//   $('body').append($overlay3);
 
-  $overlay3.hide();
+//   $overlay3.hide();
 
-  $('#pop-it-game, #mindplus').click(function(){
-      $overlay3.show();  
-    });
-    $overlay3.click(function() {
-      $overlay3.hide();
-  });
-}
+//   $('#pop-it-game, #mindplus').click(function(){
+//       $overlay3.show();  
+//     });
+//     $overlay3.click(function() {
+//       $overlay3.hide();
+//   });
+// }
 
-$(document).ready(function() {
-   playGame();
-});
+// $(document).ready(function() {
+//    playGame();
+// });
 
 
 

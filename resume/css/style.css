@@ -1,60 +1,59 @@
+
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 *{
    font-family: 'Roboto Condensed', sans-serif;
+   box-sizing: border-box;  
 }  
 
-/*mobile
-==============================================================
- */
-
-
-body{
-  background:linear-gradient(225deg, #ffabab, #ffdaab, #ddffab, #abe4ff, #d9abff);
-}
-
-
-
+/*color*/
 a:hover{
   color:#999;
 }
 
-.footer-container a{
-  color:#fff !important;
-}
-.navresume, .myname span{
-  color:rgb(2,30,170) !important;
-} 
-
-.navwork{
-color:#fff !important;
+.active, .myname span{
+  color:#000 !important;
 }
 
-.resume, .introtext{
-  color:#7F7F7F;
+.navwork,.navresume {
+color:#999;
 }
 
-.col-md-5,.col-md-4,.col-md-6{
+
+/*mobile
+==============================================================
+ */
+ .col-md-5,.col-md-4,.col-md-6{
   opacity: 0;
   transform: translateX(-25px);
   transition: all .5s ease-in;
  }
 
-
 .canvas{
-  margin:20px 30px 20px;
+  margin:20px 15px 20px;
 }
 
 
-.spaceholder{
-  margin:30px;
+.col-md-5{
+  opacity: 0;
+  transform: translateX(-25px);
+  transition: all .5s ease-in;
 }
+
+.section-divider{
+  margin:50px 0 50px;
+}
+
+.space-divider{
+  margin:40px;
+}
+
+.mobile-space-divider{  
+  margin:20px;
+}  /*to-do*/
 
 /* header
 ============================================
 ============================================ */
-
-
-
 .myname{
   height:100px;
   padding:0;
@@ -66,7 +65,7 @@ color:#fff !important;
 }
 /* center */
 .myname span {
-  font-size:60px;
+  font-size:3.75rem;
   line-height:1;
   position: absolute;
   left: 0;
@@ -85,7 +84,7 @@ color:#fff !important;
 }
 /* center */
 .navname ul{
-  font-size:25px;
+  font-size:1.5rem;
   position: absolute;
   left: 0;
   bottom:0;
@@ -93,14 +92,14 @@ color:#fff !important;
   text-align: center;
 }
 
+li{
+    display: inline;
+}
+
 li a{
   padding-left:15px;
   padding-right:15px;
   line-height:1;
-}
-
-li{
-    display: inline;
 }
 
 ul{
@@ -114,15 +113,6 @@ ul.list-inline{
 
 
 
-/*#F5264C*/
-
-.active{
-  color:rgb(2,117,216);
-}
-
-.page-divider{
-  margin:45px 0;
-}
 
 /* intro 
 =========================================================
@@ -144,7 +134,7 @@ img{
 
 .introtext{
   line-height:1.5em;
-  font-size:14px;
+  font-size:0.75rem;
   text-align:justify；
 }
 .introtext .top-buffer{
@@ -161,18 +151,9 @@ img{
 
 .time{
   color: #999;
-  font-size:12px;
+  font-size:0.7rem;
 }
 
-/* footer */
-/*.footer .row{
-  text-align:center;  
-  margin-top:10px;
-}
-
-.socialmedia {
-   background-color:#fff ;
-} */
 
 .footer .row{
   text-align:center;  
@@ -183,17 +164,21 @@ button{
 background-color: transparent;
 }
 
-/*button a{
-  color:#000;
-}*/
+.footer .row{
+  text-align:center;  
+}
+
+button{
+background-color: transparent;
+}
 
 .socialmedia {
    background-color:transparent;
-   font-size: 15px;
+   font-size: 0.9rem;
 } 
 
 .socialmedia .fa{
-  color: #fff;
+  color: #000;
 }
 
 @media (min-width: 768px) {
@@ -266,8 +251,48 @@ background-color: transparent;
   margin:25px;
 }
 /*header*/
+@media (min-width: 768px) {
 
-/*
+.canvas{
+  margin:20px 25px 20px;
+}
+
+
+/*header*/
+.navname ul{
+  font-size:1.25rem;
+}
+
+.myname{
+  height:40px;
+  padding:0;
+}
+
+.myname div{
+  position:relative;
+  height:40px;
+}
+/* center */
+.myname span {
+  font-size:3.1rem;
+  line-height:1;
+  position: absolute;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  text-align: center;
+}
+
+.navname{
+  height:40px;
+}
+
+.section-divider{
+  margin:40px 0 40px;
+}
+
+
+/* left */
 .myname span{
   position:absolute;
   bottom:0;
@@ -275,6 +300,7 @@ background-color: transparent;
   text-align:left;
 }
   
+/* right */
 .navname ul{
   position:absolute;
   bottom:0;
@@ -283,18 +309,27 @@ background-color: transparent;
 }
 
 
-.navname{
-  height:100px;
+.myname span {
+  font-size:2.8rem;
 }
 
-.navname div{
-  height:100px;
+
+.space-divider{
+  margin:25px;
 }
 
-.page-divider{
-  margin:80px 0;
+.mobile-space-divider{
+  margin:0px;
 }
- */
+
+.navbar-fixed {
+  top: 0 !important;
+  z-index: 500 !important;
+  position: fixed !important;
+  width: 100% !important;
+}
+
+
 /* project */
 img{
   width:75%;
@@ -325,14 +360,12 @@ h4.time{
 
 }
 
-@media (min-width: 992px) {
+
+@media (min-width: 1200px) {
 .canvas{
   margin:60px 30px 40px;
 }
 
 
-.page-divider{
-  margin:60px 0;
-}
 }
 

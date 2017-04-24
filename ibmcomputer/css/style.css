@@ -1,15 +1,21 @@
-body{
+.main-content{
+  width:560px;
+  height:815px;
   background-color:transparent;  
 }
 
 #computer{
   position:relative;
   pointer-events: none;
+  /*center image*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 #gameinterface{
   position:absolute;
-  left:60px;
+  left:160px;
   top:30px;
 }
 

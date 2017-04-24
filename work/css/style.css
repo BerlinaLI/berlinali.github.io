@@ -137,7 +137,7 @@ img{
     left: 0px;
     right: 0px;
     padding: 2px 0px;
-    color:rgb(2,30,170);
+    color:#000;
     background: #fff;
     text-decoration: none;
     text-align: center;
@@ -362,7 +362,7 @@ ipad
     left: 0px;
     right: 0px;
     padding: 2px 0px;
-    color:rgb(2,30,170);
+    color:#000;
     background: #fff;
     text-decoration: none;
     text-align: center;
@@ -409,10 +409,8 @@ ipad
 
 @media (min-width: 1200px) {
 .canvas{
-  margin:60px 30px 40px;
+  margin:100px 30px 40px;
 }
-
-
 
 .hovertextelevator, 
 .hovertexttaobao,

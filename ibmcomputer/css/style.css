@@ -1,7 +1,7 @@
 .main-content{
-  width:560px;
-  height:815px;
-  background-color:transparent;  
+  width:350px;
+  height:440px;
+  background-color:red;  
   overflow:visible;
 }
 
@@ -16,7 +16,7 @@
 
 #gameinterface{
   position:absolute;
-  left:160px;
+  left:55px;
   top:30px;
 }
 

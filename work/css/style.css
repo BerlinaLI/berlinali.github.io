@@ -214,9 +214,20 @@ img{
   display:block;
   width:350px;
   height: 200px;
-  margin: 50px auto;
+  margin: 15% auto;
 }
 
+.fa-close{
+  position:fixed;
+  top:3%;
+  left:90%;
+  color:#fff;
+  z-index:101;
+}
+
+.deleteIcon{
+  font-size:1.5rem;
+}
 
 /*footer*/
 .footer .row{
@@ -343,7 +354,7 @@ ipad
   display:block;
   width: 560px;
   height: 315px;
-  margin: 50px auto;
+  margin: 10% auto;
 }
 
 .gameframe{

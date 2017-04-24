@@ -124,6 +124,7 @@ img{
 ==============================================================*/
 .imageWrapper {
   position: relative;
+  cursor:pointer;
 }
 
 .hovertextelevator, 
@@ -160,6 +161,15 @@ img{
     left: 0px;
     right: 0px;
     z-index: 10;
+}
+
+
+#elevatorhover:hover .elevatorgif,
+#taobaohover:hover .taobaogif,
+#brainwavehover:hover .brainwavegif,
+#mindplushover:hover .mindplusgif
+{
+    opacity: 1;
 }
 
 
@@ -370,7 +380,6 @@ ipad
 }
 
 
-
 /*project 
 ================================================================
 */
@@ -421,14 +430,6 @@ ipad
     opacity: 1;
 }
 
-
-#elevatorhover:hover .hovertextelevator,
-#taobaohover:hover .hovertexttaobao,
-#brainwavehover:hover .hovertextbrainwave,
-#mindplushover:hover .hovertextmindplus
-{
-    opacity: 0.7;
-}
 
 }
 

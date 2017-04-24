@@ -71,17 +71,17 @@ $('body').append($overlay);
 
 $(document).ready(function() {
   //open pop-up windows
-  $('#pop-it-elevator, #elevator').click(function(){
+  $('#pop-it-elevator').click(function(){
     $(".videoiframe").attr("src",elevatorVideo);
     $overlay.show();  
   });
 
-  $('#pop-it-bot, #taobao').click(function(){
+  $('#pop-it-bot').click(function(){
     $(".videoiframe").attr("src",taobaoVideo);
     $overlay.show();  
   });
   
-  $('#pop-it-game, #mindplus').click(function(){
+  $('#pop-it-game').click(function(){
     $(".videoiframe").attr("src",gameLink);
     $(".videoiframe").css({"width":"380px","height":"520px","overflow":"visible", "margin":"5% auto"});
       //  $(".videoiframe").css({"width":"450px","height":"650px","overflow":"visible", "margin":"10% auto"});

@@ -2,6 +2,7 @@
   width:560px;
   height:815px;
   background-color:transparent;  
+  overflow:visible;
 }
 
 #computer{

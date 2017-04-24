@@ -355,6 +355,7 @@ ipad
   width: 560px;
   height: 315px;
   margin: 10% auto;
+  overflow:visible;
 }
 
 .gameframe{

@@ -83,7 +83,8 @@ $(document).ready(function() {
   
   $('#pop-it-game, #mindplus').click(function(){
     $(".videoiframe").attr("src",gameLink);
-    $(".videoiframe").css({"width":"560px","height":"815px","overflow":"visible"});
+    $(".videoiframe").css({"width":"380px","height":"520px","overflow":"visible", "margin":"5% auto"});
+      //  $(".videoiframe").css({"width":"450px","height":"650px","overflow":"visible", "margin":"10% auto"});
     $overlay.show();  
   });
 
@@ -91,7 +92,7 @@ $(document).ready(function() {
   $overlay.click(function() {
     $overlay.hide();
     $(".videoiframe").attr("src","");
-    $(".videoiframe").css({"width":"","height":"","overflow":""});
+    $(".videoiframe").css({"width":"","height":"","overflow":"","margin":""});
   });
 });
 

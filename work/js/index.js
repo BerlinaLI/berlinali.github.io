@@ -4,7 +4,7 @@ $(document).ready(function() {
     TweenMax.staggerTo(".col-md-5",.25, {'opacity': 1,  x: 0}, .25); 
   }, 3000);
 
-
+//to-do
   // $(window).scroll(function() {       
   // if ($(window).scrollTop() > 260) {
   //   $('#nav').addClass('navbar-fixed');
@@ -12,81 +12,45 @@ $(document).ready(function() {
   // else {
   //   $('#nav').removeClass('navbar-fixed');
   // }
- 
 
 });
 
 
+var $overlay = $('<div class="overlay"></div>');
+var $popup =  $('<div></div>');
+var $content = $('<iframe class="videoiframe"  src="" frameborder="0" allowfullscreen></iframe>');
+var elevatorVideo="https://www.youtube.com/embed/WIFG6bIdo7Q";
+var taobaoVideo ="https://www.youtube.com/embed/fiJgCSeNmD4";
+var gameLink= "https://berlinali.github.io/ibmcomputer/";
 
-//pop up video 
-var $overlay1 = $('<div class="overlay"></div>');
-var $popup1 =  $('<div></div>');
-var $content1 = $('<iframe class="videoiframe" src="https://www.youtube.com/embed/WIFG6bIdo7Q" frameborder="0" allowfullscreen></iframe>');
-
-$overlay1.append($popup1);
-$popup1.append($content1);
-$('body').append($overlay1);
-
-$overlay1.hide();
+$overlay.append($popup);
+$popup.append($content);
+$('body').append($overlay);
 
 $(document).ready(function() {
+  //open pop-up windows
     $('#pop-it-elevator, #elevator').click(function(){
-      console.log(screen.width);
-      $overlay1.show();  
+      $(".videoiframe").attr("src",elevatorVideo);
+      $overlay.show();  
     });
-    $overlay1.click(function() {
-      $overlay1.hide();
-    });
-});
 
-// pop-it-bot
-var $overlay2 = $('<div class="overlay"></div>');
-var $popup2 =  $('<div></div>');
-var $content2 = $('<iframe class="videoiframe"  src="https://www.youtube.com/embed/fiJgCSeNmD4" frameborder="0" allowfullscreen></iframe>');
-// width="560" height="315"
-$overlay2.append($popup2);
-$popup2.append($content2);
-$('body').append($overlay2);
-
-$overlay2.hide();
-
-$(document).ready(function() {
     $('#pop-it-bot, #taobao').click(function(){
-      $overlay2.show();  
+      $(".videoiframe").attr("src",taobaoVideo);
+      $overlay.show();  
     });
-    $overlay2.click(function() {
-      $overlay2.hide();
+    
+    $('#pop-it-game, #mindplus').click(function(){
+      $(".videoiframe").attr("src",gameLink);
+      $(".videoiframe").css({"width":"560px","height":"815px","overflow":"visible"});
+      $overlay.show();  
+    });
+
+  //close pop-up windows
+    $overlay.click(function() {
+      $overlay.hide();
+      $(".videoiframe").attr("src","");
+      $(".videoiframe").css({"width":"560px","height":"315px","overflow":"visible"});
     });
 });
-
-
-/*game*/
-
-function playGame(){
-  var $overlay3 = $('<div class="overlay"></div>');
-  var $popup3 =  $('<div></div>');
-  var $content3 = $('<iframe class="gameframe" width="760" height="1200" src="https://berlinali.github.io/ibmcomputer/" frameborder="0" allowfullscreen></iframe>');
-
-
-  $overlay3.append($popup3);
-  $popup3.append($content3);
-  $('body').append($overlay3);
-
-  $overlay3.hide();
-
-  $('#pop-it-game, #mindplus').click(function(){
-      $overlay3.show();  
-    });
-    $overlay3.click(function() {
-      $overlay3.hide();
-  });
-}
-
-$(document).ready(function() {
-   playGame();
-});
-
-
-
 
 

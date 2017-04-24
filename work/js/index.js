@@ -5,7 +5,6 @@ $(document).ready(function() {
   }, 3000);
 
 
-
   // $(window).scroll(function() {       
   // if ($(window).scrollTop() > 260) {
   //   $('#nav').addClass('navbar-fixed');
@@ -15,7 +14,6 @@ $(document).ready(function() {
   // }
  
 
-
 });
 
 
@@ -23,7 +21,7 @@ $(document).ready(function() {
 //pop up video 
 var $overlay1 = $('<div class="overlay"></div>');
 var $popup1 =  $('<div></div>');
-var $content1 = $('<iframe class="videoiframe" width="560" height="315" src="https://www.youtube.com/embed/WIFG6bIdo7Q" frameborder="0" allowfullscreen></iframe>');
+var $content1 = $('<iframe class="videoiframe" src="https://www.youtube.com/embed/WIFG6bIdo7Q" frameborder="0" allowfullscreen></iframe>');
 
 $overlay1.append($popup1);
 $popup1.append($content1);
@@ -33,6 +31,7 @@ $overlay1.hide();
 
 $(document).ready(function() {
     $('#pop-it-elevator, #elevator').click(function(){
+      console.log(screen.width);
       $overlay1.show();  
     });
     $overlay1.click(function() {
@@ -43,8 +42,8 @@ $(document).ready(function() {
 // pop-it-bot
 var $overlay2 = $('<div class="overlay"></div>');
 var $popup2 =  $('<div></div>');
-var $content2 = $('<iframe class="videoiframe" width="560" height="315" src="https://www.youtube.com/embed/fiJgCSeNmD4" frameborder="0" allowfullscreen></iframe>');
-
+var $content2 = $('<iframe class="videoiframe"  src="https://www.youtube.com/embed/fiJgCSeNmD4" frameborder="0" allowfullscreen></iframe>');
+// width="560" height="315"
 $overlay2.append($popup2);
 $popup2.append($content2);
 $('body').append($overlay2);
@@ -62,28 +61,30 @@ $(document).ready(function() {
 
 
 /*game*/
-// function playGame(){
-//   var $overlay3 = $('<div class="overlay"></div>');
-//   var $popup3 =  $('<div></div>');
-//   var $content3 = $('<iframe class="gameframe" width="760" height="1200" src="https://berlinali.github.io/ibmcomputer/" frameborder="0" allowfullscreen></iframe>');
 
-//   $overlay3.append($popup3);
-//   $popup3.append($content3);
-//   $('body').append($overlay3);
+function playGame(){
+  var $overlay3 = $('<div class="overlay"></div>');
+  var $popup3 =  $('<div></div>');
+  var $content3 = $('<iframe class="gameframe" width="760" height="1200" src="https://berlinali.github.io/ibmcomputer/" frameborder="0" allowfullscreen></iframe>');
 
-//   $overlay3.hide();
 
-//   $('#pop-it-game, #mindplus').click(function(){
-//       $overlay3.show();  
-//     });
-//     $overlay3.click(function() {
-//       $overlay3.hide();
-//   });
-// }
+  $overlay3.append($popup3);
+  $popup3.append($content3);
+  $('body').append($overlay3);
 
-// $(document).ready(function() {
-//    playGame();
-// });
+  $overlay3.hide();
+
+  $('#pop-it-game, #mindplus').click(function(){
+      $overlay3.show();  
+    });
+    $overlay3.click(function() {
+      $overlay3.hide();
+  });
+}
+
+$(document).ready(function() {
+   playGame();
+});
 
 
 

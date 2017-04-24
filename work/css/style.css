@@ -209,6 +209,16 @@ img{
   z-index:100;    
 }
 
+.videoiframe{
+  font-size: 10px;
+  display:block;
+  width:350px;
+  height: 200px;
+  margin: 50px auto;
+}
+
+
+/*footer*/
 .footer .row{
   text-align:center;  
 }
@@ -340,7 +350,10 @@ ipad
   display:block;
   width: 560px;
   height: 815px;
-  margin-top: 100px ;
+  margin: 100px auto 100px;
+/*  position:absolute;*/
+/*  margin-top: 100px;
+  left:55%;*/
   overflow: visible;
 }
 

@@ -181,7 +181,7 @@ background-color: transparent;
   color: #000;
 }
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
 .canvas{
   margin:100px 30px 40px;
 }
@@ -191,7 +191,6 @@ background-color: transparent;
 }
 
 
-/*header*/
 .navname ul{
   font-size:20px;
 }
@@ -205,7 +204,7 @@ background-color: transparent;
   position:relative;
   height:50px;
 }
-/* center */
+
 .myname span {
   font-size:50px;
   line-height:1;
@@ -224,16 +223,13 @@ background-color: transparent;
   margin:30px 0;
 }
 
-
-/* left */
 .myname span{
   position:absolute;
   bottom:0;
   left:0; 
   text-align:left;
 }
-  
-/* right */
+
 .navname ul{
   position:absolute;
   bottom:0;
@@ -249,8 +245,9 @@ background-color: transparent;
 
 .spaceholder{
   margin:25px;
-}
+}*/
 /*header*/
+
 @media (min-width: 768px) {
 
 .canvas{
@@ -363,9 +360,8 @@ h4.time{
 
 @media (min-width: 1200px) {
 .canvas{
-  margin:60px 30px 40px;
+  margin:100px 30px 40px;
 }
-
 
 }
 

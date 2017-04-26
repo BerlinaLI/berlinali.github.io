@@ -251,9 +251,8 @@ background-color: transparent;
 @media (min-width: 768px) {
 
 .canvas{
-  margin:20px 25px 20px;
+  margin:60px 25px 20px;
 }
-
 
 /*header*/
 .navname ul{

@@ -21,20 +21,35 @@
 <div class="container">
   <div class="canvas">
 
-     <div class="row nav" id="nav">
-      <div class="col-xs-12 col-md-5 offset-md-1 myname">
+ <!--    desktop nav -->
+    <div class="row desktop-nav" id="nav">
+      <div class="col-xs-12 col-md-5 offset-md-1 myname desktop-nav">
          <div><span><strong>Berlina Li</strong></span></div>
       </div> 
-      <div class="col-xs-12 col-md-5 navname">
-  <!--         <div><span>Two Words</span></div> -->
-        <ul class="list-inline "> 
+      <div class="col-xs-12 col-md-5 navname desktop-nav">
+        <ul class="list-inline"> 
           <li><a href="http://berlinali.github.io/work" class="navwork">Work</a></li>
-          <li><a href="http://berlinali.github.io/resume" class="navresume active">About Me</a></li>
-           
+          <li><a href="http://berlinali.github.io/resume" class="navresume active">About Me</a></li>          
         </ul>
       </div>
     </div><!--row -->
-    
+
+  <!--  mobile nav -->  
+    <nav class="centered-navigation group mobile-nav">  
+
+      <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+        <li class="nav-link"><a href="https://berlinali.github.io/work/">Work</a></li>
+        <li class="nav-link active"><a href="https://berlinali.github.io/resume/">About Me</a></li>
+      </ul>
+
+      <div id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</div>   
+
+      <div class="col-xs-12 myname-mobile">
+         <div><span><strong>Berlina Li</strong></span></div>
+      </div> 
+
+    </nav>
+  
     <div class="section-divider"></div>
 <!--  intro
 =====================================================================================
@@ -43,13 +58,15 @@
       <div class="row">
         <div class="col-md-4 offset-md-1 col-xs-12" >
           <img class="image-responsive center-block img-circle" src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/profilepic.jpg" alt="profile pic"> 
+         <!--  <canvas id="myCanvas"></canvas>
+ -->
         </div>
 
         <div class="col-md-6 col-xs-12">
         <!--   <h3 class="introtext">I am a front-end artist based in Shanghai. My work focuses on web interaction  with <strong>Javascript (esp H5 & p5.js)</strong> and hardware interaction with <strong>Arduino</strong>. </br><div class="top-buffer">
       Send an email to <span class="underline">berlina.lili(at)gmail(dot)com</span></a> and say hi if you are interested in my work. </br></br> -->
 
-        <h3 class="introtext">我是一位生活在上海的前端程序员，擅长网页交互和可视化编程，特别是可视化软件processing和canvas API。 早年运营开源社区的经验，让我对网页和物理空间的互动尤为关注，尤其是手机浏览器。出于对艺术的兴趣，我也为艺术家合作提供技术支持。如有合作需求，欢迎邮件联系<span class="underline">berlina.lili(at)gmail(dot)com</span>
+        <h3 class="introtext">我是一位生活在上海的前端程序员，擅长网页交互和可视化编程，包括Javascript/HTML/CSS, 特别是可视化软件processing和canvas API。 早年运营开源社区的经验，让我对网页和物理空间的互动尤为关注，尤其是手机浏览器。如有合作意向，欢迎邮件联系<span class="underline">berlina.lili(at)gmail(dot)com</span>
         </br></br>
         <!-- I am a front-end artist based in Shanghai. My work focuses on web interaction  with <strong>Javascript (esp H5 & p5.js)</strong> and hardware interaction with <strong>Arduino</strong>. </br><div class="top-buffer">
             Send an email to <span class="underline">berlina.lili(at)gmail(dot)com</span></a> and say hi if you are interested in my work. </br></br> -->
@@ -101,6 +118,9 @@
     </div> <!-- intro -->
       
     <div class="space-divider"></div> 
+
+    <div class="footer-divider"></div>  
+    
 <!-- footer -->
     <div class="footer">
       <div class="row">

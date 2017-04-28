@@ -1,59 +1,4 @@
-//nav active anchor
-$(document).ready(function() {
-  setTimeout(function(){
-    TweenMax.staggerTo(".col-md-5",.25, {'opacity': 1,  x: 0}, .25); 
-  }, 3000);
-
-//to-do
-  // $(window).scroll(function() {       
-  // if ($(window).scrollTop() > 260) {
-  //   $('#nav').addClass('navbar-fixed');
-  // }
-  // else {
-  //   $('#nav').removeClass('navbar-fixed');
-  // }
-
-});
-
-//pop-up windows when click video/game 
-// var $overlay = $('<div class="overlay"></div>');
-// var $popup =  $('<div></div>');
-// var $content = $('<iframe class="videoiframe"  src="" frameborder="0" allowfullscreen></iframe>');
-// var elevatorVideo="https://www.youtube.com/embed/WIFG6bIdo7Q";
-// var taobaoVideo ="https://www.youtube.com/embed/fiJgCSeNmD4";
-// var gameLink= "https://berlinali.github.io/ibmcomputer/";
-
-// $overlay.append($popup);
-// $popup.append($content);
-// $('body').append($overlay);
-
-// $(document).ready(function() {
-//   //open pop-up windows
-//   $('#pop-it-elevator, #elevator').click(function(){
-//     $(".videoiframe").attr("src",elevatorVideo);
-//     $overlay.show();  
-//   });
-
-//   $('#pop-it-bot, #taobao').click(function(){
-//     $(".videoiframe").attr("src",taobaoVideo);
-//     $overlay.show();  
-//   });
-  
-//   $('#pop-it-game, #mindplus').click(function(){
-//     $(".videoiframe").attr("src",gameLink);
-//     $(".videoiframe").css({"width":"560px","height":"815px","overflow":"visible"});
-//     $overlay.show();  
-//   });
-
-// //close pop-up windows
-//   $overlay.click(function() {
-//     $overlay.hide();
-//     $(".videoiframe").attr("src","");
-//     $(".videoiframe").css({"width":"560px","height":"315px","overflow":"visible"});
-//   });
-// });
-
-
+//overlay play game/video 
 var $overlay = $('<div class="overlay"></div>');
 var $popup =  $('<div></div>');
 var $content = $('<iframe class="videoiframe"  src="" frameborder="0" allowfullscreen></iframe>');
@@ -69,7 +14,14 @@ $popup.append($content);
 $popup.append($deleteIcon);
 $('body').append($overlay);
 
+
 $(document).ready(function() {
+
+  //animation when opens page
+  setTimeout(function(){
+    TweenMax.staggerTo([".centered-navigation-mobile-menu", ".nav-link", ".myname-mobile",".col-md-5",".col-md-12",".col-xs-12"], 0.25, {'opacity': 1,  x: 0}, .25);  
+  }, 1000);
+
   //open pop-up windows
   $('#pop-it-elevator').click(function(){
     $(".videoiframe").attr("src",elevatorVideo);
@@ -84,7 +36,6 @@ $(document).ready(function() {
   $('#pop-it-game').click(function(){
     $(".videoiframe").attr("src",gameLink);
     $(".videoiframe").css({"width":"380px","height":"520px","overflow":"visible", "margin":"5% auto"});
-      //  $(".videoiframe").css({"width":"450px","height":"650px","overflow":"visible", "margin":"10% auto"});
     $overlay.show();  
   });
 
@@ -94,6 +45,33 @@ $(document).ready(function() {
     $(".videoiframe").attr("src","");
     $(".videoiframe").css({"width":"","height":"","overflow":"","margin":""});
   });
+
+
+  //mobile-menu-toggle
+  var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
+  $('#js-centered-navigation-menu').removeClass("show");
+  
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-centered-navigation-menu').slideToggle(function(){
+      if($('#js-centered-navigation-menu').is(':hidden')) {
+        $('#js-centered-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
 });
 
 
+
+
+
+
+//to-do
+  // $(window).scroll(function() {       
+  // if ($(window).scrollTop() > 260) {
+  //   $('#nav').addClass('navbar-fixed');
+  // }
+  // else {
+  //   $('#nav').removeClass('navbar-fixed');
+  // }

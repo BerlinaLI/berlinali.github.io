@@ -22,17 +22,34 @@
 <div class="container">
   <div class="canvas">
       
-    <div class="row nav" id="nav">
-      <div class="col-xs-12 col-md-5 offset-md-1 myname">
+ <!--    desktop nav -->
+    <div class="row desktop-nav" id="nav">
+      <div class="col-xs-12 col-md-5 offset-md-1 myname desktop-nav">
          <div><span><strong>Berlina Li</strong></span></div>
       </div> 
-      <div class="col-xs-12 col-md-5 navname">
-        <ul class="list-inline "> 
-          <li><a href="http://berlinali.github.io/work" class="navwork active">Work</a></li>
-          <li><a href="http://berlinali.github.io/resume" class="navresume">About Me</a></li>          
+      <div class="col-xs-12 col-md-5 navname desktop-nav">
+        <ul class="list-inline"> 
+          <li><a href="http://berlinali.github.io/work" class="navwork">Work</a></li>
+          <li><a href="http://berlinali.github.io/resume" class="navresume active">About Me</a></li>          
         </ul>
       </div>
     </div><!--row -->
+
+  <!--  mobile nav -->  
+    <nav class="centered-navigation group mobile-nav">  
+
+      <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+        <li class="nav-link"><a href="https://berlinali.github.io/work/">Work</a></li>
+        <li class="nav-link active"><a href="https://berlinali.github.io/resume/">About Me</a></li>
+      </ul>
+
+      <div id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</div>   
+
+      <div class="col-xs-12 myname-mobile">
+         <div><span><strong>Berlina Li</strong></span></div>
+      </div> 
+
+    </nav>
     
     <div class="section-divider"></div>
 
@@ -112,7 +129,7 @@
             <p class="maintext">
               <span class="textblock"> 
               <!-- Have you thought about the length of your social media? It is 30 m2 for the author's wechat moment.   -->
-              该作品受艺术家shawn委托开发。出于建筑师背景，shawn选择用米来衡量朋友圈的长度。通过手机传感器数据与楼层高度和运动趋势的匹配，让长达30米的朋友圈图像跟随楼层高度自动滚动，成为一个时刻在于环境交互的社交媒体。  
+              该作品受艺术家shaw委托开发。出于建筑师背景，shaw选择用米来衡量朋友圈的长度。通过手机传感器数据与楼层高度和运动趋势的匹配，让长达30米的朋友圈图像跟随楼层高度自动滚动，成为一个时刻在于环境交互的社交媒体。  
               </span>
 
               <!--   In order to display this full image, we placed a  mobile phone which scroll it automatically corresponding to the moment of the elevator. Thus audience would have a brand new experience to check out  social media.  -->
@@ -155,7 +172,7 @@
     </div> <!-- project -->
 
 
-    <div class="section-divider"></div>  
+    <div class="footer-divider"></div>  
   
     
 <!--=============footer========================-->       

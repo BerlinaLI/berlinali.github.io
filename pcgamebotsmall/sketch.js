@@ -423,7 +423,7 @@ function MicBall(){
 		
 		if(frame2 > 60){
 			this.vol = mic.getLevel();
-			this.volSpeed = map(this.vol,0,0.6,0,height);
+			this.volSpeed = map(this.vol,0,0.3,0,height);
 			this.totalSpeed = this.speed - this.volSpeed/20;
 			this.y += this.totalSpeed;
 		}

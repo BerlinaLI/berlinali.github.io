@@ -105,7 +105,7 @@ function shakeCanvas(){
 function drawIntro(){
 	beginText();
 	timer1 = millis();
-	if(keyIsPressed || touchIsDown){
+	if(mouseIsPressed || touchIsDown){
 		state = 0.5;
 	}
 	frameIntro = frameCount;
@@ -182,7 +182,7 @@ function loseGame(){
 	loseText();
   // loseSound.play();
 	timer3 = millis();
-	if(keyIsPressed || touchIsDown){
+	if(mouseIsPressed || touchIsDown){
 		state = 4;
 	}
 }
@@ -192,7 +192,7 @@ function winGame(){
 	winText();
   // winSound.play();
 	timer3 = millis();
-	if(keyIsPressed || touchIsDown){
+	if(mouseIsPressed || touchIsDown){
 		state = 4;
 	}
 }
@@ -202,12 +202,12 @@ function beginText(){
 	stroke(0);
 	strokeWeight(9/n);
 	textSize(40/n);
-	text("Sound Reactive Mini Game",width/2,height/3);
+	text("Sound Reactive Flappy Bird",width/2,height/3);
 	strokeWeight(3);
 	textSize(30/n);
 	if(frameCount % 60 < 45){
 		// text("Press any key to play!",0,200/n,width,height-200/n);
-			text("*** CLICK ON ME! ***\n\n Press any key to play!",width/2, height/3+75);
+			text("*** Double Click to Start! ***",width/2, height/3+100);
 	}
 	// textStyle(NORMAL);
 	// textSize(25/n);
@@ -261,7 +261,7 @@ function loseText(){
 	textSize(30/n);
 	strokeWeight(6/n);
 	if(frameCount % 60 < 45){
-		text( "Press any key to play again !",width/2,height/4*3);
+		text( "Click the screen to play again !",width/2,height/4*3);
 	}
 }
 
@@ -276,7 +276,7 @@ function winText(){
 	textSize(30/n);
 	strokeWeight(3/n);
 	if(frameCount % 60 < 45){
-		text("Press any key to play again !",0,0,width,height+100);
+		text("Click the screen to play again !",0,0,width,height+100);
 	}
 }
 

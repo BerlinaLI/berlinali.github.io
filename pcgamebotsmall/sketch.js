@@ -105,7 +105,7 @@ function shakeCanvas(){
 function drawIntro(){
 	beginText();
 	timer1 = millis();
-	if(keyIsPressed){
+	if(keyIsPressed || touchIsDown){
 		state = 0.5;
 	}
 	frameIntro = frameCount;
@@ -182,7 +182,7 @@ function loseGame(){
 	loseText();
   // loseSound.play();
 	timer3 = millis();
-	if(keyIsPressed){
+	if(keyIsPressed || touchIsDown){
 		state = 4;
 	}
 }
@@ -192,7 +192,7 @@ function winGame(){
 	winText();
   // winSound.play();
 	timer3 = millis();
-	if(keyIsPressed){
+	if(keyIsPressed || touchIsDown){
 		state = 4;
 	}
 }

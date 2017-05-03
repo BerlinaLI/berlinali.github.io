@@ -27,7 +27,7 @@ $('body').append($overlay);
   var $ul=$('<ul></ul>');
   //var $slidesimage=$('<li><img src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/brainwave/brainwave_500x300.jpg"></li>'+ '<li>SLIDE 2</li>'+ '<li>SLIDE 3</li>');
   var $slidesimage=$('<li><img src='+image1+'></li>'+'<li><img src='+image2+'></li>'+'<li><img src='+image3+'></li>'+'<li><img src='+image4+'></li>');
-  //var $deleteIcon = $('<div class="deleteIcon"><i class="fa fa-close"></i></div>');
+  var $deleteIcon = $('<div class="deleteIcon"><i class="fa fa-close"></i></div>');
 
   $slider.append($arrowleft);
   $slider.append($arrowright);
@@ -65,14 +65,14 @@ $(document).ready(function() {
 
 
   //pop-up overlay element
-  $('#pop-it-bot').click(function(){
-    $(".videoiframe").attr("src",taobaoVideo);
+  $('#pop-it-game').click(function(){
+    $(".videoiframe").attr("src",gameLink);
+    $(".videoiframe").css({"width":"380px","height":"520px","overflow":"visible", "margin":"5% auto"});
     $overlay.show();  
   });
-  
-  // $('#pop-it-game').click(function(){
-  //   $(".videoiframe").attr("src",gameLink);
-  //   $(".videoiframe").css({"width":"380px","height":"520px","overflow":"visible", "margin":"5% auto"});
+
+  // $('#pop-it-bot').click(function(){
+  //   $(".videoiframe").attr("src",taobaoVideo);
   //   $overlay.show();  
   // });
 

@@ -209,7 +209,8 @@ img{
 #elevatorhover:hover .elevatorgif,
 #taobaohover:hover .taobaogif,
 #brainwavehover:hover .brainwavegif,
-#mindplushover:hover .mindplusgif
+#mindplushover:hover .mindplusgif,
+
 {
     opacity: 1;
 }
@@ -270,6 +271,8 @@ img{
   width:350px;
   height: 200px;
   margin: 30% auto;
+  position:absolute;
+  top:15%;
 }
 
 .fa-close{
@@ -308,6 +311,7 @@ background-color: transparent;
   overflow: hidden;
   margin: 30% auto;
   border-radius: 4px;
+  top:15%;
 }
 
 #slider ul {
@@ -502,13 +506,13 @@ ipad
   overflow:visible;
 }
 
-.gameframe{
+/*.gameframe{
   display:block;
   width: 560px;
   height: 815px;
   margin: 50px auto 100px;
   overflow: visible;
-}
+}*/
 
 
 /*project 

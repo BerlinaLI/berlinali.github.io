@@ -209,8 +209,7 @@ img{
 #elevatorhover:hover .elevatorgif,
 #taobaohover:hover .taobaogif,
 #brainwavehover:hover .brainwavegif,
-#mindplushover:hover .mindplusgif,
-
+#mindplushover:hover .mindplusgif
 {
     opacity: 1;
 }

@@ -20,8 +20,14 @@
 <body>
 <div class="container">
   <div class="canvas">
+    <!--language-toggle -->
+<!--     <div class="row">
+      <div class="col-sm-10 offset-sm-1 col-md-10 offset-md-1 language-toggle" id="desktop-language-toggle">
+        <span id="switch-en">EN</span> / <span id="switch-cn">中文</span>
+      </div>
+    </div> -->
 
- <!--    desktop nav -->
+    <!--desktop nav -->
     <div class="row desktop-nav" id="nav">
       <div class="col-xs-12 col-md-5 offset-md-1 myname desktop-nav">
          <div><span><strong>Berlina Li</strong></span></div>
@@ -38,14 +44,20 @@
     <nav class="centered-navigation group mobile-nav">  
 
       <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
-        <li class="nav-link"><a href="https://berlinali.github.io/work/">Work</a></li>
-        <li class="nav-link active"><a href="https://berlinali.github.io/resume/">About Me</a></li>
+        <li class="nav-link"><a href="https://berlinali.github.io/work/"><!-- <i class="fa fa-code" aria-hidden="true"></i> -->过往项目</a></li>
+        
+        <li class="nav-link active"><a href="https://berlinali.github.io/resume/"><!-- <i class="fa fa-id-card-o" aria-hidden="true"></i> -->关于我</a></li>  
       </ul>
 
-      <div id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</div>   
+      <div class="centered-navigation-mobile-menu">
+        <i class="fa fa-bars" aria-hidden="true" id="js-centered-navigation-mobile-menu" ></i> 
+        <span class="language-toggle">
+          <span id="switch-en">EN</span> / <span id="switch-cn">中文</span> 
+        </span>   
+      </div>   
 
       <div class="col-xs-12 myname-mobile">
-         <div><span><strong>Berlina Li</strong></span></div>
+        <div><span><strong>Berlina Li</strong></span></div>
       </div> 
 
     </nav>
@@ -63,54 +75,48 @@
         </div>
 
         <div class="col-md-6 col-xs-12">
-        <!--   <h3 class="introtext">I am a front-end artist based in Shanghai. My work focuses on web interaction  with <strong>Javascript (esp H5 & p5.js)</strong> and hardware interaction with <strong>Arduino</strong>. </br><div class="top-buffer">
-      Send an email to <span class="underline">berlina.lili(at)gmail(dot)com</span></a> and say hi if you are interested in my work. </br></br> -->
 
-        <h3 class="introtext">我是一位生活在上海的前端程序员，擅长网页交互和可视化编程，包括Javascript/HTML/CSS, 特别是可视化软件processing和canvas API。 早年运营开源社区的经验，让我对网页和物理空间的互动尤为关注，尤其是手机浏览器。如有合作意向，欢迎邮件联系<span class="underline">berlina.lili(at)gmail(dot)com</span>
-        </br></br>
-        <!-- I am a front-end artist based in Shanghai. My work focuses on web interaction  with <strong>Javascript (esp H5 & p5.js)</strong> and hardware interaction with <strong>Arduino</strong>. </br><div class="top-buffer">
-            Send an email to <span class="underline">berlina.lili(at)gmail(dot)com</span></a> and say hi if you are interested in my work. </br></br> -->
-      <div class="resume">    
-           <!--  <h4 class="time">//Sept 2016 til now</h4> 
-            Freelance Front-End Web Developer @ CoderBunker   
+          <div class="introtext" lang="en">
+            I am a front-end artist based in Shanghai. My work focuses on web interaction  with <strong>Javascript (especially canvas API)</strong> and hardware interaction with <strong>Arduino</strong>. </br>
+            <div class="top-buffer">
+              Send an email to <span class="underline">berlina.lili(at)gmail(dot)com</span></a> and say hi if you are interested in my work. </br></br>
+            </div>
+          </div>
 
-            <h4 class="time  top-buffer">//June 2016</h4> 
-            Camper @ New York University Interactive Telecommunications Program(ITP)
+          <div class="introtext" lang="cn">
+            我是一位生活在上海的前端程序员，擅长网页交互和可视化编程，包括Javascript/HTML/CSS, 特别是canvas API。 早年运营开源社区的经验，让我对手机传感器和浏览器的交互尤为关注。如有合作意向，欢迎邮件联系<span class="underline">berlina.lili(at)gmail(dot)com</span>
+          </br></br>
+          </div>
+          
+          <div>  
+            <div lang="en" class="resumetext">
+              <div class="time">//Sept 2016 til now</div> 
+              Freelance Front-End Web Developer @ CoderBunker   
 
-            <h4 class="time  top-buffer">//2015- Sept 2016</h4> 
-            Program Manager of Arduino in China @ Seeed Studio
+              <div class="time  top-buffer">//June 2016</div> 
+              Camper @ New York University Interactive Telecommunications Program(ITP)
+              <div class="time  top-buffer">//2015- Sept 2016</div> 
+              Program Manager of Arduino in China @ Seeed Studio
+              <div class="time  top-buffer ">//2013 - 2014 </div> 
+              Community Manager of Mind+(Visual Programming language for Arduino) @ DFRobot
+              <div class="time top-buffer">//2011-2012 </div> 
+              <div>Msc in Arts & NGO Management @ EDHEC Business School</div>
+              <div class="time top-buffer">//2006-2010 </div> 
+              <div>BA in Advertisement Planning</div>
+            </div>
 
-            <h4 class="time  top-buffer ">//2013 - 2014 </h4> 
-          Community Manager of Mind+(Visual Programming language for Arduino) @ DFRobot
-
-
-            <h4 class="time top-buffer">//2011-2012 </h4> 
-            <div>Msc in Arts & NGO Management @ EDHEC Business School</div>
-
-            <h4 class="time top-buffer">//2006-2010 </h4> 
-            <div>BA in Advertisement Planning</div> -->
-
-             <h4 class="time">//2016年至今</h4> 
-            <!-- Freelance Front-End Web Developer @ CoderBunker    -->
-            自由职业前端程序员 @ CoderBunker
-
-            <h4 class="time  top-buffer">//2016年6月</h4> 
-            纽约大学交互通讯艺术学院（ITP）培训 
-
-            <h4 class="time  top-buffer">//2015年- 2016年9月</h4> 
-            <!-- Program Manager of Arduino in China @ Seeed Studio -->
-            Arduino开源社区中国区项目经理
-
-            <h4 class="time  top-buffer ">//2013年 - 2014年 </h4> 
-        <!--   Community Manager of Mind+(Visual Programming language for Arduino) @ DFRobot -->
-            可视化编程教育软件Mindplus社区经理 @DFRobot
-
-
-            <h4 class="time top-buffer">//2011年-2012年 </h4> 
-            <div>艺术和NGO管理研究生 @ EDHEC Business School</div>
-<!-- 
-            <h4 class="time top-buffer">//2006年-2010年 </h4> 
-            <div>广告策划本科生 @ 广东财经大学</div> -->
+            <div lang="cn" class="resumetext">
+              <div class="time">//2016年至今</div> 
+              自由职业前端程序员 @ CoderBunker
+              <div class="time  top-buffer">//2016年6月</div> 
+              纽约大学交互通讯艺术学院（ITP）培训 
+              <div class="time  top-buffer">//2015年- 2016年9月</div> 
+              Arduino开源社区中国区项目经理
+              <div class="time  top-buffer ">//2013年 - 2014年 </div> 
+              可视化编程教育软件Mindplus社区经理 @DFRobot
+              <div class="time top-buffer">//2011年-2012年 </div> 
+              <div>艺术和NGO管理研究生 @ EDHEC Business School</div>
+            </div>          
            
           </div><!--  resume -->
         </div> <!-- col -->

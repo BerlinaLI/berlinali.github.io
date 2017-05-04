@@ -15,32 +15,32 @@ $popup.append($deleteIcon);
 $('body').append($overlay);
 
 
- //brainwave slider 
-  var image1 = "http://portfolioimg.oss-cn-hongkong.aliyuncs.com/brainwave/brainwave1_500x300.jpg";
-  var image2 = "http://portfolioimg.oss-cn-hongkong.aliyuncs.com/brainwave/brainwave2_500x300.jpg";
-  var image3 = "http://portfolioimg.oss-cn-hongkong.aliyuncs.com/brainwave/brainwave3_500x300.jpg";
-  var image4 = "http://portfolioimg.oss-cn-hongkong.aliyuncs.com/brainwave/brainwave4_500x300.jpg";
-  var $overlayimage = $('<div class="overlay"></div>');
-  var $slider = $('<div id="slider"></div>');
-  var $arrowleft = $('<a href="#" class="control_next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>');
-  var $arrowright = $('<a href="#" class="control_prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>');
-  var $ul=$('<ul></ul>');
-  //var $slidesimage=$('<li><img src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/brainwave/brainwave_500x300.jpg"></li>'+ '<li>SLIDE 2</li>'+ '<li>SLIDE 3</li>');
-  var $slidesimage=$('<li><img src='+image1+'></li>'+'<li><img src='+image2+'></li>'+'<li><img src='+image3+'></li>'+'<li><img src='+image4+'></li>');
-  var $deleteIcon = $('<div class="deleteIcon"><i class="fa fa-close"></i></div>');
+//brainwave slider 
+var image1 = "http://portfolioimg.oss-cn-hongkong.aliyuncs.com/brainwave/brainwave1_500x300.jpg";
+var image2 = "http://portfolioimg.oss-cn-hongkong.aliyuncs.com/brainwave/brainwave2_500x300.jpg";
+var image3 = "http://portfolioimg.oss-cn-hongkong.aliyuncs.com/brainwave/brainwave3_500x300.jpg";
+var image4 = "http://portfolioimg.oss-cn-hongkong.aliyuncs.com/brainwave/brainwave4_500x300.jpg";
+var $overlayimage = $('<div class="overlay"></div>');
+var $slider = $('<div id="slider"></div>');
+var $arrowleft = $('<a href="#" class="control_next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>');
+var $arrowright = $('<a href="#" class="control_prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>');
+var $ul=$('<ul></ul>');
+//var $slidesimage=$('<li><img src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/brainwave/brainwave_500x300.jpg"></li>'+ '<li>SLIDE 2</li>'+ '<li>SLIDE 3</li>');
+var $slidesimage=$('<li><img src='+image1+'></li>'+'<li><img src='+image2+'></li>'+'<li><img src='+image3+'></li>'+'<li><img src='+image4+'></li>');
+var $deleteIcon = $('<div class="deleteIcon"><i class="fa fa-close"></i></div>');
 
-  $slider.append($arrowleft);
-  $slider.append($arrowright);
-  $ul.append($slidesimage);
-  $slider.append($ul);
-  $slider.append($deleteIcon);  
-  $overlayimage.append($slider);
-  $('body').append($overlayimage);
+$slider.append($arrowleft);
+$slider.append($arrowright);
+$ul.append($slidesimage);
+$slider.append($ul);
+$slider.append($deleteIcon);  
+$overlayimage.append($slider);
+$('body').append($overlayimage);
 
-  var slideCount = $('#slider ul li').length;
-  var slideWidth = $('#slider ul li').width();
-  var slideHeight = $('#slider ul li').height();
-  var sliderUlWidth = slideCount * slideWidth;
+var slideCount = $('#slider ul li').length;
+var slideWidth = $('#slider ul li').width();
+var slideHeight = $('#slider ul li').height();
+var sliderUlWidth = slideCount * slideWidth;
 
 $(document).ready(function() {
 
@@ -61,6 +61,25 @@ $(document).ready(function() {
         $('#js-centered-navigation-menu').removeAttr('style');
       }
     });
+  });
+
+  //switch language
+  $('[lang="en"]').hide();
+  $('#switch-en').css("color","#999");
+  $('#switch-cn').css("color","#000");
+
+  $('#switch-en').click(function() {
+    $('[lang="cn"]').hide();
+    $('[lang="en"]').show();
+    $('#switch-en').css("color","#000");
+    $('#switch-cn').css("color","#999");
+  });
+
+  $('#switch-cn').click(function() {
+    $('[lang="en"]').hide();
+    $('[lang="cn"]').show();
+    $('#switch-en').css("color","#999");
+    $('#switch-cn').css("color","#000");
   });
 
 

@@ -384,6 +384,27 @@ ipad
 ==============================================================================================================
  */
 @media (min-width: 768px) {
+.active{
+  text-decoration: underline !important;
+}
+
+.language-toggle{
+  font-size: 1rem;
+  padding:0 15px 0;
+  float:initial;
+}
+
+.language-toggle a{
+  padding:0;
+}
+
+.desktop-nav ul li a{
+  color:#999;
+}
+
+.desktop-nav ul li a:hover{
+  color:#999;
+}
 
 #slider {
   margin: 10% auto;
@@ -479,9 +500,6 @@ ipad
 
 .navname ul li{
   display: inline;
-}
-
-.navname ul li a{
   padding-left:15px;
   padding-right:15px;
   line-height:1;

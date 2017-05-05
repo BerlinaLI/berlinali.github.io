@@ -10,9 +10,9 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <link rel="icon" href="http://www.clipartbest.com/cliparts/nTE/59b/nTE59boyc.png">
+  <link rel="icon" href="https://www.clipartbest.com/cliparts/nTE/59b/nTE59boyc.png">
 
-  <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+  <link rel='stylesheet prefetch' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
@@ -22,26 +22,26 @@
 <div class="container">
   <div class="canvas">
       
- <!--    desktop nav -->
-    <div class="row desktop-nav" id="nav">
-      <div class="col-xs-12 col-md-5 offset-md-1 myname desktop-nav">
-         <div><span><strong>Berlina Li</strong></span></div>
+  <!--    desktop nav -->
+    <nav class="row desktop-nav" id="nav">
+      <div class="col-xs-12 col-md-6 offset-md-1 myname desktop-nav">
+        <strong>Berlina Li</strong>
       </div> 
-      <div class="col-xs-12 col-md-5 navname desktop-nav">
+      <div class="col-xs-12 col-md-4 navname desktop-nav">
         <ul class="list-inline"> 
-          <li><a href="http://berlinali.github.io/work" class="navwork active">
-             < / > < / >
+          <li><a href="https://berlinali.github.io/work" class="navwork active">
+             &lt; 项目 &gt;
           </a></li>
-          <li><a href="http://berlinali.github.io/resume" class="navresume">
-            ☞(◐‿◑)☜﻿
+          <li><a href="https://berlinali.github.io/resume" class="navresume">
+            ☞ 我 ☜﻿
           </a></li>     
           <li class="language-toggle" id="language-toggle-desktop">
-            <span><a href=# id="switch-cn">中文</a></span>/
-            <span><a href=# id="switch-en">EN</a></span>
+            <span class="switch-cn pointer">中文</span>/
+            <span class="switch-en pointer">EN</span>
           </li>   
         </ul>
       </div>
-    </div><!--row -->
+    </nav><!--row -->
 
   <!--  mobile nav -->  
     <nav class="centered-navigation group mobile-nav">  
@@ -49,14 +49,14 @@
       <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
         <li class="nav-link">
           <a href="https://berlinali.github.io/work/">
-            <span lang="cn">过往项目</span>
-            <span lang="en">WORKS</span>
+            <span lang="cn" class="active">&lt; 项目 &gt;</span>
+            <span lang="en" class="active">WORKS</span>
           </a>
         </li>
         
         <li class="nav-link active">
           <a href="https://berlinali.github.io/resume/">
-            <span lang="cn">关于我</span>
+            <span lang="cn"> ☞ 我 ☜﻿</span>
             <span lang="en">ABOUT ME</span>           
           </a>
         </li>  
@@ -65,7 +65,7 @@
       <div class="centered-navigation-mobile-menu">
         <i class="fa fa-bars" aria-hidden="true" id="js-centered-navigation-mobile-menu" ></i> 
         <span class="language-toggle">
-          <span id="switch-en">EN</span> / <span id="switch-cn">中文</span> 
+          <span class="switch-en">EN</span> / <span class="switch-cn">中文</span> 
         </span>   
       </div>   
 
@@ -86,32 +86,44 @@
         <div class="col-xs-12 col-md-5 offset-md-1" id="mindplus">
 
          <div class="imageWrapper" id="mindplushover">
-            <img src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/game_gif_740x450.jpg" class="img-responsive center-block" alt="audio game">       
-            <img src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/game_gif.gif" class="img-responsive center-block mindplusgif" alt="audio game">  
+            <img src="https://portfolioimg.oss-cn-hongkong.aliyuncs.com/game_gif_740x450.jpg" class="img-responsive center-block" alt="audio game">       
+            <img src="https://portfolioimg.oss-cn-hongkong.aliyuncs.com/game_gif.gif" class="img-responsive center-block mindplusgif" alt="audio game">  
              <p class="title hovertextmindplus"><strong>Sound Flapping Bird</strong></p>
           </div>
-        
+
           <div class="projectText" id="mindplustext">           
-            <p class="maintext">
-              <span class="textblock" lang="cn"> 
-               该网页游戏邀请用户通过控制声高来玩游戏，把音量高低变成摇杆，打破传统安静的游戏物理空间，提供崭新的游戏体验。该游戏采用HTML5 Canvas功能制作，受API限制仅限safari和ios以外的浏览器和设备使用。
-              </span>   
-              <span class="textblock" lang="en">
-                Control your voice volumn to play flappy bird in your desktop or mobile device. It create a fun and engaging gaming. Users are highly encourage to play in public space. Due to privacy constraint issue, it is not avaiable on ios device and safari browser.                   
-              </span>
-
-              <span class="videowrapper" lang="cn" >
-                <span class="pop-it-game"><a href=#>戳这玩游戏</a></span> | <a href="https://github.com/BerlinaLI/berlinali.github.io/tree/master/pcgamebotsmall">源代码</a> →
-              </span>
-
-              <span class="videowrapper" lang="en">
-                <span class="pop-it-game"><a href=#>Click here to play</a></span> | <a href="https://github.com/BerlinaLI/berlinali.github.io/tree/master/pcgamebotsmall">source code</a> →
-              </span>
-
-
-            </p>
+            <div class="textblock" lang="cn"> 
+             该网页游戏邀请用户通过控制声高来玩游戏，把音量高低变成摇杆，打破传统安静的游戏物理空间，提供崭新的游戏体验。该游戏采用HTML5 Canvas功能制作，受API限制仅限safari和ios以外的浏览器和设备使用。
+            </div>   
+            <div class="textblock" lang="en">
+              Control your voice volumn to play flappy bird in your desktop or mobile device. It create a fun and engaging gaming. Users are highly encourage to play in public space. Due to privacy constraint issue, it is not avaiable on ios device and safari browser.                   
+            </div>
           </div> <!-- projecttext -->
-      
+
+          <div class="play-button">
+            <ul class="videowrapper" lang="cn" >
+              <li class="pointer">
+                <i class="fa fa-gamepad pop-it-game" aria-hidden="true"></i>
+              </li> | 
+              <li>
+                <a href="https://github.com/BerlinaLI/berlinali.github.io/tree/master/pcgamebotsmall" target="_blank">
+                 <i class="fa fa-github-alt" aria-hidden="true"></i>
+                </a> 
+              </li>
+            </ul>
+
+            <ul class="videowrapper" lang="en" >
+              <li class="pointer">
+                <i class="fa fa-gamepad pop-it-game" aria-hidden="true"></i>
+              </li> | 
+              <li>
+                <a href="https://github.com/BerlinaLI/berlinali.github.io/tree/master/pcgamebotsmall" target="_blank">
+                 <i class="fa fa-github-alt" aria-hidden="true"></i>
+                </a> 
+              </li>
+            </ul>
+          </div>
+
         </div>  <!-- col -->  
      
         <div class="mobile-space-divider"></div>
@@ -120,9 +132,9 @@
         <div class="col-xs-12 col-md-5" id="taobao" >
         <!-- ==================taobao ================== -->
           <div class="imageWrapper" id="taobaohover">
-            <img src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/homepage/homepage_0222/taobao_740x450.jpg" class="img-responsive" alt="keyword plug-in">
+            <img src="https://portfolioimg.oss-cn-hongkong.aliyuncs.com/homepage/homepage_0222/taobao_740x450.jpg" class="img-responsive" alt="keyword plug-in">
 
-            <img src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/homepage/homepage_0222/taobaogif_740x450.gif" class="img-responsive center-block taobaogif" alt="keyword plug-in gif">
+            <img src="https://portfolioimg.oss-cn-hongkong.aliyuncs.com/homepage/homepage_0222/taobaogif_740x450.gif" class="img-responsive center-block taobaogif" alt="keyword plug-in gif">
 
             <p class="title hovertexttaobao" lang="cn"><strong>某宝广告干扰插件</strong>
             <p class="title hovertexttaobao" lang="en"><strong>Anti-Ad Plug-in</strong>
@@ -154,8 +166,8 @@
         <div class="col-xs-12 col-md-5 offset-md-1" id="elevator">
       <!-- ==================game================== -->
           <div class="imageWrapper" id="elevatorhover">
-            <img src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/homepage/homepage_0222/elevator_740x450.jpg" class="img-responsive center-block" alt="elevator">
-            <img src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/homepage/homepage_0222/elevatorgif_740x450.gif" class="img-responsive center-block elevatorgif" alt="elevatorgif">
+            <img src="https://portfolioimg.oss-cn-hongkong.aliyuncs.com/homepage/homepage_0222/elevator_740x450.jpg" class="img-responsive center-block" alt="elevator">
+            <img src="https://portfolioimg.oss-cn-hongkong.aliyuncs.com/homepage/homepage_0222/elevatorgif_740x450.gif" class="img-responsive center-block elevatorgif" alt="elevatorgif">
             <p class="title hovertextelevator" lang="cn"><strong>电梯朋友圈</strong></p>
             <p class="title hovertextelevator" lang="en"><strong>Elevator Moment</strong></p>
           </div>
@@ -183,28 +195,44 @@
         <div class="col-xs-12 col-md-5" id="brainwave">    
         <!-- ==================brainwave================== -->
           <div class="imageWrapper" id="brainwavehover">
-            <img src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/homepage/homepage_0222/brainwave_740x450.jpg" class="img-responsive center-block" alt="brainwave">      
-            <img src="http://portfolioimg.oss-cn-hongkong.aliyuncs.com/homepage/homepage_0222/brainwave_740x450.jpg" class="img-responsive center-block brainwavegif" alt="brainwave gif"> 
+            <img src="https://portfolioimg.oss-cn-hongkong.aliyuncs.com/homepage/homepage_0222/brainwave_740x450.jpg" class="img-responsive center-block" alt="brainwave">      
+            <img src="https://portfolioimg.oss-cn-hongkong.aliyuncs.com/homepage/homepage_0222/brainwave_740x450.jpg" class="img-responsive center-block brainwavegif" alt="brainwave gif"> 
             <p class="title hovertextmindplus"><strong>X in White</strong></p>
           </div>
         
           <div class="projectText" id="brainwavetext">        
             <p class="maintext">
-              <span class="textblock" lang="cn" > 
+              <div class="textblock" lang="cn" > 
                 这个装置追踪用户脑波活动输出现场的灯光变化。观众可以带上耳机体验语音催眠。正如在RBG中0到255之间，观众与装置产生微妙的关系，或沉浸式冥想或玩起挑战意志游戏。该作品曾在Basement6，视觉艺术中心（M50）和上海法国领事馆展览过。
-              </span>
+              </div>
               
-               <span class="textblock" lang="en" > 
+              <div class="textblock" lang="en" > 
                 This installation visualizes brainwave data of concentration and relaxation in lighting. It is an immersive space of meditation, a game of self control and a data visualization project.
-              </span>
+              </div>
 
-              <span class="videowrapper" lang="cn">
-                <span class="pop-it-brainwave"><a href=#>戳这浏览展览图片</a></span> |  <a href="http://thexcollective.weebly.com/" target="_blank">项目网站 </a>→ 
-              </span>
+              <div class="play-button">
+                <ul class="videowrapper" lang="cn" >
+                  <li class="pointer">
+                    <i class="fa fa-picture-o pop-it-brainwave" aria-hidden="true"></i>
+                  </li> | 
+                  <li>
+                    <a href="https://thexcollective.weebly.com/" target="_blank">
+                     <i class="fa fa-link" aria-hidden="true"></i>
+                    </a> 
+                  </li>
+                </ul>
 
-              <span class="videowrapper" lang="en">
-                <span class="pop-it-brainwave"><a href=#>Click here to view pictures</a></span> |  <a href="http://thexcollective.weebly.com/" target="_blank">Project Website </a>→ 
-              </span>
+                <ul class="videowrapper" lang="en" >
+                  <li class="pointer">
+                    <i class="fa fa-picture-o pop-it-brainwave" aria-hidden="true"></i>
+                  </li> | 
+                  <li>
+                    <a href="https://thexcollective.weebly.com/" target="_blank">
+                     <i class="fa fa-link" aria-hidden="true"></i>
+                    </a> 
+                  </li>
+                </ul> 
+              </div>
 
             </p>
           </div> <!-- projecttext -->
@@ -214,47 +242,17 @@
     
     <div class="space-divider"></div>
     
-    </div> <!-- project -->
-
-
-    <div class="footer-divider"></div>  
+    </div> <!-- project -->  
   
-    
-<!--=============footer========================-->       
-    <div class="footer">
-      <div class="row">
-        <div class="col-md-12 col-xs-12">   
-         
-          <button class="btn btn-default btnReload" id="github">
-            <a class="socialmedia" href="https://github.com/BerlinaLI">
-              <i class="fa fa-github-square fa-2x "></i>
-            </a>
-          </button>
-          
-          <button class="btn btn-default btnReload " id="instagram">
-            <a class="socialmedia" href="https://www.instagram.com/berlinali/">
-              <i class="fa fa-instagram fa-2x "></i>
-            </a>
-          </button>
-          
-          <button class="btn btn-default btnReload" id="linkedin">
-            <a class="socialmedia" href="https://www.linkedin.com/in/berlinali/">           
-            <i class="fa fa-linkedin fa-2x"></i>
-            </a>
-          </button>   
-
-        </div>
-      </div>  
-    </div>
-
   </div><!--canvas -->       
 </div><!--container -->   
 
-  
-</body>
-  
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>   
   <script src="js/index.js"></script>
+  
+</body>
+  
+
 
 </html>

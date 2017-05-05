@@ -15,6 +15,24 @@
   display: inline;
 }
 
+.pointer{
+  cursor: pointer;
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:none !important;
+  color:#000;
+}
+
+.videowrapper:hover{
+  color:#999;
+}
+
+.videowrapper{
+/*  background: #B7AFFF;*/
+}
+
 .centered-navigation-mobile-menu, .nav-link, .myname-mobile,.col-md-5,.col-md-12, .col-xs-12{
 /*.col-md-5{*/
   opacity: 0;
@@ -41,7 +59,7 @@
   display: block;
   text-decoration: none;
 /*  border-top: 1px solid #E5E4E4;*/
-  font-size:0.9rem;
+  font-size:1.5rem;
 }
 
 .centered-navigation .centered-navigation-mobile-menu a {
@@ -54,8 +72,9 @@
 
 .language-toggle{
   float:right;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color:#999;
+  vertical-align:text-bottom;
 }
 
 .centered-navigation ul.centered-navigation-menu {
@@ -73,7 +92,7 @@
   line-height: 18px;
   overflow: hidden;
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 1rem;
 }
 
 .centered-navigation ul li.nav-link a {
@@ -131,6 +150,7 @@ a:hover{
 
 .active{
   color:#000 !important;
+  text-decoration: none;
 }
 
 .navwork,.navresume {
@@ -178,7 +198,6 @@ img{
 ==============================================================*/
 .imageWrapper {
   position: relative;
-  cursor:pointer;
 }
 
 .hovertextelevator, 
@@ -226,6 +245,10 @@ img{
     opacity: 1;
 }
 
+/*p{
+  margin-bottom:0;
+}*/
+
 
 /*textintro*/
 
@@ -240,14 +263,13 @@ img{
 }
 
 
-
 .textblock{
   display:block;
-  margin-top:10px;
-  font-size:0.75rem;
+  margin:5px 0 0;
+  font-size:0.9rem;
   color:#000 !important;
+  clear:both;
 }
-
 
 /*show video*/
 
@@ -255,15 +277,21 @@ img{
   float:right !important;
 }
 
-.videowrapper a{
-  font-size: 0.7rem;
-  margin-top:5px !important;
-  color:#000 !important;
+ul{
+  margin-top:0;
+  margin-bottom:0 !important;
 }
 
-.videowrapper:hover{
-  color:#999;
+.videowrapper li{
+  display: inline;
+  font-size: 1.2rem;
+
 }
+
+.videowrapper li .fa{
+  color:#0084b4 !important;  
+}
+
 
 .overlay {
   background-color: rgba(0,0,0,0.5);
@@ -457,33 +485,18 @@ ipad
   margin:60px 25px 20px;
 }
 
-/*header*/
 .myname{
   height:40px;
-  padding:0;
-}
-
-.myname div{
-  position:relative;
-  height:40px;
-}
-/* center */
-.myname span {
-  font-size:3.1rem;
+  padding-left:15px;
+  font-size:2.6rem;
   line-height:1;
-  position: absolute;
-  left: 0;
-  bottom:0;
   width: 100%;
   text-align:left;
 }
 
+
 .navname{
   height:40px;
-}
-
-.myname span {
-  font-size:2.8rem;
 }
 
 /*menu*/
@@ -496,6 +509,7 @@ ipad
   text-align: right;
   margin-bottom:0;
   -webkit-padding-start:0;
+  font-weight: 550;
 }
 
 .navname ul li{
@@ -550,6 +564,7 @@ ipad
 ================================================================
 */
 /*  hover effect */
+
 
 .hovertextelevator, 
 .hovertexttaobao,

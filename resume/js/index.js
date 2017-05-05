@@ -20,23 +20,21 @@ $(document).ready(function() {
 
 //switch language
   $('[lang="en"]').hide();
-  // $('#switch-en').css("color","#999");
-  // $('#switch-cn').css("color","#000");
-  $('#switch-en').removeClass("active");
-  $('#switch-cn').addClass("active");
+  $('.switch-en').removeClass("active");
+  $('.switch-cn').addClass("active");
 
-  $('#switch-en').click(function() {
+  $('.switch-en').click(function() {
     $('[lang="cn"]').hide();
     $('[lang="en"]').show();
-    $('#switch-cn').removeClass("active");
-    $('#switch-en').addClass("active");
+    $('.switch-cn').removeClass("active");
+    $('.switch-en').addClass("active");
   });
 
-  $('#switch-cn').click(function() {
+  $('.switch-cn').click(function() {
     $('[lang="en"]').hide();
     $('[lang="cn"]').show();
-    $('#switch-en').removeClass("active");
-    $('#switch-cn').addClass("active");
+    $('.switch-en').removeClass("active");
+    $('.switch-cn').addClass("active");
   });
 
 });

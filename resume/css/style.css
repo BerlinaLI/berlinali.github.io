@@ -229,11 +229,27 @@ background-color: transparent;
 
 
 @media (min-width: 768px) {
+.active{
+  text-decoration: underline !important;
+}
 
-/*#desktop-language-toggle{
-  text-align:right;
-  display:block;
-}*/
+.language-toggle{
+  font-size: 1rem;
+  padding:0 15px 0;
+  float:initial;
+}
+
+.language-toggle a{
+  padding:0;
+}
+
+.desktop-nav ul li a{
+  color:#999;
+}
+
+.desktop-nav ul li a:hover{
+  color:#999;
+}
 
 .mobile-nav{
   display: none;
@@ -291,9 +307,6 @@ background-color: transparent;
 
 .navname ul li{
   display: inline;
-}
-
-.navname ul li a{
   padding-left:15px;
   padding-right:15px;
   line-height:1;

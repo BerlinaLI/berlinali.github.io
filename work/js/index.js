@@ -84,7 +84,7 @@ $(document).ready(function() {
 
 
   //pop-up overlay element
-  $('#pop-it-game').click(function(){
+  $('.pop-it-game').click(function(){
     $(".videoiframe").attr("src",gameLink);
     $(".videoiframe").css({"width":"380px","height":"520px","overflow":"visible", "margin":"5% auto"});
     $overlay.show();  
@@ -102,7 +102,7 @@ $(document).ready(function() {
   // });
 
 
-  $('#pop-it-brainwave').click(function(){
+  $('.pop-it-brainwave').click(function(){
     $overlayimage.show(); 
     $('#slider').css({ width: slideWidth, height: slideHeight });
     $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });

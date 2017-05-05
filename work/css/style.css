@@ -384,9 +384,9 @@ ipad
 ==============================================================================================================
  */
 @media (min-width: 768px) {
-.active{
+/*.active{
   text-decoration: underline !important;
-}
+}*/
 
 .language-toggle{
   font-size: 1rem;

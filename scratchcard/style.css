@@ -5,7 +5,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-color:#FFD700;
+    background-color:green;
 
 }
 
@@ -25,12 +25,27 @@ body {
 
 .faceemoji{
     z-index:1;
-    width:150px;
-    height:150px;
+    width:45px;
+    height:45px;
     text-align: center;
     margin:0px auto;
     padding:10px 0;
     display:block;
+}
+
+.title ul:first-child{
+    padding-top:15px;
+    margin-top:0;
+}
+
+ul{
+    display:flex;
+    padding-left:20px;
+}
+
+ul li{
+    display:inline;
+    margin:0 5px 0;
 }
 
 h1{  
@@ -42,7 +57,7 @@ h1{
     text-shadow: 3px 2px red;
     position: relative;
     display:block;
-    font-size: 5em;
+    font-size: 4.5em;
     color: white;
     letter-spacing: 0.0625em;
     animation: drop-shadows;
@@ -70,11 +85,25 @@ h1{
 }
 
 .mini-slogan{
-    margin:0 auto;
+    margin:0 10%;
     padding:15px 0;
     display:block;
+    width:100%;
+    overflow: auto;
 }
 
+.left-prize{
+    width:25%;
+    float:left;
+}
+
+
+.right-prize{
+    width:75%;
+    float:left;
+}
+
+/*
 p{
     margin:0;
     color:black;
@@ -86,4 +115,4 @@ p{
 p span{
     color:red;
 }
-
+*/

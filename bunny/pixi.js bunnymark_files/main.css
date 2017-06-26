@@ -279,6 +279,11 @@ textarea {
     display: none !important;
 }
 
+canvas{
+    height:700px !important;
+    top:0 !important;
+}
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    Theses examples override the primary ('mobile first') styles.

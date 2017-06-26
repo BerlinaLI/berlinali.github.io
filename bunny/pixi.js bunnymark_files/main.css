@@ -272,6 +272,13 @@ textarea {
     *zoom: 1;
 }
 
+
+
+
+#stats{
+    display: none !important;
+}
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    Theses examples override the primary ('mobile first') styles.

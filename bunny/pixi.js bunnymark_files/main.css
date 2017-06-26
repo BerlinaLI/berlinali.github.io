@@ -273,6 +273,15 @@ textarea {
 }
 
 
+#instruction{
+    position:absolute;
+    top:48%;
+    left:15%;
+    color:#000;
+    z-index: 10000;
+    font-size: 20px;
+    font-weight: 600;
+}
 
 
 #stats{

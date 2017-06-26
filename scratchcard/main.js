@@ -70,6 +70,7 @@
     }
   };
 
+
   function drawScratchCard(e, canvas){
 
       var img = e.target;
@@ -99,13 +100,8 @@
 
   function attachEvent(canvas, ctx) {
       canvas.addEventListener('touchstart', handlerEventDown.bind({canvas: canvas, ctx: ctx}));
-      // canvas.addEventListener('touchstart', handlerEventDown /* .bind(mousedown) */ );
       canvas.addEventListener('touchmove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));
       canvas.addEventListener('touchend', handlerEventUp.bind({canvas: canvas, ctx: ctx}));
-
-      // canvas.addEventListener('mousedown', handlerEventDown.bind(mousedown));
-      // canvas.addEventListener('mousemove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));
-      // canvas.addEventListener('mouseup', handlerEventUp.bind({canvas: canvas, ctx: ctx}));
   }
 
 
@@ -114,55 +110,10 @@
     mousedown=true;
   }
 
+
   function handlerEventUp(e){
     e.preventDefault();
     mousedown=false;
-
-  // /*
-  // todo
-  // i tried to put the code below into a function and call it in handlerEventUp but it is not working. I have passed the argument in function. Don't know what is going wrong.
-  // */
-  // // function eraseAreaDetection(canvas,ctx){
-  //   //if the erased area percentage is > 0.5, clear the layer and generate new one
-  //   var imgData = this.ctx.getImageData(0,0,this.canvas.width,this.canvas.height);
-  //   var pixelsArr= imgData.data;
-  //   var loop = pixelsArr.length;
-  //   var transparent = 0;
-
-  //   for(var j=0; j<loop ; j+=4){
-  //     var alpha = pixelsArr[j+3];
-  //     if(alpha<10){
-  //       transparent++;
-  //     }
-  //   }
-  //   var erasePercentage = transparent/(loop/4);
-  //   var mouseAt = parseInt(e.target.id);
-  //   console.log("I = "+i,"mouse at = "+mouseAt,erasePercentage>.5);
-  //   if(i == mouseAt && erasePercentage >.5){
-
-
-  //     /*todo
-  //       if the if statement is true,
-  //       action 1:
-  //       clear the layer(line220). Changes its color from brown to transparent.My solution below does not work.
-  //       action 2(finished):
-  //       generate a new scratch card below.
-  //     */
-
-  //     setTimeout(() => {
-  //       console.log("action 1");
-  //       this.ctx.rect(0, 0, 320, 160);
-  //       this.ctx.fill();
-  //     }, imgGenerateSpeed*0.1);
-
-  //     setTimeout(function(){
-  //       console.log("action 2");
-  //       draw(mouseAt+1);
-  //     }, imgGenerateSpeed);
-
-  //     i++;
-  //     return i;
-  //   }
   }
 
 
@@ -187,12 +138,6 @@
       }
     }
 
-
-      /*
-  todo
-  i tried to put the code below into a function and call it in handlerEventUp but it is not working. I have passed the argument in function. Don't know what is going wrong.
-  */
-  // function eraseAreaDetection(canvas,ctx){
     //if the erased area percentage is > 0.5, clear the layer and generate new one
     var imgData = this.ctx.getImageData(0,0,this.canvas.width,this.canvas.height);
     var pixelsArr= imgData.data;
@@ -208,17 +153,8 @@
     var erasePercentage = transparent/(loop/4);
     var mouseAt = parseInt(e.target.id);
     console.log("I = "+i,"mouse at = "+mouseAt,erasePercentage>.5);
-    if(i == mouseAt && erasePercentage >.5){
 
-
-      /*todo
-        if the if statement is true,
-        action 1:
-        clear the layer(line220). Changes its color from brown to transparent.My solution below does not work.
-        action 2(finished):
-        generate a new scratch card below.
-      */
-
+    if(i == mouseAt && erasePercentage >.4){
       setTimeout(() => {
         console.log("action 1");
         this.ctx.rect(0, 0, 320, 160);
@@ -234,6 +170,7 @@
       return i;
     }
   }
+
 
   function jumpToAnimation(){
     $('canvas').fadeOut("slow");

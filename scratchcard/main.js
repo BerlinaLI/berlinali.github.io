@@ -46,7 +46,7 @@ function draw(i){
 
       canvas.id = i;
       canvas.style.backgroundColor='transparent';
-      canvas.style.margin = '55px auto';
+      canvas.style.margin = '45px auto 0';
       canvas.style.display='block';
       return canvas;
     })();
@@ -182,7 +182,7 @@ function handlerEventMove(e){
 function jumpToAnimation(){
   $('canvas').fadeOut("slow");
   setTimeout(function(){
-    window.open("http://www.goodboydigital.com/pixijs/bunnymark_v3/","_self");
+    window.open("https://berlinali.github.io/bunny/pixi.js%20bunnymark.html","_self");
   }, 0);
 }
 

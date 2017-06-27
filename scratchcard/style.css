@@ -54,6 +54,7 @@ body {
 
 .none-mobile-instruction{
     background: red;
+    text-transform: uppercase;
 }
 
 .faceemoji{

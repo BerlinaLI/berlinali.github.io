@@ -1,8 +1,3 @@
-if( screen.width > 500){
-	window.open("https://berlinali.github.io/bunny/scancode.html","_self");
-}
-
-
 $(document).ready(onReady)
 
 $(window).resize(resize)

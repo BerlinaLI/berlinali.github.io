@@ -1,4 +1,6 @@
-(function(){
+if( screen.width > 500){
+  window.open("https://berlinali.github.io/bunny/scancode.html","_self");
+}else{
 
   var mousedown = false;
   var bodyStyle = document.body.style;
@@ -183,5 +185,5 @@
   draw(i);
 
 
-})()
+}
 

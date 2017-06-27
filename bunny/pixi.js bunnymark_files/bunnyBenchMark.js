@@ -33,12 +33,8 @@ function onReady()
 	
 	renderer = PIXI.autoDetectRenderer(800, 600, {backgroundColor:0xFFFFFF});
 	stage = new PIXI.Stage(0xFFFFFF);
-	//stage.filterArea = new PIXI.math.Rectangle(0, 0, 800 ,600);
 
 	amount = (renderer instanceof PIXI.WebGLRenderer) ? 100 : 5;
-//	
-//	bloom = new PIXI.filters.BloomFilter();
-	//stage.filters = [bloom];
 
 	if(amount == 5)
 	{
@@ -48,7 +44,6 @@ function onReady()
 	}
 	
 	renderer.view.style["transform"] = "translatez(0)";
-	//alert(amount)
 	document.body.appendChild(renderer.view);
 	renderer.view.style.position = "absolute";
 	stats = new Stats();
@@ -75,7 +70,6 @@ function onReady()
 	container = new PIXI.DisplayObjectContainer();
 	container = new PIXI.ParticleContainer(200000, [false, true, false, false, false]);
 	stage.addChild(container);
-	//var filter = new PIXI.filters.ColorMatrixFilter();
 
 	bunny1 = new PIXI.Texture(wabbitTexture.baseTexture, new PIXI.math.Rectangle(2, 47, 26, 37));
 	bunny2 = new PIXI.Texture(wabbitTexture.baseTexture, new PIXI.math.Rectangle(2, 86, 26, 37));
@@ -96,13 +90,7 @@ function onReady()
 		bunny.anchor.x = 0.5;
 		bunny.anchor.y = 1;
 
-
-		bunnys.push(bunny);
-
-	//	bunny.filters = [filter];	
-	//	bunny.position.x = Math.random() * 800;
-	//	bunny.position.y = Math.random() * 600;
-			
+		bunnys.push(bunny);			
 
 		container.addChild(bunny);
 	}
@@ -125,11 +113,23 @@ function onReady()
 	
 	
 	resize();
+
+	PlaySound(yay);
 }
+
+	
+function PlaySound(melody) {
+    alert("On Press of "+melody);
+    var path = "yay"
+    var snd = new Audio(path + melody + ".mp3");
+    snd.play();
+}
+
 
 function onTouchStart(event)
 {
 	isAdding = true;
+
 }
 
 function onTouchEnd(event)

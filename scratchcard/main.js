@@ -152,17 +152,17 @@
     }
     var erasePercentage = transparent/(loop/4);
     var mouseAt = parseInt(e.target.id);
-    console.log("I = "+i,"mouse at = "+mouseAt,erasePercentage>.5);
+    //console.log("I = "+i,"mouse at = "+mouseAt,erasePercentage>.5);
 
     if(i == mouseAt && erasePercentage >.4){
       setTimeout(() => {
-        console.log("action 1");
+        //console.log("action 1");
         this.ctx.rect(0, 0, 320, 160);
         this.ctx.fill();
       }, imgGenerateSpeed*0.1);
 
       setTimeout(function(){
-        console.log("action 2");
+        //console.log("action 2");
         draw(mouseAt+1);
       }, imgGenerateSpeed);
 

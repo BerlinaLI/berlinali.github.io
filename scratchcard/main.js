@@ -1,6 +1,6 @@
 $( document ).ready(function() {
   if( screen.width > 500){
-    window.open("https://berlinali.github.io/bunny/scancode.html","_self");
+    window.open("https://berlinali.github.io/scratchcard/scancode.html","_self");
   }else{
     draw(i);
   }

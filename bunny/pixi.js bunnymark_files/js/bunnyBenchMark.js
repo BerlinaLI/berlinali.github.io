@@ -54,7 +54,7 @@ function onReady()
 	stats.domElement.style.top = "0px";
 	requestAnimationFrame(update);
 	
-	wabbitTexture = new PIXI.Texture.fromImage("bunnys.png")
+	wabbitTexture = new PIXI.Texture.fromImage("assets/bunnys.png")
 
 	counter = document.createElement("div");
 	counter.className = "counter";
@@ -117,27 +117,13 @@ function onReady()
 }
 
 
-var bflat = new Audio();
-bflat.src = "yay.mp3";
-
-function PlaySound() {
-	console.log("sound on");
-    bflat.play();
-}
-
-
-
 function onTouchStart(event)
 {
 	isAdding = true;
-	// PlaySound();
-	// var bflat = new Audio();
-	// bflat.src = "yay.mp3";
 	console.log("sound on");
-	// bflat.play();
-	$('#audio').html('<audio autoplay><source src="yay.mp3"></audio>');
-
+	$('#audio').html('<audio autoplay><source src="assets/yay.mp3"></audio>');
 }
+
 
 function onTouchEnd(event)
 {

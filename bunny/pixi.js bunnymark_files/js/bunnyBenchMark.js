@@ -121,7 +121,7 @@ function onTouchStart(event)
 {
 	isAdding = true;
 	console.log("sound on");
-	$('#audio').html('<audio autoplay><source src="assets/yay.mp3"></audio>');
+	$('#audio').html('<audio autoplay src="assets/yay.mp3"></audio>');
 }
 
 

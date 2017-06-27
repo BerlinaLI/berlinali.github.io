@@ -153,19 +153,6 @@ function resize()
 	
 	renderer.view.style.left = $(window).width() / 2 - width/2 + "px"
 	renderer.view.style.top = $(window).height() / 2 - height/2 + "px"
-	
-	stats.domElement.style.left = w + "px";
-	stats.domElement.style.top = h + "px";
-	
-	counter.style.left = w + "px";
-	counter.style.top = h + 49 + "px";
-	
-	pixiLogo.style.right = w  + "px";
-	pixiLogo.style.bottom = h + 8  + "px";
-	
-	clickImage.style.right = w + 108 + "px";
-	clickImage.style.bottom = h + 17  + "px";
-	
 	renderer.resize(width, height);
 }
 

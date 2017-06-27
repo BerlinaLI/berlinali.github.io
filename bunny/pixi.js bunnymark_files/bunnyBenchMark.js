@@ -31,7 +31,7 @@ var amount = 100;
 function onReady()
 {
 	
-	renderer = PIXI.autoDetectRenderer(800, 600, {backgroundColor:0xFFFFFF});
+	renderer = PIXI.autoDetectRenderer(800, 700, {backgroundColor:0xFFFFFF});
 	stage = new PIXI.Stage(0xFFFFFF);
 
 	amount = (renderer instanceof PIXI.WebGLRenderer) ? 100 : 5;
@@ -114,21 +114,28 @@ function onReady()
 	
 	resize();
 
-	PlaySound(yay);
 }
 
-	
-function PlaySound(melody) {
-    alert("On Press of "+melody);
-    var path = "yay"
-    var snd = new Audio(path + melody + ".mp3");
-    snd.play();
+
+var bflat = new Audio();
+bflat.src = "yay.mp3";
+
+function PlaySound() {
+	console.log("sound on");
+    bflat.play();
 }
+
 
 
 function onTouchStart(event)
 {
 	isAdding = true;
+	// PlaySound();
+	// var bflat = new Audio();
+	// bflat.src = "yay.mp3";
+	console.log("sound on");
+	// bflat.play();
+	$('#audio').html('<audio autoplay><source src="yay.mp3"></audio>');
 
 }
 

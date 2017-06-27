@@ -22,6 +22,7 @@ body {
     font-size: 1em;
     line-height: 1.4;
     background-color: #000000;
+    overflow-x: hidden;
 }
 
 #holder
@@ -289,7 +290,7 @@ textarea {
 }
 
 canvas{
-    height:700px !important;
+    height:800px !important;
     top:0 !important;
 }
 

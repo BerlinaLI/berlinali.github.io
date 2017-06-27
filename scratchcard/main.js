@@ -17,13 +17,18 @@ var imgGenerateSpeed = 200;
 var imgScrollSpeed = 2000;
 var arcSize = 40;
 
+// var imgs = [
+//   'p_0.jpg',
+//   'p_0.jpg',
+//   'p_1.jpg'
+// ];
+
 var imgs = [
-  'p_0.jpg',
-  'p_0.jpg',
-  // 'p_0.jpg',
-  // 'p_0.jpg',
-  'p_1.jpg'
+  'p_0_en.png',
+  'p_0_en.png',
+  'p_1_en.png'
 ];
+
 
 var hints = [
   '请在以上的刮奖区刮奖',
@@ -46,7 +51,7 @@ function draw(i){
 
       canvas.id = i;
       canvas.style.backgroundColor='transparent';
-      canvas.style.margin = '45px auto 0';
+      canvas.style.margin = '35px auto 15px';
       canvas.style.display='block';
       return canvas;
     })();

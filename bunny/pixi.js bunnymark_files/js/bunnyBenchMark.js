@@ -28,7 +28,8 @@ var wabbitTexture;
 var pirateTexture;
 
 var bunnys = [];
-var gravity = 0.5//1.5 ;
+// var gravity = 0.5//1.5 ;
+var gravity = 1//1.5 ;
 
 var maxX = width;
 var minX = 0;

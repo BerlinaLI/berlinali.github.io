@@ -94,7 +94,7 @@ function onReady()
 	bunny5 = new PIXI.Texture(wabbitTexture.baseTexture, new PIXI.math.Rectangle(2, 2, 26, 37));
 
 	bunnyTextures = [bunny1, bunny2, bunny3, bunny4, bunny5];
-	bunnyType = -1;
+	bunnyType = 3;
 	currentTexture = bunnyTextures[bunnyType];
 
 	for (var i = 0; i < startBunnyCount; i++) 

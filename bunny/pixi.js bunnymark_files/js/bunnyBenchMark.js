@@ -29,7 +29,7 @@ var pirateTexture;
 
 var bunnys = [];
 // var gravity = 0.5//1.5 ;
-var gravity = 1//1.5 ;
+var gravity = 0.5//1.5 ;
 
 var maxX = width;
 var minX = 0;
@@ -186,8 +186,8 @@ function update()
 			for (var i = 0; i < amount; i++) 
 			{
 				var bunny = new PIXI.Sprite(currentTexture);
-				bunny.speedX = Math.random() * 10;
-				bunny.speedY = (Math.random() * 10) - 5;
+				bunny.speedX = Math.random() * 5;
+				bunny.speedY = (Math.random() * 5) - 5;
 				bunny.anchor.y = 1;
 				//bunny.alpha = 0.3 + Math.random() * 0.7;
 				bunnys.push(bunny);
@@ -229,7 +229,7 @@ function update()
 		
 		if (bunny.position.y > maxY)
 		{
-			bunny.speedY *= -0.85;
+			bunny.speedY *= -0.65;
 			bunny.position.y = maxY;
 			bunny.spin = (Math.random()-0.5) * 0.2
 			if (Math.random() > 0.5)

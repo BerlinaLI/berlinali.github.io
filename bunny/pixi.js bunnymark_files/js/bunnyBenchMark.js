@@ -115,6 +115,8 @@ function onReady()
 	
 	$(renderer.view).mousedown(function(){
 		isAdding = true;
+		console.log("from renderview sound on");
+		$('#audio').html('<audio autoplay src="./assets/yay.mp3"></audio>');
 	});
 	
 	$(renderer.view).mouseup(function(){

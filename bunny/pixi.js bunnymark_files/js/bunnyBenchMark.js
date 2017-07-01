@@ -131,8 +131,18 @@ function onReady()
 	
 	resize();
 
+	playYay();
+
 }
 
+
+function playYay(){
+	var audio = document.getElementById('audio');
+	var button = document.getElementById('play-button');
+	button.addEventListener('click',function(){
+	    audio.play();
+	});
+}
 
 function onTouchStart(event)
 {
@@ -150,9 +160,9 @@ function onTouchStart(event)
 
 
  	// solution 3
-	var vid = document.getElementById("audio");
- 	vid.autoplay = true;
-    vid.load();
+	// var vid = document.getElementById("audio");
+ // 	vid.autoplay = true;
+ //    vid.load();
 
 }
 

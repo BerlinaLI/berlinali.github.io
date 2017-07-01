@@ -114,9 +114,7 @@ function onReady()
 	
 	
 	$(renderer.view).mousedown(function(){
-		isAdding = true;
-		console.log("from renderview sound on");
-		$('#audio').html('<audio autoplay src="./assets/yay.mp3"></audio>');
+		isAdding = true;	
 	});
 	
 	$(renderer.view).mouseup(function(){
@@ -140,8 +138,25 @@ function onTouchStart(event)
 {
 	isAdding = true;
 	console.log("sound on");
-	$('#audio').html('<audio autoplay src="./assets/yay.mp3"></audio>');
+	// $('#audio').html('<audio autoplay src="./assets/yay.mp3"></audio>');
+
+	// var realSounder = document.getElementById('audio');
+ //    realSounder.src = "./assets/yay.mp3";
+ //    realSounder.play();
+
+ 	// var yaySound =  document.getElementById("audio");
+ 	// yaySound.src = "./assets/yay.mp3";
+ 	// yaySound.play();
+
+
+ 	// solution 3
+	var vid = document.getElementById("audio");
+ 	vid.autoplay = true;
+    vid.load();
+
 }
+
+
 
 
 function onTouchEnd(event)

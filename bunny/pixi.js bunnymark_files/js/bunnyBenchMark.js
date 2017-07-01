@@ -128,7 +128,6 @@ function onReady()
 	document.addEventListener("touchstart", onTouchStart, true);
 	document.addEventListener("touchend", onTouchEnd, true);
 	
-	
 	resize();
 
 	playYay();
@@ -140,7 +139,11 @@ function playYay(){
 	var audio = document.getElementById('audio');
 	var button = document.getElementById('play-button');
 	button.addEventListener('click',function(){
-	    audio.play();
+		if (audio.paused) {
+	        audio.play();
+	    }else{
+	        audio.currentTime = 0 //if keep pressing
+	    }
 	});
 }
 
@@ -148,25 +151,7 @@ function onTouchStart(event)
 {
 	isAdding = true;
 	console.log("sound on");
-	// $('#audio').html('<audio autoplay src="./assets/yay.mp3"></audio>');
-
-	// var realSounder = document.getElementById('audio');
- //    realSounder.src = "./assets/yay.mp3";
- //    realSounder.play();
-
- 	// var yaySound =  document.getElementById("audio");
- 	// yaySound.src = "./assets/yay.mp3";
- 	// yaySound.play();
-
-
- 	// solution 3
-	// var vid = document.getElementById("audio");
- // 	vid.autoplay = true;
- //    vid.load();
-
 }
-
-
 
 
 function onTouchEnd(event)
@@ -174,7 +159,6 @@ function onTouchEnd(event)
 	bunnyType++
 	bunnyType %= 5;
 	currentTexture = bunnyTextures[bunnyType];
-
 	isAdding = false;
 }
 

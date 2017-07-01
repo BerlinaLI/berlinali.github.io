@@ -5,20 +5,20 @@ window.onorientationchange = resize;
 
 
 //when no people interact for 10s, redirect to the scratch card page again. 
-var idleSeconds = 15;
-$(function(){
-  var idleTimer;
-  function resetTimer(){
-    clearTimeout(idleTimer);
-    idleTimer = setTimeout(whenUserIdle,idleSeconds*1000);
-  }
-  $(document.body).bind('mousemove keydown click',resetTimer); //space separated events list that we want to monitor
-  resetTimer(); // Start the timer when the page loads
-});
+// var idleSeconds = 15;
+// $(function(){
+//   var idleTimer;
+//   function resetTimer(){
+//     clearTimeout(idleTimer);
+//     idleTimer = setTimeout(whenUserIdle,idleSeconds*1000);
+//   }
+//   $(document.body).bind('mousemove keydown click',resetTimer); //space separated events list that we want to monitor
+//   resetTimer(); // Start the timer when the page loads
+// });
 
-function whenUserIdle(){
-   window.open("https://berlinali.github.io/scratchcard/","_self");
-}
+// function whenUserIdle(){
+//    window.open("https://berlinali.github.io/scratchcard/","_self");
+// }
 
 
 var width = 480;

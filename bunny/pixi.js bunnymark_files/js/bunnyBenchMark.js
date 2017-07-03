@@ -1,10 +1,12 @@
-$(document).ready(onReady)
+// $(document).ready(onReady)
 
-$(window).resize(resize)
-window.onorientationchange = resize;
+$( document ).ready(function() {
+	onReady();   
+	$(window).resize(resize)
+	window.onorientationchange = resize;
+	playYay();
 
-
-
+});
 
 //when no people interact for 10s, redirect to the scratch card page again. 
 // var idleSeconds = 15;

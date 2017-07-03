@@ -46,22 +46,6 @@ var pixiLogo;
 var clickImage;
 var amount = 100;
 
-//background music
- $.mbAudio.sounds = {
-            backgroundSprite: {
-                id    : "backgroundSprite",
-                mp3   : "assets/bgm.mp3",
-                //mp3   : "sounds/game_bgm.mp3",
-                //example of sprite
-                sprite: {
-                    levelIntro: {id: "levelIntro", start: 0, end: 60, loop: true},
-                }
-            },
-
-        };
-
-
- $.mbAudio.play('backgroundSprite','levelIntro')
 
 function onReady()
 {
@@ -154,12 +138,11 @@ function onReady()
 
 
 function playBgm(){
-	myAudio = new Audio('assets/bgm.mp3'); 
-	myAudio.addEventListener('ended', function() {
-	    this.currentTime = 0;
-	    this.play();
-	}, false);
-	//myAudio.play();
+	var myAudio = document.getElementById('audioBgm'); 
+	var button = document.getElementById('play-button');
+	button.addEventListener('click',function(){
+	    myAudio.play();
+	});
 }
 
 

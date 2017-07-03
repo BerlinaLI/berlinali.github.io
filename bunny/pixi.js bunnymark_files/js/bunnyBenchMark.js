@@ -4,6 +4,8 @@ $(window).resize(resize)
 window.onorientationchange = resize;
 
 
+
+
 //when no people interact for 10s, redirect to the scratch card page again. 
 // var idleSeconds = 15;
 // $(function(){
@@ -40,8 +42,24 @@ var count = 0;
 var container;
 var pixiLogo;
 var clickImage;
-
 var amount = 100;
+
+//background music
+ $.mbAudio.sounds = {
+            backgroundSprite: {
+                id    : "backgroundSprite",
+                mp3   : "assets/bgm.mp3",
+                //mp3   : "sounds/game_bgm.mp3",
+                //example of sprite
+                sprite: {
+                    levelIntro: {id: "levelIntro", start: 0, end: 60, loop: true},
+                }
+            },
+
+        };
+
+
+ $.mbAudio.play('backgroundSprite','levelIntro')
 
 function onReady()
 {

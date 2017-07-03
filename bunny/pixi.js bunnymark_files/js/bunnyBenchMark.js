@@ -20,15 +20,13 @@ window.onorientationchange = resize;
 //    window.open("https://berlinali.github.io/scratchcard/","_self");
 // }
 
-
-var width = 480;
-var height = 320;
+var width = $(window).width();
+var height = $(window).height();
 
 var wabbitTexture;
 var pirateTexture;
 
 var bunnys = [];
-// var gravity = 0.5//1.5 ;
 var gravity = 0.5//1.5 ;
 
 var maxX = width;
@@ -65,7 +63,6 @@ function onReady()
 	renderer.view.style.position = "absolute";
 	stats = new Stats();
 	
-	
 	document.body.appendChild( stats.domElement );
 	stats.domElement.style.position = "absolute";
 	stats.domElement.style.top = "0px";
@@ -88,7 +85,7 @@ function onReady()
 	container = new PIXI.ParticleContainer(200000, [false, true, false, false, false]);
 	stage.addChild(container);
 
-	bunny1 = new PIXI.Texture(wabbitTexture.baseTexture, new PIXI.math.Rectangle(2, 47, 26, 37));
+	bunny1 = new PIXI.Texture(wabbitTexture.baseTexture, new PIXI.math.Rectangle(2, 47, 26, 37)); //(x, y, width, height).
 	bunny2 = new PIXI.Texture(wabbitTexture.baseTexture, new PIXI.math.Rectangle(2, 86, 26, 37));
 	bunny3 = new PIXI.Texture(wabbitTexture.baseTexture, new PIXI.math.Rectangle(2, 125, 26, 37));
 	bunny4 = new PIXI.Texture(wabbitTexture.baseTexture, new PIXI.math.Rectangle(2, 164, 26, 37));
@@ -121,7 +118,6 @@ function onReady()
 		bunnyType++
 		bunnyType %= 5;
 		currentTexture = bunnyTextures[bunnyType];
-
 		isAdding = false;
 	})
 	
@@ -145,8 +141,6 @@ function playBgm(){
 	}, false);
 	//myAudio.play();
 }
-
-
 
 
 function playYay(){
@@ -182,19 +176,8 @@ function resize()
 	var width = $(window).width(); 
 	var height = $(window).height(); 
 	
-	if(width > 800)width  = 800;
-	if(height > 600)height = 600;
-	
-	maxX = width;
-	minX = 0;
-	maxY = height;
-	minY = 0;
-	
-	var w = $(window).width() / 2 - width/2;
-	var h = $(window).height() / 2 - height/2;
-	
-	renderer.view.style.left = $(window).width() / 2 - width/2 + "px"
-	renderer.view.style.top = $(window).height() / 2 - height/2 + "px"
+	renderer.view.style.left = 0
+	renderer.view.style.top = 0
 	renderer.resize(width, height);
 }
 
@@ -240,11 +223,13 @@ function update()
 		bunny.position.x += bunny.speedX;
 		bunny.position.y += bunny.speedY;
 		bunny.speedY += gravity;
+		bunny.width = 26;
+		bunny.height = 37;
 		
-		if (bunny.position.x > maxX)
+		if (bunny.position.x + bunny.width> maxX)
 		{
 			bunny.speedX *= -1;
-			bunny.position.x = maxX;
+			bunny.position.x = maxX - bunny.width;
 		}
 		else if (bunny.position.x < minX)
 		{
@@ -255,7 +240,7 @@ function update()
 		if (bunny.position.y > maxY)
 		{
 			bunny.speedY *= -0.65;
-			bunny.position.y = maxY;
+			bunny.position.y = maxY ;
 			bunny.spin = (Math.random()-0.5) * 0.2
 			if (Math.random() > 0.5)
 			{

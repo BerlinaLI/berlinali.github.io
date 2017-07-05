@@ -166,11 +166,11 @@ color:#999;
   margin:30px 0 30px;
 }
 
-.space-divider{
+.row-divider{
   margin:30px;
 }
 
-.mobile-space-divider{  
+.mobile-col-divider{  
   margin:15px;
 }  
 
@@ -199,6 +199,7 @@ img{
 ==============================================================*/
 .imageWrapper {
   position: relative;
+  cursor: pointer;
 }
 
 .title
@@ -411,11 +412,11 @@ ipad
   margin:40px 0 40px;
 }
 
-.space-divider{
+.row-divider{
   margin:25px;
 }
 
-.mobile-space-divider{
+.mobile-col-divider{
   margin:0px;
 }
 

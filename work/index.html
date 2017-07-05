@@ -10,7 +10,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <link rel="icon" href="https://www.clipartbest.com/cliparts/nTE/59b/nTE59boyc.png">
+  <link rel="icon" href="./asset/hand.gif">
 
   <link rel='stylesheet prefetch' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
 
@@ -19,155 +19,136 @@
 </head>
 
 <body>
-<div class="container">
-  <div class="canvas">
-      
-  <!--    desktop nav -->
-    <nav class="row desktop-nav" id="nav">
-      <div class="col-xs-12 col-md-6 offset-md-1 myname desktop-nav">
-        <strong>Berlina Li</strong>
-      </div> 
-      <div class="col-xs-12 col-md-4 navname desktop-nav">
-        <ul class="list-inline"> 
-          <li><a href="https://berlinali.github.io/work" class="navwork active">
-             &lt; 项目 &gt;
-          </a></li>
-          <li><a href="https://berlinali.github.io/resume" class="navresume">
-            ☞ 我 ☜﻿
-          </a></li>     
-          <li class="language-toggle" id="language-toggle-desktop">
-            <span class="switch-cn pointer">中文</span>/
-            <span class="switch-en pointer">EN</span>
-          </li>   
+  <div class="container">
+    <div class="canvas">       
+    <!--    desktop nav -->
+      <nav class="row desktop-nav" id="nav">
+        <div class="col-xs-12 col-md-6 offset-md-1 myname desktop-nav">
+          <strong>Berlina Li</strong>
+        </div> 
+        <div class="col-xs-12 col-md-4 navname desktop-nav">
+          <ul class="list-inline"> 
+            <li><a href="https://berlinali.github.io/work" class="navwork active">
+               &lt; 项目 &gt;
+            </a></li>
+            <li><a href="https://berlinali.github.io/resume" class="navresume">
+              ☞ 我 ☜﻿
+            </a></li>     
+            <li class="language-toggle" id="language-toggle-desktop">
+              <span class="switch-cn pointer">中文</span>/
+              <span class="switch-en pointer">EN</span>
+            </li>   
+          </ul>
+        </div>
+      </nav><!--row -->
+
+    <!--  mobile nav -->  
+      <nav class="centered-navigation group mobile-nav">  
+
+        <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+          <li class="nav-link">
+            <a href="https://berlinali.github.io/work/">
+              <span lang="cn" class="active">&lt; 项目 &gt;</span>
+              <span lang="en" class="active">WORKS</span>
+            </a>
+          </li>
+          
+          <li class="nav-link active">
+            <a href="https://berlinali.github.io/resume/">
+              <span lang="cn"> ☞ 我 ☜﻿</span>
+              <span lang="en">ABOUT ME</span>           
+            </a>
+          </li>  
         </ul>
-      </div>
-    </nav><!--row -->
 
-  <!--  mobile nav -->  
-    <nav class="centered-navigation group mobile-nav">  
+        <div class="centered-navigation-mobile-menu">
+          <i class="fa fa-bars" aria-hidden="true" id="js-centered-navigation-mobile-menu" ></i> 
+          <span class="language-toggle">
+            <span class="switch-en">EN</span> / <span class="switch-cn">中文</span> 
+          </span>   
+        </div>   
 
-      <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
-        <li class="nav-link">
-          <a href="https://berlinali.github.io/work/">
-            <span lang="cn" class="active">&lt; 项目 &gt;</span>
-            <span lang="en" class="active">WORKS</span>
-          </a>
-        </li>
-        
-        <li class="nav-link active">
-          <a href="https://berlinali.github.io/resume/">
-            <span lang="cn"> ☞ 我 ☜﻿</span>
-            <span lang="en">ABOUT ME</span>           
-          </a>
-        </li>  
-      </ul>
+        <div class="col-xs-12 myname-mobile">
+          <div><span><strong>Berlina Li</strong></span></div>
+        </div> 
 
-      <div class="centered-navigation-mobile-menu">
-        <i class="fa fa-bars" aria-hidden="true" id="js-centered-navigation-mobile-menu" ></i> 
-        <span class="language-toggle">
-          <span class="switch-en">EN</span> / <span class="switch-cn">中文</span> 
-        </span>   
-      </div>   
+      </nav>
 
-      <div class="col-xs-12 myname-mobile">
-        <div><span><strong>Berlina Li</strong></span></div>
-      </div> 
+      <div class="section-divider"></div>
 
-    </nav>
+  <!-- =====================project=======================-->
 
-    <div class="section-divider"></div>
+      <div class="project">
 
-<!-- =====================project=======================-->
+        <div class="row">
+        <!-- ==================elevator ================== -->
+          <div class="col-xs-12 col-md-5 offset-md-1">
 
-    <div class="project">
-
-      <div class="row">
-      <!-- ==================elevator ================== -->
-        <div class="col-xs-12 col-md-5 offset-md-1">
-
-         <div class="imageWrapper">
-            <img src="./asset/sound_bird.jpg" class="img-responsive center-block static-image" alt="audio game" src1="./asset/sound_bird.jpg" src2="./asset/sound_bird.gif">       
-            <p class="title">Sound Flapping Bird</p>
-          </div>
-
-          <div class="projectCaption">           
-            <div class="textblock" lang="cn"> 
-             该网页游戏邀请用户通过控制声高来玩游戏，把音量高低变成摇杆，打破传统安静的游戏物理空间，提供崭新的游戏体验。该游戏采用HTML5 Canvas功能制作，受API限制仅限safari和ios以外的浏览器和设备使用。
-            </div>   
-            <div class="textblock" lang="en">
-              Control your voice volumn to play flappy bird in your desktop or mobile device. It create a fun and engaging gaming. Users are highly encourage to play in public space. Due to privacy constraint issue, it is not avaiable on ios device and safari browser.                   
+            <div class="imageWrapper">
+              <img src="./asset/sound_bird.jpg" class="img-responsive center-block static-image" alt="audio game" src1="./asset/sound_bird.jpg" src2="./asset/sound_bird.gif">       
+              <p class="title">Sound Flapping Bird</p>
             </div>
-          </div> <!-- projectCaption -->
 
-          <div class="play-button">
-            <ul class="videowrapper" lang="cn" >
-              <li class="pointer">
-                <i class="fa fa-gamepad pop-it-game" aria-hidden="true"></i>
-              </li> | 
-              <li>
-                <a href="https://github.com/BerlinaLI/berlinali.github.io/tree/master/pcgamebotsmall" target="_blank">
-                 <i class="fa fa-github-alt" aria-hidden="true"></i>
-                </a> 
-              </li>
-            </ul>
+            <div class="projectCaption">                   
+              <div class="textblock" lang="cn"> 
+               该网页游戏邀请用户通过控制声高来玩游戏，把音量高低变成摇杆，打破传统安静的游戏物理空间，提供崭新的游戏体验。该游戏采用HTML5 Canvas功能制作，受API限制仅限safari和ios以外的浏览器和设备使用。
+              </div>   
+              <div class="textblock" lang="en">
+                Control your voice volumn to play flappy bird in your desktop or mobile device. It create a fun and engaging gaming. Users are highly encourage to play in public space. Due to privacy constraint issue, it is not avaiable on ios device and safari browser.                   
+              </div>
+            </div> <!-- projectCaption -->
 
-            <ul class="videowrapper" lang="en" >
-              <li class="pointer">
-                <i class="fa fa-gamepad pop-it-game" aria-hidden="true"></i>
-              </li> | 
-              <li>
-                <a href="https://github.com/BerlinaLI/berlinali.github.io/tree/master/pcgamebotsmall" target="_blank">
-                 <i class="fa fa-github-alt" aria-hidden="true"></i>
-                </a> 
-              </li>
-            </ul>
-          </div>
+            <div class="play-button">
+              <div class="videowrapper">
+                <span  class="pointer">              
+                  <a href=#>
+                    <i class="fa fa-gamepad pop-it-game" aria-hidden="true"></i>
+                  </a>                  
+                </span> | 
+                <span>
+                  <a href="https://github.com/BerlinaLI/berlinali.github.io/tree/master/pcgamebotsmall" target="_blank">
+                   <i class="fa fa-github-alt" aria-hidden="true"></i>
+                  </a> 
+                </span>
+              </div>
+            </div>
 
-        </div>  <!-- col -->  
-     
-        <div class="mobile-space-divider"></div>
+          </div>  <!-- col -->  
+       
+          <div class="mobile-space-divider"></div>   
 
-
-        <div class="col-xs-12 col-md-5">
         <!-- ==================taobao ================== -->
-          <div class="imageWrapper">
-            <img src="./asset/taobao.jpg" class="img-responsive center-block static-image" alt="plug-in" src1="./asset/taobao.jpg" src2="./asset/taobao.gif">  
-            <p class="title" lang="cn"><strong>某宝广告干扰插件</strong>
-            <p class="title" lang="en"><strong>Anti-Ad Plug-in</strong>
-          </div>
-      
+          <div class="col-xs-12 col-md-5">
+            <div class="imageWrapper">
+              <img src="./asset/taobao.jpg" class="img-responsive center-block static-image" alt="plug-in" src1="./asset/taobao.jpg" src2="./asset/taobao.gif">  
+              <p class="title" lang="cn">某宝广告干扰插件</p>
+              <p class="title" lang="en">Anti-Ad Plug-in</p>
+            </div>
 
-          <div class="projectCaption" >   
-            <p class="maintext">
+            <div class="projectCaption" >   
               <div class="textblock" lang="cn"> 
               该插件受艺术家佩恩恩委托开发。用户在插件界面输入关键字后，插件将抓取网页CSS元素模仿人类浏览页面的行为进行搜索，比如输入关键字，点击按钮，滚动页面，从而制造虚假的浏览记录，干扰某宝的广告和产品推荐机制。该插件只提供chrome浏览器版本。
               </div>
-
               <div class="textblock" lang="en"> 
                 This bot is a chrome plug-in that searches keywords automatically to manipulate the website's recommendation system.  
-              </div> 
-                 
-            </p>
-        </div> <!-- projectCaption -->
-            
-      </div>  <!-- col -->
-    </div>  <!-- row -->
+              </div>                             
+            </div> <!-- projectCaption -->   
 
+          </div>  <!-- col -->
+        </div>  <!-- row -->
 
-     <div class="space-divider"></div>
- 
-      <div class="row">
+        <div class="space-divider"></div>
+   
+        <div class="row">
+        <!-- ==================game================== -->
+          <div class="col-xs-12 col-md-5 offset-md-1">       
+            <div class="imageWrapper">
+              <img src="./asset/elevator.jpg" class="img-responsive center-block static-image" alt="elevator moment" src1="./asset/elevator.jpg" src2="./asset/elevator.gif">  
+              <p class="title" lang="cn">电梯朋友圈</p>
+              <p class="title" lang="en">Elevator Moment</p>
+            </div>   
 
-        <div class="col-xs-12 col-md-5 offset-md-1">
-      <!-- ==================game================== -->
-          <div class="imageWrapper">
-            <img src="./asset/elevator.jpg" class="img-responsive center-block static-image" alt="elevator moment" src1="./asset/elevator.jpg" src2="./asset/elevator.gif">  
-            <p class="title" lang="cn"><strong>电梯朋友圈</strong></p>
-            <p class="title" lang="en"><strong>Elevator Moment</strong></p>
-          </div>
-       
-          <div class="projectCaption">         
-            <p class="maintext">
+            <div class="projectCaption">         
               <div class="textblock" lang="cn">         
               该作品受艺术家shaw委托开发。出于建筑师背景，shaw选择用米来衡量朋友圈的长度。通过手机传感器数据与楼层高度和运动趋势的匹配，让长达30米的朋友圈图像跟随楼层高度自动滚动，成为一个时刻在于环境交互的社交媒体。  
               </div>
@@ -176,66 +157,51 @@
 
                 In order to display this full image, we placed a  mobile phone which scroll it automatically corresponding to the moment of the elevator. Thus audience would have a brand new experience to check out  social media. 
               </div>
-            </p>
-          </div> <!-- projectCaption -->
+            </div> <!-- projectCaption -->
 
-        </div>   <!-- col -->
+          </div>   <!-- col -->
 
-        <div class="mobile-space-divider"></div>
+          <div class="mobile-space-divider"></div>
 
-        <div class="col-xs-12 col-md-5">    
         <!-- ==================brainwave================== -->
-          <div class="imageWrapper">
-            <img src="./asset/brainwave.jpg" class="img-responsive center-block" alt="brainwave">      
-            <p class="title"><strong>X in White</strong></p>
-          </div>
-        
-          <div class="projectCaption">        
-            <p class="maintext">
-              <div class="textblock" lang="cn" > 
+          <div class="col-xs-12 col-md-5">  
+
+            <div class="imageWrapper">
+              <img src="./asset/brainwave.jpg" class="img-responsive center-block" alt="brainwave">      
+              <p class="title">X in White</p>
+            </div>   
+
+            <div class="projectCaption">        
+              <div class="textblock" lang="cn"> 
                 这个装置追踪用户脑波活动输出现场的灯光变化。观众可以带上耳机体验语音催眠。正如在RBG中0到255之间，观众与装置产生微妙的关系，或沉浸式冥想或玩起挑战意志游戏。该作品曾在Basement6，视觉艺术中心（M50）和上海法国领事馆展览过。
               </div>
               
-              <div class="textblock" lang="en" > 
+              <div class="textblock" lang="en"> 
                 This installation visualizes brainwave data of concentration and relaxation in lighting. It is an immersive space of meditation, a game of self control and a data visualization project.
               </div>
+            </div>
 
-              <div class="play-button">
-                <ul class="videowrapper" lang="cn" >
-                  <li class="pointer">
-                    <i class="fa fa-picture-o pop-it-brainwave" aria-hidden="true"></i>
-                  </li> | 
-                  <li>
-                    <a href="https://thexcollective.weebly.com/" target="_blank">
-                     <i class="fa fa-link" aria-hidden="true"></i>
-                    </a> 
-                  </li>
-                </ul>
-
-                <ul class="videowrapper" lang="en" >
-                  <li class="pointer">
-                    <i class="fa fa-picture-o pop-it-brainwave" aria-hidden="true"></i>
-                  </li> | 
-                  <li>
-                    <a href="https://thexcollective.weebly.com/" target="_blank">
-                     <i class="fa fa-link" aria-hidden="true"></i>
-                    </a> 
-                  </li>
-                </ul> 
+            <div class="play-button">
+              <div class="videowrapper">
+                <span class="pointer">
+                  <i class="fa fa-picture-o pop-it-brainwave" aria-hidden="true"></i>
+                </span> | 
+                <span>
+                  <a href="https://thexcollective.weebly.com/" target="_blank">
+                   <i class="fa fa-link" aria-hidden="true"></i>
+                  </a> 
+                </span>
               </div>
-
-            </p>
-          </div> <!-- projectCaption -->
-           
-        </div>  
-      </div>  <!-- row -->
+            </div> <!-- playbutton -->
+     
+          </div>  <!-- col -->
+        </div>  <!-- row -->
+      </div> <!-- project -->  
+      
+      <div class="space-divider"></div>
     
-    <div class="space-divider"></div>
-    
-    </div> <!-- project -->  
-  
-  </div><!--canvas -->       
-</div><!--container -->   
+    </div><!--canvas -->       
+  </div><!--container -->   
 
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>   

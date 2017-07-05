@@ -172,7 +172,7 @@ color:#999;
 
 .mobile-space-divider{  
   margin:15px;
-}  /*to-do*/
+}  
 
 /* header
 ============================================
@@ -470,14 +470,10 @@ ipad
   margin-bottom:0;
 }
 /*nav*/
-
-.maintext{
-  font-size:0.75rem;
-}
-
 .textblock{
   display:block;
   margin-top:5px;
+  font-size:0.75rem;
 }
 
 

@@ -475,12 +475,6 @@ ipad
   font-size:0.75rem;
 }
 
-.title{
-  font-size:0.875rem;
-  margin-bottom: 0;
-  text-align:center !important;
-}
-
 .textblock{
   display:block;
   margin-top:5px;
@@ -505,6 +499,7 @@ ipad
 .title
 {
     font-size:0.875rem;
+    font-weight: 600;
     margin-bottom: 0;
     opacity: 0.75;
     position: absolute;

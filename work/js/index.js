@@ -52,8 +52,7 @@ $(document).ready(function() {
 
   //mobile-menu-toggle
   var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
-  $('#js-centered-navigation-menu').removeClass("show");
-  
+  $('#js-centered-navigation-menu').removeClass("show");  
   menuToggle.on('click', function(e) {
     e.preventDefault();
     $('#js-centered-navigation-menu').slideToggle(function(){
@@ -89,53 +88,23 @@ $(document).ready(function() {
     $overlay.show();  
   });
 
-  // $('#pop-it-bot').click(function(){
-  //   $(".videoiframe").attr("src",taobaoVideo);
-  //   $overlay.show();  
-  // });
-
-  //open pop-up windows
-  // $('#pop-it-elevator').click(function(){
-  //   $(".videoiframe").attr("src",elevatorVideo);
-  //   $overlay.show();  
-  // });
-
 
   $('.pop-it-brainwave').click(function(){
     $overlayimage.show(); 
     $('#slider').css({ width: slideWidth, height: slideHeight });
     $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
     $('#slider ul li:last-child').prependTo('#slider ul');
+  });
 
-    function moveLeft() {
-      $('#slider ul').animate({
-          left: + slideWidth
-      }, 200, function () {
-          $('#slider ul li:last-child').prependTo('#slider ul');
-          $('#slider ul').css('left', '');
-      });
-    };
+  $('a.control_prev').click(function () {
+    moveLeft();
+  });
 
-    function moveRight() {
-      $('#slider ul').animate({
-          left: - slideWidth
-      }, 200, function () {
-          $('#slider ul li:first-child').appendTo('#slider ul');
-          $('#slider ul').css('left', '');
-      });
-    };
+  $('a.control_next').click(function () {
+    moveRight();
+  });
 
-    $('a.control_prev').click(function () {
-      moveLeft();
-    });
-
-    $('a.control_next').click(function () {
-      moveRight();
-    });
-
-  });   
-
-//close pop-up windows
+  //close pop-up windows
   $(".deleteIcon").click(function() {
     $overlay.hide();
     $overlayimage.hide();
@@ -143,7 +112,40 @@ $(document).ready(function() {
     $(".videoiframe").css({"width":"","height":"","overflow":"","margin":""});
   });
 
-});
+//hover to change static image to GIF 
+  $( ".static-image" ).hover(
+    function() {
+      var srcGif = $(this).attr("src2");
+      console.log(srcGif);
+      $( this ).attr("src", srcGif);    
+    }, function() {
+      var srcStatic = $(this).attr("src1");
+      console.log(srcStatic);
+      $( this ).attr("src", srcStatic);
+    }
+  );
+});  
+
+function moveLeft() {
+  $('#slider ul').animate({
+      left: + slideWidth
+  }, 200, function () {
+      $('#slider ul li:last-child').prependTo('#slider ul');
+      $('#slider ul').css('left', '');
+  });
+};
+
+function moveRight() {
+  $('#slider ul').animate({
+      left: - slideWidth
+  }, 200, function () {
+      $('#slider ul li:first-child').appendTo('#slider ul');
+      $('#slider ul').css('left', '');
+  });
+}; 
+
+
+
 
 
 

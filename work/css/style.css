@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 *{
   font-family: 'Roboto Condensed', sans-serif;
@@ -200,10 +201,7 @@ img{
   position: relative;
 }
 
-.hovertextelevator, 
-.hovertexttaobao,
-.hovertextbrainwave,
-.hovertextmindplus
+.title
 {
     opacity: 0.9;
     position: absolute;
@@ -215,64 +213,13 @@ img{
     background: #fff;
     text-decoration: none;
     text-align: center;
-    -webkit-transition: opacity 500ms;
-    -moz-transition: opacity 500ms;
-    -o-transition: opacity 500ms;
-    transition: opacity 500ms;
     font-size:1.25rem;
     z-index: 20;
 }
 
-.elevatorgif, 
-.taobaogif,
-.brainwavegif,
-.mindplusgif
-{
-    opacity: 0;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    z-index: 10;
-}
 
-
-#elevatorhover:hover .elevatorgif,
-#taobaohover:hover .taobaogif,
-#brainwavehover:hover .brainwavegif,
-#mindplushover:hover .mindplusgif
-{
-    opacity: 1;
-}
-
-/*p{
-  margin-bottom:0;
-}*/
-
-
-/*textintro*/
-
-.projectText{  
-  text-align:justify；   
-}
-
-
-.title{
-  font-size:0.9rem;
-  text-align:center;
-}
-
-
-.textblock{
-  display:block;
-  margin:5px 0 0;
-  font-size:0.9rem;
-  color:#000 !important;
-  clear:both;
-}
 
 /*show video*/
-
 .videowrapper{
   float:right !important;
 }
@@ -551,26 +498,14 @@ ipad
   position:initial;
 }
 
-/*.gameframe{
-  display:block;
-  width: 560px;
-  height: 815px;
-  margin: 50px auto 100px;
-  overflow: visible;
-}*/
-
 
 /*project 
 ================================================================
 */
-/*  hover effect */
-
-
-.hovertextelevator, 
-.hovertexttaobao,
-.hovertextbrainwave,
-.hovertextmindplus
+.title
 {
+    font-size:0.875rem;
+    margin-bottom: 0;
     opacity: 0.75;
     position: absolute;
     bottom: 0px;
@@ -580,38 +515,9 @@ ipad
     color:#000;
     background: #fff;
     text-decoration: none;
-    text-align: center;
-    -webkit-transition: opacity 500ms;
-    -moz-transition: opacity 500ms;
-    -o-transition: opacity 500ms;
-    transition: opacity 500ms;
-    font-size:15px;
+    text-align: center !important;;
     z-index: 20;
-}
-
-.elevatorgif, 
-.taobaogif,
-.brainwavegif,
-.mindplusgif
-{
-    opacity: 0;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    z-index: 10;
-}
-
-
-#elevatorhover:hover .elevatorgif,
-#taobaohover:hover .taobaogif,
-#brainwavehover:hover .brainwavegif,
-#mindplushover:hover .mindplusgif
-{
-    opacity: 1;
-}
-
-
+  }
 }
 
 @media (min-width: 1200px) {
@@ -619,10 +525,7 @@ ipad
   margin:100px 30px 40px;
 }
 
-.hovertextelevator, 
-.hovertexttaobao,
-.hovertextbrainwave,
-.hovertextmindplus
+.title
 {
   font-size:0.9rem;
 }

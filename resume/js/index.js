@@ -19,9 +19,9 @@ $(document).ready(function() {
   });
 
 //switch language
-  $('[lang="en"]').hide();
-  $('.switch-en').removeClass("active");
-  $('.switch-cn').addClass("active");
+  $('[lang="cn"]').hide();
+  $('.switch-cn').removeClass("active");
+  $('.switch-en').addClass("active");
 
   $('.switch-en').click(function() {
     $('[lang="cn"]').hide();

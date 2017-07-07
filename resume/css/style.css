@@ -145,6 +145,11 @@ a:hover{
   margin:15px;
 }  /*to-do*/
 
+
+.header-slogan{
+  font-size: 1.25rem !important;
+}
+
 /* header
 ============================================
 ============================================ */
@@ -223,6 +228,7 @@ img{
 
 
 @media (min-width: 768px) {
+
 
 .socialmedia-wrapper{
   float:left;

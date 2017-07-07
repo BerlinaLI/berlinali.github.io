@@ -32,6 +32,7 @@ a:hover{
 
 .videowrapper{
 /*  background: #B7AFFF;*/
+text-align: center;
 }
 
 .centered-navigation-mobile-menu, .nav-link, .myname-mobile,.col-md-5,.col-md-12, .col-xs-12{
@@ -147,6 +148,10 @@ a:hover{
   color:#999;
 }
 
+a{
+  color:#999 !important;
+}
+
 /*.active, .myname span{*/
 
 .active{
@@ -201,9 +206,9 @@ img{
   height: auto;
 }
 
-i{
+/*i{
   color:#0275d8;
-}
+}*/
 /*hover effect
 ==============================================================*/
 .imageWrapper {
@@ -230,6 +235,10 @@ i{
 
 
 /*show video*/
+.more-info i{
+  color:#999 !important;
+}
+
 .videowrapper{
   float:right !important;
 }

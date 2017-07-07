@@ -183,6 +183,13 @@ color:#999;
 /* project
 ============================================
 ============================================ */
+.short-intro{
+  margin-top:0.5rem;
+}
+
+.projectCaption{
+  display: none;
+}
 
 img{
   /*center image*/
@@ -194,7 +201,9 @@ img{
   height: auto;
 }
 
-
+i{
+  color:#0275d8;
+}
 /*hover effect
 ==============================================================*/
 .imageWrapper {

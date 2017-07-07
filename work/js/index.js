@@ -63,9 +63,9 @@ $(document).ready(function() {
   });
 
 //switch language
-  $('[lang="en"]').hide();
-  $('.switch-en').removeClass("active");
-  $('.switch-cn').addClass("active");
+  $('[lang="cn"]').hide();
+  $('.switch-cn').removeClass("active");
+  $('.switch-en').addClass("active");
 
   $('.switch-en').click(function() {
     $('[lang="cn"]').hide();
@@ -124,6 +124,17 @@ $(document).ready(function() {
       $( this ).attr("src", srcStatic);
     }
   );
+
+
+  //test mobile auto change from static image to gif 
+  // var scrollHeight; 
+  // var imageHeight;
+  // switch case
+
+  $('.more-info').click(function () {
+    $(this).parents(".col-md-5" ).children(".projectCaption").slideToggle();
+  });
+
 });  
 
 function moveLeft() {

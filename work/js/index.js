@@ -132,7 +132,7 @@ $(document).ready(function() {
   // switch case
 
   $('.more-info').click(function () {
-    $(this).parents(".col-md-6" ).children(".projectCaption").slideToggle();
+    $(this).parents(".col-md-4" ).children(".projectCaption").slideToggle();
   });
 
 });  

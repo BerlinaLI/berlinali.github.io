@@ -212,6 +212,11 @@ img{
   height: auto;
 }
 
+
+.short-intro span{
+  color:#999;
+  font-size: 0.75rem;
+}
 /*i{
   color:#0275d8;
 }*/

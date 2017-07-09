@@ -139,7 +139,7 @@ text-align: center;
 
 
 .header-slogan{
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 /*mobile menu tab*/
 
@@ -226,7 +226,7 @@ img{
 
 .short-intro span{
   color:#999;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 /*i{
   color:#0275d8;
@@ -250,7 +250,7 @@ img{
     background: #fff;
     text-decoration: none;
     text-align: center;
-    font-size:1.25rem;
+    font-size:1rem;
     z-index: 20;
 }
 
@@ -489,7 +489,7 @@ ipad
 
 /*menu*/
 .navname ul{
-  font-size:1.25rem;  /*1.25*/
+  font-size:1rem;  /*1.25*/
   position: absolute;
   right:0; 
   bottom:0;
@@ -560,5 +560,10 @@ ipad
 .title
 {
   font-size:0.9rem;
+}
+
+
+.short-intro span{
+  font-size: 0.85rem;
 }
 }

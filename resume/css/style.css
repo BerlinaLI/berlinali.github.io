@@ -147,7 +147,7 @@ a:hover{
 
 
 .header-slogan{
-  font-size: 1.25rem !important;
+  font-size: 1rem !important;
 }
 
 /* header
@@ -284,7 +284,7 @@ a:hover{
 /*desktop test*/
 
 .navname ul{
-  font-size:1.25rem;  /*1.25*/
+  font-size:1rem;  /*1.25*/
   position: absolute;
   right:0; 
   bottom:0;

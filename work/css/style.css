@@ -202,6 +202,11 @@ color:#999;
   display: none;
 }
 
+.textblock a{
+  color:#000 !important;
+  text-decoration: underline;
+}
+
 img{
   /*center image*/
   display: block;

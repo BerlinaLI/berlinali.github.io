@@ -164,15 +164,15 @@ a:hover{
   margin-top:1em;
 }
 
-img{
+.profilepic{
   border-radius: 50%;
   /*center image*/
   display: block;
   margin-left: auto;
   margin-right: auto; 
   margin-bottom:25px;
-  width:60%;
   height:auto;
+  width:55%;
 }
 
 .introtext{
@@ -186,7 +186,7 @@ img{
 }
 
 .introtext .top-buffer{
-  margin-top:0.8em;
+  margin-top:0.5rem;
 }
 
 .underline{
@@ -217,7 +217,7 @@ img{
 
 .socialmedia .fa{
   color: #000;
-  font-size:1rem;
+  font-size:1.25rem;
 }
 
 .fa,.fa-instagram{
@@ -284,7 +284,7 @@ img{
 /*desktop test*/
 
 .navname ul{
-  font-size:1rem;  /*1.25*/
+  font-size:1.25rem;  /*1.25*/
   position: absolute;
   right:0; 
   bottom:0;
@@ -330,10 +330,6 @@ img{
 
 
 /* project */
-img{
-  width:75%;
-}
-
 .introtext{
   font-size:0.85rem;
   text-align:justify；
@@ -363,7 +359,7 @@ h4.time{
 
 .btn{
   font-size: 0.75rem;
-  padding-left:0;
+  padding-left:0 !important;
   padding-right:1.5rem;
 }
 }

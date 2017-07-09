@@ -98,7 +98,7 @@
 }
 
 .myname-mobile{
-  height:40px;
+  height:65px;
 /*  margin-top:20px;*/
 }
 
@@ -148,6 +148,10 @@ a:hover{
 
 .header-slogan{
   font-size: 1rem !important;
+}
+
+.mobile-header-slogan{
+  text-align: center;
 }
 
 /* header
@@ -220,7 +224,7 @@ a:hover{
   font-size:1.25rem;
 }
 
-.fa,.fa-instagram{
+i .socialmedia{
   color: #000;
   font-size:1rem;
 }

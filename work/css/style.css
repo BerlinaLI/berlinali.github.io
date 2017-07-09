@@ -125,8 +125,8 @@ text-align: center;
 }
 
 .myname-mobile{
-  height:40px;
-  margin-top:20px;
+  height:80px;
+/*  margin-top:20px;*/
 }
 
 /* center */
@@ -143,6 +143,9 @@ text-align: center;
 }
 /*mobile menu tab*/
 
+.mobile-header-slogan{
+  text-align: center;
+}
 
 .canvas{
   margin:10px 15px 50px;

@@ -113,17 +113,24 @@ $(document).ready(function() {
   });
 
 //hover to change static image to GIF 
-  $( ".static-image" ).hover(
-    function() {
-      var srcGif = $(this).attr("src2");
-      console.log(srcGif);
-      $( this ).attr("src", srcGif);    
-    }, function() {
-      var srcStatic = $(this).attr("src1");
-      console.log(srcStatic);
-      $( this ).attr("src", srcStatic);
-    }
-  );
+  if(screen.width > 720){
+    $( ".static-image" ).hover(
+      function() {
+        var srcGif = $(this).attr("src2");
+        console.log(srcGif);
+        $( this ).attr("src", srcGif);    
+      }, function() {
+        var srcStatic = $(this).attr("src1");
+        console.log(srcStatic);
+        $( this ).attr("src", srcStatic);
+      }
+    );
+  }
+
+  // if(screen.width < 720){
+  //     var srcGif = $( ".static-image" ).attr("src2");
+  //   $(this).attr("src",srcGif);    
+  // }
 
 
   //test mobile auto change from static image to gif 
@@ -134,6 +141,10 @@ $(document).ready(function() {
   $('.more-info').click(function () {
     $(this).parents(".col-md-4" ).children(".projectCaption").slideToggle();
   });
+
+  $('.single-info').click(function(){
+    $(this).parents(".col-md-4" ).children(".projectCaption").slideToggle();
+  })
 
 });  
 

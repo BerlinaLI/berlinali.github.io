@@ -231,9 +231,10 @@ img{
   color:#999;
   font-size: 0.9rem;
 }
-/*i{
-  color:#0275d8;
-}*/
+
+i{
+  cursor: pointer; 
+}
 /*hover effect
 ==============================================================*/
 .imageWrapper {

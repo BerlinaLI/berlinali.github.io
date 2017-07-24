@@ -142,9 +142,9 @@ $(document).ready(function() {
     $(this).parents(".col-md-4" ).children(".projectCaption").slideToggle();
   });
 
-  $('.single-info').click(function(){
-    $(this).parents(".col-md-4" ).children(".projectCaption").slideToggle();
-  })
+  // $('.single-info').click(function(){
+  //   $(this).parents(".col-md-4" ).children(".projectCaption").slideToggle();
+  // })
 
 });  
 

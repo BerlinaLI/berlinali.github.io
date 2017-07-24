@@ -226,6 +226,10 @@ img{
   margin-bottom: 0;
 }
 
+.single-imageWrapper p{
+  margin-bottom: 0;
+}
+
 
 .short-intro span{
   color:#999;
@@ -240,6 +244,10 @@ i{
 .imageWrapper {
   position: relative;
   cursor: pointer;
+}
+
+.single-imageWrapper {
+  position: relative;
 }
 
 .title

@@ -12,9 +12,9 @@ ion-item,ion-infinite-scroll{
 
 
 .item-complex .item-content, .item-radio .item-content{
-    padding: 50px 49px 45px 16px;
+    padding: 85px;
    margin:50px;
     border: none;
     background-color: red !important;
-    font-size: 55px;
+    font-size: 75px;
 }

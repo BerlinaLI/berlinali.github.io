@@ -1,7 +1,6 @@
 @font-face {
     font-family: songti;
     src: url(songti.TTF);
-    font-weight: bold;
 }
 
 body{
@@ -25,7 +24,7 @@ ion-item,ion-infinite-scroll{
 
 
 .item-complex .item-content, .item-radio .item-content{
-    padding: 85px;
+    padding: 85px !important;
    margin:50px;
     border: none;
     background-color: red !important;

@@ -1,0 +1,61 @@
+do ( w = window, d = document, $ = jQuery ) ->
+  log = (val) ->
+    if typeof( w.console ) != "undefined"
+      w.console.log val
+
+  config =
+    target: 0
+    onView: false
+    diff: 50
+    onEvent: ->
+      return
+
+  isAlong = true
+  timer = null
+
+  $.scrollExtends = ( elem, options ) ->
+    $that = elem
+    c = $.extend( config, options )
+
+    setTarget = ->
+      tarTop =  $that.offset().top
+      tarHeight = $that.height() or $that[0].height #r $that[0].scrollHeight
+      c.target = ( if c.onView then tarTop + Math.min( c.diff, tarHeight ) else tarTop + tarHeight - c.diff ) - $(w).height()
+      log( "target: " + c.target )
+      isAlong = false
+
+
+    $( w ).on "scroll", ->
+      log( "scroll:" + $("body").scrollTop() )
+      if( isAlong )
+        return
+
+      now = $("body").scrollTop()
+      log( c.target  + ":" + now )
+      if ( c.target < now )
+        isAlong = true
+        c.onEvent()
+        setTarget()
+
+    $( w ).on "resize", ->
+      log( "now Resize" )
+      if( timer )
+        clearTimeout(timer)
+
+      timer = setTimeout(->
+        setTarget()
+        clearTimeout( timer )
+      , 500 )
+
+    setTarget()
+
+  $.fn.scrollExtends = ( options )->
+    $.scrollExtends( this, options )
+    return this
+
+  $ ->
+    $.scrollExtends( $(".container"), {
+      onEvent: ->
+        height = $(".container").height()
+        $(".container").height( height += 100 )
+    })

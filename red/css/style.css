@@ -1,0 +1,8 @@
+body {
+  padding: 0;
+}
+.container {
+  margin: 0;
+  background-color: #f00;
+  height: 1000px;
+}

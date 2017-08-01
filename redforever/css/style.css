@@ -1,0 +1,20 @@
+body{
+  background:red;
+}
+
+ion-item,ion-infinite-scroll{
+  background-color:red !important;
+  text-align:center;  
+  color:yellow !important;
+  border:0 solid transparent !important;
+  font-size:125px;
+}
+
+
+.item-complex .item-content, .item-radio .item-content{
+    padding: 50px 49px 45px 16px;
+   margin:50px;
+    border: none;
+    background-color: red !important;
+    font-size: 55px;
+}

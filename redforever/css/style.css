@@ -1,6 +1,19 @@
+@font-face {
+    font-family: songti;
+    src: url(songti.TTF);
+    font-weight: bold;
+}
+
 body{
   background:red;
 }
+
+*{
+  font-family: songti;
+}
+
+
+
 
 ion-item,ion-infinite-scroll{
   background-color:red !important;

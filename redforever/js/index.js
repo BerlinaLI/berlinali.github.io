@@ -19,3 +19,14 @@ debugger;
     $scope.items=[];
 
 });
+
+
+function playBgm(){
+    var myAudio = document.getElementById('audioBgm'); 
+    var button = document.getElementById('play-button');
+    button.addEventListener('click',function(){
+        myAudio.play();
+    });
+}
+
+playBgm();

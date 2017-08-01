@@ -1,6 +1,6 @@
 @font-face {
-    font-family: songti;
-    src: url(songti.TTF);
+    font-family:songti;
+    src:url(songti.TTF);
 }
 
 body{
@@ -8,7 +8,7 @@ body{
 }
 
 *{
-  font-family: songti;
+  font-family:songti;
 }
 
 

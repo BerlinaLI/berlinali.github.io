@@ -20,7 +20,7 @@
    <script src="app.js"></script>
     <title>Red Forever</title>
 </head>
-<body ng-controller="InfiniteAppCntrl">
+<body ng-controller="InfiniteAppCntrl" id="play-button">
 <ion-content>
 <!--     <ion-header-bar >{{items.length}} items</ion-header-bar> -->
 </ion-content>
@@ -35,6 +35,14 @@
                      ></ion-infinite-scroll>
 </ion-list>
 </ion-content>
+
+
+  <audio id="audioBgm" autobuffer loop>
+    <source src="bgm.mp3" type="audio/mpeg">
+    Your browser does not support HTML5 video.
+  </audio>
+
+
 </body>
 </html>
   

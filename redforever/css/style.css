@@ -19,14 +19,14 @@ ion-item,ion-infinite-scroll{
   text-align:center;  
   color:yellow !important;
   border:0 solid transparent !important;
-  font-size:150px;
+  font-size:225px;
 }
 
 
 .item-complex .item-content, .item-radio .item-content{
-    padding: 85px !important;
+    padding: 185px 10px!important;
    margin:50px;
     border: none;
     background-color: red !important;
-    font-size: 150px;
+    font-size: 225px;
 }

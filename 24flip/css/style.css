@@ -13,7 +13,7 @@ body, html {
 }
 
 .intro {
-  background-image: url("./pic/shop.jpg" );
+  background-image: url("shop.jpg" );
   /* Full height */
   height: 100%;
   /* Center and scale the image nicely */

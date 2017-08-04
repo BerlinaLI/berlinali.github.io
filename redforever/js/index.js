@@ -1,6 +1,10 @@
 /**
  * Created by singhdi on 2014-07-26.
  */
+
+
+alert("不停往下拉体验更佳！keep scrolling for infinite RED");
+
 var app = angular.module("ionicInfiniteScrollApp",['ionic']);
 
 app.controller("InfiniteAppCntrl",function($scope){
@@ -19,17 +23,6 @@ debugger;
     $scope.items=[];
 
 });
-
-
-// function playBgm(){
-//     var myAudio = document.getElementById('audioBgm'); 
-//     var button = document.getElementById('play-button');
-//     button.addEventListener('click',function(){
-//         myAudio.play();
-//     });
-// }
-
-// playBgm();
 
 // 音乐播放
     function autoPlayMusic() {

@@ -21,15 +21,42 @@ debugger;
 });
 
 
-function playBgm(){
-    var myAudio = document.getElementById('audioBgm'); 
-    var button = document.getElementById('play-button');
-    button.addEventListener('click',function(){
-        myAudio.play();
-    });
-}
+// function playBgm(){
+//     var myAudio = document.getElementById('audioBgm'); 
+//     var button = document.getElementById('play-button');
+//     button.addEventListener('click',function(){
+//         myAudio.play();
+//     });
+// }
 
-playBgm();
+// playBgm();
 
+// 音乐播放
+    function autoPlayMusic() {
+        // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+        function musicInBrowserHandler() {
+            musicPlay(true);
+            document.body.removeEventListener('touchstart', musicInBrowserHandler);
+        }
+        document.body.addEventListener('touchstart', musicInBrowserHandler);
 
-alert("准备好了？举起你的左手，举起你的右手。");
+        // 自动播放音乐效果，解决微信自动播放问题
+        function musicInWeixinHandler() {
+            musicPlay(true);
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                musicPlay(true);
+            }, false);
+            document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+        }
+        document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+    }
+    function musicPlay(isPlay) {
+        var audio = document.getElementById('musicid');
+        if (isPlay && audio.paused) {
+            audio.play();
+        }
+        if (!isPlay && !audio.paused) {
+            audio.pause();
+        }
+    }
+    autoPlayMusic();

@@ -3,7 +3,7 @@
  */
 
 
-alert("不停往下拉体验更佳！keep scrolling for infinite RED");
+alert("不停往下拉体验更多的红！\nKeep scrolling for infinite RED!");
 
 var app = angular.module("ionicInfiniteScrollApp",['ionic']);
 

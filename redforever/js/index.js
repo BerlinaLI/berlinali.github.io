@@ -30,3 +30,6 @@ function playBgm(){
 }
 
 playBgm();
+
+
+alert("准备好了？举起你的左手，举起你的右手。");

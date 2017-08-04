@@ -4,7 +4,7 @@
 * Browser Support: Safari, Firefox, Chrome, IE8+, and Touch Devices; (IE9 and below will not have any flip effect but will just change on hover)
 ***/
 * {
-  font-size: 10px;
+  font-size: 25px;
   font-weight: 400;
 }
 
@@ -27,12 +27,19 @@ body, html {
 }
 
 span {
-  font-size: 8px;
+  font-size: 15px;
 }
 
+span .detail{
+  line-height: 45%;
+}
+
+.artist{
+  font-size:20px;
+}
 .time {
-  font-size: 6px;
-  margin-bottom: 6px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 .by {

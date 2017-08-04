@@ -1,0 +1,179 @@
+@import "compass/css3";
+
+$default-transition-duration: 500ms;
+$perspective: 300;
+
+/***
+* CSS3 FLIP CARDS
+* Markup for an element that a user can hover to reveal content on the back, like a card
+* Browser Support: Safari, Firefox, Chrome, IE8+, and Touch Devices; (IE9 and below will not have any flip effect but will just change on hover)
+***/
+*{
+  font-size:10px;
+  font-weight:400;
+}
+
+body, html {
+    height: 100%;
+}
+
+.intro{
+  background-image: url("http://flip24.oss-cn-beijing.aliyuncs.com/flipshop?Expires=1501815433&OSSAccessKeyId=TMP.AQF9LWu27GvgnDbBpZCHBFuGEdT4VOqXKlE5_d9cSC1ZwgPJ6uYRAXRm8ZrbADAtAhUA8RXd67I4tWluMEacA13QqvjpRPwCFHrgjeZOSvj7xZLStzS46ihVp7WR&Signature=6W%2BvU5VGsxwL%2Buwnw8PzwQdJLuw%3D");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.project{
+  display:none;
+}
+
+// .intro{
+//   display:none;
+// }
+
+span{
+  font-size:8px;
+}
+
+
+.time{
+  font-size:6px;
+  margin-bottom:6px;
+}
+
+.by{
+  font-size:3.5px;  
+}
+
+.name{
+  z-index:20000;
+  position:absolute;
+  top:25px;
+  left:25px;
+  font-size:50px; 
+  display:none;
+}
+
+.namesmall{
+   font-size:20px; 
+  top:15px;
+  left:15px;
+}
+
+.card-front{
+  position:relative;
+}
+
+img{
+  position:absolute;
+  width:100px;
+  height:100px;
+  left:0;
+  top:0;
+}
+
+
+.flip-card {
+  display: block;
+  position: relative;
+  z-index: 1000;
+  width: 100px; 
+  height: 100px;
+  
+  .card-front,
+  .card-back {
+    @include backface-visibility(hidden);
+    @include single-transition(transform);
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%; 
+  }
+
+  .card-front {
+    @include transform3d(perspective($perspective) rotateY(0));
+    z-index: 900;
+  }
+
+  .card-back {
+    @include rotateY(-180deg); //Using rotate instead of transform prevents the back of the card from flipping on page load because transition is only targeting transform. Super sweet. 
+     z-index: 800;
+  }
+
+  &:hover {
+    .card-front { 
+      @include transform(rotateY(180deg)); //No 3D fallback
+      @include transform3d(perspective($perspective) rotateY(180deg)); 
+    }
+    .card-back { 
+      z-index: 950; //No transform fallback
+      @include transform(rotateY(0deg)); //No 3D fallback
+      @include transform3d(perspective($perspective) rotateY(0deg)); 
+    }
+  }
+}
+
+
+
+
+/*** Just for show... ***/
+
+.flip-card {
+  @include text-shadow(1px 1px 0 rgba(darken(#1B8CE8, 20%), .8) );
+  color: #fff;
+  cursor: pointer;
+  float: left;
+  font-weight: bold;
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  min-width: 100px;
+  max-width: 400px;
+  
+  .card-front,
+  .card-back {
+    @include border-radius(1px);
+    @include box-shadow(1px 1px 2px rgba(darken(#1B8CE8, 20%), .8));
+    @include box-sizing(border-box);
+    // border: 1px solid darken(#1B8CE8, 40%);
+    padding: 5px 0;
+  }
+
+  .card-front {
+    @include box-sizing(border-box);
+    background-color: #999; // Old browsers
+  	@include filter-gradient(#499bea, #207ce5, vertical);
+		@include background-image(linear-gradient(top,  #499bea 0%,#207ce5 100%));
+
+  }
+
+  .card-back {
+    // @include box-shadow(0 0 20px rgba(darken(#1B8CE8, 10%), .8) inset);
+		background-color: #999; 
+   opacity:0.75;
+    // Old browsers
+		// @include filter-gradient(#478ce0, #0263db, vertical); // IE6-9
+		// @include background-image(linear-gradient(top,  #478ce0 0%,#1168db 100%,#0263db 100%));
+  } 
+}
+
+
+
+body {
+  // background-color: #e6f2f7; // Old browsers
+  // @include filter-gradient(#e6f2f7, #a0d8ef, horizontal); 
+  // @include background-image(radial-gradient(center, circle cover,  #e6f2f7 0%,#a0d8ef 100%));
+
+}
+
+.viewport {
+  margin: 10px auto 0;
+  width: 100vw;
+  // width:100%;
+}

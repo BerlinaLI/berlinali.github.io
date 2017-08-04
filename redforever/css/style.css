@@ -11,15 +11,11 @@ body{
   font-family:songti;
 }
 
-
-
-
 ion-item,ion-infinite-scroll{
   background-color:red !important;
   text-align:center;  
   color:yellow !important;
   border:0 solid transparent !important;
-  font-size:700px;
 }
 
 
@@ -28,5 +24,5 @@ ion-item,ion-infinite-scroll{
     margin:50px;
     border: none;
     background-color: red !important;
-    font-size: 225px;
+    font-size: 425px;
 }

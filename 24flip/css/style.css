@@ -13,7 +13,7 @@ body, html {
 }
 
 .intro {
-  background-image: url("http://flip24.oss-cn-beijing.aliyuncs.com/flipshop?Expires=1501815433&OSSAccessKeyId=TMP.AQF9LWu27GvgnDbBpZCHBFuGEdT4VOqXKlE5_d9cSC1ZwgPJ6uYRAXRm8ZrbADAtAhUA8RXd67I4tWluMEacA13QqvjpRPwCFHrgjeZOSvj7xZLStzS46ihVp7WR&Signature=6W%2BvU5VGsxwL%2Buwnw8PzwQdJLuw%3D");
+  background-image: url("./pic/shop.jpg" );
   /* Full height */
   height: 100%;
   /* Center and scale the image nicely */

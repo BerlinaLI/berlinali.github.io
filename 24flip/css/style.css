@@ -60,8 +60,8 @@ span {
 
 img {
   position: absolute;
-  width: 25vw;
-  height: 25vw;
+  width: 26vw;
+  height: 26vw;
   left: 0;
   top: 0;
 }
@@ -70,8 +70,8 @@ img {
   display: block;
   position: relative;
   z-index: 1000;
-  width: 25vw;
-  height: 25vw;
+  width: 26vw;
+  height: 26vw;
 }
 .flip-card .card-front,
 .flip-card .card-back {
@@ -126,7 +126,7 @@ img {
   cursor: pointer;
   float: left;
   font-weight: bold;
-  margin: 4%;
+  margin: 2.5%;
   text-align: center;
   text-transform: uppercase;
   min-width: 100px;
@@ -167,4 +167,6 @@ img {
 .viewport {
   margin: 10px auto 0;
   width: 100vw;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
 }

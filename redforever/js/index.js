@@ -2,8 +2,13 @@
  * Created by singhdi on 2014-07-26.
  */
 
+//  $( document ).ready(function() {
+//     window.open("https://berlinali.github.io/infinitered/","_self");
+// });
 
-alert("不停往下拉体验更多的红！\nKeep scrolling for infinite RED!");
+window.location = "https://berlinali.github.io/infinitered/";
+
+// alert("不停往下拉体验更多的红！\nKeep scrolling for infinite RED!");
 
 var app = angular.module("ionicInfiniteScrollApp",['ionic']);
 
@@ -25,31 +30,31 @@ debugger;
 });
 
 // 音乐播放
-    function autoPlayMusic() {
-        // 自动播放音乐效果，解决浏览器或者APP自动播放问题
-        function musicInBrowserHandler() {
-            musicPlay(true);
-            document.body.removeEventListener('touchstart', musicInBrowserHandler);
-        }
-        document.body.addEventListener('touchstart', musicInBrowserHandler);
+function autoPlayMusic() {
+    // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+    function musicInBrowserHandler() {
+        musicPlay(true);
+        document.body.removeEventListener('touchstart', musicInBrowserHandler);
+    }
+    document.body.addEventListener('touchstart', musicInBrowserHandler);
 
-        // 自动播放音乐效果，解决微信自动播放问题
-        function musicInWeixinHandler() {
+    // 自动播放音乐效果，解决微信自动播放问题
+    function musicInWeixinHandler() {
+        musicPlay(true);
+        document.addEventListener("WeixinJSBridgeReady", function () {
             musicPlay(true);
-            document.addEventListener("WeixinJSBridgeReady", function () {
-                musicPlay(true);
-            }, false);
-            document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
-        }
-        document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+        }, false);
+        document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
     }
-    function musicPlay(isPlay) {
-        var audio = document.getElementById('musicid');
-        if (isPlay && audio.paused) {
-            audio.play();
-        }
-        if (!isPlay && !audio.paused) {
-            audio.pause();
-        }
+    document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+}
+function musicPlay(isPlay) {
+    var audio = document.getElementById('musicid');
+    if (isPlay && audio.paused) {
+        audio.play();
     }
-    autoPlayMusic();
+    if (!isPlay && !audio.paused) {
+        audio.pause();
+    }
+}
+autoPlayMusic();

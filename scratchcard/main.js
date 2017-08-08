@@ -106,7 +106,7 @@ function drawScratchCard(e, canvas){
 }
 
 function layer(ctx,w,h){
-  ctx.fillStyle = "#DCDCDC";
+  ctx.fillStyle = "#C0C0C0";
   ctx.fillRect(0, 0, w, h);
 }
 

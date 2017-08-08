@@ -1,6 +1,11 @@
 /**
  * Created by singhdi on 2014-07-26.
  */
+if( screen.width > 500){
+// window.open("https://berlinali.github.io/scratchcard/scancode.html","_self");
+    window.location = "https://berlinali.github.io/gongzhonghao/";
+}else{
+
 
 
 alert("不停往下拉体验更多的红！\nKeep scrolling for infinite RED!");
@@ -53,3 +58,5 @@ debugger;
         }
     }
     autoPlayMusic();
+
+}

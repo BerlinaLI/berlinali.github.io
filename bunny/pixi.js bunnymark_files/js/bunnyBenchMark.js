@@ -130,20 +130,15 @@ function onReady()
 	
 	resize();
 
-	playYay();
+	playYay();	
 
-	playBgm();
+    //initial yay
+	var audio = document.getElementById('audio');
+    audio.play();
+	    
 
 }
 
-
-// function playBgm(){
-// 	var myAudio = document.getElementById('audioBgm'); 
-// 	var button = document.getElementById('play-button');
-// 	button.addEventListener('click',function(){
-// 	    myAudio.play();
-// 	});
-// }
 
 // 音乐播放
 function autoPlayMusic() {
@@ -164,6 +159,7 @@ function autoPlayMusic() {
     }
     document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
 }
+
 function musicPlay(isPlay) {
     var audio = document.getElementById('musicid');
     if (isPlay && audio.paused) {

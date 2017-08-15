@@ -214,11 +214,21 @@ color:#999;
 
 .project-info{
   font-size: 0.85rem;
+  color:#999;
 }
 
 .project-text{
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  margin-top:15px;
 }
+
+/*nav*/
+/*.textblock{
+  display:block;
+  margin-top:5px;
+  font-size:0.75rem;
+}
+*/
 
 
 
@@ -550,13 +560,6 @@ ipad
 .navname ul.list-inline{
   margin-bottom:0;
 }
-/*nav*/
-.textblock{
-  display:block;
-  margin-top:5px;
-  font-size:0.75rem;
-}
-
 
 /*video*/
 .videoiframe{

@@ -21,6 +21,14 @@
   text-decoration:none;
 }
 
+
+.animated #static, .static #animated {
+    display: none;
+}
+.animated #animated, .static #static {
+    display: inline;
+}
+
 a:hover{
   text-decoration:none !important;
   color:#000;
@@ -35,12 +43,11 @@ a:hover{
 text-align: center;
 }
 
-.centered-navigation-mobile-menu, .nav-link, .myname-mobile,.col-md-5,.col-md-12, .col-xs-12{
-/*.col-md-5{*/
+/*.centered-navigation-mobile-menu, .nav-link, .myname-mobile,.col-md-5,.col-md-12, .col-xs-12{
   opacity: 0;
   transform: translateX(-25px);
   transition: all .5s ease-in;
-}
+}*/
 
 /*mobile nav*/
 .group:after {
@@ -136,8 +143,6 @@ text-align: center;
   display:block;
 }
 
-
-
 .header-slogan{
   font-size: 1rem;
 }
@@ -191,6 +196,29 @@ color:#999;
 /* header
 ============================================
 ============================================ */
+
+/*detail page */
+.video-iframe{
+ /* width:100%;*/
+  width: 680px;
+  height: 390px;
+/*  center-block*/
+  display: block;
+  margin: 0 auto 30px ;
+}
+
+.project-title{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.project-info{
+  font-size: 0.85rem;
+}
+
+.project-text{
+  font-size: 0.85rem;
+}
 
 
 
@@ -563,6 +591,7 @@ ipad
     z-index: 20;
   }
 }
+
 
 @media (min-width: 1200px) {
 .canvas{

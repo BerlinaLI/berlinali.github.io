@@ -43,11 +43,11 @@ a:hover{
 text-align: center;
 }
 
-/*.centered-navigation-mobile-menu, .nav-link, .myname-mobile,.col-md-5,.col-md-12, .col-xs-12{
+.centered-navigation-mobile-menu, .nav-link, .myname-mobile,.col-md-5,.col-md-12, .col-xs-12{
   opacity: 0;
   transform: translateX(-25px);
   transition: all .5s ease-in;
-}*/
+}
 
 /*mobile nav*/
 .group:after {
@@ -198,14 +198,14 @@ color:#999;
 ============================================ */
 
 /*detail page */
-.video-iframe{
- /* width:100%;*/
-  width: 680px;
-  height: 390px;
+.project-iframe{
+   width: 100%;
+  height: 180px;
 /*  center-block*/
   display: block;
   margin: 0 auto 30px ;
 }
+
 
 .project-title{
   font-size: 1.2rem;
@@ -222,15 +222,9 @@ color:#999;
   margin-top:15px;
 }
 
-/*nav*/
-/*.textblock{
-  display:block;
-  margin-top:5px;
-  font-size:0.75rem;
+.pre-next a, .pre-next a:visited {
+  color:#000 !important;
 }
-*/
-
-
 
 /* project
 ============================================
@@ -454,6 +448,15 @@ ipad
   text-decoration: underline !important;
 }*/
 
+/*detail*/
+.project-iframe{
+ /* width:100%;*/
+  width: 680px;
+  height: 390px;
+}
+
+
+
 .language-toggle{
   font-size: 1rem;
   padding:0 15px 0;
@@ -530,6 +533,7 @@ ipad
   line-height:1;
   width: 100%;
   text-align:left;
+  cursor: pointer;
 }
 
 

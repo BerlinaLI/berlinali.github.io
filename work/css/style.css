@@ -227,12 +227,26 @@ color:#999;
 }
 
 .bottom-nav{
-  margin-top:15px;
+  margin-top:30px;
 } 
 
 .bottom-nav span{
   font-size: 0.9rem;
 }
+
+
+.btn-outline-secondary{
+  color:#000 !important;
+  border-color:#000 !important;
+  border: 0.95px solid transparent;
+}
+
+.btn-outline-secondary:hover{
+  color:#fff !important; 
+  border-color:#999 !important;
+}
+
+
 /* project
 ============================================
 ============================================ */
@@ -461,6 +475,10 @@ ipad
   width: 400px;
   height: 220px;
 }
+
+.bottom-nav{
+  margin-top:15px;
+} 
 
 .language-toggle{
   font-size: 1rem;

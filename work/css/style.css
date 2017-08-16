@@ -226,6 +226,13 @@ color:#999;
   color:#000 !important;
 }
 
+.bottom-nav{
+  margin-top:15px;
+} 
+
+.bottom-nav span{
+  font-size: 0.9rem;
+}
 /* project
 ============================================
 ============================================ */

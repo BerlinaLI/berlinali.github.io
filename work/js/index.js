@@ -42,12 +42,18 @@ var slideWidth = $('#slider ul li').width();
 var slideHeight = $('#slider ul li').height();
 var sliderUlWidth = slideCount * slideWidth;
 
+var isHomePage = $('.isHomePage').length ? true : false;
+var isResumePage= $('.isResumePage').length ? true : false;
+
 $(document).ready(function() {
 
   //animation when opens page
-  setTimeout(function(){
-    TweenMax.staggerTo([".centered-navigation-mobile-menu", ".nav-link", ".myname-mobile",".col-md-5",".col-md-12",".col-xs-12"], 0.25, {'opacity': 1,  x: 0}, .25);  
-  }, 1000);
+  // if(isHomePage || isResumePage){
+  //   console.log("si");
+  //   setTimeout(function(){
+  //     TweenMax.staggerTo([".centered-navigation-mobile-menu", ".nav-link", ".myname-mobile",".col-md-5",".col-md-12",".col-xs-12"], 0.25, {'opacity': 1,  x: 0}, .25);  
+  //   }, 1000);
+  // }
 
 
   //mobile-menu-toggle
@@ -81,6 +87,13 @@ $(document).ready(function() {
     $('.switch-cn').addClass("active");
   });
 
+
+
+  //click myname back to homepage 
+  $('.myname').click(function(){
+    window.open("https://berlinali.github.io/work","_self");
+  })
+
   //pop-up overlay element
   $('.pop-it-game').click(function(){
     $(".videoiframe").attr("src",gameLink);
@@ -113,19 +126,40 @@ $(document).ready(function() {
   });
 
 //hover to change static image to GIF 
-  if(screen.width > 720){
-    $( ".static-image" ).hover(
-      function() {
-        var srcGif = $(this).attr("src2");
-        console.log(srcGif);
-        $( this ).attr("src", srcGif);    
-      }, function() {
-        var srcStatic = $(this).attr("src1");
-        console.log(srcStatic);
-        $( this ).attr("src", srcStatic);
-      }
-    );
-  }
+  // if(screen.width > 720){
+  //   $( ".static-image" ).hover(
+  //     function() {
+  //       var srcGif = $(this).attr("src2");
+  //       console.log(srcGif);
+  //       $( this ).attr("src", srcGif);    
+  //     }, function() {
+  //       var srcStatic = $(this).attr("src1");
+  //       console.log(srcStatic);
+  //       $( this ).attr("src", srcStatic);
+  //     }
+  //   );
+  // }
+
+
+$(function () {
+    $('.imageWrapper').on('hover', function () {
+        $(this).toggleClass('animated').toggleClass('static');
+    }, function () {
+        $(this).toggleClass('animated').toggleClass('static');
+    });
+});
+
+  //   if(screen.width > 720){
+  //   $( ".static-image" ).hover(
+  //      function() {
+  //       $(this).hide();
+  //       $(this).siblings( ".animated-gif" ).css( "display", "inline" );    
+  //     }, function() {
+  //       $(this).show();
+  //       $(this).siblings( ".animated-gif" ).css( "display", "none" );    
+  //     }
+  //   );
+  // }
 
   // if(screen.width < 720){
   //     var srcGif = $( ".static-image" ).attr("src2");

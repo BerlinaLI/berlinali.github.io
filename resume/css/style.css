@@ -109,12 +109,12 @@
   display:block;
 }
 
-.centered-navigation-mobile-menu, .nav-link, .myname-mobile,.col-md-5, .col-md-4,.col-md-6,.col-md-12, .col-xs-12{
+/*.centered-navigation-mobile-menu, .nav-link, .myname-mobile,.col-md-5, .col-md-4,.col-md-6,.col-md-12, .col-xs-12{
   opacity: 0;
   transform: translateX(-25px);
   transition: all .5s ease-in;
 }
-
+*/
 
 /*desktop-nav*/
 .canvas{

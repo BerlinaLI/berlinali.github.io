@@ -43,11 +43,16 @@ a:hover{
 text-align: center;
 }
 
-.centered-navigation-mobile-menu, .nav-link, .myname-mobile,.col-md-5,.col-md-12, .col-xs-12{
+/*.isHomePage.centered-navigation-mobile-menu, 
+.isHomePage.nav-link, 
+.isHomePage.myname-mobile,
+.isHomePage.col-md-5,
+.isHomePage.col-md-12, 
+.isHomePage.col-xs-12{
   opacity: 0;
   transform: translateX(-25px);
   transition: all .5s ease-in;
-}
+}*/
 
 /*mobile nav*/
 .group:after {
@@ -230,8 +235,10 @@ color:#999;
   margin-top:30px;
 } 
 
-.bottom-nav span{
+.bottom-nav span a{
   font-size: 0.9rem;
+  color: #000 !important;
+  text-decoration: underline;
 }
 
 
@@ -247,6 +254,11 @@ color:#999;
 }
 
 
+.project-text span a{
+  color:#000 !important;
+  text-decoration: underline;
+}
+ 
 /* project
 ============================================
 ============================================ */

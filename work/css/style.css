@@ -223,8 +223,13 @@ color:#999;
 }
 
 .project-text{
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-top:15px;
+  text-align:justify;
+}
+
+.top-buffer{
+  margin-top:0.4rem;
 }
 
 .pre-next a, .pre-next a:visited {
@@ -236,7 +241,7 @@ color:#999;
 } 
 
 .bottom-nav span a{
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #000 !important;
   text-decoration: underline;
 }
@@ -253,12 +258,20 @@ color:#999;
   border-color:#999 !important;
 }
 
+.btn-group-sm>.btn, .btn-sm{
+  margin-top:0.75rem;
+  padding: .15rem .5rem;
+}
 
 .project-text span a{
   color:#000 !important;
   text-decoration: underline;
 }
  
+
+.paragraph-buffer{
+  margin-top:8px;
+}
 /* project
 ============================================
 ============================================ */
@@ -286,6 +299,9 @@ img{
   border: 0.01px solid #ddd !important;
 }
 
+/*p{
+  margin-bottom: 0.5rem !important;
+}*/
 
 .imageWrapper p{
   margin-bottom: 0;

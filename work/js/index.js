@@ -48,13 +48,12 @@ var isResumePage= $('.isResumePage').length ? true : false;
 $(document).ready(function() {
 
   //animation when opens page
-  // if(isHomePage || isResumePage){
-  //   console.log("si");
-  //   setTimeout(function(){
-  //     TweenMax.staggerTo([".centered-navigation-mobile-menu", ".nav-link", ".myname-mobile",".col-md-5",".col-md-12",".col-xs-12"], 0.25, {'opacity': 1,  x: 0}, .25);  
-  //   }, 1000);
-  // }
 
+
+    setTimeout(function(){
+      TweenMax.staggerTo([".openAnimation"], 0.25, {'opacity': 1,  x: 0}, .25);  
+    }, 1000);
+  // }
 
   //mobile-menu-toggle
   var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();

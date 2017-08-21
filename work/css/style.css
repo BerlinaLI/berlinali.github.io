@@ -48,11 +48,12 @@ text-align: center;
 .isHomePage.myname-mobile,
 .isHomePage.col-md-5,
 .isHomePage.col-md-12, 
-.isHomePage.col-xs-12{
+.isHomePage.col-xs-12}*/
+.openAnimation{
   opacity: 0;
   transform: translateX(-25px);
   transition: all .5s ease-in;
-}*/
+}
 
 .imageWrapper{
   position: relative;

@@ -10,21 +10,10 @@
 /*mobile-nav*/
 .desktop-nav{
   display: none;
-  position:fixed;
-  background: yellow;
-}
-
-/*.project{
-  margin-top:200px;
-}*/
-
-*{
-  background: yellow;
 }
 
 .mobile-nav{
   display: inline;
-  background: yellow;
 }
 
 .pointer{

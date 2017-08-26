@@ -1,10 +1,10 @@
-$( document ).ready(function() {
-  if( screen.width > 500){
-    window.open("https://berlinali.github.io/scratchcard/scancode.html","_self");
-  }else{
-    draw(i);
-  }
-});
+// $( document ).ready(function() {
+//   if( screen.width > 500){
+//     window.open("https://berlinali.github.io/scratchcard/scancode.html","_self");
+//   }else{
+//     draw(i);
+//   }
+// });
 
 
 var mousedown = false;

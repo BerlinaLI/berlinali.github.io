@@ -7,7 +7,7 @@ var $deleteIcon = $('<div class="deleteIcon"><i class="fa fa-close"></i></div>')
 // var elevatorVideo="https://www.youtube.com/embed/WIFG6bIdo7Q";
 // var elevatorVideo="http://player.youku.com/embed/XMjc0MDY0ODQ4MA==";
 // var taobaoVideo ="https://www.youtube.com/embed/fiJgCSeNmD4";
-var gameLink= "https://berlinali.github.io/ibmcomputer/";
+var gameLink= "https://berlina.io/ibmcomputer/";
 
 $overlay.append($popup);
 $popup.append($content);
@@ -88,7 +88,7 @@ $(document).ready(function() {
 
   //click myname back to homepage 
   $('.myname').click(function(){
-    window.open("https://berlinali.github.io/work","_self");
+    window.open("https://berlina.io/work","_self");
   })
 
   //pop-up overlay element

@@ -1,10 +1,10 @@
 /**
  * Created by singhdi on 2014-07-26.
  */
-if( screen.width > 500){
-// window.open("https://berlinali.github.io/scratchcard/scancode.html","_self");
-    window.location = "https://berlinali.github.io/gongzhonghao/";
-}else{
+// if( screen.width > 500){
+// // window.open("https://berlinali.github.io/scratchcard/scancode.html","_self");
+//     window.location = "https://berlinali.github.io/gongzhonghao/";
+// }else{
 
 
 

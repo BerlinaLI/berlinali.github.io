@@ -244,7 +244,8 @@ color:#999;
 /*detail page */
 .project-iframe{
    width: 300px;
-  height: 180px;
+ /* height: 180px;*/
+  height:auto;
 /*  center-block*/
   display: block;
   margin: 0 auto 5px ;
@@ -547,7 +548,8 @@ ipad
 .project-iframe{
  /* width:100%;*/
   width: 400px;
-  height: 220px;
+  /*height: 220px;*/
+  height: auto;
 }
 
 .bottom-nav{
@@ -714,6 +716,7 @@ ipad
 .project-iframe{
  /* width:100%;*/
   width: 100%;
-  height: 400px;
+/*  height: 400px;*/
+  height:auto;
 }
 }

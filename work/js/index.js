@@ -45,8 +45,11 @@ var $deleteIcon = $('<div class="deleteIcon"><i class="fa fa-close"></i></div>')
 var isHomePage = $('.isHomePage').length ? true : false;
 var isResumePage= $('.isResumePage').length ? true : false;
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
+$(window).on("load", function() {
+    // weave your magic here.
+// });
   //animation when opens page
 
 

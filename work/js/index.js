@@ -15,6 +15,19 @@ var $deleteIcon = $('<div class="deleteIcon"><i class="fa fa-close"></i></div>')
 var isHomePage = $('.isHomePage').length ? true : false;
 var isResumePage= $('.isResumePage').length ? true : false;
 
+document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'interactive') {
+       document.getElementById('contents').style.visibility="hidden";
+  } else if (state == 'complete') {
+      setTimeout(function(){
+         document.getElementById('interactive');
+         document.getElementById('load').style.visibility="hidden";
+         document.getElementById('contents').style.visibility="visible";
+      },10);
+  }
+}
+
 $(window).on("load", function() {
 
   //animation when opens page

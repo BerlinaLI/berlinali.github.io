@@ -424,8 +424,9 @@ color:#999;
 
 /*detail page */
 .project-iframe{
-   width: 300px;
+/*   width: 300px;*/
  /* height: 180px;*/
+  width:100%;
   height:auto;
 /*  center-block*/
   display: block;
@@ -727,8 +728,8 @@ ipad
 
 /*detail*/
 .project-iframe{
- /* width:100%;*/
-  width: 400px;
+  width:100%;
+/*  width: 400px;*/
   /*height: 220px;*/
   height: auto;
 }

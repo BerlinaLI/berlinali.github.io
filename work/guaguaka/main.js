@@ -1,6 +1,6 @@
 $( document ).ready(function() {
   if( screen.width > 500){
-    window.open("https://berlinali.github.io/scratchcard/scancode.html","_self");
+    window.open("https://berlina.io/scratchcard/scancode.html","_self");
   }else{
     draw(i);
   }
@@ -187,7 +187,7 @@ function handlerEventMove(e){
 function jumpToAnimation(){
   $('canvas').fadeOut("slow");
   setTimeout(function(){
-    window.open("https://berlinali.github.io/bunny/pixi.js%20bunnymark.html","_self");
+    window.open("https://berlina.io/bunny/pixi.js%20bunnymark.html","_self");
   }, 0);
 }
 

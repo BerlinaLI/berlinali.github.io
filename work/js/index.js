@@ -15,7 +15,17 @@ var $deleteIcon = $('<div class="deleteIcon"><i class="fa fa-close"></i></div>')
 var isHomePage = $('.isHomePage').length ? true : false;
 var isResumePage= $('.isResumePage').length ? true : false;
 
+// var $images = $('img');
+
+
+$(document).ready(function () {
+    $('img').hide();
+});
+
+
 $(window).on("load", function() {
+
+  $('img').show();
 
   //mobile-menu-toggle
   var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();

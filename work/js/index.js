@@ -15,19 +15,6 @@ var $deleteIcon = $('<div class="deleteIcon"><i class="fa fa-close"></i></div>')
 var isHomePage = $('.isHomePage').length ? true : false;
 var isResumePage= $('.isResumePage').length ? true : false;
 
-document.onreadystatechange = function () {
-  var state = document.readyState
-  if (state == 'interactive') {
-       document.getElementById('contents').style.visibility="hidden";
-  } else if (state == 'complete') {
-      setTimeout(function(){
-         document.getElementById('interactive');
-         document.getElementById('load').style.visibility="hidden";
-         document.getElementById('contents').style.visibility="visible";
-      },10);
-  }
-}
-
 $(window).on("load", function() {
 
   //mobile-menu-toggle
@@ -43,23 +30,23 @@ $(window).on("load", function() {
   });
 
 //toggle language
-  $('[lang="cn"]').hide();
-  $('.switch-cn').removeClass("active");
-  $('.switch-en').addClass("active");
+  // $('[lang="cn"]').hide();
+  // $('.switch-cn').removeClass("active");
+  // $('.switch-en').addClass("active");
 
-  $('.switch-en').click(function() {
-    $('[lang="cn"]').hide();
-    $('[lang="en"]').show();
-    $('.switch-cn').removeClass("active");
-    $('.switch-en').addClass("active");
-  });
+  // $('.switch-en').click(function() {
+  //   $('[lang="cn"]').hide();
+  //   $('[lang="en"]').show();
+  //   $('.switch-cn').removeClass("active");
+  //   $('.switch-en').addClass("active");
+  // });
 
-  $('.switch-cn').click(function() {
-    $('[lang="en"]').hide();
-    $('[lang="cn"]').show();
-    $('.switch-en').removeClass("active");
-    $('.switch-cn').addClass("active");
-  });
+  // $('.switch-cn').click(function() {
+  //   $('[lang="en"]').hide();
+  //   $('[lang="cn"]').show();
+  //   $('.switch-en').removeClass("active");
+  //   $('.switch-cn').addClass("active");
+  // });
 
   //click myname back to homepage 
   $('.myname').click(function(){

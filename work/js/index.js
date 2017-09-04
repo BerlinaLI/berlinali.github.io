@@ -31,10 +31,10 @@ document.onreadystatechange = function () {
 $(window).on("load", function() {
 
   //animation when opens page
-  setTimeout(function(){
-    TweenMax.staggerTo([".openAnimation"], 0.25, {'opacity': 1,  x: 0}, .25);  
-  }, 100);
-  // }
+  // setTimeout(function(){
+  //   TweenMax.staggerTo([".openAnimation"], 0.25, {'opacity': 1,  x: 0}, .25);  
+  // }, 100);
+
 
   //mobile-menu-toggle
   var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();

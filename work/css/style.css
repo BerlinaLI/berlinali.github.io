@@ -214,14 +214,6 @@ body {
   text-decoration:none;
 }
 
-
-.animated #static, .static #animated {
-    display: none;
-}
-.animated #animated, .static #static {
-    display: inline;
-}
-
 a:hover{
   text-decoration:none !important;
   color:#000;
@@ -236,17 +228,11 @@ a:hover{
 text-align: center;
 }
 
-/*.isHomePage.centered-navigation-mobile-menu, 
-.isHomePage.nav-link, 
-.isHomePage.myname-mobile,
-.isHomePage.col-md-5,
-.isHomePage.col-md-12, 
-.isHomePage.col-xs-12}*/
-.openAnimation{
+/*.openAnimation{
   opacity: 0;
   transform: translateX(-25px);
   transition: all .5s ease-in;
-}
+}*/
 
 .imageWrapper{
   position: relative;
@@ -258,8 +244,8 @@ text-align: center;
   height: auto;
 }
 
-/*.gif{
-  display: none;
+.gif{
+/*  display: none;*/
   position: absolute;
   top: 0;
   bottom: 0;
@@ -270,10 +256,10 @@ text-align: center;
   opacity: 0;
   transition: .5s ease;
 }
-*/
-/*.imageWrapper:hover .gif {
+
+.imageWrapper:hover .gif {
   opacity: 1;
-}*/
+}
 
 
 

@@ -113,8 +113,11 @@ text-align: center;
   color: #999;
 }
 
-.fa-bars{
+.fa-bars img{
   float:right;
+  border-color:transparent !important;
+  width:25px;
+  height:25px;
 }
 
 .language-toggle{

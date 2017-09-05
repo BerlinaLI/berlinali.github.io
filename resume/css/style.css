@@ -61,6 +61,15 @@
   float:right;
 }
 
+
+.fa-bars img{
+  float:right;
+  border-color:transparent !important;
+  width:25px;
+  height:25px;
+}
+
+
 .language-toggle{
   float:right;
   font-size: 0.9rem;

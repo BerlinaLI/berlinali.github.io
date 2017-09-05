@@ -18,14 +18,14 @@ var isResumePage= $('.isResumePage').length ? true : false;
 // var $images = $('img');
 
 
-$(document).ready(function () {
-    $('img').hide();
-});
+// $(document).ready(function () {
+//     $('img').hide();
+// });
 
 
 $(window).on("load", function() {
 
-  $('img').show();
+  // $('img').show();
 
   //mobile-menu-toggle
   var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();

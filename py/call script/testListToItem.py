@@ -15,36 +15,39 @@ try:
 	#aaUrl=['http://faso.com/artist-websites/ae-ai/', 'http://faso.com/artist-websites/aj-an/', 'http://faso.com/artist-websites/ao-as/', 'http://faso.com/artist-websites/at-az/', 'http://faso.com/artist-websites/ba-bc/', 'http://faso.com/artist-websites/bd-bg/', 'http://faso.com/artist-websites/bh-bk/', 'http://faso.com/artist-websites/bl-bn/', 'http://faso.com/artist-websites/bo-bq/', 'http://faso.com/artist-websites/br-bt/', 'http://faso.com/artist-websites/bu-bz/', 'http://faso.com/artist-websites/ca-cc/', 'http://faso.com/artist-websites/cd-cg/', 'http://faso.com/artist-websites/ch-ck/', 'http://faso.com/artist-websites/cl-cn/', 'http://faso.com/artist-websites/co-cq/', 'http://faso.com/artist-websites/cr-ct/', 'http://faso.com/artist-websites/cu-cz/']
 	#aaUrl=[ 'http://faso.com/artist-websites/ga-gd', 'http://faso.com/artist-websites/ge-gi', 'http://faso.com/artist-websites/gj-gn', 'http://faso.com/artist-websites/go-gs', 'http://faso.com/artist-websites/gt-gz']
 	
-	aaUrl = azUrl[28:33]
 
-	artistUrlArr =[]
-	numberOfFinishedIndex = 0
-	numberOfIndexPage = len(aaUrl)
-	#for subpg in aaUrl:
-	for pg in aaUrl:
-		request = urllib2.Request(pg)
-		response = urllib2.urlopen(request) 
-		content = response.read()
-		soup = BeautifulSoup(content,'html.parser')
-		for link in soup.select('a[href*="faso.com/artists"]'):
-			artistUrlArr.append(link.get('href'))
+	for i in range(1,105):	
 
-		numberOfFinishedIndex = numberOfFinishedIndex+1
-		print ("finish Index page:   "+ str(numberOfFinishedIndex) + "  /  " + str(numberOfIndexPage))
+		aaUrl = azUrl[i:i+1]
 
-	#delete duplicate 		
-	artistUrlArr = list(set(artistUrlArr))
-	print ("artistUrlArr:  " + str(len(artistUrlArr)))
+		artistUrlArr =[]
+		numberOfFinishedIndex = 0
+		numberOfIndexPage = len(aaUrl)
+		#for subpg in aaUrl:
+		for pg in aaUrl:
+			request = urllib2.Request(pg)
+			response = urllib2.urlopen(request) 
+			content = response.read()
+			soup = BeautifulSoup(content,'html.parser')
+			for link in soup.select('a[href*="faso.com/artists"]'):
+				artistUrlArr.append(link.get('href'))
+
+			numberOfFinishedIndex = numberOfFinishedIndex+1
+			print ("finish Index page:   "+ str(numberOfFinishedIndex) + "  /  " + str(numberOfIndexPage))
+
+		#delete duplicate 		
+		artistUrlArr = list(set(artistUrlArr))
+		print ("artistUrlArr:  " + str(len(artistUrlArr)))
+
+		#pass data from other script
+		import called
+
+		print ("artistUrlArr:  " + str(len(artistUrlArr)))
 
 
 except:
 	pass
 
-
-#pass data from other script
-import called
-
-print ("artistUrlArr:  " + str(len(artistUrlArr)))
 
 
 import win32com.client as wincl

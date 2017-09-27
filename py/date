@@ -1,0 +1,8 @@
+def time()
+ today = datetime(now)
+ wd = date.weekday(today)
+ days = ["monday", “tuesday”,”wednesday”,”Thu”,”Fri”,”Sat”,”Sun”]
+ print “today is day number %d” %wd
+ print “which is a” + days[wd]
+
+

@@ -6,10 +6,9 @@ except ImportError:
 
 from bs4 import BeautifulSoup
 
+#excel
 import csv
-
-
-
+from datetime import datetime
 
 #########################
 try:
@@ -27,22 +26,48 @@ try:
 		content = response.read()
 		soup = BeautifulSoup(content,'html.parser')
 		for link in soup.select('a[href*="faso.com/artists"]'):
-			print (link.get('href'))
+		#	print (link.get('href'))
 			artistUrlArr.append(link.get('href'))
+		#print (soup.body.img)
 
-	#delete duplicate 		
-	artistUrlArr = list(set(artistUrlArr))
-	print (artistUrlArr)	
+	#######################################################
+	#url = ["http://faso.com/artists/brianblood.html","http://faso.com/artists/keithbond.html"]
+
+	data =[]
+
+	for pg1 in artistUrlArr:
+		request1 = urllib2.Request(pg1)
+		response1 = urllib2.urlopen(request1,timeout=1)
+
+	#check website status
+		if response1.getcode() == 200:
+			content1 = response1.read()
+			soup1 = BeautifulSoup(content1,'html.parser')
+			#name
+			name = soup1.h1.string
+
+			#link
+			link = soup1.b.find('a').get('href')
+
+			dataExist = name and link
+			if dataExist:
+				print (name, link)
+				data.append((name, link))
+			else:
+				print ("this is an exception")
+
+
+		with open('index.csv', 'a', encoding='utf-8') as csv_file:
+			writer = csv.writer(csv_file)
+			# The for loop
+			for name, link in data:
+				writer.writerow([name, link])
+
 except:
 	pass
 
 
-#pass data from other script
-import called
 
-import win32com.client as wincl
-speak = wincl.Dispatch("SAPI.SpVoice")
-speak.Speak("finish script")
 
 
 

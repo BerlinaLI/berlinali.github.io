@@ -9,36 +9,49 @@ from bs4 import BeautifulSoup
 import csv
 from datetime import datetime
 
+import time 
+
 import re
+
 
 number = 10000
 validNum = 0
-
+s1  = time.time()
 #for i in range(10000,81000):
-for i in range(86400, 10000, -1):	
- try:
+
+for i in range(86400, 86398, -1):	
+# try:
+
   page = urllib2.urlopen('http://www.artwanted.com/artist.cfm?ArtID={}'.format(i)+'&Tab=Contact')
- except:
-  continue
- else:
+  #except:
+  #continue
+  #else:
   data=[]
   content = page.read()
   soup = BeautifulSoup(content,'html.parser')
   name = soup.h1.getText().strip()
   link = soup.find_all(string = re.compile("www."))[0]
-  wwwLen = len(soup.find_all(string = re.compile("www.")))
-  hasNoPersonalWebsite = soup.find_all("a", string="http://www.artwanted.com")
-  lens=len(hasNoPersonalWebsite)
+  #wwwLen = len(soup.find_all(string = re.compile("www.")))
+  #hasNoPersonalWebsite = soup.find_all("a", string="http://www.artwanted.com")
+  #lens=len(hasNoPersonalWebsite)
 
   #if name != "Browse Artwork" and lens != 1 and wwwLen != 1:
-  validNum = validNum + 1
-  data.append((name, link))
-  print (name,link,validNum,"/",86401-i)
+  if name and link:
+   validNum = validNum + 1
+   data.append((name, link))
+   print (name,link,validNum,"/",86401-i)
 
-  with open('index.csv', 'a', encoding='utf-8') as csv_file:
-   writer = csv.writer(csv_file)
-   # The for loop
-   for name, link in data:
-    writer.writerow([name, link])
-  
+  # with open('index.csv', 'a', encoding='utf-8') as csv_file:
+   # writer = csv.writer(csv_file)
+   # for name, link in data:
+#     writer.writerow([name, link])
+
   number = number - 1
+
+print ("Request time = "+str(time.time() - s1))
+
+
+import win32com.client as wincl
+speak = wincl.Dispatch("SAPI.SpVoice")
+speak.Speak("finish the script")
+#5 / 12s (with try)

@@ -17,22 +17,28 @@ quote_page = 'https://www.artfinder.com/artists-az/#/'
 page = urllib2.urlopen(quote_page)
 soup = BeautifulSoup(page, 'html.parser')
 
-
-#url = soup.find('a').get('h')
-#for link in soup.find_all('a'):
-	#if soup.find(text=re.compile('/artist')):
-#	print("https://www.artfinder.com"+link.get('href')+"about/#/")
-	
-
 divTag = soup.find_all("li", {"class": "artist"})
 
 for tag in divTag:
-    tdTags = tag.find_all("a")
-    for tag in tdTags:
-        data.append("https://www.artfinder.com"+tag.get('href')+"about/#/")
+    # tdTags = tag.find_all("a")
+    # for tag in tdTags:
+    #     data.append("https://www.artfinder.com"+tag.get('href')+"about/#/")
+    tdTags = tag.find("a")
+    #data.append("https://www.artfinder.com"+tdTags.get('href')+"about/#/")
+    print ("https://www.artfinder.com"+tdTags.get('href')+"about/#/")
 
 #9524
-print (data[0:500])
+
+#data = list(set(data))
+#print (data[940:960])
+
+#1500:1800
+#1800:1900
+#[0:200]
+#200:300
+#450:700
+#700:940
+
 
 #with open('index.csv', 'a') as csv_file:
 #	writer = csv.writer(csv_file)

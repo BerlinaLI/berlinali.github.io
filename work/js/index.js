@@ -31,7 +31,7 @@ $(window).on("load", function() {
   });
 
 //toggle language
-  // $('[lang="cn"]').hide();
+  $('[lang="cn"]').hide();
   // $('.switch-cn').removeClass("active");
   // $('.switch-en').addClass("active");
 
@@ -50,22 +50,6 @@ $(window).on("load", function() {
   // });
 
   //click myname back to homepage 
-  // $('.myname').mouseenter(function(){
-  //   $('.myname').css("text-decoration","underline");
-  // })
-
-  // $('.myname').mouseenter(function(){
-  //   $('.myname').css("text-decoration","none");
-  // })
-
-  // $( ".nameanchor" ).hover(
-  //   function() {
-  //     $( this ).css("text-decoration","underline");
-  //   }, function() {
-  //     $( this ).css("text-decoration","none");
-  //   }
-  // );
-
   $('.myname').click(function(){
     window.open("https://berlinali.github.io/work","_self");
   })

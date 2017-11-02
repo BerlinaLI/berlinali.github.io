@@ -3,7 +3,7 @@ var $overlay = $('<div class="overlay"></div>');
 var $popup =  $('<div></div>');
 var $content = $('<iframe class="videoiframe"  src="" frameborder="0" allowfullscreen></iframe>');
 var $deleteIcon = $('<div class="deleteIcon"><i class="fa fa-close"></i></div>');
-var gameLink= "https://berlina.io/ibmcomputer/";
+var gameLink= "https://berlinali.github.io/ibmcomputer/";
 
 $overlay.append($popup);
 $popup.append($content);
@@ -50,9 +50,27 @@ $(window).on("load", function() {
   // });
 
   //click myname back to homepage 
+  // $('.myname').mouseenter(function(){
+  //   $('.myname').css("text-decoration","underline");
+  // })
+
+  // $('.myname').mouseenter(function(){
+  //   $('.myname').css("text-decoration","none");
+  // })
+
+  // $( ".nameanchor" ).hover(
+  //   function() {
+  //     $( this ).css("text-decoration","underline");
+  //   }, function() {
+  //     $( this ).css("text-decoration","none");
+  //   }
+  // );
+
   $('.myname').click(function(){
-    window.open("https://berlina.io/work","_self");
+    window.open("https://berlinali.github.io/work","_self");
   })
+
+
 
   //pop-up overlay element
   $('.pop-it-game').click(function(){

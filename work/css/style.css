@@ -15,6 +15,17 @@ body {
   background:#fff;
 }
 
+a{
+  color:#000 !important;
+}
+
+a .nameanchor{
+  color:#000 !important;
+}
+.myname{
+  color:#000 !important
+}
+
 #displaybutton{
   position: absolute;
   width:45%;
@@ -203,9 +214,9 @@ a:hover{
   color:#999;
 }
 
-a{
+/*a{
   color:#999 !important;
-}
+}*/
 
 /*.active, .myname span{*/
 
@@ -240,10 +251,10 @@ color:#999;
 
 /*detail page */
 .project-iframe{
-/*   width: 300px;*/
- /* height: 180px;*/
-  width:100%;
-  height:auto;
+   width: 300px;
+  height: 180px;
+  /*width:100%;
+  height:auto;*/
 /*  center-block*/
   display: block;
   margin: 0 auto 5px ;
@@ -549,10 +560,10 @@ ipad
 
 /*detail*/
 .project-iframe{
-  width:100%;
-/*  width: 400px;*/
-  /*height: 220px;*/
-  height: auto;
+/*  width:100%;*/
+  width: 400px;
+  height: 220px;
+/*  height: auto;*/
 }
 
 .bottom-nav{
@@ -719,7 +730,7 @@ ipad
 .project-iframe{
  /* width:100%;*/
   width: 100%;
-/*  height: 400px;*/
-  height:auto;
+  height: 400px;
+/*  height:auto;*/
 }
 }

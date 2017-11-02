@@ -18,6 +18,11 @@ var isResumePage= $('.isResumePage').length ? true : false;
 
 $(window).on("load", function() {
 
+     //animation when opens page
+  setTimeout(function(){
+     TweenMax.staggerTo([".openAnimation"], 0.25, {'opacity': 1,  x: 0}, .25);  
+  }, 100);
+
   //mobile-menu-toggle
   var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
   $('#js-centered-navigation-menu').removeClass("show");  
@@ -29,6 +34,7 @@ $(window).on("load", function() {
       }
     });
   });
+
 
 //toggle language
   $('[lang="cn"]').hide();

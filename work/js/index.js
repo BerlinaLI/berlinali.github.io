@@ -54,14 +54,6 @@ $(window).on("load", function() {
   //   $('.switch-en').removeClass("active");
   //   $('.switch-cn').addClass("active");
   // });
-
-  //click myname back to homepage 
-  $('.myname').click(function(){
-    window.open("https://berlinali.github.io/work","_self");
-  })
-
-
-
   //pop-up overlay element
   $('.pop-it-game').click(function(){
     $(".videoiframe").attr("src",gameLink);

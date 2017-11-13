@@ -287,14 +287,17 @@ color:#999;
 
 .bottom-nav{
   margin-top:50px;
+  cursor: pointer;
 } 
-
+/*
 .bottom-nav span a{
   font-size: 1rem;
   color: #000 !important;
   text-decoration: underline;
-}
-
+}*/
+/*.bottom-nav span:hover{
+  text-decoration: underline;
+} */
 
 .btn-outline-secondary{
   color:#000 !important;
@@ -369,10 +372,20 @@ img{
   margin-bottom: 0;
 }
 
-.single-imageWrapper p{
-  margin-bottom: 0;
+/*
+.imageWrapper img {
+  
+  filter: gray;
+  -webkit-filter: grayscale(1);  Webkit Nightlies & Chrome Canary 
+  -webkit-transition: all .8s ease-in-out;  
 }
 
+.imageWrapper img :hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
+  -webkit-transform: scale(1.01);
+}
+*/
 
 .short-intro span{
   color:#999;
@@ -397,11 +410,11 @@ i{
 .title
 {
     opacity: 0.9;
-    position: absolute;
+   /* position: absolute;
     bottom: 0px;
     left: 0px;
     right: 0px;
-    padding: 2px 0px;
+    padding: 2px 0px;*/
     color:#000;
     background: #fff;
     text-decoration: none;
@@ -570,6 +583,7 @@ ipad
 
 .bottom-nav{
   margin-top:15px;
+
 } 
 
 .language-toggle{
@@ -701,11 +715,11 @@ ipad
     font-weight: 600;
     margin-bottom: 0;
     opacity: 0.75;
-    position: absolute;
+   /* position: absolute;
     bottom: 0px;
     left: 0px;
     right: 0px;
-    padding: 2px 0px;
+    padding: 2px 0px;*/
     color:#000;
     background: #fff;
     text-decoration: none;

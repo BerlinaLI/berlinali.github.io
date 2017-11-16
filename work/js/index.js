@@ -3,7 +3,7 @@ var $overlay = $('<div class="overlay"></div>');
 var $popup =  $('<div></div>');
 var $content = $('<iframe class="videoiframe"  src="" frameborder="0" allowfullscreen></iframe>');
 var $deleteIcon = $('<div class="deleteIcon"><i class="fa fa-close"></i></div>');
-var gameLink= "https://berlinali.github.io/ibmcomputer/";
+var gameLink= "https://berlina.io/project/ibmcomputer/";
 
 $overlay.append($popup);
 $popup.append($content);

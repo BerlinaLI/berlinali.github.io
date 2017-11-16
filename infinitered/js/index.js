@@ -18,7 +18,7 @@ debugger;
     $scope.loadMoreData=function()
     {
         $scope.items.push({id: $scope.items.length});
-        if($scope.items.length==100)
+        if($scope.items.length==1700000000)
         {
             $scope.moredata=true;
         }
@@ -48,6 +48,7 @@ debugger;
         }
         document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
     }
+    
     function musicPlay(isPlay) {
         var audio = document.getElementById('musicid');
         if (isPlay && audio.paused) {

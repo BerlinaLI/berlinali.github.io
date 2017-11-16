@@ -1,9 +1,10 @@
 $( document ).ready(function() {
   if( screen.width > 500){
-    window.open("https://berlinali.github.io/scratchcard/scancode.html","_self");
+    window.open("https://berlina.io/project/scratchcard/scancode.html","_self");
   }else{
     draw(i);
   }
+
 });
 
 

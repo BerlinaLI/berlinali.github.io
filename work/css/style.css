@@ -377,11 +377,11 @@ img{
   margin-bottom: 0;
 }
 
-/*
-.imageWrapper img {
+
+/*.imageWrapper img {
   
   filter: gray;
-  -webkit-filter: grayscale(1);  Webkit Nightlies & Chrome Canary 
+  -webkit-filter: grayscale(30%);  Webkit Nightlies & Chrome Canary 
   -webkit-transition: all .8s ease-in-out;  
 }
 
@@ -466,7 +466,7 @@ ul{
   z-index:100;    
 }
 
-/*.videoiframe{
+.videoiframe{
   font-size: 10px;
   display:block;
   width:350px;
@@ -476,7 +476,7 @@ ul{
   position:absolute;
   top:15%;
 }
-*/
+
 .fa-close{
   position:fixed;
   top:3%;
@@ -733,7 +733,7 @@ ipad
 }
 
 /*video*/
-/*.videoiframe{
+.videoiframe{
   font-size: 10px;
   display:block;
   width: 560px;
@@ -741,7 +741,7 @@ ipad
   margin: 10% auto;
   overflow:visible;
   position:initial;
-}*/
+}
 
 
 /*project 

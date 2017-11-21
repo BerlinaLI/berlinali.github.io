@@ -3,7 +3,7 @@ var $overlay = $('<div class="overlay"></div>');
 var $popup =  $('<div></div>');
 var $content = $('<iframe class="videoiframe"  src="" frameborder="0" allowfullscreen></iframe>');
 var $deleteIcon = $('<div class="deleteIcon"><i class="fa fa-close"></i></div>');
-var gameLink= "https://berlina.io/project/ibmcomputer/";
+var gameLink= "http://berlina.io/project/ibmcomputer/";
 
 $overlay.append($popup);
 $popup.append($content);
@@ -18,10 +18,20 @@ var isResumePage= $('.isResumePage').length ? true : false;
 
 $(window).on("load", function() {
 
-     //animation when opens page
-  setTimeout(function(){
-     TweenMax.staggerTo([".openAnimation"], 0.25, {'opacity': 1,  x: 0}, .25);  
-  }, 100);
+  if( isHomePage ){
+  //automatic onclick html  (todo)
+    // var pageClass = document.querySelector(".pageClass");
+    // var pageID = pageClass.getAttribute("id");
+    // var windowLocation = "window.location='"+ pageID + ".html'";
+    // console.log(windowLocation);
+    // pageClass.setAttribute("onClick",windowLocation);
+
+
+    //animation when opens page
+    setTimeout(function(){
+       TweenMax.staggerTo([".openAnimation"], 0.25, {'opacity': 1,  x: 0}, .25);  
+    }, 100);
+  }
 
   //mobile-menu-toggle
   var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
@@ -68,5 +78,9 @@ $(window).on("load", function() {
     $(".videoiframe").attr("src","");
     $(".videoiframe").css({"width":"","height":"","overflow":"","margin":""});
   });
+
+
+
+
 
 });  

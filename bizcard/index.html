@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>bouncing canvas image( biz card)</title>
+	<IfModule mod_setenvif.c>
+    	<IfModule mod_headers.c>
+       		<FilesMatch "\.(cur|gif|ico|jpe?g|png|svgz?|webp)$">
+            	SetEnvIf Origin ":" IS_CORS
+            	Header set Access-Control-Allow-Origin "*" env=IS_CORS
+       		</FilesMatch>
+    	</IfModule>
+	</IfModule>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="http://hongru.github.io/proj/canvas2image/canvas2image.js"></script>
+	<script>
+
+		//window.addEventListener('resize', resizeCanvas, false);
+
+		//resizeCanvas();
+
+		drawStuff(); 
+
+		// function to_image(){
+		// 	var canvas = document.getElementById("myCanvas");
+		// 	document.getElementById("theimage").src = canvas.toDataURL();
+		// 	Canvas2Image.saveAsPNG(canvas);
+		// }
+
+		/*checking MDN of toDataURL*/
+		function to_image(){
+			var canvas = document.getElementById("myCanvas");
+			document.getElementById("theimage").src = canvas.toDataURL();
+			Canvas2Image.saveAsPNG(canvas);
+			// var dataURL = canvas.toDataURL();
+			// console.log(dataURL);
+		}
+	  
+		function resizeCanvas() {
+			var canvas = document.getElementById('myCanvas');
+			var ctx = canvas.getContext('2d');
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+		}
+
+		function drawStuff() {
+		   
+			window.addEventListener('load', function () {
+			    var img = new Image;		
+			    var ctx = document.getElementById('myCanvas').getContext('2d');
+
+			    //working example:https://stackoverflow.com/questions/10673122/how-to-save-canvas-as-an-image-with-canvas-todataurl/10673476#10673476
+
+			    // img.src = 'wechatcode55.png';
+			    img.src = 'cut_edge_110.png';
+			    img.addEventListener('load', function () {
+
+			     	var interval = setInterval(function() {
+			        	// var x = 0, y = 0,speed_x = 3,speed_y = 3;
+			        	var imgWidth = 110;
+			        	var edge= 400;
+			        	var movingSpeed = 4;
+			        	var cardHeight = document.getElementById("myCanvas").height;
+			        	var cardWidth = document.getElementById("myCanvas").width;
+			        	var x = 0, y =cardHeight-imgWidth,speed_x = movingSpeed,speed_y =-movingSpeed;
+
+			        	return function () {
+			         
+							var imgWidth = img.naturalWidth,
+							imgHeight = img.naturalHeight;
+							console.log("cardHeight : " +cardHeight+"  cardWidth : " +cardWidth+ "  imgHeight : " + imgHeight + " imgWidth : " + imgWidth );
+				          
+			           		ctx.drawImage(img, x, y);
+			          		console.log("positionX : " + x + "  positionY : " + y);
+			          		
+			          		// if(x<190){
+			          		if(x<edge){
+								x = x+ speed_x;
+								y = y+ speed_y;
+								if (x + imgWidth > ctx.canvas.width  || x < 0) {
+									speed_x = speed_x *-1;
+								}
+								if (y + imgHeight > ctx.canvas.height || y < 0) {
+									speed_y = speed_y *-1;
+								}
+							}
+						};
+			      	//}(), 800);  good pace
+		      		// }(), 50);
+		      		}(), 1);
+			    }, false);
+			}, false); 
+		}
+		    
+	</script>
+</head>
+
+<body>
+<!-- 	<canvas id="myCanvas" width="340px" height="204px"></canvas> -->
+	<canvas id="myCanvas" width="680px" height="408px"></canvas>
+<!-- 	
+	<div><button onclick="drawStuff()">Start Draw</button></div> -->
+	
+	<div><button onclick="to_image()">Save Image</button></div>
+
+	<image id="theimage"  crossOrigin="anonymous"></image> 	
+
+</body>
+
+<!--     <body onload="draw()">
+        <canvas width=200 height=200 id="thecanvas"></canvas>
+        <div><button onclick="to_image()">Draw to Image</button></div>
+        <image id="theimage"></image>
+        <script  src="js/index.js"></script>
+    </body> -->
+
+</html>
+
+<!-- 
+
+<html>
+    <head>
+        <script src="http://hongru.github.io/proj/canvas2image/canvas2image.js"></script>
+        <script>
+            function draw(){
+                var canvas = document.getElementById("thecanvas");
+                var ctx = canvas.getContext("2d");
+                ctx.fillStyle = "rgba(125, 46, 138, 0.5)";
+                ctx.fillRect(25,25,100,100); 
+                ctx.fillStyle = "rgba( 0, 146, 38, 0.5)";
+                ctx.fillRect(58, 74, 125, 100);
+            }
+
+            function to_image(){
+                var canvas = document.getElementById("thecanvas");
+                document.getElementById("theimage").src = canvas.toDataURL();
+                Canvas2Image.saveAsPNG(canvas);
+            }
+        </script>
+    </head>
+    <body onload="draw()">
+        <canvas width=200 height=200 id="thecanvas"></canvas>
+        <div><button onclick="to_image()">Draw to Image</button></div>
+        <image id="theimage"></image>
+    </body>
+</html> -->

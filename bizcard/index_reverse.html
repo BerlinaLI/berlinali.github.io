@@ -65,7 +65,7 @@
 			        	var movingSpeed = 4;
 			        	var cardHeight = document.getElementById("myCanvas").height;
 			        	var cardWidth = document.getElementById("myCanvas").width;
-			        	var x = 400, y =98,speed_x = -movingSpeed,speed_y =-movingSpeed;
+			        	var x = cardWidth-400-imgWidth, y =98,speed_x = movingSpeed,speed_y =-movingSpeed;
 
 			        	return function () {
 			         
@@ -76,7 +76,7 @@
 			           		ctx.drawImage(img, x, y);
 			          		console.log("positionX : " + x + "  positionY : " + y);
 			          		//192 /41
-			          		if(x>edge){
+			          		if(x<cardWidth-imgWidth){
 								x = x+ speed_x;
 								y = y+ speed_y;
 								if (x + imgWidth > ctx.canvas.width  || x < 0) {

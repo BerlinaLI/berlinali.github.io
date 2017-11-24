@@ -288,7 +288,7 @@ function Ball(micBall){
 	
 	this.init = function(){
 		this.x = random(-width,-20/n);
-		this.y = random(this.size,height-25/n-this.size*2);
+		this.y = random(this.size+30,height-25/n-this.size*2);
 	}
 	this.init();
 	
@@ -439,7 +439,8 @@ function Teeth(){
       fill(255);
       stroke(125,127+127*sin(frameCount* this.hr));
       strokeWeight(3/n);
-      triangle(i*this.slength,height,i*this.slength + this.slength/2,height-20,(i+1)*this.slength,height);
+      triangle(i*this.slength,height,i*this.slength + this.slength/2,height-25,(i+1)*this.slength,height);
+      triangle(i*this.slength,0,i*this.slength + this.slength/2,25,(i+1)*this.slength,0);
     }
   }
 }

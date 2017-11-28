@@ -1,0 +1,20 @@
+/*body{
+	overflow:hidden;
+
+}
+*/
+
+.photoAlbum img{
+	position:absolute;
+
+}
+
+
+
+/*.profile,
+.photoAlbum,
+.photoDetail
+{
+	display: none;
+}
+*/

@@ -1,8 +1,8 @@
 const IMAGES = document.querySelectorAll(".photoAlbum img");
 const photoAlbum = document.querySelector(".photoAlbum");
 const photoDetail = document.querySelector(".photoDetail");
-const textArea = document.querySelector("textArea");
-const submitButton = document.querySelector("input[value='SUBMIT']");
+const textArea = document.querySelector("#textArea");
+const submitButton = document.querySelector(".submitButton");
 const exitButton = document.querySelector(".deleteIcon");
 const bigImg =  document.querySelector(".bigImg");
 
@@ -15,11 +15,25 @@ submitButton.disabled = true;
 showAlbum();
 
 
+function openAlbumPage(){
+	photoDetail.style.display = "none";
+	photoAlbum.style.display = "block";
+}
+
+function openDetailPage(){
+	photoAlbum.style.display = "none";
+	photoDetail.style.display = "block";
+}
+
+function closeDetailPage(){
+	photoDetail.style.display = "none";
+	photoAlbum.style.display = "block";
+}
+
 
 function showAlbum(){
 
-	photoDetail.style.display = "none";
-	photoAlbum.style.display = "block";
+	openAlbumPage();
 
 	for(var i = 0; i< IMAGES.length; i++){
 		let imgWidth = IMAGES[i].clientWidth;
@@ -37,22 +51,15 @@ function showAlbum(){
 		img.addEventListener("click", function(){
 			let bigImgSrc = getBigImgSrc(img);
 			bigImg.setAttribute("src", bigImgSrc); 
-			photoAlbum.style.display = "none";
-			photoDetail.style.display = "block";
-
-		});
+			openDetailPage();
+		});				
 	}
 }
-
-// function showBigImg(){
-	
-// }
 
 
 function getBigImgSrc(img){
 	let imgSrc = img.getAttribute("src");
     imgSrc = imgSrc.slice(0,-7) + "1200.png";
-    console.log(imgSrc);
     return imgSrc;
 }
 
@@ -73,18 +80,29 @@ function leaveMessage(){
 
 
 function submitMessage(){
+	//save message 
 	let message = textArea.value;
-	console.log(message);
+	// console.log("previous msg : " + message);
+
+	//clear message
+	message = "";
+	// console.log("clear msg : " + message);
+	// console.log(message);
 
 	//delete animation
+	deleteSmallImage();
+
 	closeDetailPage();
-	
 }
 
-
-function closeDetailPage(){
-	photoDetail.style.display = "none";
-	photoAlbum.style.display = "block";
+function deleteSmallImage(){
+	let bigImgSrc = bigImg.getAttribute("src");	
+    let smallImgSrc = bigImgSrc.slice(0,-8) + "300.png";
+    let smallImgSelector = 'img[src="' + smallImgSrc + '"]';
+    let smallImg = document.querySelector(smallImgSelector);
+    smallImg.setAttribute("src","");
+	smallImgSrc = smallImg.getAttribute("src");
+	console.log("selectimg 2: " + smallImgSrc);
 }
 
 

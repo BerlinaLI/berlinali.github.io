@@ -1,11 +1,11 @@
-$( document ).ready(function() {
-  if( screen.width > 500){
-    window.open("http://berlina.io/project/scratchcard/scancode.html","_self");
-  }else{
-    draw(i);
-  }
+// $( document ).ready(function() {
+//   if( screen.width > 500){
+//     window.open("http://berlina.io/project/scratchcard/scancode.html","_self");
+//   }else{
+//     draw(i);
+//   }
 
-});
+// });
 
 
 var mousedown = false;
@@ -13,7 +13,7 @@ var bodyStyle = document.body.style;
 bodyStyle.mozUserSelect = 'none';
 bodyStyle.webkitUserSelect = 'none';
 
-var i= 0;
+var i = 0;
 var imgGenerateSpeed = 200;
 var imgScrollSpeed = 2000;
 var arcSize = 40;
@@ -39,6 +39,7 @@ var hints = [
   // '呵呵，都说我不是骗子啦'
 ];
 
+draw(0);
 
 function draw(i){
 
@@ -55,6 +56,7 @@ function draw(i){
       canvas.style.margin = '35px auto 15px';
       canvas.style.display='block';
       return canvas;
+      console.log(i);
     })();
 
     (function initImg(canvas){
@@ -109,6 +111,19 @@ function drawScratchCard(e, canvas){
 function layer(ctx,w,h){
   ctx.fillStyle = "#C0C0C0";
   ctx.fillRect(0, 0, w, h);
+  ctx.fillStyle = "#999";
+  ctx.font='italic 20px Arial';
+  ctx.rotate(40*Math.PI/180);
+  for (var j = 0 ; j<10 ; j++){
+    for (var i = 0 ; i<10 ; i++){
+      var hintText = "刮我";
+      ctx.fillText(hintText,10*w/60*i ,-10*h/60*j);
+      if(j>0){
+        ctx.fillText(hintText,10*w/60*i ,10*h/60*j);
+      }
+    }
+  }
+  ctx.rotate(-40*Math.PI/180);
 }
 
 function attachEvent(canvas, ctx) {
@@ -188,7 +203,8 @@ function handlerEventMove(e){
 function jumpToAnimation(){
   $('canvas').fadeOut("slow");
   setTimeout(function(){
-    window.open("https://berlinali.github.io/bunny/pixi.js%20bunnymark.html","_self");
+    // window.open("https://berlinali.github.io/bunny/pixi.js%20bunnymark.html","_self");
+    window.open("http://berlina.io/project/bunny/");
   }, 0);
 }
 

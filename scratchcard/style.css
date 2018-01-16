@@ -39,9 +39,9 @@ body {
 }
 
 .gamecode-img{
-    width: 40%;
+    width: 30%;
     display: block;
-    margin:10% auto;
+    margin:5% auto;
 }
 
 .none-mobile{
@@ -54,7 +54,7 @@ body {
 
 .none-mobile-instruction{
     background: red;
-    text-transform: uppercase;
+    padding: 8%;
 }
 
 .faceemoji{

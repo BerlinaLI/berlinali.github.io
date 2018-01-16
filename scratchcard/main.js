@@ -1,23 +1,16 @@
-// $( document ).ready(function() {
-//   if( screen.width > 500){
-//     window.open("http://berlina.io/project/scratchcard/scancode.html","_self");
-//   }else{
-//     draw(i);
-//   }
-
-// });
-
-
 var mousedown = false;
 var bodyStyle = document.body.style;
 bodyStyle.mozUserSelect = 'none';
 bodyStyle.webkitUserSelect = 'none';
 
 var i = 0;
+var numberOfCards = 3;
 var imgGenerateSpeed = 200;
 var imgScrollSpeed = 2000;
-var arcSize = 40;
-
+var arcSize = 25;
+var erasedPercentage = 0.18;
+var hintText = "刮我"; 
+//icon on the surface of scratch card
 // var imgs = [
 //   'p_0.jpg',
 //   'p_0.jpg',
@@ -40,6 +33,12 @@ var hints = [
 ];
 
 draw(0);
+
+// $( document ).ready(function() {
+//   if( screen.width > 500){
+//     window.open("http://berlina.io/project/scratchcard/scancode.html","_self");
+//   }
+// });
 
 function draw(i){
 
@@ -80,6 +79,26 @@ function draw(i){
       }, imgScrollSpeed);
     }
 
+    // if(i=2){
+    //   //add glitch
+    //   //show video
+    //   // Returns width of browser viewport
+    //   // Returns width of HTML document
+    //   //$( document ).width();
+    //   var currentPageWidth = $(document).width(); //window.innerWidth;
+    //   var currentPageHeight = $(document).height();
+    //   console.log(currentPageWidth,currentPageWidth);
+    //   var c = document.getElementsByTagName("BODY")[0];
+    //   c.style.backgroundColor = "red";
+    //   var ctxVid=c.getContext("2d");
+    //   ctxVid.rect(0,0,currentPageWidth,currentPageHeight);
+    //   ctxVid.fillStyle = "red";
+    //   ctxVid.fill();
+    //   //add black background
+
+    //   //show video 
+    // }
+
   }else{
     jumpToAnimation();
   }
@@ -111,15 +130,27 @@ function drawScratchCard(e, canvas){
 function layer(ctx,w,h){
   ctx.fillStyle = "#C0C0C0";
   ctx.fillRect(0, 0, w, h);
+  //Water mark
+  // ctx.fillStyle = "#999";
+  // ctx.font='italic 20px Arial';
+  // ctx.rotate(40*Math.PI/180);
+  // for (var j = 0 ; j<12 ; j++){
+  //   for (var i = 0 ; i<10 ; i++){
+  //     ctx.fillText(hintText,10*w/60*i ,-10*h/60*j);
+  //     if(j>0){
+  //       ctx.fillText(hintText,10*w/60*i ,10*h/60*j);
+  //     }
+  //   }
+  // }
+
   ctx.fillStyle = "#999";
-  ctx.font='italic 20px Arial';
+  ctx.font='italic 12px Arial';
   ctx.rotate(40*Math.PI/180);
-  for (var j = 0 ; j<10 ; j++){
+  for (var j = 0 ; j<12 ; j++){
     for (var i = 0 ; i<10 ; i++){
-      var hintText = "刮我";
-      ctx.fillText(hintText,10*w/60*i ,-10*h/60*j);
+      ctx.fillText(hintText,10*w/90*i ,-10*h/90*j);
       if(j>0){
-        ctx.fillText(hintText,10*w/60*i ,10*h/60*j);
+        ctx.fillText(hintText,10*w/90*i ,10*h/90*j);
       }
     }
   }
@@ -131,6 +162,8 @@ function attachEvent(canvas, ctx) {
     canvas.addEventListener('touchmove', handlerEventMove.bind({canvas: canvas, ctx: ctx}));
     canvas.addEventListener('touchend', handlerEventUp.bind({canvas: canvas, ctx: ctx}));
 }
+
+//onmousedown, onmouseup and onclick
 
 
 function handlerEventDown(e){
@@ -182,7 +215,7 @@ function handlerEventMove(e){
   var mouseAt = parseInt(e.target.id);
   //console.log("I = "+i,"mouse at = "+mouseAt,erasePercentage>.5);
 
-  if(i == mouseAt && erasePercentage >.4){
+  if(i == mouseAt && erasePercentage > erasedPercentage){
     setTimeout(() => {
       //console.log("action 1");
       this.ctx.rect(0, 0, 320, 160);

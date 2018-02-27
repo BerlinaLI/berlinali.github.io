@@ -18,19 +18,37 @@
 var arr = [];
 
 function fireEvent(){ 
-  $( "ul li" )
+  $( ".num-wrapper ul li" )
     .click(function() {
       var value = $( this ).attr("data");
-      $( ".click span" ).text( value );
       arr.push(value);
-      //arr.push(parseInt(value));
-      $( ".arr span" ).text(arr.join("") );
       console.log(arr);
+
+      if(value !== "="){
+      	$( ".click span" ).text( value );
+      }
+      $( ".arr span" ).text(arr.join("") ); 
       
-//       if(value == "="){
-  
-//       }
-    })  
+      if(value == "="){
+      	arr.pop();
+      	var result = eval(arr.join(""));
+  		console.log(result);
+  		var arrText = arr.join("")+"="+ result;
+  		// $( ".result span" ).text( result );
+  		$( ".click span" ).text( result );
+  		$( ".arr span" ).text(arrText ); 
+  		arr = [result.toString()];
+      }
+    }) 
+
+  $(".clear")
+    .click(function(){
+    	arr=[];
+    	console.log(arr);
+    	$( ".result span" ).text("0");
+    	$( ".click span" ).text("0");
+    	$( ".arr span" ).text("0"); 
+    })
 };
 
 fireEvent();

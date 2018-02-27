@@ -2,11 +2,22 @@ ul {
   list-style-type: none;
 }
 
-ul li{
+
+.result-wrapper {
+	width:100%;
+}
+
+.result-wrapper ul li{
   float:left;
-  width:25%;
+  width:50%;
 }
 	
+.num-wrapper ul li{
+  float:left;
+  width:6%;
+}
+
+
 ul li,p{
   cursor:pointer;
 }

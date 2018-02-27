@@ -1,0 +1,21 @@
+ul{
+  list-style-type: none; 
+}
+
+#keyboard-wrapper ul li{
+  float:left;
+  margin:2%;
+}
+
+#keyboard-wrapper button {
+    cursor:pointer;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 20px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius:5px;
+}

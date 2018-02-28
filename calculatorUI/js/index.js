@@ -1,9 +1,9 @@
-var keys = ["c","%","÷","x",7,8,9,"-",4,5,6,"+",1,2,3,"=",0,".","+/- "];  
+var keys = ["c","%","÷","x",7,8,9,"-",4,5,6,"+",1,2,3,".",0,".",".","="];  
 var dataKeys = [];
 
 //create duplicate dom element
 var createKeyboardDom = function() {
-  var output = '<ul>', 
+  var output = '', 
     keyboardList =document.getElementById("keyboard-wrapper");
   
   for(var i=0; i< keys.length; i++){
@@ -21,9 +21,9 @@ var createKeyboardDom = function() {
 	    default: 
 	        dataKeys[i] = keys[i];
 		}
-    output+= '<li><button class="button" data=' + dataKeys[i] + '>' + keys[i] + '</button></li>';			
+    output+= '<button class="button" data=' + dataKeys[i] + '>' + keys[i] + '</button>';			
   }
-  output+= '</ul>';
+  output+= '';
 
   keyboardList.innerHTML = output;
 
@@ -40,6 +40,10 @@ var createDomStyling = function(){
 		var dataAttr = button.getAttribute("data");
 		if(dataAttr == "="){
 			button.style.backgroundColor = "orange";
+			button.style.marginTop = "-65px";
+			button.style.position = "absolute";
+			button.style.height = "130.5px";
+			button.style.zIndex = "10";
 		}
 		//if it is a number,background color is grey;
 		var matches = dataAttr.match(/\d+/g);
@@ -53,7 +57,7 @@ var createDomStyling = function(){
 var arr = [];
 
 var calculate = function(){
-  $( "#keyboard-wrapper ul li button" ) //button
+  $( "#keyboard-wrapper button" ) //button
     .click(function() {
       var value = $( this ).attr("data");
       arr.push(value);
@@ -86,5 +90,11 @@ var calculate = function(){
 }();
 
 
+
+try {
+  calculate;
+} catch (e) {
+  console.log(e.name + ': ' + e.message);
+}
 
 

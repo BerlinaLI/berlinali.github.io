@@ -6,7 +6,7 @@
 .main{
   position:relative;
   width: 287px;
-  height:auto;
+  height: 450px;
   padding: 0; 
   margin: 5% auto auto;
   border: 2.1px solid #999;
@@ -62,7 +62,8 @@ ul{
   padding:0.3em 0.5em 0.5em;
   width: 287px;
   height: auto;
-  display: flex;
+  position: absolute;
+  display: inline-block;
 }
 
 #keyboard-wrapper ul li{
@@ -72,16 +73,21 @@ ul{
 }
 
 #keyboard-wrapper button {
-    cursor:pointer;
-   /* background-color: #4CAF50; */
-     background-color: rgba(0,0,0,0.9);
-    border: none;
-    color: white;
-    width:62px;
-    height:62px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 22px;
-    border-radius:5px;
+  cursor:pointer;
+  outline:none;
+  background-color: rgba(0,0,0,0.9);
+  border: none;
+  color: white;
+  width:62px;
+  height:62px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  border-radius:5px;
+  margin:1%;
+}
+
+#keyboard-wrapper button:hover{
+  opacity:0.8;
 }

@@ -5,16 +5,64 @@
 
 .main{
   width: 287px;
-  padding: 0.5em; 
+  height:auto;
+  padding: 0; 
   margin: 8% auto auto;
-  border: 1px solid;
-  border-radius: 1px;
+  border: 2.1px solid #999;
+  border-radius: 2.6px;
   background-color: rgba(0,0,0,0.8);
-  display: flex;
+  display: table;
 }
 
 ul{
   list-style-type: none; 
+}
+
+#project-name{
+  text-align:center;
+  color:#fff;
+  font-style: italic;
+  font-size: 0.7em;
+  margin: 0.2em;
+  text-transform: uppercase;
+}
+
+#author{
+  text-align:center;
+  color:#000;
+  font-size: 0.6em;
+  margin: 0.5em;
+}
+
+#result-wrapper{
+  color:#fff;
+  width: 304px; /*todo*/
+  height: auto;
+  display: table;
+} 
+
+#result-wrapper p{
+  text-align:right;
+}
+
+.arr-row{
+  background-color:#999;
+  color:rgba(0,0,0,0.4);
+  padding-right: 0.9em;
+}
+
+.click-row{
+  background-color:#fff;
+  color:#000;
+  font-size: 2.8em;
+  padding-right: 0.2em;
+}
+
+#keyboard-wrapper{
+  padding:0.3em 0.5em 0.5em;
+  width: 287px;
+  height: auto;
+  display: flex;
 }
 
 #keyboard-wrapper ul li{
@@ -24,7 +72,8 @@ ul{
 
 #keyboard-wrapper button {
     cursor:pointer;
-    background-color: #4CAF50; /* Green */
+   /* background-color: #4CAF50; */
+     background-color: rgba(0,0,0,0.9);
     border: none;
     color: white;
     width:66px;

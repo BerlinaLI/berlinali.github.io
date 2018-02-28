@@ -1,10 +1,25 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+.main{
+  width: 287px;
+  padding: 0.5em; 
+  margin: 8% auto auto;
+  border: 1px solid;
+  border-radius: 1px;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+}
+
 ul{
   list-style-type: none; 
 }
 
 #keyboard-wrapper ul li{
   float:left;
-  margin:2%;
+  margin:1%;
 }
 
 #keyboard-wrapper button {
@@ -12,10 +27,15 @@ ul{
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 20px 25px;
+    width:66px;
+    height:66px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 22px;
     border-radius:5px;
 }
+
+/*#keyboard-wrapper button .number{
+   background-color: red;
+}*/

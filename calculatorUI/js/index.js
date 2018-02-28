@@ -1,4 +1,4 @@
-var keys = ["c","%","÷","x",7,8,9,"-",4,5,6,"+",1,2,3,"=",0,".","+/-"];  
+var keys = ["c","%","÷","x",7,8,9,"-",4,5,6,"+",1,2,3,"=",0,".","+/- "];  
 var dataKeys = [];
 
 //create duplicate dom element
@@ -60,9 +60,9 @@ var calculate = function(){
       console.log(arr);
 
       if(value !== "=" && value !== "clear"){
-      	$( ".click-row span" ).text( value );
+      	$( ".click-row" ).text( value );
       }
-      $( ".arr-row span" ).text(arr.join("") ); 
+      $( ".arr-row" ).text(arr.join("") ); 
 
       //when click = ,output result 
       if(value == "="){
@@ -70,9 +70,8 @@ var calculate = function(){
       	var result = eval(arr.join(""));
 	  		console.log(result);
 	  		var arrText = arr.join("")+"="+ result;
-	  		// $( ".result span" ).text( result );
-	  		$( ".click-row span" ).text( result );
-	  		$( ".arr-row span" ).text(arrText ); 
+	  		$( ".click-row" ).text( result );
+	  		$( ".arr-row" ).text(arrText ); 
 	  		arr = [result.toString()];
       }
 
@@ -80,8 +79,8 @@ var calculate = function(){
       if(value == "clear"){
         arr=[];
     		console.log(arr);
-    	  $( ".click-row span" ).text("0");
-    	  $( ".arr-row span" ).text("0"); 
+    	  $( ".click-row" ).text("0");
+    	  $( ".arr-row" ).text("0"); 
       }
     }) 
 }();

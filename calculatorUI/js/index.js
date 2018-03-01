@@ -1,5 +1,6 @@
-var keys = ["c","%","÷","x",7,8,9,"-",4,5,6,"+",1,2,3,".",0,".",".","="];  
+var keys = ["c","%","÷","x",7,8,9,"-",4,5,6,"+",1,2,3,"p",0,".",".","="];  
 var dataKeys = [];
+var operatorVal = ["%","/","*","-","+","="];
 
 //create duplicate dom element
 var createKeyboardDom = function() {
@@ -45,12 +46,20 @@ var createDomStyling = function(){
 			button.style.height = "130.5px";
 			button.style.zIndex = "10";
 		}
+		//hide "p", for "=" hover effect
+		if(dataAttr == "p"){
+			button.style.backgroundColor = "transparent";
+			button.style.color = "transparent";
+		}
 		//if it is a number,background color is grey;
 		var matches = dataAttr.match(/\d+/g);
 		if (matches != null) {
 			button.style.backgroundColor = "#999";
 		}
+
 	}
+
+
 }();
 
 
@@ -60,8 +69,27 @@ var calculate = function(){
   $( "#keyboard-wrapper button" ) //button
     .click(function() {
       var value = $( this ).attr("data");
+
+      //exit if currethen and previous string are operator
+      if(operatorVal.indexOf(value)>0){
+      	if(arr.length>=1){
+      		var prevVal = arr[arr.length-1];
+      		if(operatorVal.indexOf(prevVal)>0){    		
+      	  	// return; 
+      	  	console.log("2 operators");
+      	  	return;
+      		}	
+      	}
+      }
+
       arr.push(value);
       console.log(arr);
+      
+      //exit if index 0 is operator
+      if(operatorVal.indexOf(arr[0])>0){
+      	arr=[];
+      	return;
+      }
 
       if(value !== "=" && value !== "clear"){
       	$( ".click-row" ).text( value );
@@ -70,6 +98,8 @@ var calculate = function(){
 
       //when click = ,output result 
       if(value == "="){
+
+      	//if the last string is not a number, return
       	arr.pop();
       	var result = eval(arr.join(""));
 	  		console.log(result);
@@ -90,11 +120,5 @@ var calculate = function(){
 }();
 
 
-
-try {
-  calculate;
-} catch (e) {
-  console.log(e.name + ': ' + e.message);
-}
 
 

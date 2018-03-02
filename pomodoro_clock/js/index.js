@@ -1,8 +1,11 @@
-//1. pause interval 
-//https://stackoverflow.com/questions/21277900/javascript-pausing-setinterval/21278007#21278007
+/*
+1. pause interval 
+https://stackoverflow.com/questions/21277900/javascript-pausing-setinterval/21278007#21278007
 
-
-
+2. detect true or false 
+if(isPaused)
+if(isPaused = true) is true forever
+*/
 
 var workArr = [0,3];
 var breakArr = [0,5];
@@ -54,42 +57,22 @@ function countDown(){
 $(".status").text("work" + workArr[1] +"s");
 $(".main").css("background-color", "red");
 
-
 var isPaused = false;
 var t = window.setInterval(function() {
-  if(!isPaused) {
+  if(!isPaused) {   
     countDown();
   }
 }, 1000);
 
-$('.play').on('click', function(e) {
-  play();
-});
-
-$('.pause').on('click', function(e) {
-  pause();
-});
-
-// $( ".main" ).toggle(function() {
-//   pause();
-// }, function() {
-//   play();
-// });
-
-// play();
-
-function play(){
-  console.log("play");
-  e.preventDefault();
-  isPaused = false;
+function togglePlay(){
+  if(isPaused){  
+    isPaused = false;
+    console.log("run");
+  }else{
+    isPaused = true;
+    console.log("pause");
+  }
 }
-
-function pause(){
-  console.log("pause");
-  e.preventDefault();
-  isPaused = true;
-}
-
 
 
 

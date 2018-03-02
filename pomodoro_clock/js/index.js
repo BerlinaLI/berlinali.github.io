@@ -32,28 +32,28 @@ function countDown(){
     sec = 59;
     min --;
   }
-  
-  displayTime();  
-  
-  if(sec == 0 && min == 0){
+
+  if(sec == 59 && min == -1){
     if(runWorkArr){
       min = breakArr[0];
       sec = breakArr[1];
       runWorkArr= false;
       $(".status").text("break :" + breakArr[1] +"s");
-      $(".main").css("background-color", "yellow");
+      $(".main").css("background-color", "red");
     }else{
       min = workArr[0];
       sec = workArr[1];
       runWorkArr= true;
       $(".status").text("work" + workArr[1] +"s");
-      $(".main").css("background-color", "red");
+      $(".main").css("background-color", "green");
     }
   }
+  displayTime();  
 }
 
 $(".status").text("work" + workArr[1] +"s");
 $(".main").css("background-color", "red");
+
 
 var isPaused = false;
 var t = window.setInterval(function() {
@@ -63,16 +63,34 @@ var t = window.setInterval(function() {
 }, 1000);
 
 $('.play').on('click', function(e) {
-  console.log("play");
-  e.preventDefault();
-  isPaused = false;
+  play();
 });
 
 $('.pause').on('click', function(e) {
+  pause();
+});
+
+// $( ".main" ).toggle(function() {
+//   pause();
+// }, function() {
+//   play();
+// });
+
+// play();
+
+function play(){
+  console.log("play");
+  e.preventDefault();
+  isPaused = false;
+}
+
+function pause(){
   console.log("pause");
   e.preventDefault();
   isPaused = true;
-});
+}
+
+
 
 
 

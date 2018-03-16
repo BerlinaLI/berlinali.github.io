@@ -100,9 +100,13 @@ function shakeCanvas(){
 function drawIntro(){
 	beginText();
 	timer1 = millis();
-	if(keyIsPressed){
+	// if(keyIsPressed){
+	// 	state = 0.5;
+	// }
+	if(mouseIsPressed || touchIsDown){
 		state = 0.5;
 	}
+	
 	frameIntro = frameCount;
 }
 
@@ -177,7 +181,10 @@ function loseGame(){
 	loseText();
   // loseSound.play();
 	timer3 = millis();
-	if(keyIsPressed){
+	// if(keyIsPressed){
+	// 	state = 4;
+	// }
+	if(mouseIsPressed || touchIsDown){
 		state = 4;
 	}
 }
@@ -187,7 +194,10 @@ function winGame(){
 	winText();
   // winSound.play();
 	timer3 = millis();
-	if(keyIsPressed){
+	// if(keyIsPressed){
+	// 	state = 4;
+	// }
+	if(mouseIsPressed || touchIsDown){
 		state = 4;
 	}
 }
@@ -389,7 +399,7 @@ function MicBall(){
 		
 		if(frame1 > 60){
 			this.vol = mic.getLevel();
-			this.volSpeed = map(this.vol,0,0.7,0,height);
+			this.volSpeed = map(this.vol,0,0.1,0,height);
 			this.totalSpeed = this.speed - this.volSpeed/10;
 			this.y += this.totalSpeed;
 		}

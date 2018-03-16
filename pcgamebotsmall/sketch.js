@@ -31,6 +31,7 @@ var timee4;
 var ttimer;
 var timer;
 var mute = false;
+var fr = 60;
 
 function preload(){
   //bgdMusic = loadSound("bgdMusic.mp3");
@@ -42,7 +43,7 @@ function preload(){
 }
 
 function setup(){
-
+  frameRate(fr);
 	canvas = createCanvas(window.innerWidth,window.innerHeight);
 	mic = new p5.AudioIn();
 	mic.start();
@@ -398,6 +399,9 @@ function MicBall(){
 		
 		if(frame1 > 60){
 			this.vol = mic.getLevel();
+			// fill(50);
+			// textSize(10);
+			// text(this.vol*100, 10, 10, 170, 180); 
 			this.volSpeed = map(this.vol,0,0.7,0,height);
 			this.totalSpeed = this.speed - this.volSpeed/10;
 			this.y += this.totalSpeed;

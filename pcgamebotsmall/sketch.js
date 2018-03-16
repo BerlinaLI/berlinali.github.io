@@ -31,7 +31,7 @@ var timee4;
 var ttimer;
 var timer;
 var mute = false;
-var fr = 60;
+var fr ;
 
 function preload(){
   //bgdMusic = loadSound("bgdMusic.mp3");
@@ -43,7 +43,7 @@ function preload(){
 }
 
 function setup(){
-  frameRate(fr);
+  // frameRate(fr);
 	canvas = createCanvas(window.innerWidth,window.innerHeight);
 	mic = new p5.AudioIn();
 	mic.start();
@@ -235,6 +235,15 @@ function playText(){
 }
 
 function playTime(){
+	
+	fr = frameRate();
+	fill(0,0,0);
+	textSize(30);
+	text(Math.floor(fr), 50,50,200,200);
+	console.log(fr);
+
+
+
 	timer2 = millis();
 	ttimer = timer2 - timer1;
 	timer = round(ttimer/1000);

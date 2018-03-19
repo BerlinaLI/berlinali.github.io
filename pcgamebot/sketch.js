@@ -100,12 +100,12 @@ function shakeCanvas(){
 function drawIntro(){
 	beginText();
 	timer1 = millis();
-	// if(keyIsPressed){
-	// 	state = 0.5;
-	// }
-	if(mouseIsPressed || touchIsDown){
+	if(keyIsPressed){
 		state = 0.5;
 	}
+	// if(mouseIsPressed || touchIsDown){
+	// 	state = 0.5;
+	// }
 	
 	frameIntro = frameCount;
 }
@@ -181,12 +181,12 @@ function loseGame(){
 	loseText();
   // loseSound.play();
 	timer3 = millis();
-	// if(keyIsPressed){
-	// 	state = 4;
-	// }
-	if(mouseIsPressed || touchIsDown){
+	if(keyIsPressed){
 		state = 4;
 	}
+	// if(mouseIsPressed || touchIsDown){
+	// 	state = 4;
+	// }
 }
 
 function winGame(){
@@ -194,12 +194,12 @@ function winGame(){
 	winText();
   // winSound.play();
 	timer3 = millis();
-	// if(keyIsPressed){
-	// 	state = 4;
-	// }
-	if(mouseIsPressed || touchIsDown){
+	if(keyIsPressed){
 		state = 4;
 	}
+	// if(mouseIsPressed || touchIsDown){
+	// 	state = 4;
+	// }
 }
 
 function beginText(){
@@ -208,10 +208,27 @@ function beginText(){
 	strokeWeight(6);
 	textSize(40);
 	text("Sound Reactive Mini Game",0,0,width,height-200);
+	
+	
+	// ellipse(1,this.y,this.size,this.size);
+
+	textSize(17);
+	strokeWeight(2);
+	
+  stroke(255,0,0);
+	text("red balls to reduce your lives",0,130,width,height-300);
+
+	stroke(0,0,255);
+	text("blue balls to gain more scores",0,130,width,height-200);
+
+	
 	strokeWeight(3);
 	textSize(17);
+	fill(255);
+	stroke(0);
+	
 	if(frameCount % 60 < 45){
-		text("Press any key to play!",0,200,width,height-200);
+		text("Press any key to play!",0,400,width,height-450);
 	}
 	textStyle(NORMAL);
 	fill('rgba(0,0,255, 0.75)');
@@ -229,9 +246,9 @@ function playText(){
   } else{
     fill("white");
   }
-	text("Lives : "+lives,0,0,width-20,80);
+	text("Lives : "+lives,0,0,width-20,150);
 	fill(255);
-	text("Score : "+score,0,0,width-20,150)
+	text("Score : "+score,0,0,width-20,230)
 }
 
 function playTime(){
@@ -239,7 +256,7 @@ function playTime(){
 	ttimer = timer2 - timer1;
 	timer = round(ttimer/1000);
 	textSize(20);
-	text(timer+" sec",0,0,width-20,220);
+	text(timer+" sec",0,0,width-20,310);
 }
 
 function playTimeAgain(){
@@ -247,7 +264,7 @@ function playTimeAgain(){
 	ttimer = timer4 - timer3;
 	timer = round(ttimer/1000);
 	textSize(20);
-	text(timer+" sec",0,0,width-20,220);
+	text(timer+" sec",0,0,width-20,310);
 }
 
 function loseText(){
@@ -440,7 +457,9 @@ function Teeth(){
       fill(255);
       stroke(125,127+127*sin(frameCount* this.hr));
       strokeWeight(3);
-      triangle(i*this.slength,height,i*this.slength + this.slength/2,height-20,(i+1)*this.slength,height);
+      //triangle(i*this.slength,height,i*this.slength + this.slength/2,height-20,(i+1)*this.slength,height);
+      triangle(i*this.slength,height,i*this.slength + this.slength/2,height-40,(i+1)*this.slength,height);
+      triangle(i*this.slength,0,i*this.slength + this.slength/2,40,(i+1)*this.slength,0);
     }
   }
 }

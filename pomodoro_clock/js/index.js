@@ -7,25 +7,60 @@ if(isPaused)
 if(isPaused = true) is true forever
 */
 
-var workArr = [0,3];
+// var workArr = [0,3];
+var workArr=[];
 var breakArr = [0,5];
-var timeArr = workArr;
-var min = timeArr[0];
-var sec = timeArr[1];
+var min;
+var sec;
 var runWorkArr = true;
 var getTime;
+var isPaused = true;
+var interval;
 
 
-function displayTime(){
-  var timerDisplay = convertTime(min) + ":" + convertTime(sec);
-  $(".timer").text(timerDisplay);
-}
+$(".status").text("work");
+$(".main").css("background-color", "red");
 
-function convertTime(num){
-  if(num < 10 && num >= 0){
-    return num = "0" + num;
+
+var workMin  = 25;
+
+$(".workPlus").click(function(){
+  if(isPaused){
+    workMin++;
+    $(".workNum").text(workMin);
+    $(".timer").text(workMin);
+  }
+});
+
+$(".workMinus").click(function(){
+  if(isPaused){
+    workMin--;
+    $(".workNum").text(workMin);
+    $(".timer").text(workMin);
+  }
+});
+
+
+
+
+
+function togglePlay(){
+
+  workArr = [workMin,0];
+  min = workArr[0];
+  sec = workArr[1];
+
+  if(isPaused){  
+    console.log("run");
+    isPaused = false;
+    interval = window.setInterval(function() {
+      countDown();
+    }, 1000);
   }else{
-    return num;
+    isPaused = true;
+    console.log("pause");
+    clearInterval(interval);
+    //interval = null;
   }
 }
 
@@ -47,32 +82,28 @@ function countDown(){
       min = workArr[0];
       sec = workArr[1];
       runWorkArr= true;
-      $(".status").text("work" + workArr[1] +"s");
+      $(".status").text("work");
       $(".main").css("background-color", "green");
     }
   }
   displayTime();  
 }
 
-$(".status").text("work" + workArr[1] +"s");
-$(".main").css("background-color", "red");
 
-var isPaused = false;
-var t = window.setInterval(function() {
-  if(!isPaused) {   
-    countDown();
-  }
-}, 1000);
+function displayTime(){
+  var timerDisplay = convertTime(min) + ":" + convertTime(sec);
+  $(".timer").text(timerDisplay);
+}
 
-function togglePlay(){
-  if(isPaused){  
-    isPaused = false;
-    console.log("run");
+function convertTime(num){
+  if(num < 10 && num >= 0){
+    return num = "0" + num;
   }else{
-    isPaused = true;
-    console.log("pause");
+    return num;
   }
 }
+
+
 
 
 

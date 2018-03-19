@@ -3,7 +3,7 @@ var $overlay = $('<div class="overlay"></div>');
 var $popup =  $('<div></div>');
 var $content = $('<iframe class="videoiframe"  src="" frameborder="0" allowfullscreen></iframe>');
 var $deleteIcon = $('<div class="deleteIcon"><i class="fa fa-close"></i></div>');
-var gameLink= "http://berlina.io/project/ibmcomputer/";
+// var gameLink= "http://berlina.io/project/ibmcomputer/";
 
 $overlay.append($popup);
 $popup.append($content);
@@ -64,12 +64,47 @@ $(window).on("load", function() {
   //   $('.switch-en').removeClass("active");
   //   $('.switch-cn').addClass("active");
   // });
+
+
   //pop-up overlay element
-  $('.pop-it-game').click(function(){
-    $(".videoiframe").attr("src",gameLink);
-    $(".videoiframe").css({"width":"380px","height":"520px","overflow":"visible", "margin":"5% auto"});
-    $overlay.show();  
-  });
+  // $('.pop-it-game').click(function(){
+  //   $(".videoiframe").attr("src",gameLink);
+  //   $(".videoiframe").css({"width":"380px","height":"520px","overflow":"visible", "margin":"5% auto"});
+  //   $overlay.show();  
+  // });
+
+
+  $('.mobile-game-ban').hide();
+
+  $('.mobile-game-ban').css({
+    'position': 'fixed',
+    'float': 'left',
+    'top': '30%',
+    'left': '50%',
+    'transform': 'translate(-50%, -50%)',
+    'background': '#999',
+    'text-align': 'left',
+    'padding': '9.5px 12.1px',
+    'color': '#fff',
+    'border-radius': '3.9px',
+    'font-size': '1.1rem'
+  })
+
+  $('.game-link').click(function(){
+      var $width = screen.width;// $(window).width();
+      // desktop 992
+      if( $width > 990){
+        console.log("desktop");
+        $(".game-link").attr("href", "https://berlinali.github.io/pcgamebot/");
+        $(".game-link").attr("target","_blank");
+      }else{
+        console.log("mobile");
+        // $(".game-link").attr("href", "");
+        $('.mobile-game-ban').show().delay(1200).fadeOut();
+       }
+   });
+
+
 
   //close pop-up windows
   $(".deleteIcon").click(function() {
@@ -79,8 +114,9 @@ $(window).on("load", function() {
     $(".videoiframe").css({"width":"","height":"","overflow":"","margin":""});
   });
 
-
-
-
+  //work detail slide toggle
+  $(".scroll-down").click(function() {
+    $(this).next().slideToggle("slow");
+  });
 
 });  

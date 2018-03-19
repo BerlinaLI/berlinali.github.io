@@ -9,8 +9,8 @@ if(isPaused = true) is true forever
 
 // var workArr = [0,3];
 
-var workMin  = 1;
-var breakMin = 1;
+var workMin  = 25;
+var breakMin = 5;
 var workArr=[];
 var breakArr = [];
 var min;
@@ -21,10 +21,10 @@ var isPaused = true;
 var interval;
 var barHeight = 0;
 
-
 function togglePlay(){
   workArr = [workMin,0];
   breakArr = [breakMin,0];
+
   min = workArr[0];
   sec = workArr[1];
 
@@ -32,8 +32,7 @@ function togglePlay(){
     console.log("run");
     isPaused = false;
     interval = window.setInterval(function() {
-      countDown();
-     
+      countDown();     
     }, 1000);
     
   }else{
@@ -51,8 +50,13 @@ function countDown(){
     min --;
   }
 
-  // runProgessBar(breakMin);
-  // runProgessBar(workMin);
+  if(runWorkArr){
+    runProgessBar(workMin);
+      $("#progress-bar").css("background-color","red");
+  }else{
+    runProgessBar(breakMin);
+      $("#progress-bar").css("background-color","red");
+  };
 
   if(sec == 59 && min == -1){
     if(runWorkArr){
@@ -98,6 +102,12 @@ function runProgessBar(minType) {
     elem.style.height = result + 'px'; 
     console.log(result);
   }
+
+  // if(minType == workMin){
+  //   $("#progress-bar").css("background-color","red");
+  // }else{
+  //   $("#progress-bar").css("background-color","green");
+  // }
 }
 
 $(".workPlus").click(function(){

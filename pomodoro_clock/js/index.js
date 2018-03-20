@@ -7,12 +7,8 @@ if(isPaused)
 if(isPaused = true) is true forever
 */
 
-// var workArr = [0,3];
-
-var workMin  = 25;
-var breakMin = 5;
-var workArr=[];
-var breakArr = [];
+var workMin  = 1;
+var breakMin = 1;
 var min;
 var sec;
 var runWorkArr = true;
@@ -22,19 +18,24 @@ var interval;
 var barHeight = 0;
 
 function togglePlay(){
-  workArr = [workMin,0];
-  breakArr = [breakMin,0];
-
-  min = workArr[0];
-  sec = workArr[1];
+  min = workMin;
+  sec = 0;
 
   if(isPaused){  
     console.log("run");
     isPaused = false;
     interval = window.setInterval(function() {
-      countDown();     
+      countDown(); 
+
+      if(runWorkArr){
+        runProgessBar(workMin);
+        $("#progress-bar").css("background-color","green"); 
+      }else{
+        runProgessBar(breakMin); 
+        $("#progress-bar").css("background-color","red");
+      }
     }, 1000);
-    
+        
   }else{
     isPaused = true;
     console.log("pause");
@@ -50,23 +51,15 @@ function countDown(){
     min --;
   }
 
-  if(runWorkArr){
-    runProgessBar(workMin);
-      $("#progress-bar").css("background-color","red");
-  }else{
-    runProgessBar(breakMin);
-      $("#progress-bar").css("background-color","red");
-  };
-
   if(sec == 59 && min == -1){
     if(runWorkArr){
-      min = breakArr[0];
-      sec = breakArr[1];
+      min = breakMin;
+      sec = 0;
       runWorkArr= false;
       $(".status").text("break");
     }else{
-      min = workArr[0];
-      sec = workArr[1];
+      min = workMin;
+      sec = 0;
       runWorkArr= true;
       $(".status").text("work");
     }
@@ -88,26 +81,20 @@ function convertTime(num){
   }
 }
 
-
 function runProgessBar(minType) {
   var total = minType * 60;
   var result; 
   var elem = document.getElementById("progress-bar"); 
  
   if (barHeight >= total) {
-    clearInterval(id);
+    barHeight = 0;
+    result = 0;
   } else {
     barHeight++; 
     result = 300 * barHeight/total; 
     elem.style.height = result + 'px'; 
     console.log(result);
   }
-
-  // if(minType == workMin){
-  //   $("#progress-bar").css("background-color","red");
-  // }else{
-  //   $("#progress-bar").css("background-color","green");
-  // }
 }
 
 $(".workPlus").click(function(){
@@ -118,6 +105,29 @@ $(".workPlus").click(function(){
   }
 });
 
+$(".workMinus").click(function(){
+  if(isPaused){
+    workMin--;
+    $(".workNum").text(workMin);
+    $(".timer").text(workMin);
+  }
+});
+
+
+
+// if(isPaused){
+//   $(".workPlus").click(function(){workMin++;});
+//   $(".workMinus").click(function(){workMin--;});
+
+//   $(".breakPlus").click(function(){breakMin++;});
+//   $(".breakMinus").click(function(){breakMin--;});
+
+//   $(".breakNum").text(breakMin);
+//   $(".workNum").text(workMin);
+//   $(".timer").text(workMin);
+//   console.log("workmin: "+ workMin + "breakMin: " + breakMin);
+// }
+
 $(".breakPlus").click(function(){
   if(isPaused){
     breakMin++;
@@ -126,13 +136,7 @@ $(".breakPlus").click(function(){
   console.log(breakMin);
 });
 
-$(".workMinus").click(function(){
-  if(isPaused){
-    workMin--;
-    $(".workNum").text(workMin);
-    $(".timer").text(workMin);
-  }
-});
+
 
 $(".breakMinus").click(function(){
   if(isPaused){

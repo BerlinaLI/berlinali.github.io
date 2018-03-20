@@ -8,16 +8,34 @@
 </head>
 
 <body>
-  <div class="main" onclick="togglePlay()">
-  	<div class="status"></div>
-		<div class="timer"> </div>
+
+	<div class="header"> Pomodoro Clock </div>
+
+	<div class="main" onclick="togglePlay()">
+	  <div id="progress-bar"></div>
+	  <div class="status">work</div>
+	  <div class="timer"> 25 </div>
 	</div>
 
+	<div class="control-panel">
+	  <div class="break-container"> 
+	    <div><b>break length</b></div>
+	    <div class="break-click"> 
+	      <span class="breakPlus"> + </span>
+	      <span class="breakNum"> 5 </span>
+	      <span class="breakMinus"> - </span>
+	    </div>
+	  </div>
 
-  <button class="play"> play </button>
-
-  <button class="pause"> pause </button>
-
+	  <div class="work-container">
+	    <div><b>session length</b></div>
+	    <div class="work-click"> 
+	      <span class="workPlus"> +  </span>
+	      <span class="workNum"> 25 </span>
+	      <span class="workMinus"> - </span>
+	    </div>
+	  </div>
+	</div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script  src="js/index.js"></script>

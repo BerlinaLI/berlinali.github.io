@@ -1,23 +1,18 @@
-/*
-1. pause interval 
-https://stackoverflow.com/questions/21277900/javascript-pausing-setinterval/21278007#21278007
-
-2. detect true or false 
-if(isPaused)
-if(isPaused = true) is true forever
-*/
-
-var workMin  = 1;
-var breakMin = 1;
+var elem = document.getElementById("progress-bar"); 
+var workMin  = 25;
+var breakMin = 5;
+var barHeight = 0;
+var runWorkArr = true;
+var isPaused = true;
 var min;
 var sec;
-var runWorkArr = true;
 var getTime;
-var isPaused = true;
 var interval;
-var barHeight = 0;
+var total;
+var result; 
 
 function togglePlay(){
+  //init to show work
   min = workMin;
   sec = 0;
 
@@ -26,7 +21,7 @@ function togglePlay(){
     isPaused = false;
     interval = window.setInterval(function() {
       countDown(); 
-
+      
       if(runWorkArr){
         runProgessBar(workMin);
         $("#progress-bar").css("background-color","green"); 
@@ -51,6 +46,7 @@ function countDown(){
     min --;
   }
 
+//switch between work and break time
   if(sec == 59 && min == -1){
     if(runWorkArr){
       min = breakMin;
@@ -67,7 +63,6 @@ function countDown(){
   displayTime();  
 }
 
-
 function displayTime(){
   var timerDisplay = convertTime(min) + ":" + convertTime(sec);
   $(".timer").text(timerDisplay);
@@ -75,17 +70,14 @@ function displayTime(){
 
 function convertTime(num){
   if(num < 10 && num >= 0){
-    return num = "0" + num;
-  }else{
-    return num;
+    num = "0" + num;
   }
+  return num;
 }
 
 function runProgessBar(minType) {
-  var total = minType * 60;
-  var result; 
-  var elem = document.getElementById("progress-bar"); 
- 
+  total = minType * 60;
+  
   if (barHeight >= total) {
     barHeight = 0;
     result = 0;
@@ -97,51 +89,27 @@ function runProgessBar(minType) {
   }
 }
 
-$(".workPlus").click(function(){
-  if(isPaused){
+//control panel clicking
+if(isPaused){
+  $(".workPlus").click(function(){
     workMin++;
     $(".workNum").text(workMin);
     $(".timer").text(workMin);
-  }
-});
+  });
 
-$(".workMinus").click(function(){
-  if(isPaused){
+  $(".workMinus").click(function(){
     workMin--;
     $(".workNum").text(workMin);
     $(".timer").text(workMin);
-  }
-});
+  });
 
-
-
-// if(isPaused){
-//   $(".workPlus").click(function(){workMin++;});
-//   $(".workMinus").click(function(){workMin--;});
-
-//   $(".breakPlus").click(function(){breakMin++;});
-//   $(".breakMinus").click(function(){breakMin--;});
-
-//   $(".breakNum").text(breakMin);
-//   $(".workNum").text(workMin);
-//   $(".timer").text(workMin);
-//   console.log("workmin: "+ workMin + "breakMin: " + breakMin);
-// }
-
-$(".breakPlus").click(function(){
-  if(isPaused){
+  $(".breakPlus").click(function(){
     breakMin++;
     $(".breakNum").text(breakMin);
-  }
-  console.log(breakMin);
-});
+  });
 
-
-
-$(".breakMinus").click(function(){
-  if(isPaused){
+  $(".breakMinus").click(function(){
     breakMin--;
     $(".breakNum").text(breakMin);
-  }
-  console.log(breakMin);
-});
+  });
+}

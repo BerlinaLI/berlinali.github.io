@@ -1,32 +1,73 @@
-*{
-  color:#fff;
+body {
+  font-family: 'Raleway', sans-serif;
+  color:#999;
 }
 
+
+.header{
+  font-size:3.5rem;
+  text-align:center;
+  margin:50px auto 0px;
+}
 
 .timer{
   text-align:center;
+  font-size:5.2rem;
+  line-height:120px;
 }
 
 .main{
-	background-color:red;
-    margin: 0 auto;
-    text-align: center;
-    width: 300px;
-    height: 300px;
-    font-size: 3em;
-    border: 2px solid #99CC00;
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
-    z-index: 20;
-    overflow: hidden;
+  margin: 50px auto 50px;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  font-size: 3em;
+  border: 5px solid #99CC00;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+  overflow: hidden;
+}
+
+#progress-bar{
+  width: 300px;
+  bottom:0;
+  left:0;
+  position:absolute;
+  z-index: -1;
 }
 
 .status{
-	line-height: 3.8em;
+  line-height: 100px;
+  font-size:1.8rem;
 }
 
+.control-panel{
+  margin: 30px auto 10px;
+  width: 500px;
+  height: 80px;
+  font-size:25px;
+}
 
-button{
-	color:#000;
+.break-click, .work-click{
+  margin-top:15px;
+}
+
+.break-container,.work-container{
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+}
+
+.breakPlus, .breakMinus,.workPlus, .workMinus {
+  cursor: pointer;
+}
+
+.breakNum, .workNum{
+  margin:0 10px;
+}
+
+.work-click, .break-click{
+  font-weight:600;
 }

@@ -28,9 +28,11 @@
     </ion-content>
 
     <div class="musicinfo" id="musicinfo">
-        <audio id="musicid" src="bgm.mp3" preload="preload" autoplay="autoplay"  loop="loop">您的浏览器不支持 audio标签。</audio>
+      <audio id="musicid" preload="preload" autoplay loop>
+        <source src="bgm.mp3" type="audio/mpeg">
+      </audio>
     </div>
-  
+
     <script src="js/index.js"></script>
 
   </body>
